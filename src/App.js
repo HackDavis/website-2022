@@ -50,11 +50,76 @@ function App() {
         var credential = error.credential;
     });
   } 
+  
+
+  function signUp() {
+    var email = document.getElementById("emailInput-Up").value;
+    var password = document.getElementById("passwordInput-Up").value;
+    
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in 
+      console.log(userCredential);
+      var user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      console.log(error);
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ..
+    });
+  }
+
+  function signIn() {
+    var email = document.getElementById("emailInput-In").value;
+    var password = document.getElementById("passwordInput-In").value;
+    
+    firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    console.log(user.uid);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+  }
+
+  function signOut() {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      console.log("Signed Out");
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
 
   return (
     <div className="App">
-      <button onClick={handleSignIn}>Click me to sign in with Google</button>
+      {/* Google Sign In */}
+      <button onClick={handleSignIn}>Click me to sign in with Google</button> <br />
+      
+      {/* Sign up for the first time */}
+      <p> Email: <br />
+      <input id = "emailInput-Up"></input> </p>
+      <p> Password: <br />
+      <input id = "passwordInput-Up"></input> </p>
+      <button type = "button" onClick = {signUp}> Sign-Up! </button>
+
+      {/* Sign in */}
+      <p> Email: <br />
+      <input id = "emailInput-In"></input> </p>
+      <p> Password: <br />
+      <input id = "passwordInput-In"></input> </p>
+      <button type = "button" onClick = {signIn}> Sign-In! </button>
+
+      {/* Sign out */}
+      <p> <button type = "button" onClick = {signOut}> Sign-Out! </button> </p>
     </div>
+
   );
 }
 
