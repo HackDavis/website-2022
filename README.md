@@ -1,4 +1,11 @@
-# HackDavis 2022 Website 
+<p align="center">
+  <a href="https://www.hackdavis.io">
+    <img alt="HackDavis" src="https://github.com/HackDavis/website-2021/blob/master/src/images/hd_logo.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  HackDavis Website 2022
+</h1>
 
 Made with ☕ and 💛 in Davis
 

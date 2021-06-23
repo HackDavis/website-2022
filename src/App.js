@@ -1,3 +1,4 @@
+import reactDom, { useState } from 'react';
 import './App.css';
 import firebase from "firebase/app";
 import "firebase/analytics";
@@ -7,6 +8,7 @@ import "firebase/firestore";
 require('dotenv').config();
 
 function App() { 
+
   const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -18,19 +20,28 @@ function App() {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 
-  // Initialize Firebase
-  if (!firebase.apps.length)
-    firebase.initializeApp(firebaseConfig);
+  let db; 
+  let app;
 
-    var provider = new firebase.auth.GoogleAuthProvider();
+  // Initialize Firebase
+  if (!firebase.apps.length) { 
+    app = firebase.initializeApp(firebaseConfig);
+  }
+
+  db = firebase.firestore(app);
+  console.log(db); 
+
+  var provider = new firebase.auth.GoogleAuthProvider(); 
     
   function handleSignIn() { 
     firebase.auth()
       .signInWithPopup(provider)
       .then((result) => {
         console.log(result); 
+        // result.additionalUserInfo.isNewUser <- says whether or not its the users first time signing in 
         // TODO: Write a request to our firestore database, asking it to log certain fields 
         // from the result variable 
+        console.log(result.additionalUserInfo.isNewUser);
 
         /** @type {firebase.auth.OAuthCredential} */
         var credential = result.credential;
@@ -59,9 +70,28 @@ function App() {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in 
-      console.log(userCredential);
-      var user = userCredential.user;
-      // ...
+      console.log(userCredential); 
+      db.collection("2022-users").add({
+        name: "", // there should be a name field somewhere in the sign up that feeds into this 
+        email: userCredential.user.email,
+        profile_picture: userCredential.user.photoURL || "",
+        app_status: "Not Applied",
+        rsvp_status: false,
+        qr_code: "",
+        about_me: "",
+        group_id: "",
+        pending_groups: [],
+        tags: [],
+        pending_invitations: {}, 
+        hd_director: userCredential.user.email.substr(userCredential.user.email.lastIndexOf("@") + 1) === "hackdavis.io", 
+      })
+      .then((res) => {
+        console.log("Document successfully written!");
+        console.log(res); 
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -77,6 +107,7 @@ function App() {
     
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
+    console.log("signed in"); 
     // Signed in
     var user = userCredential.user;
     console.log(user.uid);
@@ -96,6 +127,18 @@ function App() {
       // An error happened.
     });
   }
+
+  function forgotPassword() { 
+    firebase.auth().sendPasswordResetEmail(document.getElementById("forgotPasswordEmail").value) 
+    .then(() => {
+      console.log("success resetting password"); 
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode, errorMessage); 
+    });
+  } 
 
   return (
     <div className="App">
@@ -118,8 +161,12 @@ function App() {
 
       {/* Sign out */}
       <p> <button type = "button" onClick = {signOut}> Sign-Out! </button> </p>
-    </div>
 
+      {/* Forgot Password */}
+      <p>Email for forgot password:</p>
+      <input id="forgotPasswordEmail"></input>
+      <button onClick={forgotPassword}>Forgot Password</button>
+    </div>
   );
 }
 
