@@ -5,31 +5,42 @@ import "firebase/analytics";
 import "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import "firebase/firestore";
+
+// Redux Imports 
+import { useSelector, useDispatch } from 'react-redux';
+import { getUser } from './redux/state-slices/userSlice';
+
 require('dotenv').config();
 
 function App() { 
 
-  const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
-    measurementId: process.env.REACT_APP_MEASUREMENT_ID
-  };
+  const num = useSelector(state => state.user.num)
+  const db = useSelector(state => state.db.db)
+  const dispatch = useDispatch()
+  
+  // const firebaseConfig = {
+  //   apiKey: process.env.REACT_APP_API_KEY,
+  //   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  //   databaseURL: process.env.REACT_APP_DATABASE_URL,
+  //   projectId: process.env.REACT_APP_PROJECT_ID,
+  //   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  //   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  //   appId: process.env.REACT_APP_APP_ID,
+  //   measurementId: process.env.REACT_APP_MEASUREMENT_ID
+  // };
 
-  let db; 
-  let app;
+  // let db; 
+  // let app;
 
-  // Initialize Firebase
-  if (!firebase.apps.length) { 
-    app = firebase.initializeApp(firebaseConfig);
-  }
+  // // Initialize Firebase
+  // if (!firebase.apps.length) { 
+  //   app = firebase.initializeApp(firebaseConfig);
+  // }
 
-  db = firebase.firestore(app);
-  console.log(db); 
+  // db = firebase.firestore(app);
+  // console.log("db:", db); 
+
+  console.log("db in App.js", db); 
 
   var provider = new firebase.auth.GoogleAuthProvider(); 
     
@@ -166,6 +177,13 @@ function App() {
       <p>Email for forgot password:</p>
       <input id="forgotPasswordEmail"></input>
       <button onClick={forgotPassword}>Forgot Password</button>
+
+      <button
+          onClick={() => dispatch(getUser())}
+        >
+          Increment
+        </button>
+        <span>{num}</span>
     </div>
   );
 }
