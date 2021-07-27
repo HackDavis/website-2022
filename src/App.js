@@ -1,4 +1,4 @@
-import reactDom, { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import firebase from "firebase/app";
 import "firebase/analytics";
@@ -12,8 +12,7 @@ import { getUser } from './redux/state-slices/userSlice';
 
 require('dotenv').config();
 
-function App() { 
-
+function App() {
   const num = useSelector(state => state.user.num)
   const db = useSelector(state => state.db.db)
   const dispatch = useDispatch()
