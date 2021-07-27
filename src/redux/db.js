@@ -1,4 +1,3 @@
-import { createSlice } from '@reduxjs/toolkit';
 import firebase from "firebase/app";
 
 const firebaseConfig = {
@@ -12,25 +11,8 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-let db; 
 let app;
 
-// Initialize Firebase, preventing repeated initializations
-if (!firebase.apps.length) { 
-    app = firebase.initializeApp(firebaseConfig); 
-}
-else { 
-    console.log("hit databaseSlice else statement"); 
-}
+app = firebase.initializeApp(firebaseConfig); 
 
-db = firebase.firestore(app);
-//console.log("databaseSlice db:", db); 
-
-export const databaseSlice = createSlice({
-	name: 'db',
-	initialState: {
-		db: db
-	},
-})
-
-export default databaseSlice.reducer
+export let db = firebase.firestore(app);
