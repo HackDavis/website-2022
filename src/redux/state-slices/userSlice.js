@@ -16,11 +16,11 @@ export const userSlice = createSlice({
 			docRef.get().then((doc) => {
 				if (doc.exists) {
 					// console.log("Document data:", doc.data());
-					// let userData = JSON.stringify(doc.data());
+					let userData = JSON.stringify(doc.data());
+					console.log(`userData: ${userData}`);
 					// state.user = userData;
 					return {
-						...state,
-						user: JSON.stringify(doc.data())
+						user: {userData}
 					}
 				} else {
 					// doc.data() will be undefined in this case
