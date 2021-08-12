@@ -158,7 +158,7 @@ function App(props) {
           Get User
       </button>
       <button 
-          onClick={() => console.log("logging user:", props.user)}
+          onClick={() => console.log("logging user:", props.user)} 
       > 
           Log User Info 
       </button> 
@@ -172,7 +172,7 @@ App.propTypes = {
 }; 
 
 const mapStateToProps = (state) => ({ 
-  user: state.user.user
+  user: state.user
 }); 
 
 export default connect(mapStateToProps, { fetchUser })(App); 

@@ -1,8 +1,6 @@
 import { FETCH_USER } from "../actions/types";
 
-const initialState = { 
-    user: {}
-};
+const initialState = {};
 
 export default function (state = initialState, action) { 
     switch (action.type) { 
@@ -10,10 +8,10 @@ export default function (state = initialState, action) {
             console.log("fetching user:", action.payload);
             return { 
                 ...state,
-                user: action.payload
+                ...action.payload
             };
         
-            default: 
-                return state; 
+        default: 
+            return state; 
     }
 }; 
