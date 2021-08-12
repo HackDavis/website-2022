@@ -172,7 +172,7 @@ App.propTypes = {
 }; 
 
 const mapStateToProps = (state) => ({ 
-  user: state.user
+  user: state.userData
 }); 
 
 export default connect(mapStateToProps, { fetchUser })(App); 
