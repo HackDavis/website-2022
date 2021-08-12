@@ -7,8 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import "firebase/firestore";
 
 // Redux Imports 
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { getUser } from './redux/state-slices/userSlice';
+import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions"; 
 
@@ -17,9 +16,6 @@ require('dotenv').config();
 let db = "";
 
 function App(props) {
-  const num = useSelector(state => state.user.num)
-  const dispatch = useDispatch()
-
   var provider = new firebase.auth.GoogleAuthProvider(); 
     
   function handleSignIn() { 
