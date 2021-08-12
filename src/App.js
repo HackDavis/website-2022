@@ -7,14 +7,16 @@ import { GoogleAuthProvider } from "firebase/auth";
 import "firebase/firestore";
 
 // Redux Imports 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import { getUser } from './redux/state-slices/userSlice';
+import PropTypes from "prop-types";
+import { fetchUser } from "./redux/actions/userActions"; 
 
 require('dotenv').config();
 
 let db = "";
 
-function App() {
+function App(props) {
   const num = useSelector(state => state.user.num)
   const dispatch = useDispatch()
 
@@ -155,13 +157,26 @@ function App() {
       <button onClick={forgotPassword}>Forgot Password</button>
 
       <button
-          onClick={() => dispatch(getUser())}
-        >
+          onClick={() => console.log("hit fetchUser function call", props.fetchUser())} 
+      >
           Get User
-        </button>
-        <span>{num}</span>
+      </button>
+      <button 
+          onClick={() => console.log("logging user:", props.user)}
+      > 
+          Log User Info 
+      </button> 
     </div>
   );
 }
 
-export default App;
+App.propTypes = { 
+  fetchUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+}; 
+
+const mapStateToProps = (state) => ({ 
+  user: state.user.user
+}); 
+
+export default connect(mapStateToProps, { fetchUser })(App); 
