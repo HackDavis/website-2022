@@ -10,6 +10,7 @@ import "firebase/firestore";
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions"; 
+import { memberAccepted } from "./redux/actions/memberAcceptedActions"; 
 
 require('dotenv').config();
 
@@ -162,12 +163,22 @@ function App(props) {
       > 
           Log User Info 
       </button> 
+      <button 
+          onClick={() => {
+            props.fetchUser();
+            console.log(props.user.user_id); // 3k1... ->  3k1 
+            props.memberAccepted(props.user.user_id, props.user.name, props.user.email);
+          }} 
+      > 
+          Call Member Accepted
+      </button> 
     </div>
   );
 }
 
 App.propTypes = { 
   fetchUser: PropTypes.func.isRequired,
+  memberAccepted: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 }; 
 
@@ -175,4 +186,4 @@ const mapStateToProps = (state) => ({
   user: state.userData
 }); 
 
-export default connect(mapStateToProps, { fetchUser })(App); 
+export default connect(mapStateToProps, { fetchUser, memberAccepted })(App); 
