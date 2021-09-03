@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions"; 
 import { memberAccepted } from "./redux/actions/memberAcceptedActions"; 
+import {setRSVP} from "./redux/actions/getUserAndRSVPActions";
 
 require('dotenv').config();
 
@@ -69,7 +70,7 @@ function App(props) {
         pending_groups: [],
         tags: [],
         pending_invitations: {}, 
-        hd_director: userCredential.user.email.substr(userCredential.user.email.lastIndexOf("@") + 1) === "hackdavis.io", 
+        hd_director: userCredential.user.email.substr(userCredential.user.email.lastIndexOf("@") + 1) === "hackdavis.io" 
       })
       .then((res) => {
         console.log("Document successfully written!");
@@ -172,12 +173,22 @@ function App(props) {
       > 
           Call Member Accepted
       </button> 
+      <button
+        onClick={()=> {
+          props.fetchUser();
+          // Must put hardcoded ID to test out functionality because getUser() has not been implemented yet
+          props.setRSVP(props.user.user_id,"Yes");
+        }}
+        >
+          Set RSVP Button
+      </button>
     </div>
   );
 }
 
 App.propTypes = { 
   fetchUser: PropTypes.func.isRequired,
+  setRSVP: PropTypes.func.isRequired,
   memberAccepted: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 }; 
@@ -186,4 +197,4 @@ const mapStateToProps = (state) => ({
   user: state.userData
 }); 
 
-export default connect(mapStateToProps, { fetchUser, memberAccepted })(App); 
+export default connect(mapStateToProps, { fetchUser, memberAccepted, setRSVP})(App); 

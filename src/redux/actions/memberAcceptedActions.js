@@ -21,5 +21,5 @@ function setGroupId(user_id, group_id) {
     })
     .catch((error) => { 
         console.log("ERROR setting group id:", error);
-    })
+    });
 };

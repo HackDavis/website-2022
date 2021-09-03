@@ -1,4 +1,4 @@
-import { FETCH_USER, MEMBER_ACCEPT } from "../actions/types";
+import { FETCH_USER, MEMBER_ACCEPT, SET_RSVP } from "../actions/types";
 
 const initialState = {};
 
@@ -13,6 +13,12 @@ export default function (state = initialState, action) {
         case MEMBER_ACCEPT: 
             console.log("calling member accepted from userReducer:", action.payload);
             return { 
+                ...state,
+                ...action.payload
+            };
+        case SET_RSVP:
+            console.log("setting rsvp ", action.payload);
+            return {
                 ...state,
                 ...action.payload
             };
