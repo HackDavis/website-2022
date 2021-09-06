@@ -7,16 +7,14 @@ export function fetchUser() {
 		
 		docRef.get().then((doc) => {
 			if (doc.exists) {
-				// console.log("Document data:", doc.data());
 				let userData = doc.data();
+				userData.user_id = docRef.id;
 				console.log("userData:", JSON.stringify(userData));
-				// state.user = userData;
 				dispatch({
 					type: FETCH_USER,
 					payload: userData
 				});
 			} else {
-				// doc.data() will be undefined in this case
 				console.log("No such document!");
 			}
 		}).catch((error) => {

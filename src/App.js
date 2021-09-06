@@ -167,7 +167,7 @@ function App(props) {
       <button 
           onClick={() => {
             props.fetchUser();
-            console.log(props.user.user_id); // 3k1... ->  3k1 
+            console.log("hit user id on line 170:", props.user.user_id); 
             props.memberAccepted(props.user.user_id, props.user.name, props.user.email);
           }} 
       > 
