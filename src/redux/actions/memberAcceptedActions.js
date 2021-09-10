@@ -40,4 +40,4 @@ async function addGroupMember(user_id, name, email, group_id) {
     // members.set(user_id, [name, email, false]);
 
     // update the current group's document 
-};
+}; 

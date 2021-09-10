@@ -1,3 +1,5 @@
+// !!Make sure to import env file while updating data into Firestore!!
+
 import React, { useState } from 'react';
 import './App.css';
 import firebase from "firebase/app";
@@ -11,7 +13,8 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions"; 
 import { memberAccepted } from "./redux/actions/memberAcceptedActions"; 
-import {setRSVP} from "./redux/actions/getUserAndRSVPActions";
+import { setRSVP } from "./redux/actions/setRSVP";
+import { groupApplication } from "./redux/actions/groupApplicationActions";
 
 require('dotenv').config();
 
@@ -182,6 +185,13 @@ function App(props) {
         >
           Set RSVP Button
       </button>
+      <button
+        onClick={()=> {
+          props.groupApplication(props.user.user_id, props.user.name, props.user.email, "C5VaLwp0TjZCj2erPcaF");
+        }}
+        >
+          group application
+      </button>
     </div>
   );
 }
@@ -190,6 +200,7 @@ App.propTypes = {
   fetchUser: PropTypes.func.isRequired,
   setRSVP: PropTypes.func.isRequired,
   memberAccepted: PropTypes.func.isRequired,
+  groupApplication: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 }; 
 
@@ -197,4 +208,4 @@ const mapStateToProps = (state) => ({
   user: state.userData
 }); 
 
-export default connect(mapStateToProps, { fetchUser, memberAccepted, setRSVP})(App); 
+export default connect(mapStateToProps, { fetchUser, memberAccepted, setRSVP, groupApplication})(App); 
