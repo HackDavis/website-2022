@@ -12,6 +12,7 @@ import "firebase/firestore";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions";
+import { getUser } from "./redux/actions/getUser";
 import { memberAccepted } from "./redux/actions/memberAcceptedActions";
 import { setRSVP } from "./redux/actions/setRSVP";
 import { groupApplication } from "./redux/actions/groupApplicationActions";
@@ -21,6 +22,10 @@ require("dotenv").config();
 let db = "";
 
 function App(props) {
+
+  useEffect(()=> {
+    props.getUser("3KaiyNl4pUuV2UEDTlt1")
+  }, []);
   var provider = new firebase.auth.GoogleAuthProvider();
 
   function handleSignIn() {
@@ -208,7 +213,7 @@ function App(props) {
       </button>
       <button
         onClick={() => {
-          props.fetchUser();
+          // props.fetchUser();
           console.log("hit user id on line 170:", props.user.user_id);
           props.memberAccepted(
             props.user.user_id,
@@ -249,6 +254,7 @@ App.propTypes = {
   setRSVP: PropTypes.func.isRequired,
   memberAccepted: PropTypes.func.isRequired,
   groupApplication: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
 
@@ -261,4 +267,5 @@ export default connect(mapStateToProps, {
   memberAccepted,
   setRSVP,
   groupApplication,
+  getUser
 })(App);
