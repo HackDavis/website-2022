@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import firebase from "firebase/app";
+// import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 // Redux Imports
 import { connect } from "react-redux";
@@ -23,41 +24,22 @@ let db = "";
 
 function App(props) {
 
-  useEffect(()=> {
-    props.getUser("3KaiyNl4pUuV2UEDTlt1")
-  }, []);
-  var provider = new firebase.auth.GoogleAuthProvider();
+  async function handleSignIn() {
+    const provider = new GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
+    const result = await signInWithPopup(auth, provider);
+  
+    // The signed-in user info.
+    const user = result.user;
 
-  function handleSignIn() {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        // result.additionalUserInfo.isNewUser <- says whether or not its the users first time signing in
-        // TODO: Write a request to our firestore database, asking it to log certain fields
-        // from the result variable
-        console.log(result.additionalUserInfo.isNewUser);
-
-        /** @type {firebase.auth.OAuthCredential} */
-        var credential = result.credential;
-
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-      })
-      .catch((error) => {
-        // TODO: Give the user visual feedback letting them know that their sign-in attempt failed
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-      });
-  }
+    if (user) { 
+      console.log(result.additionalUserInfo.isNewUser);
+      console.log("user found:", user);
+    } else { 
+      console.log("No user found!");
+    };
+  };
 
   function signUp() {
     var email = document.getElementById("emailInput-Up").value;
@@ -202,8 +184,10 @@ function App(props) {
       <input id="forgotPasswordEmail"></input>
       <button onClick={forgotPassword}>Forgot Password</button>
       <button
-        onClick={() =>
-          console.log("hit fetchUser function call", props.fetchUser())
+        onClick={() => {
+            console.log("hit fetchUser function call", props.fetchUser());
+            console.log("this should print after the fetchUser line");
+          }
         }
       >
         Get User

@@ -2,38 +2,33 @@ import { GROUP_APPLICATION } from "./types";
 import { db } from "../db";
 import { findUserById } from "./findUserById";
 import { findGroupById } from "./findGroupById";
+import { doc, updateDoc } from "firebase/firestore";
 
 // Note: This function will work once we integrate async await
-export function groupApplication(user_id, name, email, group_id) {
+export async function groupApplication(user_id, name, email, group_id) {
   console.log("group application function called");
-  return function (dispatch, getState) {
-    addPendingGroup(user_id, group_id);
-    addPendingMember(user_id, name, email, group_id);
+  return async function (dispatch, getState) {
+    await addPendingGroup(user_id, group_id);
+    await addPendingMember(user_id, name, email, group_id);
   };
 }
 
-function addPendingGroup(user_id, group_id) {
-  // Note: Need to use await on line 17 in order for function to work
-  var docRef = db.collection("2022-users").doc(user_id);
-  let userData = findUserById(user_id);
+async function addPendingGroup(user_id, group_id) {
+  const docRef = doc(db, "2022-users", user_id);
+  let userData = await findUserById(user_id);
   let pending_groups_arr = userData.pending_groups;
   pending_groups_arr.push(group_id);
 
   // update user document with new pending group
-  docRef
-    .update({ pending_groups: pending_groups_arr })
-    .then(() => {
-      console.log("added pending group");
-    })
-    .catch((error) => {
-      console.log("Error getting document:", error);
-    });
+  await updateDoc(docRef, { 
+    pending_groups: pending_groups_arr 
+  }); 
 }
 
-function addPendingMember(user_id, name, email, group_id) {
-  var docRef = db.collection("2022-groups").doc(group_id);
+async function addPendingMember(user_id, name, email, group_id) {
+  const docRef = doc(db, "2022-groups", group_id); 
   // Note: Need to use await on line 34 in order for function to work
-  let groupData = findGroupById(group_id);
+  let groupData = await findGroupById(group_id);
   let pending_members_map = groupData.pending_members;
 
   // Update the pending members map with a new user
@@ -41,12 +36,7 @@ function addPendingMember(user_id, name, email, group_id) {
   pending_members_map[user_id] = [name, email];
 
   // update group document with new pending member map
-  docRef
-    .update({ pending_members: pending_members_map })
-    .then(() => {
-      console.log("added pending members");
-    })
-    .catch((error) => {
-      console.log("Error getting document:", error);
-    });
+  await updateDoc(docRef, { 
+    pending_members: pending_members_map 
+  }); 
 }

@@ -1,27 +1,22 @@
 import { FETCH_USER } from "./types";
 import { db } from "../db";
+import { doc, getDoc } from "firebase/firestore";
 
 export function fetchUser() {
-  return function (dispatch) {
-    var docRef = db.collection("2022-users").doc("3KaiyNl4pUuV2UEDTlt1");
+  return async function (dispatch) {
+    const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+    const docSnap = await getDoc(docRef);
 
-    docRef
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          let userData = doc.data();
-          userData.user_id = docRef.id;
-          console.log("userData:", JSON.stringify(userData));
-          dispatch({
-            type: FETCH_USER,
-            payload: userData,
-          });
-        } else {
-          console.log("No such document!");
-        }
-      })
-      .catch((error) => {
-        console.log("Error getting document:", error);
+    if (docSnap.exists()) {
+      let userData = docSnap.data();
+      userData.user_id = docRef.id;
+      console.log("userData:", JSON.stringify(userData));
+      dispatch({
+        type: FETCH_USER,
+        payload: userData,
       });
+    } else {
+      console.log("No such document!");
+    }
   };
 }

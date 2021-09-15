@@ -1,23 +1,16 @@
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../db";
 
-export function findGroupById(group_id) {
-  console.log("hit findGroupById line 4 groupId:", group_id);
-  var docRef = db.collection("2022-groups").doc(group_id);
+export async function findGroupById(group_id) {
+  const docRef = doc(db, "2022-groups", group_id);
+  const docSnap = await getDoc(docRef);
 
-  docRef
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        let groupData = doc.data();
-        console.log("hit findGroupById line 4 groupData:", groupData);
+  if (docSnap.exists()) {
+        let groupData = docSnap.data();
+        console.log("groupData found:", groupData);
         return groupData;
-      } else {
-        console.log("No such document!");
-        return undefined;
-      }
-    })
-    .catch((error) => {
-      console.log("Error getting document:", error);
-      return undefined;
-    });
-}
+  } else {
+    console.log("No such document exists!");
+    return undefined;
+  };
+};

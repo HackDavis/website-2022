@@ -1,20 +1,17 @@
 import { db } from "../db";
+import { doc, getDoc } from "firebase/firestore";
 
-export function findUserById(user_id) {
-  var docRef = db.collection("2022-users").doc(user_id);
-  docRef
-    .get()
-    .then((doc) => {
-      if (doc.exists) {
-        let userData = doc.data();
-        return userData;
-      } else {
-        console.log("No such document!");
-        return undefined;
-      }
-    })
-    .catch((error) => {
-      console.log("Error getting document:", error);
-      return undefined;
-    });
+export async function findUserById(user_id) {
+  return async function (dispatch) {
+    const docRef = doc(db, "2022-users", user_id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      let userData = docSnap.data();
+      return userData;
+    } else {
+      console.log("No such document!");
+    }
+  }
 }
+
