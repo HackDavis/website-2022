@@ -18,6 +18,12 @@ import { memberAccepted } from "./redux/actions/memberAcceptedActions";
 import { setRSVP } from "./redux/actions/setRSVP";
 import { groupApplication } from "./redux/actions/groupApplicationActions";
 
+
+// Recoil Imports
+import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import CharacterCounter from "./recoil/CharacterCounter.js";
+import PrintUserRecoil from "./recoil/getUserRecoil.js";
+
 require("dotenv").config();
 
 let db = "";
@@ -135,6 +141,7 @@ function App(props) {
   }
 
   return (
+    <RecoilRoot>
     <div className="App">
       {/* Google Sign In */}
       <button onClick={handleSignIn}>
@@ -230,6 +237,12 @@ function App(props) {
         group application
       </button>
     </div>
+    <CharacterCounter/>
+    <PrintUserRecoil/>
+    {/* <button onClick={() => console.log("logging user:", getUserRecoil(props.user.user_id))}>
+        Log User Info (Recoil)
+    </button> */}
+    </RecoilRoot>
   );
 }
 
