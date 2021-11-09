@@ -40,17 +40,17 @@ function App(props) {
   //   setUserStateAtom();
   // }, []);
 
-  async function setUserStateAtom() {
-    const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
-    const docSnap =  await getDoc(docRef);
-    if (docSnap.exists()) {
-        // setUser(JSON.stringify(docSnap.data()));
-        setUser(docSnap.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-  }
+  // async function setUserStateAtom() {
+  //   const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+  //   const docSnap =  await getDoc(docRef);
+  //   if (docSnap.exists()) {
+  //       // setUser(JSON.stringify(docSnap.data()));
+  //       setUser(docSnap.data());
+  //   } else {
+  //       // doc.data() will be undefined in this case
+  //       console.log("No such document!");
+  //   }
+  // }
 
   async function handleSignIn() {
     const provider = new GoogleAuthProvider();
