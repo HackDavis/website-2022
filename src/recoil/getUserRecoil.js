@@ -3,6 +3,8 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue, selectorFam
 
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./db.js";
+import { setUserId } from "@firebase/analytics";
+import { userStateAtom } from "./atoms/userAtom.js";
 
 // export const firestoreState = atom({
 //     key: "firestore",
@@ -30,38 +32,57 @@ import { db } from "./db.js";
 //     }
 // });
 
-const userStateAtom = atom({
-    key: 'userStateAtom',
-    default: ''
-});
+// async function getData() {
+//     const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+//     const docSnap =  await getDoc(docRef);
+//     if (docSnap.exists()) {
+//         console.log("Document data:", docSnap.data());
+//         return JSON.stringify(docSnap.data());
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }
 
-const userStateSelector = selector({
-    key: "userStateSelector",
-    // user_id hardcoded in
-    get: async ({ get }) => {
-        const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
-        const docSnap =  getDoc(docRef);
-        let userData = docSnap.data();
-        userData.user_id = docRef.id;
-        return JSON.stringify(userData)
+async function setUserStateAtom() {
+    const [user, setUser] = useRecoilState(userStateAtom);
+
+    const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+    const docSnap =  await getDoc(docRef);
+    if (docSnap.exists()) {
+        setUser(JSON.stringify(docSnap.data()));
+        return user;
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
     }
-});
-
-function GetUserRecoil() {
-    const user = useRecoilValue(userStateSelector);
-    return <>User Name: {user}</>;
 }
 
-function PrintUserRecoil() {
-    return (
-        <div>
-            <p>This is where the user *should* be lol</p>
-            <GetUserRecoil />
-        </div>
-    );
-}
+export default setUserStateAtom;
 
-export default PrintUserRecoil;
+// const userStateSelector = selector({
+//     key: "userStateSelector",
+//     // user_id hardcoded in
+//     get: ({ get }) => {
+        
+//     }
+// });
+
+// async function GetUserRecoil() {
+//     const user = useRecoilValue(userStateSelector);
+//     return user;
+// }   
+
+// function PrintUserRecoil() {
+//     return (
+//         <div>
+//             <p>This is where the user *should* be lol</p>
+//             <GetUserRecoil />
+//         </div>
+//     );
+// }
+
+
 // const userState = atom({
 //     key: 'userState',
 //     default: ''

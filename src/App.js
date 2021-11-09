@@ -22,13 +22,35 @@ import { groupApplication } from "./redux/actions/groupApplicationActions";
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import CharacterCounter from "./recoil/CharacterCounter.js";
-import PrintUserRecoil from "./recoil/getUserRecoil.js";
+// import setUserStateAtom from "./recoil/getUserRecoil.js";
+import { userStateAtom } from "./recoil/atoms/userAtom.js";
+import User from "./recoil/User.js";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./recoil/db.js";
+import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 
 require("dotenv").config();
 
-let db = "";
+// let db = "";
 
 function App(props) {
+  const [user, setUser] = useRecoilState(userStateAtom);
+
+  // useEffect(()=> {
+  //   setUserStateAtom();
+  // }, []);
+
+  async function setUserStateAtom() {
+    const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+    const docSnap =  await getDoc(docRef);
+    if (docSnap.exists()) {
+        // setUser(JSON.stringify(docSnap.data()));
+        setUser(docSnap.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+  }
 
   async function handleSignIn() {
     const provider = new GoogleAuthProvider();
@@ -46,7 +68,6 @@ function App(props) {
       console.log("No user found!");
     };
   };
-
   function signUp() {
     var email = document.getElementById("emailInput-Up").value;
     var password = document.getElementById("passwordInput-Up").value;
@@ -141,7 +162,6 @@ function App(props) {
   }
 
   return (
-    <RecoilRoot>
     <div className="App">
       {/* Google Sign In */}
       <button onClick={handleSignIn}>
@@ -236,13 +256,19 @@ function App(props) {
       >
         group application
       </button>
-    </div>
+    <button onClick={() => {
+          AsyncAwaitTest();
+        }}>Async Await Testing</button>
+    <button onClick={() => {
+          console.log(user);
+        }}>Recoil test</button>
     <CharacterCounter/>
-    <PrintUserRecoil/>
+    <User/>
+    {/* <GetUserRecoil/> */}
     {/* <button onClick={() => console.log("logging user:", getUserRecoil(props.user.user_id))}>
         Log User Info (Recoil)
     </button> */}
-    </RecoilRoot>
+    </div>
   );
 }
 
