@@ -15,7 +15,7 @@ import PropTypes from "prop-types";
 import { fetchUser } from "./redux/actions/userActions";
 import { getUser } from "./redux/actions/getUser";
 import { memberAccepted } from "./redux/actions/memberAcceptedActions";
-import { setRSVP } from "./redux/actions/setRSVP";
+// import { setRSVP } from "./redux/actions/setRSVP";
 import { groupApplication } from "./redux/actions/groupApplicationActions";
 
 
@@ -28,6 +28,7 @@ import User from "./recoil/User.js";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./recoil/db.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
+import SetRSVPButton from "./recoil/setRSVPRecoil.js";
 
 require("dotenv").config();
 
@@ -237,12 +238,11 @@ function App(props) {
       </button>
       <button
         onClick={() => {
-          props.fetchUser();
           // Must put hardcoded ID to test out functionality because getUser() has not been implemented yet
-          props.setRSVP(props.user.user_id, "Yes");
+          // setRSVP(props.user.user_id, "Testing");
         }}
       >
-        Set RSVP Button
+        Set RSVP Button (Defunct)
       </button>
       <button
         onClick={() => {
@@ -264,6 +264,9 @@ function App(props) {
         }}>Recoil test</button>
     <CharacterCounter/>
     <User/>
+    <SetRSVPButton
+      response={"final test again lol"} 
+    />
     {/* <GetUserRecoil/> */}
     {/* <button onClick={() => console.log("logging user:", getUserRecoil(props.user.user_id))}>
         Log User Info (Recoil)
@@ -288,7 +291,6 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   fetchUser,
   memberAccepted,
-  setRSVP,
   groupApplication,
   getUser
 })(App);
