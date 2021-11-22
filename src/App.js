@@ -29,6 +29,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./recoil/db.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import SetRSVPButton from "./recoil/setRSVPRecoil.js";
+import CreateGroupButton from "./recoil/createGroup.js";
 
 require("dotenv").config();
 
@@ -267,6 +268,7 @@ function App(props) {
     <SetRSVPButton
       response={"final test again lol"} 
     />
+    <CreateGroupButton/>
     {/* <GetUserRecoil/> */}
     {/* <button onClick={() => console.log("logging user:", getUserRecoil(props.user.user_id))}>
         Log User Info (Recoil)
