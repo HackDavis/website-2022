@@ -6,6 +6,11 @@ import { db } from "../db/db.js";
 import { userStateAtom } from "./atoms/userAtom.js";
 import { SetRSVPState } from "./selectors/selectors.js"; 
 
+// Purpose: Update the user's RSVP response between "Yes","No", and "Undecided"
+// How it works: Query the database for the user's id and update the rsvp status field to the response that is passed into the parameter
+// Input: userId(string) and response(string)
+// Expected Result: The user's RSVP status field is updated based on the response passed into the function
+
 function SetRSVPButton({response}) {
     // TODO: Recoil states will be moved into the async function when testing is done
     const user = useRecoilValue(userStateAtom);

@@ -5,12 +5,17 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../db/db.js";
 import { userStateAtom } from "./atoms/userAtom.js";
 
+// Purpose: Gets the user's basic information when they log into their Google account
+// How it works: When a user first logs in, the async function getUser() is called to update the user recoil state
+// Input: userId(string)
+// Expected Result: JSON object of the logged in user is stored in the user recoil state
+
 export function GetUserButton() {
   // TODO: The recoil state will be moved back into the getUser function after testing is done
 	const [user, setUser] = useRecoilState(userStateAtom);  
 	
 	async function getUser() {
-				// TODO: hardcoded ID will be replaced with the UID of the logged in user
+        // TODO: hardcoded ID will be replaced with the UID of the logged in user
         const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
         const docSnap =  await getDoc(docRef);
         if (docSnap.exists()) {
