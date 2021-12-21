@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "./db.js";
+import { db } from "../db/db.js";
 
 async function AsyncAwaitTest() {
     const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");

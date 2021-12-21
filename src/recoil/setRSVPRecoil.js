@@ -1,13 +1,14 @@
 import React from "react";
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "./db.js";
+import { db } from "../db/db.js";
 import { userStateAtom } from "./atoms/userAtom.js";
 import { SetRSVPState } from "./selectors/selectors.js"; 
 
 function SetRSVPButton({response}) {
-    const [user, setUser] = useRecoilState(userStateAtom);
+    // TODO: Recoil states will be moved into the async function when testing is done
+    const user = useRecoilValue(userStateAtom);
     const setRSVPStatus = useSetRecoilState(SetRSVPState); 
 
     async function setRSVP() {

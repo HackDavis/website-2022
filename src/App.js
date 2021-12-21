@@ -2,57 +2,26 @@
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-// import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Redux Imports
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { fetchUser } from "./redux/actions/userActions";
-import { getUser } from "./redux/actions/getUser";
-import { memberAccepted } from "./redux/actions/memberAcceptedActions";
-// import { setRSVP } from "./redux/actions/setRSVP";
-import { groupApplication } from "./redux/actions/groupApplicationActions";
-
-
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import CharacterCounter from "./recoil/CharacterCounter.js";
-// import setUserStateAtom from "./recoil/getUserRecoil.js";
+import  { GetUserButton } from "./recoil/getUserRecoil.js";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
-import User from "./recoil/User.js";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "./recoil/db.js";
+import { db } from "./db/db.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import SetRSVPButton from "./recoil/setRSVPRecoil.js";
 import CreateGroupButton from "./recoil/createGroup.js";
 
 require("dotenv").config();
 
-// let db = "";
-
 function App(props) {
   const [user, setUser] = useRecoilState(userStateAtom);
-
-  // useEffect(()=> {
-  //   setUserStateAtom();
-  // }, []);
-
-  // async function setUserStateAtom() {
-  //   const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
-  //   const docSnap =  await getDoc(docRef);
-  //   if (docSnap.exists()) {
-  //       // setUser(JSON.stringify(docSnap.data()));
-  //       setUser(docSnap.data());
-  //   } else {
-  //       // doc.data() will be undefined in this case
-  //       console.log("No such document!");
-  //   }
-  // }
 
   async function handleSignIn() {
     const provider = new GoogleAuthProvider();
@@ -70,6 +39,7 @@ function App(props) {
       console.log("No user found!");
     };
   };
+
   function signUp() {
     var email = document.getElementById("emailInput-Up").value;
     var password = document.getElementById("passwordInput-Up").value;
@@ -212,51 +182,6 @@ function App(props) {
       <p>Email for forgot password:</p>
       <input id="forgotPasswordEmail"></input>
       <button onClick={forgotPassword}>Forgot Password</button>
-      <button
-        onClick={() => {
-            console.log("hit fetchUser function call", props.fetchUser());
-            console.log("this should print after the fetchUser line");
-          }
-        }
-      >
-        Get User
-      </button>
-      <button onClick={() => console.log("logging user:", props.user)}>
-        Log User Info
-      </button>
-      <button
-        onClick={() => {
-          // props.fetchUser();
-          console.log("hit user id on line 170:", props.user.user_id);
-          props.memberAccepted(
-            props.user.user_id,
-            props.user.name,
-            props.user.email
-          );
-        }}
-      >
-        Call Member Accepted
-      </button>
-      <button
-        onClick={() => {
-          // Must put hardcoded ID to test out functionality because getUser() has not been implemented yet
-          // setRSVP(props.user.user_id, "Testing");
-        }}
-      >
-        Set RSVP Button (Defunct)
-      </button>
-      <button
-        onClick={() => {
-          props.groupApplication(
-            props.user.user_id,
-            props.user.name,
-            props.user.email,
-            "C5VaLwp0TjZCj2erPcaF"
-          );
-        }}
-      >
-        group application
-      </button>
     <button onClick={() => {
           AsyncAwaitTest();
         }}>Async Await Testing</button>
@@ -264,35 +189,13 @@ function App(props) {
           console.log(user);
         }}>Recoil test</button>
     <CharacterCounter/>
-    <User/>
     <SetRSVPButton
       response={"final test again lol"} 
     />
     <CreateGroupButton/>
-    {/* <GetUserRecoil/> */}
-    {/* <button onClick={() => console.log("logging user:", getUserRecoil(props.user.user_id))}>
-        Log User Info (Recoil)
-    </button> */}
+    <GetUserButton/>
     </div>
   );
 }
 
-App.propTypes = {
-  fetchUser: PropTypes.func.isRequired,
-  setRSVP: PropTypes.func.isRequired,
-  memberAccepted: PropTypes.func.isRequired,
-  groupApplication: PropTypes.func.isRequired,
-  getUser: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  user: state.userData,
-});
-
-export default connect(mapStateToProps, {
-  fetchUser,
-  memberAccepted,
-  groupApplication,
-  getUser
-})(App);
+export default App;

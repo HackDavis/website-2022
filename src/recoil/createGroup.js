@@ -2,7 +2,7 @@ import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { db } from "./db.js";
+import { db } from "../db/db.js";
 import { userStateAtom } from "./atoms/userAtom.js";
 import { groupStateAtom } from "./atoms/groupAtom";
 import { SetUserGroupID, SetUserPendingGroups, SetUserPendingInvitations } from "./selectors/selectors.js"; 

@@ -1,3 +1,5 @@
+// Firebase DB credentials and config
+
 import "firebase/compat/firestore"
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore";
