@@ -11,11 +11,11 @@ import { getAuth } from "firebase/auth";
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import CharacterCounter from "./recoil/CharacterCounter.js";
-import  { GetUserButton } from "./recoil/getUserRecoil.js";
+import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
+import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import { db } from "./db/db.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
-import SetRSVPButton from "./recoil/setRSVPRecoil.js";
 import CreateGroupButton from "./recoil/createGroup.js";
 
 require("dotenv").config();
@@ -190,7 +190,7 @@ function App(props) {
         }}>Recoil test</button>
     <CharacterCounter/>
     <SetRSVPButton
-      response={"final test again lol"} 
+      response={"set rsvp button test"} 
     />
     <CreateGroupButton/>
     <GetUserButton/>

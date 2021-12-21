@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The recoil folder is used to store the **firebase database queries** (located at the root level), **atoms** (shared pieces of state that can be accessed throughout the entire front-end application), and **selectors** (used to access a piece of a state).
+The recoil folder is used to store the **firebase database queries** (located under the DBQueries folder), **atoms** (shared pieces of state that can be accessed throughout the entire front-end application), **selectors** (used to access a piece of a state), and **testButtons** (used to test out database queries).
 
 ## Developer Note
 
