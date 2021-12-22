@@ -19,7 +19,7 @@ import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
 import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
-import CreateGroupButton from "./recoil/createGroup.js";
+import CreateGroupButton from "./recoil/testButtons/CreateGroupButton";
 
 require("dotenv").config();
 

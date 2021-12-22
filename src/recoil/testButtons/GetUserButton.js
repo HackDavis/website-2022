@@ -8,7 +8,8 @@ export function GetUserButton() {
     const [user, setUser] = useRecoilState(userStateAtom);
     // Calls the query function and updates the recoil state 
     async function setUserState () {
-        const userData = await getUser();
+        // user hardcoded for testing
+        const userData = await getUser("3KaiyNl4pUuV2UEDTlt1");
         setUser(userData);
     }
     return (
