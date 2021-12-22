@@ -19,4 +19,4 @@ let app;
 
 app = initializeApp(firebaseConfig);
 
-export let db = getFirestore(app);
+export let dbConfig = getFirestore(app);

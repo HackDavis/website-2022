@@ -1,8 +1,8 @@
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../db/db.js";
+import { dbConfig } from "../db/dbConfig.js";
 
 async function AsyncAwaitTest() {
-    const docRef = doc(db, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
+    const docRef = doc(dbConfig, "2022-users", "3KaiyNl4pUuV2UEDTlt1");
     const docSnap =  await getDoc(docRef);
     if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());

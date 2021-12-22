@@ -7,6 +7,9 @@ import "firebase/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import { dbConfig } from "./db/dbConfig.js";
+import {setDoc, doc, getDoc} from "firebase/firestore";
+import { getUser } from "./recoil/DBQueries/getUser";
 
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
@@ -15,7 +18,6 @@ import { ResetPendingGroupsButton } from "./recoil/testButtons/ResetPendingGroup
 import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
 import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
-import { db } from "./db/db.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import CreateGroupButton from "./recoil/createGroup.js";
 
@@ -24,66 +26,97 @@ require("dotenv").config();
 function App(props) {
   const [user, setUser] = useRecoilState(userStateAtom);
 
+  // Sign in using Google Login
+  // Note: Produces an error when using Safari but works fine on Chrome
   async function handleSignIn() {
     const provider = new GoogleAuthProvider();
+    const auth = getAuth();
     provider.addScope('profile');
     provider.addScope('email');
-    const result = await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth,provider);
   
     // The signed-in user info.
     const user = result.user;
 
     if (user) { 
-      console.log(result.additionalUserInfo.isNewUser);
-      console.log("user found:", user);
+      // If user signs in with their gmail account but their data does not exist in firebase, then create a user object
+      const userData = await getUser(user.uid);
+      if (userData) {
+        console.log("user found in database");
+        // Update user recoil state 
+        setUser(userData);
+      } else {
+        // Add new user to DB 
+      const newUserData = {
+        name: user.displayName, // there should be a name field somewhere in the sign up that feeds into this
+        email: user.email,
+        user_id: user.uid,
+        profile_picture: user.photoURL || "",
+        app_status: "Not Applied",
+        rsvp_status: false,
+        qr_code: "",
+        about_me: "",
+        group_id: "",
+        pending_groups: [],
+        tags: [],
+        pending_invitations: {},
+        hd_director:
+          user.email.substring(
+            user.email.lastIndexOf("@") + 1
+          ) === "hackdavis.io",
+      };
+
+      await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
+      console.log("created new user");
+    }
     } else { 
       console.log("No user found!");
     };
   };
 
-  function signUp() {
-    var email = document.getElementById("emailInput-Up").value;
-    var password = document.getElementById("passwordInput-Up").value;
+  // function signUp() {
+  //   var email = document.getElementById("emailInput-Up").value;
+  //   var password = document.getElementById("passwordInput-Up").value;
 
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in
-        console.log(userCredential);
-        db.collection("2022-users")
-          .add({
-            name: "", // there should be a name field somewhere in the sign up that feeds into this
-            email: userCredential.user.email,
-            profile_picture: userCredential.user.photoURL || "",
-            app_status: "Not Applied",
-            rsvp_status: false,
-            qr_code: "",
-            about_me: "",
-            group_id: "",
-            pending_groups: [],
-            tags: [],
-            pending_invitations: {},
-            hd_director:
-              userCredential.user.email.substr(
-                userCredential.user.email.lastIndexOf("@") + 1
-              ) === "hackdavis.io",
-          })
-          .then((res) => {
-            console.log("Document successfully written!");
-            console.log(res);
-          })
-          .catch((error) => {
-            console.error("Error writing document: ", error);
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ..
-      });
-  }
+  //   firebase
+  //     .auth()
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       console.log(userCredential);
+  //       db.collection("2022-users")
+  //         .add({
+  //           name: "", // there should be a name field somewhere in the sign up that feeds into this
+  //           email: userCredential.user.email,
+  //           profile_picture: userCredential.user.photoURL || "",
+  //           app_status: "Not Applied",
+  //           rsvp_status: false,
+  //           qr_code: "",
+  //           about_me: "",
+  //           group_id: "",
+  //           pending_groups: [],
+  //           tags: [],
+  //           pending_invitations: {},
+  //           hd_director:
+  //             userCredential.user.email.substr(
+  //               userCredential.user.email.lastIndexOf("@") + 1
+  //             ) === "hackdavis.io",
+  //         })
+  //         .then((res) => {
+  //           console.log("Document successfully written!");
+  //           console.log(res);
+  //         })
+  //         .catch((error) => {
+  //           console.error("Error writing document: ", error);
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // ..
+  //     });
+  // }
 
   function signIn() {
     var email = document.getElementById("emailInput-In").value;
@@ -152,10 +185,10 @@ function App(props) {
         Password: <br />
         <input id="passwordInput-Up"></input>{" "}
       </p>
-      <button type="button" onClick={signUp}>
+      {/* <button type="button" onClick={signUp}>
         {" "}
         Sign-Up!{" "}
-      </button>
+      </button> */}
       {/* Sign in */}
       <p>
         {" "}
