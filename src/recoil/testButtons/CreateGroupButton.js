@@ -12,10 +12,9 @@ function CreateGroupButton({}) {
     const setUserPendingGroups = useSetRecoilState(SetUserPendingGroups);
     const setUserPendingInvitations = useSetRecoilState(SetUserPendingInvitations);
 
-    // hardcoded for testing, should probably be randomly generated
-    const newGroupID = "reformatted group test";
-
     async function createGroupClick() {
+        const newGroupID = "rgt test 2";
+
         const newGroup = await createGroup(user.email, newGroupID, user.user_id);
         // setRSVP for front-end Recoil atom
         setGroup(newGroup);
