@@ -1,7 +1,5 @@
-import { useSetRecoilState} from 'recoil';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../db/db.js";
-import { userStateAtom } from "../atoms/userAtom.js";
 
 // Purpose: Gets the user's basic information when they log into their Google account
 // How it works: When a user first logs in, the async function getUser() is called to fetch the user's data; the recoil state will be updated in the component that calls this function

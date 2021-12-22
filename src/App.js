@@ -11,6 +11,7 @@ import { getAuth } from "firebase/auth";
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import CharacterCounter from "./recoil/CharacterCounter.js";
+import { ResetPendingGroupsButton } from "./recoil/testButtons/ResetPendingGroupsButton";
 import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
 import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
@@ -194,6 +195,7 @@ function App(props) {
     />
     <CreateGroupButton/>
     <GetUserButton/>
+    <ResetPendingGroupsButton/>
     </div>
   );
 }

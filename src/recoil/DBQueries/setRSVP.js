@@ -13,9 +13,9 @@ export async function setRSVP(user, response) {
         await updateDoc(docRef, {
             rsvp_status: response
         });
+        console.log("successfully updated RSVP status");
     } catch(e) {
         console.log(`error setting rsvp: ${e}`);
     }
-    console.log("successfully updated RSVP status");
     return response;
 }

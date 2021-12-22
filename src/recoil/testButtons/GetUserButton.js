@@ -2,7 +2,7 @@ import { useRecoilState} from 'recoil';
 
 import React from "react";
 import { userStateAtom } from "../atoms/userAtom.js";
-import {getUser} from '../DBQueries/getUserRecoil.js';
+import {getUser} from '../DBQueries/getUser.js';
 
 export function GetUserButton() {
     const [user, setUser] = useRecoilState(userStateAtom);
