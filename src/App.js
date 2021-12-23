@@ -20,6 +20,7 @@ import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import CreateGroupButton from "./recoil/testButtons/CreateGroupButton";
+import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
 
 require("dotenv").config();
 
@@ -229,6 +230,7 @@ function App(props) {
     <CreateGroupButton/>
     <GetUserButton/>
     <ResetPendingGroupsButton/>
+    <GroupApplicationButton/>
     </div>
   );
 }

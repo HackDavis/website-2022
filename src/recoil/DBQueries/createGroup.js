@@ -8,7 +8,8 @@ export async function createGroup(email, newGroupID, user_id, newGroupDesc) {
         description: newGroupDesc,
         group_id: newGroupID,
         members: [user_id],
-        pending_members: [],
+        pending_members: new Map(), // new Map() not working
+        pending_invitations: [],
         tags1: [],
         tags2: [],
     };
