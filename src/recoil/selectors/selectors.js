@@ -53,7 +53,7 @@ export const updateUserPendingGroup = selector({
     }, 
 });
 
-export const updateGroupPendingMember = selector({
+export const UpdateGroupPendingMember = selector({
     get: ({get}) => ({...get(groupStateAtom)}), 
     set: ({set, get}, user_id, name, email) => { 
         let groupStateCopy = {...get(groupStateAtom)}
@@ -61,5 +61,23 @@ export const updateGroupPendingMember = selector({
         pending_groups_map[user_id] = [name, email];
         groupStateCopy.pending_members = pending_groups_map; 
         set(groupStateAtom, groupStateCopy)
+    }, 
+});
+
+export const DeletePendingMember = selector({
+    get: ({get}) => ({...get(groupStateAtom)}), 
+    set: ({set, get}, new_pending_members) => { 
+        let groupStateCopy = {...get(groupStateAtom)}
+        groupStateCopy.pending_members = new_pending_members; 
+        set(groupStateAtom, groupStateCopy)
+    }, 
+});
+
+export const DeletePendingGroup = selector({
+    get: ({get}) => ({...get(userStateAtom)}), 
+    set: ({set, get}, new_pending_groups) => { 
+        let userStateCopy = {...get(userStateAtom)}; 
+        userStateCopy.pending_groups = new_pending_groups; 
+        set(userStateAtom, userStateCopy); 
     }, 
 });

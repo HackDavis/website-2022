@@ -36,7 +36,7 @@ function CreateGroupButton({}) {
                 <input type="text" id="inputGroupDesc"></input>
             </div>
             <button onClick={createGroupClick}>createGroup</button>
-            {user ? <h1>{user.group_id}</h1> : <h1> user group not set</h1>}
+            {user ? <h1>{user.group_id}</h1> : <h1>createGroup not called yet</h1>}
         </div>
     );
 }

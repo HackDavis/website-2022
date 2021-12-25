@@ -21,7 +21,7 @@ function GroupApplicationButton() {
         <div>
             <button onClick={groupApplicationClick}>groupApplication</button>
             {user ? <h1>{user.pending_groups}</h1> : <h1> user pending group not set</h1>}
-            {group ? <h1>{group.pending_members}</h1> : <h1> group pending members not set</h1>}
+            {/* {group ? <h1>{group.pending_members}</h1> : <h1> group pending members not set</h1>} */}
         </div>
     );
 }
