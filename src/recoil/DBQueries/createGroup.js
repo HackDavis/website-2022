@@ -3,12 +3,12 @@ import { dbConfig } from "../../db/dbConfig.js";
 
 export async function createGroup(email, newGroupID, user_id, newGroupDesc) {
     // first, create a group locally
-    var newGroup = {
+    const newGroup = {
         contact_email: email,
         description: newGroupDesc,
         group_id: newGroupID,
         members: [user_id],
-        pending_members: new Map(), // new Map() not working
+        pending_members: {},
         pending_invitations: [],
         tags1: [],
         tags2: [],
