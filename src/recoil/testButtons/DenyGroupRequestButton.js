@@ -2,12 +2,15 @@ import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
 import { groupStateAtom } from "../atoms/groupAtom";
-import { DeletePendingGroup, DeletePendingMember } from "../selectors/selectors.js";
+import { DeletePendingGroup } from "../selectors/deletePendingGroup";
+import {DeletePendingMember} from "../selectors/deletePendingMember";
 import { denyGroupRequest } from "../DBQueries/denyGroupRequest.js"; 
 
 function DenyGroupRequestButton() {
     const [user, setUser] = useRecoilState(userStateAtom);
     const [group, setGroup] = useRecoilState(groupStateAtom);
+    const setDeletePendingGroup = useSetRecoilState(DeletePendingGroup);
+    const setDeletePendingMember = useSetRecoilState(DeletePendingMember);
 
     async function denyGroupRequestClick() { 
         // local updates 
@@ -24,8 +27,8 @@ function DenyGroupRequestButton() {
 
         // front-end Recoil atom update 
         // TO-DO: These both don't work - React can't seem to find the function for some reason. 
-        DeletePendingMember(new_pending_members); 
-        DeletePendingGroup(new_pending_groups); 
+        setDeletePendingMember(new_pending_members); 
+        setDeletePendingGroup(new_pending_groups); 
     }; 
     
     return (

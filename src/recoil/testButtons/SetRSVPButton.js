@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
-import { SetRSVPState } from "../selectors/selectors.js"; 
+import { SetRSVPState } from "../selectors/setRSVPState.js"; 
 import {setRSVP} from "../DBQueries/setRSVP";
 
 export function SetRSVPButton({response}) {
-    const user = useRecoilValue(userStateAtom);
+    const [user, setUser] = useRecoilState(userStateAtom);
     const setRSVPStatus = useSetRecoilState(SetRSVPState); 
     
     // Call setRSVP recoil function to return a status back and then update the recoil state with the new status to reflect the latest changes on the front-end

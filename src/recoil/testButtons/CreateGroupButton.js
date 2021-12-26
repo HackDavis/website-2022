@@ -2,7 +2,9 @@ import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
 import { groupStateAtom } from "../atoms/groupAtom";
-import { SetUserGroupID, SetUserPendingGroups, SetUserPendingInvitations } from "../selectors/selectors.js"; 
+import {SetUserGroupID} from "../selectors/setUserGroupID";
+import {SetUserPendingGroups} from "../selectors/setUserPendingGroups"
+import { SetUserPendingInvitations } from "../selectors/setUserPendingInvitations.js";
 import { createGroup } from '../DBQueries/createGroup.js';
 
 function CreateGroupButton({}) {

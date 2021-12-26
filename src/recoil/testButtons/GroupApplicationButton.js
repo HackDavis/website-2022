@@ -2,19 +2,22 @@ import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
 import { groupStateAtom } from "../atoms/groupAtom";
-import { updateUserPendingGroup } from "../selectors/selectors.js";
+import { updateUserPendingGroup } from "../selectors/updateUserPendingGroup";
+import {updateGroupPendingMember} from "../selectors/updateGroupPendingMember";
 import { groupApplication } from "../DBQueries/groupApplication.js";
 
 function GroupApplicationButton() {
     const [user, setUser] = useRecoilState(userStateAtom);
     const [group, setGroup] = useRecoilState(groupStateAtom);
-
+    const setUpdateUserPendingGroup = useSetRecoilState(updateUserPendingGroup);
+    const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
+    
     async function groupApplicationClick() {
         await groupApplication(user.user_id, user.name, user.email, group.group_id);
 
         // setRSVP for front-end Recoil atom
-        updateUserPendingGroup(group.group_id);
-        updateGroupPendingMember(user.user_id, user.name, user.email);
+        setUpdateUserPendingGroup(group.group_id);
+        setUpdateGroupPendingMember(user.user_id, user.name, user.email);
     }
     
     return (
