@@ -10,6 +10,7 @@ import { getAuth } from "firebase/auth";
 import { dbConfig } from "./db/dbConfig.js";
 import {setDoc, doc, getDoc} from "firebase/firestore";
 import { getUser } from "./recoil/DBQueries/getUser";
+import { TestRecoil } from "./recoil/testButtons/TestRecoil";
 
 // Recoil Imports
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
@@ -227,14 +228,15 @@ function App(props) {
         }}>Recoil test</button>
     <CharacterCounter/>
     <SetRSVPButton
-      response={"set rsvp button test"} 
+      response={"set rsvp button test :):("} 
     />
-    <CreateGroupButton/>
+    <TestRecoil/>
+    {/* <CreateGroupButton/>
     <GetUserButton/>
     <GetGroupButton/> 
     <ResetPendingGroupsButton/>
     <GroupApplicationButton/>
-    <DenyGroupRequestButton/> 
+    <DenyGroupRequestButton/>  */}
     </div>
   );
 }

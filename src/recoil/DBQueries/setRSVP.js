@@ -14,8 +14,8 @@ export async function setRSVP(user, response) {
             rsvp_status: response
         });
         console.log("successfully updated RSVP status");
+        return response;
     } catch(e) {
         console.log(`error setting rsvp: ${e}`);
     }
-    return response;
 }
