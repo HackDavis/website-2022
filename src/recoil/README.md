@@ -6,8 +6,10 @@ The recoil folder is used to store the **firebase database queries** (located un
 
 ## Developer Note
 
-Please be sure to put all the database query functions at the root level of the **recoil** folder. If the function is used to update a particular field of the user/group state, then create a new selector file within the **selectors** folder.
+Please be sure to put all the database query functions in the **DBQueries** folder which is inside the **recoil** folder. If the function is used to update a particular field of the user/group state, then create a new selector file within the **selectors** folder.
 
 When developing the database queries, please put a comment at the top of the file to indicate the **purpose** of the query, **how it works**, **inputs**, **outputs/expected results**. This will help streamline the development process and ensure we don't forget how our code works. :)
+
+When creating a selector, MAKE SURE TO INCLUDE A KEY or else the selector will mess up the entire recoil state. Please refer to the current selectors as examples.
 
 All the database queries can be viewed here: <https://docs.google.com/document/d/1khOIhWv6MfOnDU_hCHNSzwk2T4RD_K9_AH2XeMJr1zQ/edit>

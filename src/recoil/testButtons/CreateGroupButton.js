@@ -1,13 +1,13 @@
 import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
-import { groupStateAtom } from "../atoms/groupAtom";
+import { groupStateAtom } from "../atoms/groupAtom.js";
 import {SetUserGroupID} from "../selectors/setUserGroupID";
 import {SetUserPendingGroups} from "../selectors/setUserPendingGroups"
 import { SetUserPendingInvitations } from "../selectors/setUserPendingInvitations.js";
 import { createGroup } from '../DBQueries/createGroup.js';
 
-function CreateGroupButton({}) {
+export function CreateGroupButton() {
     const [user, setUser] = useRecoilState(userStateAtom);
     const [group, setGroup] = useRecoilState(groupStateAtom);
     const setUserGroupID = useSetRecoilState(SetUserGroupID);
@@ -42,5 +42,3 @@ function CreateGroupButton({}) {
         </div>
     );
 }
-
-export default CreateGroupButton; 

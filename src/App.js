@@ -21,9 +21,9 @@ import  { GetGroupButton } from "./recoil/testButtons/GetGroupButton";
 import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
-// import CreateGroupButton from "./recoil/testButtons/CreateGroupButton";
-// import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
-// import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
+import {CreateGroupButton} from "./recoil/testButtons/CreateGroupButton";
+import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
+import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 
 require("dotenv").config();
 
@@ -228,16 +228,15 @@ function App(props) {
         }}>Recoil test</button>
     <CharacterCounter/>
     <SetRSVPButton
-      response={"set rsvp button test[]--"} 
+      response={"set rsvp button tests"} 
     />
     <TestRecoil/>
     <GetUserButton/>
     <GetGroupButton/> 
     <ResetPendingGroupsButton/>
-    {/* The three components below are breaking the recoil state update, so the front-end changes are not reflect immediately */}
-    {/* <CreateGroupButton/> */}
-    {/* <GroupApplicationButton/> */}
-    {/* <DenyGroupRequestButton/>  */}
+    <CreateGroupButton/>
+    <GroupApplicationButton/>
+    <DenyGroupRequestButton/> 
     </div>
   );
 }

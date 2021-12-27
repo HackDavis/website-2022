@@ -2,6 +2,7 @@ import { userStateAtom } from "../atoms/userAtom.js";
 import { selector } from 'recoil';
 
 export const updateUserPendingGroup = selector({
+    key:"updateUserPendingGroup",
     get: ({get}) => ({...get(userStateAtom)}), 
     set: ({set, get}, pending_group) => { 
         let userStateCopy = {...get(userStateAtom)}
