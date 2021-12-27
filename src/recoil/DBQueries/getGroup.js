@@ -10,13 +10,17 @@ export async function getGroup(groupID) {
     // TODO: hardcoded ID will be replaced with the UID of the logged in user; need to integrate this with the login button
     // The line below is for testing purposes
     const docRef = doc(dbConfig, "2022-groups", groupID);
-    const docSnap =  await getDoc(docRef);
-    if (docSnap.exists()) {
-        //console.log(docSnap.data()); 
-        return docSnap.data();
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("Group does not exist!");
+    try {
+        const docSnap =  await getDoc(docRef);
+        if (docSnap.exists()) {
+            //console.log(docSnap.data()); 
+            return docSnap.data();
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("Group does not exist!");
+        }
+    } catch(e) {
+        console.log("error with getGroup: ", e);
     }
 }
 

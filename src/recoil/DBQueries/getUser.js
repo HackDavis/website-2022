@@ -10,12 +10,16 @@ export async function getUser(userID) {
     // TODO: hardcoded ID will be replaced with the UID of the logged in user; need to integrate this with the login button
     // The line below is for testing purposes
     const docRef = doc(dbConfig, "2022-users", userID);
-    const docSnap =  await getDoc(docRef);
-    if (docSnap.exists()) {
-        return docSnap.data();
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("User does not exist!");
+    try {
+        const docSnap =  await getDoc(docRef);
+        if (docSnap.exists()) {
+            return docSnap.data();
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("User does not exist!");
+        }
+    } catch(e) {
+        console.log("error with getUser: ", e);
     }
 }
 

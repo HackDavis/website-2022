@@ -26,6 +26,7 @@ export async function deleteGroup(groupID) {
         let keys_p_mem = Object.keys(pending_members_map);
         console.log(keys_p_mem);
 
+        
         for(let id of keys_p_mem) {
             console.log(id);
             // deleteMultiplePendingMembers(id, groupID);

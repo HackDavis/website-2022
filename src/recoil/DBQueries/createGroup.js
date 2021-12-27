@@ -16,16 +16,24 @@ export async function createGroup(email, user_id, newGroupDesc) {
 
     // add this group to the firebase
     const docRef = await addDoc(collection(dbConfig, "2022-groups"), newGroup);
-    await updateDoc(docRef, {
-        group_id: docRef.id
-    })
+    try {
+        await updateDoc(docRef, {
+            group_id: docRef.id
+        })
+    } catch(e) {
+        console.log(`error adding group in createGroup: ${e}`);
+    }
 
     // update the current user's group on firebase
     const docRef2 = doc(dbConfig, "2022-users", user_id);
-    await updateDoc(docRef2, {
-        group_id: docRef.id,
-        pending_groups: [],
-    });
+    try {
+        await updateDoc(docRef2, {
+            group_id: docRef.id,
+            pending_groups: [],
+        });
+    } catch(e) {
+        console.log(`error updating user in createGroup: ${e}`);
+    }
 
     newGroup.group_id = docRef.id;
 
