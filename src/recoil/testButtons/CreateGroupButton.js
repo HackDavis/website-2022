@@ -16,23 +16,18 @@ export function CreateGroupButton() {
 
     async function createGroupClick() {
         // note: error checking here if group_id is blank or something
-        const newGroupID = document.getElementById("inputGroupID").value;
         const newGroupDesc = document.getElementById("inputGroupDesc").value;
 
-        const newGroup = await createGroup(user.email, newGroupID, user.user_id, newGroupDesc);
+        const newGroup = await createGroup(user.email, user.user_id, newGroupDesc);
         // setRSVP for front-end Recoil atom
         setGroup(newGroup);
-        setUserGroupID(newGroupID);
+        setUserGroupID(newGroup.group_id);
         setUserPendingGroups([]);
         setUserPendingInvitations([]);
     }
     
     return (
         <div>
-            <div>
-                Group ID: <br />
-                <input type="text" id="inputGroupID"></input>
-            </div>
             <div>
                 Group Description: <br />
                 <input type="text" id="inputGroupDesc"></input>
