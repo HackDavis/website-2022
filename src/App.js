@@ -25,6 +25,10 @@ import {CreateGroupButton} from "./recoil/testButtons/CreateGroupButton";
 import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
 import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 
+//import CreateGroupButton from "./recoil/testButtons/CreateGroupButton";
+// import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
+// import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
+import DeleteGroupButton from "./recoil/testButtons/DeleteGroupButton";
 require("dotenv").config();
 
 function App(props) {
@@ -226,7 +230,10 @@ function App(props) {
     <button onClick={() => {
           console.log(user);
         }}>Recoil test</button>
+    
     <CharacterCounter/>
+
+    
     <SetRSVPButton
       response={"set rsvp button tests"} 
     />
@@ -237,6 +244,7 @@ function App(props) {
     <CreateGroupButton/>
     <GroupApplicationButton/>
     <DenyGroupRequestButton/> 
+    <DeleteGroupButton/>
     </div>
   );
 }

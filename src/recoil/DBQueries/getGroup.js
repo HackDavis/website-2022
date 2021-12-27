@@ -12,7 +12,7 @@ export async function getGroup(groupID) {
     const docRef = doc(dbConfig, "2022-groups", groupID);
     const docSnap =  await getDoc(docRef);
     if (docSnap.exists()) {
-        console.log(docSnap.data()); 
+        //console.log(docSnap.data()); 
         return docSnap.data();
     } else {
         // doc.data() will be undefined in this case

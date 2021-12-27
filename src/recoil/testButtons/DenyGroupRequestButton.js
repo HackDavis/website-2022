@@ -19,7 +19,11 @@ function DenyGroupRequestButton() {
         delete new_pending_members[user.user_id]; 
         let new_pending_groups = [...user.pending_groups]; // done for the same reason as above (we don't want a read-only copy) 
         console.log("Old:", new_pending_groups); 
+
+        // splice requires the index of the group_id you are searching for
+        // so try doing group.indexOf(group_id) ?
         new_pending_groups.splice(0, group.group_id); // TO-DO: This seemingly does nothing 
+        
         console.log("New:", new_pending_groups); 
         // TO-DO: Neither of the two sub-functions this one calls work. One returns "success" but does nothing 
         // And the other returns net::ERR_FAILED with a 200 code (which should normally indicate success)? 
