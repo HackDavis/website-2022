@@ -13,11 +13,14 @@ function GroupApplicationButton() {
     const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
     
     async function groupApplicationClick() {
-        await groupApplication(user.user_id, user.name, user.email, group.group_id);
+        let hardcode_group_id = "C5VaLwp0TjZCj2erPcaF";
+        //TODO: Change hardcode_group_id to group.group_id after testing
+        let pending_members_map_copy = await groupApplication(user.user_id, user.name, user.email, hardcode_group_id);
+        console.log(pending_members_map_copy);
 
-        // setRSVP for front-end Recoil atom
-        setUpdateUserPendingGroup(group.group_id);
-        setUpdateGroupPendingMember(user.user_id, user.name, user.email);
+        // setRSVP for front-end Recoil atom=
+        setUpdateUserPendingGroup(hardcode_group_id);
+        setUpdateGroupPendingMember(pending_members_map_copy);
     }
     
     return (

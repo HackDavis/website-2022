@@ -7,9 +7,9 @@ import { deleteMultiplePendingMembers } from "./deleteMultiplePendingMembers";
 //Purpose: Deletes a group
 //Input: group_id (string)
 // 1. for loop: calls deleteMultiplePendingMembers() -> takes user_id, group_id in every loop
-//          update's firebase doc in func
-// 2. for loop: calls deleteMultiplePendingGroups() -> takes user_id, group_id
-// 3. for loop: calls deleteMultipleMembers() -> takes user_id, group_id [BIT DIFF THAN THE OTHER TWO]
+//          update's firebase doc in func, deleting each user's pending_groups
+// 2. for loop: calls deleteMultiplePendingInvitations() -> takes user_id, group_id, deleting the group in each user's pending_invitations
+// 3. for loop: calls deleteMultipleMembers() -> takes user_id, group_id [BIT DIFF THAN THE OTHER TWO], for the ACTUAL members of the group, delete this group_id for each user
 // 4. deleteDoc -> delete's group
 
 
@@ -29,7 +29,7 @@ export async function deleteGroup(groupID) {
         
         for(let id of keys_p_mem) {
             console.log(id);
-            // deleteMultiplePendingMembers(id, groupID);
+            await deleteMultiplePendingMembers(id, groupID);
         }
 
         let keys_p_invitations = Object.keys(pending_invitations_map);

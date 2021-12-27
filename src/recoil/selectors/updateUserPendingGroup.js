@@ -4,10 +4,9 @@ import { selector } from 'recoil';
 export const updateUserPendingGroup = selector({
     key:"updateUserPendingGroup",
     get: ({get}) => ({...get(userStateAtom)}), 
-    set: ({set, get}, pending_group) => { 
+    set: ({set, get}, group_id) => { 
         let userStateCopy = {...get(userStateAtom)}
-        let pending_groups_arr = userStateCopy.pending_groups;
-        pending_groups_arr.push(pending_group);
+        let pending_groups_arr = [...userStateCopy.pending_groups, group_id]
         userStateCopy.pending_groups = pending_groups_arr; 
         set(userStateAtom, userStateCopy)
     }, 
