@@ -1,4 +1,4 @@
-import { doc, updateDoc} from "firebase/firestore";
+import { doc, getDoc, updateDoc} from "firebase/firestore";
 import { dbConfig } from "../../db/dbConfig.js";
 
 export async function deletePendingMember(group_id, new_pending_members) {
@@ -7,7 +7,6 @@ export async function deletePendingMember(group_id, new_pending_members) {
         await updateDoc(docRef, {
             pending_members: new_pending_members,
         });
-        console.log("deletePendingMember success");
     } catch(e) {
         console.log(`deletePendingMember error ${e}`);
     }
