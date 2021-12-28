@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import React from "react";
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
 import { SetRSVPState } from "../selectors/setRSVPState.js"; 
 import {setRSVP} from "../DBQueries/setRSVP";

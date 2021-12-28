@@ -18,6 +18,7 @@ import CharacterCounter from "./recoil/CharacterCounter.js";
 import { ResetPendingGroupsButton } from "./recoil/testButtons/ResetPendingGroupsButton";
 import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
 import  { GetGroupButton } from "./recoil/testButtons/GetGroupButton";
+import {SetGroupID, SetGroupIDButton} from "./recoil/testButtons/SetGroupIDButton";
 import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
@@ -245,6 +246,7 @@ function App(props) {
     <GroupApplicationButton/>
     <DenyGroupRequestButton/> 
     <DeleteGroupButton/>
+    <SetGroupIDButton/>
     </div>
   );
 }
