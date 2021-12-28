@@ -1,86 +1,63 @@
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { dbConfig } from "../../db/dbConfig";
 import { getGroup } from "./getGroup";
-//import { getUser } from "./getUser";
 import { deleteMultiplePendingMembers } from "./deleteMultiplePendingMembers";
+import { getUser } from "./getUser";
+import { deleteMultiplePendingInvitations } from "./deleteMultiplePendingInvitations";
+import { deleteMultipleMembers } from "./deleteMultipleMembers"
 
 //Purpose: Deletes a group
 //Input: group_id (string)
+// How it works: (4 steps)
 // 1. for loop: calls deleteMultiplePendingMembers() -> takes user_id, group_id in every loop
 //          update's firebase doc in func, deleting each user's pending_groups
-// 2. for loop: calls deleteMultiplePendingInvitations() -> takes user_id, group_id, deleting the group in each user's pending_invitations
-// 3. for loop: calls deleteMultipleMembers() -> takes user_id, group_id [BIT DIFF THAN THE OTHER TWO], for the ACTUAL members of the group, delete this group_id for each user
+// 2. for loop: calls deleteMultiplePendingInvitations() -> takes user_id, group_id, 
+//          deleting the group in each user's pending_invitations
+// 3. for loop: calls deleteMultipleMembers() -> takes user_id, group_id [BIT DIFF THAN THE OTHER TWO], 
+//          for the ACTUAL members of the group, delete this group_id for each user
 // 4. deleteDoc -> delete's group
+// Expected Result: group_id deleted from all users that were in
+//  1. pending_members
+//  2. pending_invitations
+//  3. members
 
 
 export async function deleteGroup(groupID) {
+    //group id: C5VaLwp0TjZCj2erPcaF
     
     try {
         console.log("dbqueries");
         let groupDoc = await getGroup(groupID);
-
         let pending_members_map  = groupDoc.pending_members;
         let pending_invitations_map = groupDoc.pending_invitations;
         let members_arr = groupDoc.members;
 
+        // 1. removing group_id from all user's pending_groups
         let keys_p_mem = Object.keys(pending_members_map);
-        console.log(keys_p_mem);
-
-        
         for(let id of keys_p_mem) {
-            console.log(id);
             await deleteMultiplePendingMembers(id, groupID);
         }
 
+        //2. removing group_id from all user's pending_invitations
         let keys_p_invitations = Object.keys(pending_invitations_map);
         console.log(keys_p_invitations);
-
         for(let id of keys_p_invitations) {
-            console.log(id);
-            //deleteMultiplePendingInvitations(id, groupID);
-                // userCopy await getUser(id)
-                //splice from userCopy.pending_invitations
+            await deleteMultiplePendingInvitations (id, groupID);
         }
 
+        //3. removing group_id from all members of the group
         let keys_mem = Object.keys(members_arr);
         console.log(keys_mem);
-
         for(let id of keys_mem) {
-            console.log(id);
-            //deleteMultipleMembers(id, groupID);
-                // userCopy await getUser(id)
-                // userCopy.group_id = null
+            await deleteMultipleMembers(id);
         }
 
-        // let userCopy = {};
-        // let groupIndex = 0;        
-        
-        // async function deleteGroupIds(){
-        //     console.log('Start');
-        //     for (let id of keys) {
-        //         console.log(id);
-        //         userCopy =  await getUser(key);
-        //         groupIndex = userCopy.pending_groups.indexOf(groupID);
-        //         userCopy.pending_groups.splice(groupIndex, 1);
-        //         console.log(userCopy);
-        //     };
-        //     console.log("End");
-        // };
-
-        // Object.keys(pending_members_map).forEach(async key => {
-        //     console.log(key);
-        //     userCopy =  await getUser(key);
-        //     console.log(userCopy);
-        //     groupIndex = userCopy.pending_groups.indexOf(groupID);
-        //     userCopy.pending_groups.splice(groupIndex, 1);
-        //     console.log(userCopy);
-            
-        // });
-
+        //4. actual deletion of group
+        await deleteDoc(doc(dbConfig, "2022-groups", groupID));
 
     }
     catch(e) {
-        console.log(`error: ${e}`);
+        console.log(`error in deleteGroup: ${e}`);
     }
     
 }

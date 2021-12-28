@@ -4,7 +4,7 @@ import { groupStateAtom } from "../atoms/groupAtom";
 import { deleteGroup } from '../DBQueries/deleteGroup.js';
 import { useRecoilState } from 'recoil';
 function DeleteGroupButton() {
-    //const [user, setUser] = useRecoilState(userStateAtom);
+    const [user, setUser] = useRecoilState(userStateAtom);
     const [group, setGroup] = useRecoilState(groupStateAtom);
     //const setUserGroupID = useSetRecoilState(SetUserGroupID);
     
@@ -12,12 +12,11 @@ function DeleteGroupButton() {
 
         let new_pending_members = new Map();
         new_pending_members = {...group.pending_members};
-        console.log(new_pending_members);
         // for(let [key, value] of new_pending_members) {
         //     console.log(key);
         // };
-
-        await deleteGroup("C5VaLwp0TjZCj2erPcaF");
+        //console.log(group.group_id);
+        await deleteGroup(group.group_id);
 
         //iterate through members of group
         //setUserGroupID: set group id of each member to []

@@ -15,12 +15,16 @@ function GroupApplicationButton() {
     async function groupApplicationClick() {
         let hardcode_group_id = "C5VaLwp0TjZCj2erPcaF";
         //TODO: Change hardcode_group_id to group.group_id after testing
+        console.log("old group:", group);
+        console.log("old user:", user);
         let pending_members_map_copy = await groupApplication(user.user_id, user.name, user.email, hardcode_group_id);
         console.log(pending_members_map_copy);
 
         // setRSVP for front-end Recoil atom=
         setUpdateUserPendingGroup(hardcode_group_id);
         setUpdateGroupPendingMember(pending_members_map_copy);
+        console.log("New group:", group);
+        console.log("User:", user);
     }
     
     return (
