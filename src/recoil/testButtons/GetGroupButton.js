@@ -9,7 +9,7 @@ export function GetGroupButton() {
     // Calls the query function and updates the recoil state 
     async function setGroupState () {
         // user hardcoded for testing
-        const groupData = await getGroup("C5VaLwp0TjZCj2erPcaF");
+        const groupData = await getGroup("pyYivJHs7UIyNPvLYvrc");
         console.log(groupData); 
         setGroup(groupData);
     }

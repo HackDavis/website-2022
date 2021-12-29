@@ -13,7 +13,7 @@ function GroupApplicationButton() {
     const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
     
     async function groupApplicationClick() {
-        let hardcode_group_id = "C5VaLwp0TjZCj2erPcaF";
+        let hardcode_group_id = "pyYivJHs7UIyNPvLYvrc";
         //TODO: Change hardcode_group_id to group.group_id after testing
         console.log("old group:", group);
         console.log("old user:", user);

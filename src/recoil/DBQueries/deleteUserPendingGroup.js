@@ -2,12 +2,12 @@ import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { dbConfig } from "../../db/dbConfig.js";
 import { getUser } from "./getUser.js";
 
-// deletes group_id from users's pending_group
-// group calls this function
-// takes user_id and group_id as input
-// this group no longer exists in user's pending_groups
+// Purpose: deletes group_id from users's pending_group
+// How it works: removes group_id from user's pending group array copy and then updates to firebase
+// Input: takes user_id and group_id as input
+// Expected Result: this group no longer exists in user's pending_groups
 
-export async function deleteMultiplePendingMembers(user_id, group_id) {
+export async function deleteUserPendingGroup(user_id, group_id) {
     const docRef = doc(dbConfig, "2022-users", user_id);
     
     try {

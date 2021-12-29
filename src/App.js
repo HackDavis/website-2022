@@ -30,6 +30,7 @@ import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton"
 // import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
 // import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 import DeleteGroupButton from "./recoil/testButtons/DeleteGroupButton";
+import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberButton";
 require("dotenv").config();
 
 function App(props) {
@@ -248,6 +249,7 @@ function App(props) {
     <DenyGroupRequestButton/> 
     <DeleteGroupButton/>
     <SetGroupIDButton/>
+    <DeleteActiveMemberButton/>
     </div>
   );
 }

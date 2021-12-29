@@ -11,6 +11,7 @@ export function GetUserButton() {
         // user hardcoded for testing
         const userData = await getUser("3AeNF87UiIYpvFeWn4KLH0yvEHD3");
         setUser(userData);
+        console.log(userData);
     }
     return (
         <div>
