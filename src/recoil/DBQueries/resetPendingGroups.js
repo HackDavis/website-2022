@@ -13,7 +13,9 @@ export async function resetPendingGroups(userID) {
         await updateDoc(docRef, {
             pending_groups: [],
         });
+        let newPendingGroups = [];
         console.log("resetPendingGroup success");
+        return newPendingGroups;
     } catch(e) {
         console.log(`resetPendingGroup error ${e}`);
     }

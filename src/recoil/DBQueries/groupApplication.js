@@ -1,5 +1,3 @@
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../../db/dbConfig.js";
 import { addPendingGroup } from "./addPendingGroup.js";
 import { addPendingMember } from "./addPendingMember.js";
 

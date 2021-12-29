@@ -24,6 +24,7 @@ import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import {CreateGroupButton} from "./recoil/testButtons/CreateGroupButton";
 import {AddGroupMemberButton} from "./recoil/testButtons/AddGroupMemberButton";
+import { MemberAcceptedButton } from "./recoil/testButtons/MemberAcceptedButton";
 import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
 import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 
@@ -32,6 +33,7 @@ import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton"
 // import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 import DeleteGroupButton from "./recoil/testButtons/DeleteGroupButton";
 import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberButton";
+import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
 require("dotenv").config();
 
 function App(props) {
@@ -253,6 +255,7 @@ function App(props) {
     <SetGroupIDButton/>
     <DeleteActiveMemberButton/>
     <AddGroupMemberButton/>
+    <MemberAcceptedButton/>
     </div>
   );
 }
