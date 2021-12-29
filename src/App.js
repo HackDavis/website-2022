@@ -66,6 +66,7 @@ function App(props) {
         qr_code: "",
         about_me: "",
         group_id: "",
+        leader_status: false,
         pending_groups: [],
         tags: [],
         pending_invitations: {},
