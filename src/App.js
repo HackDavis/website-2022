@@ -23,6 +23,7 @@ import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
 import { userStateAtom } from "./recoil/atoms/userAtom.js";
 import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
 import {CreateGroupButton} from "./recoil/testButtons/CreateGroupButton";
+import {AddGroupMemberButton} from "./recoil/testButtons/AddGroupMemberButton";
 import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
 import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 
@@ -78,6 +79,7 @@ function App(props) {
       };
 
       await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
+      setUser(newUserData);
       console.log("created new user");
     }
     } else { 
@@ -250,6 +252,7 @@ function App(props) {
     <DeleteGroupButton/>
     <SetGroupIDButton/>
     <DeleteActiveMemberButton/>
+    <AddGroupMemberButton/>
     </div>
   );
 }
