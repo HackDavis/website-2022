@@ -1,5 +1,6 @@
 import { doc, getDoc, setDoc, updateDoc, addDoc, collection } from "firebase/firestore";
 import { dbConfig } from "../../db/dbConfig.js";
+import { getUser } from "./getUser.js";
 
 export async function createGroup(email, user_id, newGroupDesc) {
     // first, create a group locally
@@ -13,6 +14,11 @@ export async function createGroup(email, user_id, newGroupDesc) {
         tags1: [],
         tags2: [],
     };
+    // note: can just fix frontend to avoid this issue
+    if (getUser(user_id).group_id != "") {
+        console.log('error in createGroup: user is already in a group');
+        return null;
+    }
 
     // add this group to the firebase
     const docRef = await addDoc(collection(dbConfig, "2022-groups"), newGroup);

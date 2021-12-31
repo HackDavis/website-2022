@@ -19,11 +19,15 @@ export function CreateGroupButton() {
         const newGroupDesc = document.getElementById("inputGroupDesc").value;
 
         const newGroup = await createGroup(user.email, user.user_id, newGroupDesc);
-        // setRSVP for front-end Recoil atom
-        setGroup(newGroup);
-        setUserGroupID(newGroup.group_id);
-        setUserPendingGroups([]);
-        setUserPendingInvitations([]);
+        if (newGroup == null) {
+            console.log("createGroup Error: user is already in a group");
+        } else {
+            // setRSVP for front-end Recoil atom
+            setGroup(newGroup);
+            setUserGroupID(newGroup.group_id);
+            setUserPendingGroups([]);
+            setUserPendingInvitations([]);
+        }
     }
     
     return (

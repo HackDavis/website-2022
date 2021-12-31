@@ -32,7 +32,8 @@ function DenyGroupRequestButton() {
         // console.log("new pending_groups and pending_members done"); 
         // ------------
         //TODO: Test if this method of extracting variables actually works
-        const {newPendingMemberMap, newPendingGroupMap} = await denyGroupRequest(user.user_id, group.group_id); 
+        let temp_user_id = "xKuRoQEUJzZ8MtJ9MkiEoWMYOj72";
+        const {newPendingMemberMap, newPendingGroupMap} = await denyGroupRequest(temp_user_id, group.group_id); 
 
         // front-end Recoil atom update 
         setDeletePendingMember(newPendingMemberMap); 

@@ -8,6 +8,8 @@ export async function deletePendingGroup(user_id, group_id) {
     try {
         const userData = await getUser(user_id);
         const groupData = await getGroup(group_id);
+        
+        console.log("inside deletePendingGroup: ", userData);
         let new_pending_groups = [...userData.pending_groups];
         // splice requires the index of the group_id you are searching for
         let groupIndex = new_pending_groups.indexOf(groupData.group_id);

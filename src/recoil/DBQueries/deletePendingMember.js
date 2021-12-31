@@ -8,6 +8,7 @@ export async function deletePendingMember(user_id, group_id) {
     try {
         const groupData = await getGroup(group_id);
         const userData = await getUser(user_id);
+        console.log(userData);
         let new_pending_members = {...groupData.pending_members}; // must spread because this is an object of arrays - 
                                                             // otherwise you do a shallow copy of nested objects 
         delete new_pending_members[userData.user_id]; 
