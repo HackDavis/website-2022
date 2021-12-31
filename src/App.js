@@ -2,106 +2,136 @@
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { dbConfig } from "./db/dbConfig.js";
+import {setDoc, doc, getDoc} from "firebase/firestore";
+import { getUser } from "./recoil/DBQueries/getUser";
+import { TestRecoil } from "./recoil/testButtons/TestRecoil";
 
-// Redux Imports
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { fetchUser } from "./redux/actions/userActions";
-import { getUser } from "./redux/actions/getUser";
-import { memberAccepted } from "./redux/actions/memberAcceptedActions";
-import { setRSVP } from "./redux/actions/setRSVP";
-import { groupApplication } from "./redux/actions/groupApplicationActions";
+// Recoil Imports
+import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
+import CharacterCounter from "./recoil/CharacterCounter.js";
+import { ResetPendingGroupsButton } from "./recoil/testButtons/ResetPendingGroupsButton";
+import  { GetUserButton } from "./recoil/testButtons/GetUserButton";
+import  { GetGroupButton } from "./recoil/testButtons/GetGroupButton";
+import {SetGroupID, SetGroupIDButton} from "./recoil/testButtons/SetGroupIDButton";
+import {SetRSVPButton} from "./recoil/testButtons/SetRSVPButton";
+import { userStateAtom } from "./recoil/atoms/userAtom.js";
+import AsyncAwaitTest from "./recoil/AsyncAwaitTest.js";
+import {CreateGroupButton} from "./recoil/testButtons/CreateGroupButton";
+import {AddGroupMemberButton} from "./recoil/testButtons/AddGroupMemberButton";
+import { MemberAcceptedButton } from "./recoil/testButtons/MemberAcceptedButton";
+import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
+import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
 
+//import CreateGroupButton from "./recoil/testButtons/CreateGroupButton";
+// import GroupApplicationButton from "./recoil/testButtons/GroupApplicationButton";
+// import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton";
+import DeleteGroupButton from "./recoil/testButtons/DeleteGroupButton";
+import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberButton";
+import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
 require("dotenv").config();
 
-let db = "";
-
 function App(props) {
+  const [user, setUser] = useRecoilState(userStateAtom);
 
-  useEffect(()=> {
-    props.getUser("3KaiyNl4pUuV2UEDTlt1")
-  }, []);
-  var provider = new firebase.auth.GoogleAuthProvider();
+  // Sign in using Google Login
+  // Note: Produces an error when using Safari but works fine on Chrome
+  async function handleSignIn() {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    provider.addScope('profile');
+    provider.addScope('email');
+    const result = await signInWithPopup(auth,provider);
+  
+    // The signed-in user info.
+    const user = result.user;
 
-  function handleSignIn() {
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        // result.additionalUserInfo.isNewUser <- says whether or not its the users first time signing in
-        // TODO: Write a request to our firestore database, asking it to log certain fields
-        // from the result variable
-        console.log(result.additionalUserInfo.isNewUser);
+    if (user) { 
+      // If user signs in with their gmail account but their data does not exist in firebase, then create a user object
+      const userData = await getUser(user.uid);
+      if (userData) {
+        console.log("user found in database");
+        // Update user recoil state 
+        setUser(userData);
+      } else {
+        // Add new user to DB 
+      const newUserData = {
+        name: user.displayName, // there should be a name field somewhere in the sign up that feeds into this
+        email: user.email,
+        user_id: user.uid,
+        profile_picture: user.photoURL || "",
+        app_status: "Not Applied",
+        rsvp_status: false,
+        qr_code: "",
+        about_me: "",
+        group_id: "",
+        leader_status: false,
+        pending_groups: [],
+        tags: [],
+        pending_invitations: {},
+        hd_director:
+          user.email.substring(
+            user.email.lastIndexOf("@") + 1
+          ) === "hackdavis.io",
+      };
 
-        /** @type {firebase.auth.OAuthCredential} */
-        var credential = result.credential;
+      await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
+      setUser(newUserData);
+      console.log("created new user");
+    }
+    } else { 
+      console.log("No user found!");
+    };
+  };
 
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-      })
-      .catch((error) => {
-        // TODO: Give the user visual feedback letting them know that their sign-in attempt failed
+  // function signUp() {
+  //   var email = document.getElementById("emailInput-Up").value;
+  //   var password = document.getElementById("passwordInput-Up").value;
 
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-      });
-  }
-
-  function signUp() {
-    var email = document.getElementById("emailInput-Up").value;
-    var password = document.getElementById("passwordInput-Up").value;
-
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in
-        console.log(userCredential);
-        db.collection("2022-users")
-          .add({
-            name: "", // there should be a name field somewhere in the sign up that feeds into this
-            email: userCredential.user.email,
-            profile_picture: userCredential.user.photoURL || "",
-            app_status: "Not Applied",
-            rsvp_status: false,
-            qr_code: "",
-            about_me: "",
-            group_id: "",
-            pending_groups: [],
-            tags: [],
-            pending_invitations: {},
-            hd_director:
-              userCredential.user.email.substr(
-                userCredential.user.email.lastIndexOf("@") + 1
-              ) === "hackdavis.io",
-          })
-          .then((res) => {
-            console.log("Document successfully written!");
-            console.log(res);
-          })
-          .catch((error) => {
-            console.error("Error writing document: ", error);
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ..
-      });
-  }
+  //   firebase
+  //     .auth()
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       console.log(userCredential);
+  //       db.collection("2022-users")
+  //         .add({
+  //           name: "", // there should be a name field somewhere in the sign up that feeds into this
+  //           email: userCredential.user.email,
+  //           profile_picture: userCredential.user.photoURL || "",
+  //           app_status: "Not Applied",
+  //           rsvp_status: false,
+  //           qr_code: "",
+  //           about_me: "",
+  //           group_id: "",
+  //           pending_groups: [],
+  //           tags: [],
+  //           pending_invitations: {},
+  //           hd_director:
+  //             userCredential.user.email.substr(
+  //               userCredential.user.email.lastIndexOf("@") + 1
+  //             ) === "hackdavis.io",
+  //         })
+  //         .then((res) => {
+  //           console.log("Document successfully written!");
+  //           console.log(res);
+  //         })
+  //         .catch((error) => {
+  //           console.error("Error writing document: ", error);
+  //         });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // ..
+  //     });
+  // }
 
   function signIn() {
     var email = document.getElementById("emailInput-In").value;
@@ -170,10 +200,10 @@ function App(props) {
         Password: <br />
         <input id="passwordInput-Up"></input>{" "}
       </p>
-      <button type="button" onClick={signUp}>
+      {/* <button type="button" onClick={signUp}>
         {" "}
         Sign-Up!{" "}
-      </button>
+      </button> */}
       {/* Sign in */}
       <p>
         {" "}
@@ -201,71 +231,33 @@ function App(props) {
       <p>Email for forgot password:</p>
       <input id="forgotPasswordEmail"></input>
       <button onClick={forgotPassword}>Forgot Password</button>
-      <button
-        onClick={() =>
-          console.log("hit fetchUser function call", props.fetchUser())
-        }
-      >
-        Get User
-      </button>
-      <button onClick={() => console.log("logging user:", props.user)}>
-        Log User Info
-      </button>
-      <button
-        onClick={() => {
-          // props.fetchUser();
-          console.log("hit user id on line 170:", props.user.user_id);
-          props.memberAccepted(
-            props.user.user_id,
-            props.user.name,
-            props.user.email
-          );
-        }}
-      >
-        Call Member Accepted
-      </button>
-      <button
-        onClick={() => {
-          props.fetchUser();
-          // Must put hardcoded ID to test out functionality because getUser() has not been implemented yet
-          props.setRSVP(props.user.user_id, "Yes");
-        }}
-      >
-        Set RSVP Button
-      </button>
-      <button
-        onClick={() => {
-          props.groupApplication(
-            props.user.user_id,
-            props.user.name,
-            props.user.email,
-            "C5VaLwp0TjZCj2erPcaF"
-          );
-        }}
-      >
-        group application
-      </button>
+    <button onClick={() => {
+          AsyncAwaitTest();
+        }}>Async Await Testing</button>
+    <button onClick={() => {
+          console.log(user);
+        }}>Recoil test</button>
+    
+    <CharacterCounter/>
+
+    
+    <SetRSVPButton
+      response={"set rsvp button tests"} 
+    />
+    <TestRecoil/>
+    <GetUserButton/>
+    <GetGroupButton/> 
+    <ResetPendingGroupsButton/>
+    <CreateGroupButton/>
+    <GroupApplicationButton/>
+    <DenyGroupRequestButton/> 
+    <DeleteGroupButton/>
+    <SetGroupIDButton/>
+    <DeleteActiveMemberButton/>
+    <AddGroupMemberButton/>
+    <MemberAcceptedButton/>
     </div>
   );
 }
 
-App.propTypes = {
-  fetchUser: PropTypes.func.isRequired,
-  setRSVP: PropTypes.func.isRequired,
-  memberAccepted: PropTypes.func.isRequired,
-  groupApplication: PropTypes.func.isRequired,
-  getUser: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  user: state.userData,
-});
-
-export default connect(mapStateToProps, {
-  fetchUser,
-  memberAccepted,
-  setRSVP,
-  groupApplication,
-  getUser
-})(App);
+export default App;
