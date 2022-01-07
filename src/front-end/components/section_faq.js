@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './css/section_faq.module.scss';
+import styles from '../css/section_faq.module.scss';
 import { Accordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
 
 const Section_FAQ  = () => {

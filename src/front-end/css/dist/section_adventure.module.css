@@ -1,0 +1,12 @@
+.body {
+  padding: 3rem 1rem;
+  background-color: gray;
+  width: 81%;
+  margin: 1rem auto;
+}
+
+@media (min-width: 426px) {
+  .body {
+    padding: 7rem 1rem;
+  }
+}
