@@ -1,14 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  border-bottom: solid black 1px;
+}
+
 .hamburger {
+  padding: 0;
+  margin: 20px;
   width: 25px;
 }
 
 .circle {
+  padding: 0;
+  margin: 20px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   background-color: black;
-}
-
-.container {
-    height: 10vh;
 }

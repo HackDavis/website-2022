@@ -4,9 +4,9 @@ import Hamburger from "../images/HamburgerMenu.svg";
 
 const Section_Navbar = () => {
     return(
-        <div className={`${styles.container} container`}>
-          <div className={`col-1  ${styles.circle}`}></div>
-          <img className={`col-1 offset-10  ${styles.hamburger}`} src={Hamburger}/>
+        <div className={styles.container}>
+          <div className={styles.circle}/>
+          <img className={styles.hamburger} src={Hamburger}/>
         </div>
     )
 }
