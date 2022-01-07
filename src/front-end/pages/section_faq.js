@@ -26,13 +26,20 @@ const Section_FAQ  = () => {
                     <Accordion
                       flush
                       open={open}
-                      toggle={() => ind === open ? setOpen() : setOpen(ind)}
+                      style={{marginLeft: '1.25rem'}}
+                      toggle={() => (ind === open ? setOpen() : setOpen(ind))}
                     >
-                      <AccordionItem>
-                        <AccordionHeader className={`border-bottom border-dark`}  targetId={ind}>
+                      <AccordionItem className={styles.accHead}>
+                          <AccordionHeader
+                            className={`border-bottom border-dark`}
+                            targetId={ind}
+                          >
                             {key}
-                        </AccordionHeader>
-                        <AccordionBody className="border-bottom border-dark" accordionId={ind}>
+                          </AccordionHeader>
+                        <AccordionBody
+                          className="border-bottom border-dark"
+                          accordionId={ind}
+                        >
                           {faqItems[key]}
                         </AccordionBody>
                       </AccordionItem>

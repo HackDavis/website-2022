@@ -11,3 +11,12 @@
   width: 100vw;
 }
 
+:global(.accordion-button) {
+  padding-left: 0 !important;
+  color: black !important;
+  background-color: white !important;
+}
+:global(.accordion-button:focus) {
+  box-shadow: none !important;
+  border: none !important;
+}
