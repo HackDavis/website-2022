@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../css/section_faq.module.scss';
-import { Accordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
+import { UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
 
 const Section_FAQ  = () => {
   const [open, setOpen] = useState();
-  
+
   const faqItems = {
     "What is a hackathon?":"A hackathon is where you transform your crazy ideas into real stuff. Hundreds of hackers from across California and other parts of the U.S. form teams around an idea and collaboratively create a solution from scratch. These ideas turn into websites, mobile apps, hardware, and more! \n\nCome make the most incredible things you can imagine alongside fellow creators. You take care of building and we'll take care of you. \n\nWe will be following MLH's Code Of Conduct.",
     "Who can attend?":"HackDavis is open to all majors! As long as you're prepared to learn, brainstorm, and build cool things, we welcome you to join. We encourage participants to form teams of up to 4 people. \n\nWe will be holding workshops throughout the year for students to immerse themselves into the world of hackathons and technology. These workshops will be held by industry professionals and members of our team, who will teach new and upcoming tools that assist with web development, mobile development, and more.",
@@ -23,7 +23,7 @@ const Section_FAQ  = () => {
                 <div className={styles.headerText}>Questions</div>
                 {Object.keys(faqItems).map((key, ind) => {
                   return (
-                    <Accordion
+                    <UncontrolledAccordion
                       flush
                       open={open}
                       style={{marginLeft: '1.25rem'}}
@@ -31,19 +31,19 @@ const Section_FAQ  = () => {
                     >
                       <AccordionItem className={styles.accHead}>
                           <AccordionHeader
-                            className={`border-bottom border-dark`}
+                            className={ind !== 7  ? "border-bottom border-dark" : ""}
                             targetId={ind}
                           >
                             {key}
                           </AccordionHeader>
                         <AccordionBody
-                          className="border-bottom border-dark"
+                          className="border-bottom border-dark rounded-0"
                           accordionId={ind}
                         >
                           {faqItems[key]}
                         </AccordionBody>
                       </AccordionItem>
-                    </Accordion>
+                    </UncontrolledAccordion>
                   );})}
             </div>
         </div>
