@@ -11,6 +11,15 @@
   width: 100vw;
 }
 
+.thevoid {
+  display: flex;
+  height: 300vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
 :global(.accordion-button) {
   padding-left: 0 !important;
   color: black !important;

@@ -1,0 +1,51 @@
+.container {
+  // display: flex;
+  // justify-content: space-between;
+  height: 8vh;
+  position: fixed;
+  width: 100vw;
+  z-index: 998;
+  background-color: white;
+}
+
+.hamburger {
+  margin-right: 2rem !important;
+  width: 25px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.circle {
+  margin-left: 2rem !important;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 999;
+  transition: 0.75s;
+  transform: translate();
+}
+
+.menuNav.showMenu {
+  right: 0;
+  background-color: white;
+}
+
+.exitDash {
+  position: absolute;
+  right: 2rem;
+  top: 2rem; 
+}
