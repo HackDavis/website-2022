@@ -11,5 +11,5 @@ export function MainBlock() {
       <br />
       <button>SPONSOR 2022</button>
     </main>
-  )
+  );
 }

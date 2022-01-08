@@ -1,0 +1,11 @@
+.contents {
+  background-color: #f2f2f2;
+  height: 210px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.top_diagonal {
+  border-bottom: 50px solid #f2f2f2;
+  border-right: calc(100vw - 24px) solid transparent;
+}

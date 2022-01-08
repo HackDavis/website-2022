@@ -1,0 +1,28 @@
+.contents {
+  background-color: #f2f2f2;
+  padding: 15px 24px 25px;
+
+  > h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 24px;
+  }
+
+  > p {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.top_diagonal {
+  border-bottom: 50px solid #f2f2f2;
+  border-right: calc(100vw - 24px) solid transparent;
+}
+
+.bottom_diagonal {
+  border-top: 50px solid #f2f2f2;
+  border-left: calc(100vw - 24px) solid transparent;
+  margin-bottom: -20px;
+}

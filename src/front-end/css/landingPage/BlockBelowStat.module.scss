@@ -1,0 +1,16 @@
+.top_diagonal {
+  border-bottom: 50px solid #c4c4c4;
+  border-right: calc(100vw - 24px) solid transparent;
+}
+
+.bottom_diagonal {
+  border-top: 50px solid #c4c4c4;
+  border-left: calc(100vw - 24px) solid transparent;
+  margin-bottom: -20px;
+}
+
+.contents {
+  background-color: #c4c4c4;
+  height: 400px;
+  width: 100%;
+}
