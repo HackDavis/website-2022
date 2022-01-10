@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "../../../css/landingPage/mainSection/Stats.module.scss";
 
-export function Stats({media}) {
-  const bottom_diagonal = media === "mobile" ? styles.bottom_diagonal_mobile : styles.bottom_diagonal_non_mobile
+export function Stats() {
 
   return (
     <>
@@ -18,7 +17,6 @@ export function Stats({media}) {
         </h1>
         <button>VIEW 2021 WINNERS</button>
       </section>
-      {/* <div className={bottom_diagonal}></div> */}
     </>
   );
 }

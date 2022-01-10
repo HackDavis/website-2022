@@ -8,7 +8,6 @@ import { Stats } from "../components/landingPage/mainSection/Stats";
 import { BlockBelowStat } from "../components/landingPage/mainSection/BlockBelowStat";
 import { About } from "../components/landingPage/mainSection/About";
 import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlantedBlock";
-import { Row, Col, Container } from "reactstrap";
 
 export function MainSection() {
 	return (
@@ -18,25 +17,25 @@ export function MainSection() {
 				<SecondMainBlock />
 				<TagLine />
 				<SmallBoxes />
-				<Stats media="mobile" />
-				<BlockBelowStat media="mobile" />
-				<About media="mobile" />
-				<LastSlantedBlock media="mobile" />
+				<Stats/>
+				<BlockBelowStat/>
+				<About/>
+				<LastSlantedBlock/>
 			</div>
 			{/* Tablet, Desktop, and Laptop version */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
 				<div>
 					<MainBlock />
 					<SmallBoxes />
-					<Stats media="non-mobile" />
-					<LastSlantedBlock media="non-mobile" />
+					<Stats/>
+					<LastSlantedBlock/>
 				</div>
 				<div>
 					<SecondMainBlock />
 					<TagLine />
 					{/* modified components */}
-					<BlockBelowStat media="non-mobile" />
-					<About media="non-mobile" />
+					<BlockBelowStat/>
+					<About/>
 				</div>
 			</div>
 		</>
