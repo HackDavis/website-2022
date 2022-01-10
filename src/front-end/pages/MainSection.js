@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../css/landingPage/MainSection.module.scss";
 import { MainBlock } from "../components/landingPage/mainSection/MainBlock";
 import { SecondMainBlock } from "../components/landingPage/mainSection/SecondMainBlock";
 import { TagLine } from "../components/landingPage/mainSection/TagLine";
@@ -10,35 +11,34 @@ import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlan
 import { Row, Col, Container } from "reactstrap";
 
 export function MainSection() {
-  return (
-    <Container fluid>
-			<Row>
-				{/* Mobile version */}
-				<Col xs="12" md="0" className="d-block d-sm-block d-md-none">
-					<MainBlock />
-					<SecondMainBlock />
-					<TagLine />
-					<SmallBoxes />
-					<Stats media="mobile" />
-					<BlockBelowStat media="mobile" />
-					<About media="mobile" />
-					<LastSlantedBlock media="mobile" />
-				</Col>
-				{/* Tablet, Desktop, and Laptop version */}
-				<Col md="5" className="d-none d-md-block">
+	return (
+		<>
+			<div className={`d-block d-sm-block d-md-block d-lg-none ${styles.container}`}>
+				<MainBlock />
+				<SecondMainBlock />
+				<TagLine />
+				<SmallBoxes />
+				<Stats media="mobile" />
+				<BlockBelowStat media="mobile" />
+				<About media="mobile" />
+				<LastSlantedBlock media="mobile" />
+			</div>
+			{/* Tablet, Desktop, and Laptop version */}
+			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
+				<div>
 					<MainBlock />
 					<SmallBoxes />
 					<Stats media="non-mobile" />
 					<LastSlantedBlock media="non-mobile" />
-				</Col>
-				<Col md="7" className="d-none d-md-block">
+				</div>
+				<div>
 					<SecondMainBlock />
 					<TagLine />
 					{/* modified components */}
 					<BlockBelowStat media="non-mobile" />
-					<About media="non-mobile"/>
-				</Col>
-			</Row>
-		</Container> 
-  );
+					<About media="non-mobile" />
+				</div>
+			</div>
+		</>
+	);
 }

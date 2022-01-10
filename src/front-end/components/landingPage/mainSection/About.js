@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../../../css/landingPage/About.module.scss";
+import styles from "../../../css/landingPage/mainSection/About.module.scss";
 
 export function About({media}) {
   const top_diagonal = media === "mobile" ? styles.top_diagonal_mobile : styles.top_diagonal_non_mobile;
 
   return (
     <>
-      <div className={top_diagonal}></div>
+      {/* <div className={top_diagonal}></div> */}
       <section className={styles.contents}>
         <h1>
           Hack for <br /> Social Good
@@ -23,7 +23,7 @@ export function About({media}) {
           address the world’s most pressing issues.
         </p>
       </section>
-      { media === "mobile" ? <div className={styles.bottom_diagonal_mobile}></div> : null }
+      {/* { media === "mobile" ? <div className={styles.bottom_diagonal_mobile}></div> : null } */}
       
     </>
   );

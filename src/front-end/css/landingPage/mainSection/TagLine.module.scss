@@ -14,10 +14,12 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .container {
+    padding: 48px 64px;
+
     > h1 {
-      font-size: 32px;
+      font-size: min(2.6vw, 32px);
     }
   }
 }
