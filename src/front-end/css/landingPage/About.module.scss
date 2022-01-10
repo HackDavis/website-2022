@@ -16,13 +16,29 @@
   }
 }
 
-.top_diagonal {
+.top_diagonal_mobile {
   border-bottom: 50px solid #f2f2f2;
   border-right: calc(100vw - 24px) solid transparent;
 }
 
-.bottom_diagonal {
+.bottom_diagonal_mobile {
   border-top: 50px solid #f2f2f2;
   border-left: calc(100vw - 24px) solid transparent;
   margin-bottom: -20px;
+}
+
+.top_diagonal_non_mobile {
+  border-bottom: 50px solid #f2f2f2;
+  border-right: calc(58.33vw - 24px) solid transparent;
+}
+
+@media (min-width: 768px) {
+  .container {
+    > h1 {
+      font-size: 48px;
+    }
+    > button {
+      font-size: 17px;
+    }
+  }
 }

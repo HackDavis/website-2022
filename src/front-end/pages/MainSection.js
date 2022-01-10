@@ -13,15 +13,30 @@ export function MainSection() {
   return (
     <Container fluid>
 			<Row>
-				<Col xs="12">
+				{/* Mobile version */}
+				<Col xs="12" md="0" className="d-block d-sm-block d-md-none">
 					<MainBlock />
 					<SecondMainBlock />
 					<TagLine />
 					<SmallBoxes />
-					<Stats />
-					<BlockBelowStat />
-					<About />
-					<LastSlantedBlock />
+					<Stats media="mobile" />
+					<BlockBelowStat media="mobile" />
+					<About media="mobile" />
+					<LastSlantedBlock media="mobile" />
+				</Col>
+				{/* Tablet, Desktop, and Laptop version */}
+				<Col md="5" className="d-none d-md-block">
+					<MainBlock />
+					<SmallBoxes />
+					<Stats media="non-mobile" />
+					<LastSlantedBlock media="non-mobile" />
+				</Col>
+				<Col md="7" className="d-none d-md-block">
+					<SecondMainBlock />
+					<TagLine />
+					{/* modified components */}
+					<BlockBelowStat media="non-mobile" />
+					<About media="non-mobile"/>
 				</Col>
 			</Row>
 		</Container> 

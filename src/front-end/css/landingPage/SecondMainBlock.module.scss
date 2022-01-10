@@ -4,3 +4,15 @@
   background-color: #c4c4c4;
   margin-bottom: 24px;
 }
+
+@media (min-width: 768px) {
+  .container {
+    height: 400px;
+  }
+}
+
+@media (min-wdith: 1440px) {
+  .container {
+    height: 500px;
+  }
+}

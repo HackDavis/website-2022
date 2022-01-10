@@ -1,11 +1,16 @@
 .contents {
-  background-color: #f2f2f2;
+  background-color: #c4c4c4;
   height: 210px;
   width: 100%;
   margin-bottom: 24px;
 }
 
-.top_diagonal {
-  border-bottom: 50px solid #f2f2f2;
+.top_diagonal_mobile {
+  border-bottom: 50px solid #c4c4c4;
   border-right: calc(100vw - 24px) solid transparent;
+}
+
+.top_diagonal_non_mobile {
+  border-bottom: 50px solid #c4c4c4;
+  border-right: calc(41.67vw - 24px) solid transparent;
 }
