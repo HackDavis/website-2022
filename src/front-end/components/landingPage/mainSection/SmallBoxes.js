@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../../../css/landingPage/SmallBoxes.module.scss";
+import styles from "../../../css/landingPage/mainSection/SmallBoxes.module.scss";
 import {Row, Col, Container} from "reactstrap";
 
 function Box() {
@@ -12,7 +12,15 @@ export function SmallBoxes() {
   return (
     
     <div className={styles.container}>
-      <Row>
+      <div>
+        <Box />
+        <Box />
+      </div>
+      <div>
+        <Box />
+        <Box />
+      </div>
+      {/* <Row>
         <Col xs={6}>
 					<Box/>
         </Col> 
@@ -27,7 +35,7 @@ export function SmallBoxes() {
         <Col xs={6}>
 					<Box/>
 				</Col>
-      </Row>
+      </Row> */}
     </div>
   );
 }

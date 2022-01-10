@@ -1,6 +1,9 @@
 .contents {
+  position: relative;
   background-color: #f2f2f2;
-  padding: 15px 24px 25px;
+  padding: 48px 24px 80px;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  margin-bottom: -10px;
 
   > h1 {
     font-weight: 700;
@@ -14,6 +17,21 @@
     line-height: 21px;
     letter-spacing: 0.02em;
   }
+
+  // &:before {
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   content: '';
+  //   background: inherit;
+  //   z-index: -1;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   transform-origin: top left;
+  //   transform: skewY(4deg);
+  // }
 }
 
 .top_diagonal_mobile {
@@ -32,11 +50,22 @@
   border-right: calc(58.33vw - 24px) solid transparent;
 }
 
-@media (min-width: 768px) {
-  .container {
+@media (min-width: 992px) {
+  .contents {
+    padding: 108px 64px 80px;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin: 0;  
+
     > h1 {
       font-size: 48px;
+      line-height: 58px;
     }
+
+    > p {
+      font-size: 17px;
+      line-height: 25px;
+    }
+
     > button {
       font-size: 17px;
     }
