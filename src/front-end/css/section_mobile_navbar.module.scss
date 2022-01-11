@@ -1,15 +1,11 @@
 .container {
-  // display: flex;
-  // justify-content: space-between;
   height: 8vh;
   position: fixed;
   width: 100vw;
-  z-index: 998;
-  background-color: white;
 }
 
 .hamburger {
-  margin-right: 2rem !important;
+  margin-right: 2rem;
   width: 25px;
 }
 
@@ -18,7 +14,7 @@
 }
 
 .circle {
-  margin-left: 2rem !important;
+  margin-left: 2rem;
   width: 25px;
   height: 25px;
   border-radius: 50%;

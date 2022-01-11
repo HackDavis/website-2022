@@ -6,11 +6,19 @@
 }
 .container {
     display: flex;
-    background-color: rgba(242, 242, 242, 1);
+    flex-direction: column; 
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    padding: 2rem;
     height: 138px;
     width: 80vw;
     max-width: 1280px;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+@media (min-width: 426px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+    }
 }
