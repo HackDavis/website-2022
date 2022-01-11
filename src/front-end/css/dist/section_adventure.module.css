@@ -1,12 +1,17 @@
-.body {
-  padding: 3rem 1rem;
-  background-color: gray;
-  width: 81%;
-  margin: 1rem auto;
+.background {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 24px;
 }
 
-@media (min-width: 426px) {
-  .body {
-    padding: 7rem 1rem;
-  }
+.container {
+  display: flex;
+  background-color: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 138px;
+  width: 80vw;
+  max-width: 1280px;
 }

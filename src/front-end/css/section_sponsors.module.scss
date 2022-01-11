@@ -1,7 +1,31 @@
+.background {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 1280px;
+  height: 912px;
+  margin-top: 24px;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contentWrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .headerText {
-    margin-top: 10rem;
-    margin-bottom: 2rem;
-    padding-left: 1.25rem;
-    font-size: 40px;
-    font-weight: 700;
-  }
+  font-size: 40px;
+  font-weight: 700;
+}

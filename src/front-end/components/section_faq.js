@@ -17,40 +17,39 @@ const Section_FAQ  = () => {
   }
 
   return (
-    <div className={`container p-0 m-0 ${styles.container}`}>
-        <div className={`row no-gutters ${styles.background}`}>
-            <div className="col-10 offset-1">
-                <div className={styles.headerText}>Questions</div>
-                {Object.keys(faqItems).map((key, ind) => {
-                  return (
-                    <UncontrolledAccordion
-                      flush
-                      open={open}
-                      style={{ marginLeft: "1.25rem", maxWidth: "1280px", margin: "auto"}}
-                      toggle={() => (ind === open ? setOpen() : setOpen(ind))}
-                    >
-                      <AccordionItem className={styles.accHead}>
-                        <AccordionHeader
-                          className={
-                            ind !== 7 ? "border-bottom border-dark" : ""
-                          }
-                          targetId={ind}
-                        >
-                          {key}
-                        </AccordionHeader>
-                        <AccordionBody
-                          className="border-bottom border-dark rounded-0"
-                          accordionId={ind}
-                        >
-                          {faqItems[key]}
-                        </AccordionBody>
-                      </AccordionItem>
-                    </UncontrolledAccordion>
-                  );})}
-                  <div className={styles.thevoid}>
-                    the void
-                  </div>
-            </div>
+    <div className={styles.background}>
+      <div className={styles.container}>
+        <div className={styles.contentWrapper}>
+          <div className={styles.headerText}>Questions</div>
+            {Object.keys(faqItems).map((key, ind) => {
+              return (
+              <UncontrolledAccordion
+                flush
+                open={open}
+                style={{width: "60vw", maxWidth: "1280px"}}
+                toggle={() => (ind === open ? setOpen() : setOpen(ind))}
+              >
+                <AccordionItem className={styles.accHead}>
+                  <AccordionHeader
+                    className={
+                      ind !== Object.keys(faqItems).length-1 ? "border-bottom border-dark" : ""
+                    }
+                    targetId={ind}
+                  >
+                    {key}
+                  </AccordionHeader>
+                  <AccordionBody
+                    className={
+                      ind === Object.keys(faqItems).length-1 ? "border-top border-dark rounded-0" : "border-bottom border-dark rounded-0"
+                    }
+                    accordionId={ind}
+                  >
+                    {faqItems[key]}
+                  </AccordionBody>
+                </AccordionItem>
+              </UncontrolledAccordion>
+            );})}  
+          </div>
         </div>
     </div>
   )
