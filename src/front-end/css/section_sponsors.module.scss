@@ -6,8 +6,8 @@
 
 .container {
   display: flex;
-  flex-direction: column;
   width: 80vw;
+  padding: 2rem;
   max-width: 1280px;
   height: 912px;
   margin-top: 24px;
@@ -21,6 +21,7 @@
 }
 
 .contentWrapper {
+  width: 60vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -28,4 +29,10 @@
 .headerText {
   font-size: 40px;
   font-weight: 700;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
 }
