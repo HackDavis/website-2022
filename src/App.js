@@ -8,13 +8,13 @@ import Section_Navbar from './front-end/components/section_navbar.js';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Section_Navbar/>
       <MainSection />
       <Section_FAQ/>
       <Section_Contact/>
       <Section_Sponsors/>
       <Section_Adventure/>
-    </div>
+    </>
   );
 }

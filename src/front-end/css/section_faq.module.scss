@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding-top: 50px; // remove once full website put together
 }
 
 .container {
@@ -15,6 +14,7 @@
 }
 
 .contentWrapper {
+  width: 60vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -27,6 +27,8 @@
 :global(.accordion-button) {
   padding-left: 0 !important;
   color: black !important;
+  font-size: 14pt !important;
+  max-width: 70vw !important;
   background-color: rgba(242, 242, 242, 1) !important;
 }
 :global(.accordion-button:focus) {
@@ -37,7 +39,13 @@
 :global(.accordion-button::after) {
   content: none !important;
 }
-
 :global(.accordion-body) {
   background-color: rgba(242, 242, 242, 1) !important;
+  overflow-x: hidden !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 5rem;
+  }
 }

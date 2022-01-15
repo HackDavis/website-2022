@@ -26,7 +26,7 @@ const Section_FAQ  = () => {
               <UncontrolledAccordion
                 flush
                 open={open}
-                style={{width: "60vw", maxWidth: "1280px"}}
+                style={{width: "100%", maxWidth: "1280px"}}
                 toggle={() => (ind === open ? setOpen() : setOpen(ind))}
               >
                 <AccordionItem className={styles.accHead}>

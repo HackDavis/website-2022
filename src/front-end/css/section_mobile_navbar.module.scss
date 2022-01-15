@@ -1,7 +1,9 @@
 .container {
-  height: 8vh;
+  // height: 8vh;
   position: fixed;
   width: 100vw;
+  z-index: 999;
+  margin-top: -1rem;
 }
 
 .hamburger {
@@ -43,5 +45,5 @@
 .exitDash {
   position: absolute;
   right: 2rem;
-  top: 2rem; 
+  top: 2rem;
 }

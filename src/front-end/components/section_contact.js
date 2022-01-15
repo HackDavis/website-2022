@@ -5,8 +5,8 @@ const Section_Contact = () => {
     return (
         <div className={styles.background}>
             <div className={styles.container}>
-                Need help? Contact&nbsp;
-                <strong>team@hackdavis.io</strong>
+                <span>Need help? Contact <strong>team@hackdavis.io</strong></span>
+                {/* <strong className={styles.strong}>team@hackdavis.io</strong> */}
             </div>
         </div>
     )
