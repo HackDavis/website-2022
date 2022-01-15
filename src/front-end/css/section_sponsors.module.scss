@@ -1,0 +1,38 @@
+.background {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  width: 80vw;
+  padding: 2rem;
+  max-width: 1280px;
+  height: 912px;
+  margin-top: 24px;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contentWrapper {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerText {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}

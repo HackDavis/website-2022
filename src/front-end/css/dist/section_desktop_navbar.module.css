@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 998;
+  margin-top: 0.5rem;
+}
+
+.circle {
+  margin-left: 2rem !important;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  padding-right: 1rem;
+}
+
+.button {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}

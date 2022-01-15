@@ -1,0 +1,12 @@
+.desktop {
+    display: none;
+}
+
+@media (min-width: 426px) {
+    .desktop {
+        display: initial;
+    }
+    .mobile {
+        display: none;
+    }
+}

@@ -4,6 +4,7 @@ import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from "./App";
 import { RecoilRoot} from 'recoil';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
     <RecoilRoot>

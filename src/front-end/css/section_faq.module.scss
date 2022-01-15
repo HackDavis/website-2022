@@ -1,0 +1,43 @@
+.background {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding-top: 50px; // remove once full website put together
+}
+
+.container {
+  display: flex;
+  width: 80vw;
+  max-width: 1280px;
+  margin-top: 24px;
+  padding: 2rem;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.contentWrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerText {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+:global(.accordion-button) {
+  padding-left: 0 !important;
+  color: black !important;
+  background-color: rgba(242, 242, 242, 1) !important;
+}
+:global(.accordion-button:focus) {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: rgba(242, 242, 242, 1) !important;
+}
+:global(.accordion-button::after) {
+  content: none !important;
+}
+
+:global(.accordion-body) {
+  background-color: rgba(242, 242, 242, 1) !important;
+}
