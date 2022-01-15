@@ -17,7 +17,6 @@ const Section_FAQ  = () => {
   }
 
   return (
-    <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
           <div className={styles.headerText}>Questions</div>
@@ -51,7 +50,6 @@ const Section_FAQ  = () => {
             );})}  
           </div>
         </div>
-    </div>
   )
 }
 

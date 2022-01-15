@@ -6,11 +6,11 @@ const Section_Desktop_Navbar = () => {
     <div className={styles.container}>
       <div className={styles.circle} />
       <div className={styles.buttons}>
-        <a href=""><p className={styles.button}>About us</p></a>
-        <a href=""><p className={styles.button}>Info</p></a>
-        <a href=""><p className={styles.button}>FAQ</p></a>
-        <a href=""><p className={styles.button}>Sponsors</p></a>
-        <a href=""><p className={styles.button}>Profile</p></a>
+        <a className={styles.button} href="">About us</a>
+        <a className={styles.button} href="">Info</a>
+        <a className={styles.button} href="">FAQ</a>
+        <a className={styles.button} href="">Sponsors</a>
+        <a className={styles.button} href="">Profile</a>
       </div>
     </div>
   );

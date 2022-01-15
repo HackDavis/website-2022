@@ -4,7 +4,7 @@ import styles from '../css/section_navbar.module.scss';
 
 const Section_Navbar = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <div className={styles.mobile}>
                 <Section_Mobile_Navbar/>
             </div>

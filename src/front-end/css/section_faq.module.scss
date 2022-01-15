@@ -1,22 +1,17 @@
-.background {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-
 .container {
   display: flex;
-  width: 80vw;
+  width: 100%;
   max-width: 1280px;
   margin-top: 24px;
-  padding: 2rem;
+  padding: 32px 24px 40px;
   background-color: rgba(242, 242, 242, 1);
 }
 
 .contentWrapper {
-  width: 60vw;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 990px;
+  // width: 60vw;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 .headerText {
@@ -24,6 +19,9 @@
   font-weight: 700;
 }
 
+:global(.accordion-item) {
+  background-color: rgba(242, 242, 242, 1) !important;
+}
 :global(.accordion-button) {
   padding-left: 0 !important;
   color: black !important;
@@ -44,7 +42,7 @@
   overflow-x: hidden !important;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
   }

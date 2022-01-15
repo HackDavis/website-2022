@@ -4,6 +4,7 @@
   padding: 48px 24px 80px;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
   margin-bottom: -10px;
+  z-index: -1;
 
   > h1 {
     font-weight: 700;

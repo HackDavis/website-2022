@@ -5,7 +5,7 @@ import Hamburger from "../images/HamburgerMenu.svg";
 const Section_Mobile_Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
+    <>
       <div className={`d-flex justify-content-between align-items-center ${styles.container}`}>
         <div className={`${styles.circle}`} />
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => (setIsOpen(!isOpen))}/>
@@ -17,7 +17,7 @@ const Section_Mobile_Navbar = () => {
           <h2 style={{display: 'block'}}>Hackers will see their information here</h2>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

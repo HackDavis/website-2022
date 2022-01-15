@@ -1,14 +1,13 @@
 .container {
-  // height: 8vh;
-  position: fixed;
+  padding: 24px;
   width: 100vw;
   z-index: 999;
-  margin-top: -1rem;
+  background: white;
 }
 
 .hamburger {
-  margin-right: 2rem;
-  width: 25px;
+  // margin-right: 2rem;
+  width: 24px;
 }
 
 .hamburger:hover {
@@ -16,11 +15,11 @@
 }
 
 .circle {
-  margin-left: 2rem;
-  width: 25px;
-  height: 25px;
+  // margin-left: 2rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #c4c4c4;
 }
 
 .menuNav {

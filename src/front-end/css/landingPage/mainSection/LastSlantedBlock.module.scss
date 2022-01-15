@@ -3,7 +3,8 @@
   height: 210px;
   width: 100%;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-  margin-bottom: 24px;
+  // margin-bottom: 24px;
+  z-index: -1;
 }
 
 .top_diagonal_mobile {

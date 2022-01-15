@@ -1,17 +1,31 @@
-.background {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
+// .background {
+//     display: flex;
+//     width: 100vw;
+//     justify-content: center;
+//     margin-top: 24px;
+//     margin-bottom: 24px;
+// }
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    margin: 24px 0;
     height: 138px;
-    width: 80vw;
-    max-width: 1280px;
+    width: 100%;
+    // max-width: 1280px;
     background-color: rgba(242, 242, 242, 1);
+
+    > p {
+        text-align: center;
+        max-width: 226px;
+        font-size: 24px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .container > p {
+        max-width: 350px;
+    }
 }

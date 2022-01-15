@@ -11,7 +11,7 @@ import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlan
 
 export function MainSection() {
 	return (
-		<div className={styles.outer_container}>
+		<>
 			<div className={`d-block d-sm-block d-md-block d-lg-none ${styles.container}`}>
 				<MainBlock />
 				<SecondMainBlock />
@@ -38,6 +38,6 @@ export function MainSection() {
 					<About/>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
