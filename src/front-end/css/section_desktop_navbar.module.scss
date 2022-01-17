@@ -7,14 +7,18 @@
   max-width: 1280px;
   margin: auto;
   z-index: 999;
-  background: white;
+  background: #173a52;
+}
+
+.scroll{
+  // box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+  box-shadow: 0px 16px 12px -10px rgba(0,0,0,.5);
 }
 
 .circle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #c4c4c4;
 }
 
 .buttons {
@@ -28,7 +32,7 @@
 .button {
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: white;
   width: auto;
 
   &:hover {
@@ -38,6 +42,6 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 40px 24px 24px;
+    padding: 24px;
   }
 }

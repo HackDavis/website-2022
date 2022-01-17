@@ -16,6 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
   /* overflow-x: hidden; */
   width: 100%;
+  /*Note: fix this on merge later*/
+  /* background-color: #173A52; */ 
 }
 
 *,

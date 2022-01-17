@@ -2,12 +2,22 @@
   padding: 24px;
   width: 100vw;
   z-index: 999;
-  background: white;
+  background: #173a52;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  text-align: right;
+  padding-right: 20px;
 }
 
 .hamburger {
   // margin-right: 2rem;
-  width: 24px;
+  width: 30px;
+  height: 30px;
+  color: #FFFFFF;
 }
 
 .hamburger:hover {
@@ -15,34 +25,55 @@
 }
 
 .circle {
-  // margin-left: 2rem;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: #c4c4c4;
+}
+
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  left: 30px;
+  transition: 300ms;
+  transform: translate();
+  background-color: transparent;
+}
+
+.mlhbanner.hide {
+  top: -100vh;
+}
+
+.scroll{
+  // box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+  box-shadow: 0px 16px 12px -10px rgba(0,0,0,.5);
 }
 
 .menuNav {
   overflow-y: scroll;
   position: fixed;
-  top: 0;
-  right: -100vw;
+  top: -30%;
+  left: 0;
+  right: 0;
   bottom: 0;
-  height: 100vh;
+  height: 30%;
+  background-color: #173a52;
   width: 100vw;
   overflow: hidden;
   z-index: 999;
-  transition: 0.75s;
+  transition: 200ms;
   transform: translate();
 }
-
+.button {
+  text-decoration: none;
+  color: #FFFFFF;
+  line-height: 50px;
+}
 .menuNav.showMenu {
-  right: 0;
-  background-color: white;
+  top: 11vh;
+  z-index: -1;
 }
 
 .exitDash {
-  position: absolute;
   right: 2rem;
   top: 2rem;
 }

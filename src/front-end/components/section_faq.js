@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../css/section_faq.module.scss';
 import { UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
+import Section_Contact from './section_contact.js';
 
 const Section_FAQ  = () => {
   const [open, setOpen] = useState();
@@ -20,36 +21,31 @@ const Section_FAQ  = () => {
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
           <div className={styles.headerText}>Questions</div>
-            {Object.keys(faqItems).map((key, ind) => {
-              return (
-              <UncontrolledAccordion
-                flush
-                open={open}
-                style={{width: "100%", maxWidth: "1280px"}}
-                toggle={() => (ind === open ? setOpen() : setOpen(ind))}
-              >
-                <AccordionItem className={styles.accHead}>
-                  <AccordionHeader
-                    className={
-                      ind !== Object.keys(faqItems).length-1 ? "border-bottom border-dark" : ""
-                    }
-                    targetId={ind}
-                  >
-                    {key}
-                  </AccordionHeader>
-                  <AccordionBody
-                    className={
-                      ind === Object.keys(faqItems).length-1 ? "border-top border-dark rounded-0" : "border-bottom border-dark rounded-0"
-                    }
-                    accordionId={ind}
-                  >
-                    {faqItems[key]}
-                  </AccordionBody>
-                </AccordionItem>
-              </UncontrolledAccordion>
-            );})}  
-          </div>
+          {Object.keys(faqItems).map((key, ind) => {
+            return (
+            <UncontrolledAccordion
+              flush
+              open={open}
+              style={{width: "100%", maxWidth: "1280px"}}
+              toggle={() => (ind === open ? setOpen() : setOpen(ind))}
+            >
+              <AccordionItem className={styles.accHead}>
+                <AccordionHeader
+                  targetId={ind}
+                >
+                  {key}
+                </AccordionHeader>
+                <AccordionBody
+                  accordionId={ind}
+                >
+                  {faqItems[key]}
+                </AccordionBody>
+              </AccordionItem>
+            </UncontrolledAccordion>
+          );})}  
         </div>
+        <Section_Contact/>
+      </div>
   )
 }
 

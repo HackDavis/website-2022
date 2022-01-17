@@ -1,30 +1,45 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 8vh;
+  padding: 24px;
   width: 100vw;
-  position: fixed;
-  z-index: 998;
-  margin-top: 0.5rem;
+  max-width: 1280px;
+  margin: auto;
+  z-index: 999;
+  background: #173a52;
+}
+
+.scroll {
+  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
 }
 
 .circle {
-  margin-left: 2rem !important;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: black;
 }
 
 .buttons {
-  margin-left: auto;
   display: flex;
   flex-direction: row;
-  padding-right: 1rem;
+  max-width: 485px;
+  justify-content: flex-end;
+  column-gap: 56px;
 }
 
 .button {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  width: auto;
+}
+.button:hover {
+  color: black;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 24px;
+  }
 }

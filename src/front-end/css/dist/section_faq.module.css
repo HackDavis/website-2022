@@ -1,43 +1,90 @@
-.background {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  padding-top: 50px;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80vw;
+  width: 100%;
   max-width: 1280px;
-  margin-top: 50px;
-  padding: 2rem;
-  background-color: #f2f2f2;
+  margin-top: 24px;
+  padding: 32px 24px 40px;
+  position: relative;
+  background-color: #173A52;
+  border: solid #9EE7E5 3pt;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contentWrapper {
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 990px;
+  padding-bottom: 50px;
 }
 
 .headerText {
-  font-size: 40px;
-  font-weight: 700;
+  font: medium "DM Mono";
+  font-size: 32pt;
+  line-height: 42px;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+:global(.accordion-item) {
+  background-color: #173A52 !important;
 }
 
 :global(.accordion-button) {
   padding-left: 0 !important;
-  color: black !important;
-  background-color: #f2f2f2 !important;
+  color: #FFFFFF !important;
+  font-size: 14pt !important;
+  max-width: 70vw !important;
+  background-color: #173A52 !important;
 }
 
 :global(.accordion-button:focus) {
   box-shadow: none !important;
   border: none !important;
-  background-color: #f2f2f2 !important;
+  color: #9EE7E5 !important;
+  background-color: #173A52 !important;
+}
+
+:global(.accordion-button::after) {
+  background-image: url("../images/Vector131.svg") !important;
 }
 
 :global(.accordion-body) {
-  background-color: #f2f2f2 !important;
+  background-color: #173A52 !important;
+  color: #FFFFFF !important;
+  overflow-x: hidden !important;
+  border-bottom: #9EE7E5 solid;
+}
+
+:global(.accordion-header) {
+  font: "Proxima Nova";
+  font-size: 14pt;
+  letter-spacing: 2%;
+  position: relative !important;
+  border-bottom: #9EE7E5 solid !important;
+}
+
+:global(.accordion-header:focus) {
+  color: #9EE7E5 !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    padding: 5rem;
+  }
+
+  .headerText {
+    font: medium "DM Mono";
+    font-size: 48pt;
+    line-height: 62px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+  }
+
+  :global(.accordion-header) {
+    font: "Proxima Nova";
+    font-size: 24pt;
+    letter-spacing: 2%;
+  }
 }
