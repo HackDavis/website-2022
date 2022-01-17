@@ -4,7 +4,6 @@
   align-items: center;
   padding: 24px;
   width: 100vw;
-  max-width: 1280px;
   margin: auto;
   z-index: 999;
   background: #173a52;
@@ -26,6 +25,7 @@
   max-width: 485px;
   justify-content: flex-end;
   column-gap: 56px;
+  margin-right: 2vw;
 }
 
 .button {
