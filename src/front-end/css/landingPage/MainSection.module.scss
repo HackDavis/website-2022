@@ -1,9 +1,11 @@
+@import "../_defs";
 .container {
   display: flex;
   flex-direction: column;
   margin: auto;
   padding: 0 25px;
   max-width: 377px;
+  background-color: $darker_teal;
 }
 
 .non_mobile_container {
@@ -15,6 +17,7 @@
   padding: 0 25px;
   margin: auto;
   column-gap: 24px;
+  background-color: $darker_teal;
 
   > div:first-of-type {
     width: 45%;

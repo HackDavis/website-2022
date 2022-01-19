@@ -1,8 +1,10 @@
 @mixin title($mobile: true) {
+  color: white;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 2%;
+  margin: 0;
   @if $mobile {
     font-size: 3.5rem;
   } @else {
@@ -11,9 +13,11 @@
 }
 
 @mixin header1($mobile: true) {
+  color: white;
   font-family: "DM Mono", monospace;
   font-weight: 500;
   line-height: 3.875rem;
+  margin: 0;
   @if $mobile {
     font-size: 2rem;
   } @else {
@@ -22,31 +26,55 @@
 }
 
 @mixin header2($mobile: true) {
+  color: white;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 600;
   line-height: 175%;
   letter-spacing: 2%;
+  margin: 0;
   @if $mobile {
-    font-size: .875rem;
+    font-size: 0.875rem;
   } @else {
     font-size: 1.5rem;
   }
 }
 
 @mixin body($mobile: true) {
+  color: white;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 2%;
+  margin: 0;
   @if $mobile {
-    font-size: .875rem;
+    font-size: 0.875rem;
   } @else {
     font-size: 1.0625rem;
   }
 }
 
-$bright_teal: #9EE7E5;
-$medium_teal: #45D5D9;
+@mixin button($white: true) {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  border-radius: 100px;
+  @if $white {
+    color: #043b54;
+    background-color: white;
+  } @else {
+    color: white;
+    border: 3px solid white;
+    background-color: $darker_teal;
+  }
+}
+
+@mixin border() {
+  border-radius: 10px;
+  border: 3px solid $bright_teal;
+}
+
+$bright_teal: #9ee7e5;
+$medium_teal: #45d5d9;
 $dark_teal: #005271;
-$darker_teal: #173A52;
-$yellow: #FFC53D;
+$darker_teal: #173a52;
+$yellow: #ffc53d;

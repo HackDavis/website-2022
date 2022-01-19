@@ -1,25 +1,59 @@
+@import "../../_defs";
+
 .container {
   padding: 40px 25px;
-  background-color: #f2f2f2;
+  background-color: $darker_teal;
   margin-bottom: 24px;
+  @include border();
 
-  > h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  > .info_flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 15px;
+    margin-bottom: 16px;
+    > img {
+      &:first-of-type {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:last-of-type {
+        width: 18px;
+        height: 22px;
+      }
+    }
+
+    > h3 {
+      @include body();
+      font-size: 17px;
+      line-height: 21px;
+      margin: 0;
+
+      > strong {
+        @include header2();
+        font-size: 17px;
+        line-height: 21px;
+        font-weight: 700;
+      }
+
+      // &:last-of-type {
+      //   margin-bottom: 24px;
+      // }
+    }
   }
 
-  > h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
+  > .location_container {
+    margin-bottom: 25px;
+  }
 
-    > strong {
-      font-weight: 700;
-    }
-
-    &:last-of-type {
-      margin-bottom: 24px;
-    }
+  > h1 {
+    @include title();
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
   }
 
   > div {
@@ -27,21 +61,20 @@
     flex-flow: column nowrap;
 
     > button {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      background-color: black;
-      color: white;
-      border-radius: 100px;
+      &:first-of-type {
+        @include button();
+      }
+      &:last-of-type {
+        @include button(false);
+      }
       padding: 10px;
       width: 100%;
-  
+
       &:first-of-type {
         margin-bottom: 8px;
       }
     }
   }
-
 }
 
 @media (min-width: 992px) {
@@ -49,13 +82,13 @@
     padding: 64px 64px 80px;
 
     > h1 {
-      font-size: min(5.5vw, 80px);
+      @include title(0);
     }
-    
+
     > h3 {
       font-size: 24px;
       line-height: 29px;
-  
+
       &:last-of-type {
         line-height: 28px;
       }

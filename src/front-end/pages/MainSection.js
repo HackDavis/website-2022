@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css/landingPage/MainSection.module.scss";
 import { MainBlock } from "../components/landingPage/mainSection/MainBlock";
-import { SecondMainBlock } from "../components/landingPage/mainSection/SecondMainBlock";
+import { FlyingAnimals } from "../components/landingPage/mainSection/FlyingAnimals";
 import { TagLine } from "../components/landingPage/mainSection/TagLine";
 import { SmallBoxes } from "../components/landingPage/mainSection/SmallBoxes";
 import { Stats } from "../components/landingPage/mainSection/Stats";
@@ -14,7 +14,7 @@ export function MainSection() {
 		<>
 			<div className={`d-block d-sm-block d-md-block d-lg-none ${styles.container}`}>
 				<MainBlock />
-				<SecondMainBlock />
+				<FlyingAnimals/>
 				<TagLine />
 				<SmallBoxes />
 				<Stats/>
@@ -31,7 +31,7 @@ export function MainSection() {
 					<LastSlantedBlock/>
 				</div>
 				<div>
-					<SecondMainBlock />
+					<FlyingAnimals/>
 					<TagLine />
 					{/* modified components */}
 					<BlockBelowStat/>
