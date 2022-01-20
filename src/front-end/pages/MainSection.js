@@ -3,7 +3,7 @@ import styles from "../css/landingPage/MainSection.module.scss";
 import { MainBlock } from "../components/landingPage/mainSection/MainBlock";
 import { FlyingAnimals } from "../components/landingPage/mainSection/FlyingAnimals";
 import { TagLine } from "../components/landingPage/mainSection/TagLine";
-import { SmallBoxes } from "../components/landingPage/mainSection/SmallBoxes";
+import { AnimalSpotlight } from "../components/landingPage/mainSection/AnimalSpotlight";
 import { Stats } from "../components/landingPage/mainSection/Stats";
 import { BlockBelowStat } from "../components/landingPage/mainSection/BlockBelowStat";
 import { About } from "../components/landingPage/mainSection/About";
@@ -16,7 +16,7 @@ export function MainSection() {
 				<MainBlock />
 				<FlyingAnimals/>
 				<TagLine />
-				<SmallBoxes />
+				<AnimalSpotlight/>
 				<Stats/>
 				<BlockBelowStat/>
 				<About/>
@@ -26,7 +26,7 @@ export function MainSection() {
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
 				<div>
 					<MainBlock />
-					<SmallBoxes />
+					<AnimalSpotlight/>
 					<Stats/>
 					<LastSlantedBlock/>
 				</div>

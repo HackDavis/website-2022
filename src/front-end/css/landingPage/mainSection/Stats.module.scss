@@ -1,17 +1,22 @@
+@import "../../_defs";
+
 .container {
   position: relative;
-  padding: 32px 24px 80px;
-  background-color: #f2f2f2;
+  padding: 29px 19px 77px 21px;
+  background-color: $darker_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
   margin-bottom: -10px;
+  @include border();
 
-  > h1 {
-    font-size: 32px;
-    line-height: 39px;
-    font-weight: 700;
-    margin-bottom: 34px;
+  > h2 {
+    @include header1();
+    margin-bottom: 24px;
+
+    > span {
+      @include header1();
+      color: $yellow;
+    }
   }
-
   > button {
     background: #000000;
     border-radius: 100px;
@@ -21,6 +26,7 @@
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.1em;
+    @include button();
   }
 
   // &:after{

@@ -6,9 +6,9 @@ export function About() {
   return (
     <>
       <section className={styles.contents}>
-        <h1>
-          Hack for <br /> Social Good
-        </h1>
+        <h2>
+          hack for <br /> social good
+        </h2>
         <p>
           With the rapid advancement of technology, it is important to use its
           power in ways that benefit society. HackDavis challenges its

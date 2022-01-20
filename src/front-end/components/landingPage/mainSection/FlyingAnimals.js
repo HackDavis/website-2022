@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../../../css/landingPage/mainSection/FlyingAnimals.module.scss';
-import bottomright_cloud from "../../../images/main_section/bottomright_cloud.svg";
-import top_left_cloud from "../../../images/main_section/top_left_cloud.svg";
+import bottomright_cloud from "../../../images/main_section/flying_animals/bottomright_cloud.svg";
+import top_left_cloud from "../../../images/main_section/flying_animals/top_left_cloud.svg";
 
 // Note: The block below the main block
 

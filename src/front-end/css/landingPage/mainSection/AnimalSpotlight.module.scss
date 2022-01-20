@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  height: 400px;
+  margin-bottom: 24px;
+
+  > div {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+  }
+}
+
+.box {
+  flex-basis: 50%;
+  border-radius: 16px;
+  background-color: #c4c4c4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  // max-height: 327px;
+}
+
+.cow {
+  background-color: #9ee7e5;
+
+  > img:last-of-type {
+    width: 128px;
+  }
+}
+
+.bunny {
+  background-color: #ffc5ab;
+  > img:last-of-type {
+    width: 128px;
+  }
+}
+
+.frog {
+  background-color: #afd157;
+
+  > img:last-of-type {
+    width: 121px;
+  }
+}
+
+.chick {
+  background-color: #ffc53d;
+  > img:last-of-type {
+    width: 129px;
+  }
+}
+
+.spotlight {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    // max-height: 700px;
+    flex-grow: 1;
+  }
+
+  .spotlight {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 16px;
+    object-fit: cover;
+    height: 100%;
+    &:hover {
+      opacity: 1;
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  .box {
+    position: relative;
+  }
+}
