@@ -15,12 +15,14 @@ const Section_Desktop_Navbar = () => {
   window.addEventListener('scroll', setNavbarShadow);
 
   return (
-    <div className={`${shadow ? `${styles.scroll}` : ""} ${styles.container}`}>
-      <img className={styles.circle} src={LogoIcon}></img>
-      <div className={styles.buttons}>
-        <a className={styles.button} href="">Homepage</a>
-        <a className={styles.button} href="">About us</a>
-        <a className={styles.button} href="">Dashboard</a>
+    <div className={`${shadow ? `${styles.scroll}` : ""} ${styles.buttonContainer}`}>
+      <div className={styles.container}>
+          <img className={styles.circle} src={LogoIcon}></img>
+          <div className={styles.buttons}>
+            <a className={styles.button} href="">Homepage</a>
+            <a className={styles.button} href="">About us</a>
+            <a className={styles.button} href="">Dashboard</a>
+          </div>
       </div>
     </div>
   );
