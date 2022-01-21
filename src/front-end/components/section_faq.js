@@ -7,7 +7,7 @@ const Section_FAQ  = () => {
   const [open, setOpen] = useState();
 
   const faqItems = {
-    "What is a hackathon?":"A hackathon is where you transform your crazy ideas into real stuff. Hundreds of students from across California form teams around an idea and collaboratively create technical solutions to problems we face in our local communities. These ideas turn into websites, mobile apps, hardware, and more! \n\nCome make the most incredible things you can imagine alongside fellow creators. You take care of building and we'll take care of you. \n\n We will be following MLH's Code of Conduct.",
+    "What is a hackathon?":"A hackathon is where you transform your crazy ideas into real stuff. Hundreds of students from across California form teams around an idea and collaboratively create technical solutions to problems we face in our local communities. These ideas turn into websites, mobile apps, hardware, and more! \n\nCome make the most incredible things you can imagine alongside fellow creators. You take care of building and we'll take care of you. \n\n We will be following ",
     "When will HackDavis take place?":"HackDavis 2022 will take place on the 16th and 17th of April, 2022.",
     "Will HackDavis be in-person or virtual?":"We are planning to host HackDavis 2022 as a hybrid event. Participants will have the option to participate in-person at the University Credit Union Center in Davis, or participate virtually from the comfort of their homes! \n\nHackDavis will be organized in accordance with CDC, California, City of Davis, and UC Davis protocols. However, all plans are subject to change with evolving public health guidance.",
     "Who can attend?":"HackDavis is open to all enrolled undergraduate and graduate students from all majors, and graduates who have completed their degrees within the past year. As long as you're prepared to learn, brainstorm, and build cool things, we welcome you to join!",
@@ -40,11 +40,21 @@ const Section_FAQ  = () => {
                 >
                   {key}
                 </AccordionHeader>
-                <AccordionBody
+                {ind === 0 ? 
+                  <AccordionBody
                   accordionId={ind}
-                >
-                  {faqItems[key]}
-                </AccordionBody>
+                  >
+                    {faqItems[key]}
+                    <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH's Code of Conduct.</a>
+                  </AccordionBody>
+                  :
+                  <AccordionBody
+                  accordionId={ind}
+                  >
+                    {faqItems[key]}
+                  </AccordionBody>
+                }
+                
               </AccordionItem>
             </UncontrolledAccordion>
           );})}  
