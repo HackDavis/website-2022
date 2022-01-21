@@ -40,21 +40,17 @@ const Section_FAQ  = () => {
                 >
                   {key}
                 </AccordionHeader>
-                {ind === 0 ? 
-                  <AccordionBody
-                  accordionId={ind}
-                  >
-                    {faqItems[key]}
-                    <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH's Code of Conduct.</a>
-                  </AccordionBody>
-                  :
-                  <AccordionBody
-                  accordionId={ind}
-                  >
-                    {faqItems[key]}
-                  </AccordionBody>
-                }
-                
+                <AccordionBody accordionId={ind}>
+                  {faqItems[key]}
+                  {ind === 0 ? 
+                    <a target="_blank" rel="noopener noreferrer" 
+                     className={styles.link} 
+                     href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
+                      MLH's Code of Conduct.
+                    </a> 
+                    : ""
+                  }
+                </AccordionBody>
               </AccordionItem>
             </UncontrolledAccordion>
           );})}  

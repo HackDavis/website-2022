@@ -40,6 +40,16 @@
   margin-bottom: 1rem;
 }
 
+.link {
+  text-decoration: none;
+  color:#9EE7E5;
+}
+
+.link:hover {
+  color:#9EE7E5;
+  text-decoration: underline;
+}
+
 :global(.accordion-item) {
   background-color: #173A52 !important;
 }
