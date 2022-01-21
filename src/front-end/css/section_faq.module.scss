@@ -70,7 +70,6 @@
 }
 :global(.accordion-header) {
   @include header2;
-  position: relative !important;
   border-bottom: #9EE7E5 solid !important;
 }
 

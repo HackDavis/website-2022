@@ -29,7 +29,7 @@ const Section_FAQ  = () => {
               style={{width: "100%", maxWidth: "1280px"}}
               toggle={() => (ind === open ? setOpen() : setOpen(ind))}
             >
-              <AccordionItem className={styles.accHead}>
+              <AccordionItem>
                 <AccordionHeader
                   targetId={ind}
                 >
