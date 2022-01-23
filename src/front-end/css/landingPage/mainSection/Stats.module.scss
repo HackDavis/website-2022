@@ -70,5 +70,10 @@
     > button {
       max-width: 234px;
     }
+    .hover_winners {
+      &:hover {
+        background-color: #ffc53d;
+      }
+    }
   }
 }

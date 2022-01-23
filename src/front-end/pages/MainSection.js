@@ -12,7 +12,7 @@ import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlan
 export function MainSection() {
 	return (
 		<>
-			<div className={`d-block d-sm-block d-md-block d-lg-none ${styles.container}`}>
+			<div className={`d-flex d-sm-flex d-md-flex d-lg-none ${styles.container}`}>
 				<MainBlock />
 				<FlyingAnimals/>
 				<TagLine />

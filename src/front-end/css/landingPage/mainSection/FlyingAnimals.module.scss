@@ -1,13 +1,48 @@
 .container {
   width: 100%;
-  height: 258px;
-  background-color: #c4c4c4;
+  height: auto;
+  max-height: 258px;
+  // background-color: #c4c4c4;
   margin-bottom: 24px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+
+  .hero_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .chick {
+    position: absolute;
+    z-index: 1;
+    max-width: 45px;
+    left: 18%;
+    top: 35%;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
-    height: 550px;
+    height: auto;
+    max-height: 550px;
+    .chick {
+      max-width: 87px;
+      left: 10%;
+      top: 35%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    .chick {
+      left: 14%;
+      top: 35%;
+    }
   }
 }
 

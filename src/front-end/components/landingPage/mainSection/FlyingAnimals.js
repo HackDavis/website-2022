@@ -1,14 +1,20 @@
 import React from "react";
 import styles from '../../../css/landingPage/mainSection/FlyingAnimals.module.scss';
-import bottomright_cloud from "../../../images/main_section/flying_animals/bottomright_cloud.svg";
-import top_left_cloud from "../../../images/main_section/flying_animals/top_left_cloud.svg";
+import hero_image from '../../../images/main_section/flying_animals/hero_image.svg';
+import swinging_chicky from "../../../images/main_section/flying_animals/swinging_chicky.svg";
+import leftjetpack from "../../../images/main_section/flying_animals/leftjetpackclouds.svg";
+import rightjetpack from "../../../images/main_section/flying_animals/rightjetpackclouds.svg";
+
 
 // Note: The block below the main block
 
 export function FlyingAnimals() {
   return (
     <section className={styles.container}>
-      <img src={bottomright_cloud}></img>
+      <img src={swinging_chicky} className={styles.chick}/>
+      <img src={hero_image} className={styles.hero_image}/>
+      <img src={leftjetpack} className={styles.leftjetpack}/>
+      <img src={rightjetpack} className={styles.rightjetpack}/>
     </section>
   );
 }

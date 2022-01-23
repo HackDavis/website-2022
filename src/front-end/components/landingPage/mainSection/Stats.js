@@ -15,7 +15,7 @@ export function Stats() {
           <br />
           <span>&#36;15,000+</span> prizes
         </h2>
-        <button>VIEW 2021 WINNERS</button>
+        <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>
       </section>
     </>
   );

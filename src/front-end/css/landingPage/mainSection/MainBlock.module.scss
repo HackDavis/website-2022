@@ -106,5 +106,16 @@
         }
       }
     }
+    .hover_prereg {
+      &:hover {
+        background-color: #45d5d9;
+      }
+    }
+    .hover_sponsor {
+      &:hover {
+        border: 3px solid#45d5d9;
+        color: #45d5d9;
+      }
+    }
   }
 }

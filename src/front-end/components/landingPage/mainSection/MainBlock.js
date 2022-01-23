@@ -15,8 +15,8 @@ export function MainBlock() {
         <h3>UC Davis University Credit Union Center</h3>
       </div>
       <div>
-        <button>PRE-REGISTER</button>
-        <button>SPONSOR 2022</button>
+        <button className={styles.hover_prereg}>PRE-REGISTER</button>
+        <button className={styles.hover_sponsor}>SPONSOR 2022</button>
       </div>
     </main>
   );
