@@ -13,8 +13,8 @@ export function FlyingAnimals() {
     <section className={styles.container}>
       <img src={swinging_chicky} className={styles.chick}/>
       <img src={hero_image} className={styles.hero_image}/>
-      <img src={leftjetpack} className={styles.leftjetpack}/>
-      <img src={rightjetpack} className={styles.rightjetpack}/>
+      <img src={leftjetpack} className={styles.left_jetpack}/>
+      <img src={rightjetpack} className={styles.right_jetpack}/>
     </section>
   );
 }

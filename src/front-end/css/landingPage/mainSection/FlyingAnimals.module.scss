@@ -1,8 +1,7 @@
 .container {
   width: 100%;
   height: auto;
-  max-height: 258px;
-  // background-color: #c4c4c4;
+  max-height: 550px;
   margin-bottom: 24px;
   position: relative;
   border-radius: 5px;
@@ -10,41 +9,90 @@
   z-index: 0;
 
   .hero_image {
-    position: absolute;
-    height: 100%;
+    // position: absolute;
+    // height: 100%;
     width: 100%;
-    object-fit: cover;
+    // object-fit: cover;
     z-index: 0;
   }
+
+  @keyframes pendulum {
+    0% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+
   .chick {
     position: absolute;
     z-index: 1;
-    max-width: 45px;
-    left: 18%;
+    width: 15%;
+    left: 19%;
     top: 35%;
+    animation: pendulum 2s infinite ease-in-out;
+    transform-origin: 20% 10%;
+  }
+
+  @keyframes backAndForth {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translate(5px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
+  .left_jetpack {
+    position: absolute;
+    z-index: 1;
+    // background-color: black;
+    width: 50%;
+    animation: backAndForth 3s infinite ease-in-out;
+    // max-width: 45px;
+    bottom: -8%;
+    left: -8%;
+  }
+
+  @keyframes forthAndBack {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translate(-10px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+
+  .right_jetpack {
+    position: absolute;
+    z-index: 1;
+    // background-color: black;
+    width: 50%;
+    animation: forthAndBack 5s infinite ease-in-out;
+    // max-width: 45px;
+    bottom: -8%;
+    left: -6%;
   }
 }
 
-@media (min-width: 992px) {
-  .container {
-    height: auto;
-    max-height: 550px;
-    .chick {
-      max-width: 87px;
-      left: 10%;
-      top: 35%;
-    }
-  }
-}
-
-@media (max-width: 320px) {
-  .container {
-    .chick {
-      left: 14%;
-      top: 35%;
-    }
-  }
-}
+// @media (max-width: 320px) {
+//   .container {
+//     .chick {
+//       left: 14%;
+//       top: 35%;
+//     }
+//   }
+// }
 
 // @media (min-wdith: 1440px) {
 //   .container {

@@ -7,7 +7,7 @@ import { AnimalSpotlight } from "../components/landingPage/mainSection/AnimalSpo
 import { Stats } from "../components/landingPage/mainSection/Stats";
 import { BlockBelowStat } from "../components/landingPage/mainSection/BlockBelowStat";
 import { About } from "../components/landingPage/mainSection/About";
-import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlantedBlock";
+import { CowHeart } from "../components/landingPage/mainSection/CowHeart";
 
 export function MainSection() {
 	return (
@@ -20,7 +20,7 @@ export function MainSection() {
 				<Stats/>
 				<BlockBelowStat/>
 				<About/>
-				<LastSlantedBlock/>
+				<CowHeart/>
 			</div>
 			{/* Tablet, Desktop, and Laptop version */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
@@ -28,7 +28,7 @@ export function MainSection() {
 					<MainBlock />
 					<AnimalSpotlight/>
 					<Stats/>
-					<LastSlantedBlock/>
+					<CowHeart/>
 				</div>
 				<div>
 					<FlyingAnimals/>
