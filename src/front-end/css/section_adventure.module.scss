@@ -16,16 +16,14 @@
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    // flex-wrap: wrap;
-    margin: 24px 0 100px;
-    width: 100%;
-    // max-width: 1280px;
-    background-color: #123041;
-    border-radius: 10px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 24px 0 250px;
+  width: 100%;
+  background-color: #123041;
+  border-radius: 10px;
+  position: relative;
 }
 
 .adventuremobile {
@@ -38,32 +36,40 @@
 }
 
 .headerText {
-    @include header2;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    inline-size: 280px;
-    overflow-wrap: break-word;
-    margin-top: 15px;
-    z-index: 9999;
-    line-height: normal;
-    background-color: transparent;
+  @include header2;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  inline-size: 280px;
+  overflow-wrap: break-word;
+  margin-top: 15px;
+  z-index: 998;
+  line-height: normal;
+  background-color: transparent;
 }
 
 .button {
-    @include header2;
-    background-color: #FFFFFF;
-    color: #123041;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    border-radius: 100px;
-    padding: 10px;
-    width: 60%;
-    z-index: 9999;
-  }
+  @include header2;
+  background-color: #FFFFFF;
+  color: #173a52;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  padding: 10px;
+  width: 60%;
+  z-index: 998;
+}
+
+.button:active {
+  background: #45D5D9;
+}
+
 
 @media only screen and (min-width: 992px) {
+    .container {
+      margin-bottom: 300px;
+    }
     .headerText {
       @include header2;
       text-align: center;
