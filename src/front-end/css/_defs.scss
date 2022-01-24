@@ -16,13 +16,14 @@
   color: white;
   font-family: "DM Mono", monospace;
   font-weight: 500;
-  line-height: 2.626rem;
   margin: 0;
   @if $mobile {
     font-size: 1.75rem;
+    line-height: 2.626rem;
     letter-spacing: 2%;
   } @else {
     font-size: 3rem;
+    line-height: 3.875rem;
   }
 }
 

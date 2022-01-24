@@ -1,12 +1,25 @@
 @import "../../_defs";
 
-.contents {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright_teal;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  padding: 3px 0 3px;
+  border-radius: 10px;
+  margin-bottom: -20px;
+}
+
+.container {
+  width: calc(100% - 6px);
   position: relative;
   background-color: $darker_teal;
   padding: 45px 21px 77px;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
-  margin-bottom: -10px;
-  @include border();
+  // margin-bottom: -10px;
+  border-radius: 9px;
+  // @include border();
 
   > h2 {
     @include header1();
@@ -50,14 +63,20 @@
 }
 
 @media (min-width: 992px) {
-  .contents {
+  .wrapper {
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    padding-bottom: 3px;
+    margin-bottom: 0;
+  }
+
+  .container {
     padding: 108px 64px 80px;
     clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
     margin: 0;
 
-    > h1 {
-      font-size: 48px;
-      line-height: 58px;
+    > h2 {
+      @include header1(false);
+      margin-bottom: 25px;
     }
 
     > p {

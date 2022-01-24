@@ -9,15 +9,16 @@ import hand_down from '../../../images/main_section/cow_heart/hand_down.svg';
 
 export function CowHeart() {
   const [animateHand, setAnimateHand] = useState(false);
+  const [animateHeart, setAnimateHeart] = useState(false);
 
   return (
     <>
       <section className={styles.container}>
-        <img className={styles.base_image} src={base_image} alt="cow image" onMouseMove={() => setAnimateHand(true)} />
+        <img className={styles.base_image} src={base_image} alt="cow image" onMouseMove={() => setAnimateHand(true)} onClick={() => setAnimateHeart(true)} />
         <img className={animateHand ? `${styles.hand_up} ${styles.hand_animate}` : `${styles.hand_up}`} onAnimationEnd={() => setAnimateHand(false)} src={hand_up} alt="cow hand" />
         <img className={styles.lightbulb} src={lightbulb} alt="lightbulb" />
         <img className={styles.code_box} src={code_box} alt="code box" />
-        <img className={styles.heart} src={heart} alt="heart" />
+        <img className={animateHeart ? `${styles.heart} ${styles.heart_animate}` : `${styles.heart}`} onClick={() => setAnimateHeart(true)} onAnimationEnd={() => setAnimateHeart(false)} src={heart} alt="heart" />
       </section>
     </>
   );

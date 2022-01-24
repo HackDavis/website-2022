@@ -4,8 +4,8 @@ import styles from "../../../css/landingPage/mainSection/About.module.scss";
 export function About() {
 
   return (
-    <>
-      <section className={styles.contents}>
+    <div className={styles.wrapper}>
+      <section className={styles.container}>
         <h2>
           hack for <br /> social good
         </h2>
@@ -21,6 +21,6 @@ export function About() {
           address the world’s most pressing issues.
         </p>
       </section>
-    </>
+    </div>
   );
 }

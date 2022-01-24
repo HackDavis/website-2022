@@ -9,10 +9,7 @@
   z-index: 0;
 
   .hero_image {
-    // position: absolute;
-    // height: 100%;
     width: 100%;
-    // object-fit: cover;
     z-index: 0;
   }
 
@@ -84,18 +81,3 @@
     left: -6%;
   }
 }
-
-// @media (max-width: 320px) {
-//   .container {
-//     .chick {
-//       left: 14%;
-//       top: 35%;
-//     }
-//   }
-// }
-
-// @media (min-wdith: 1440px) {
-//   .container {
-//     height: 500px;
-//   }
-// }

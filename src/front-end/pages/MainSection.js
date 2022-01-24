@@ -5,7 +5,7 @@ import { FlyingAnimals } from "../components/landingPage/mainSection/FlyingAnima
 import { TagLine } from "../components/landingPage/mainSection/TagLine";
 import { AnimalSpotlight } from "../components/landingPage/mainSection/AnimalSpotlight";
 import { Stats } from "../components/landingPage/mainSection/Stats";
-import { BlockBelowStat } from "../components/landingPage/mainSection/BlockBelowStat";
+import { TreeTop } from "../components/landingPage/mainSection/TreeTop";
 import { About } from "../components/landingPage/mainSection/About";
 import { CowHeart } from "../components/landingPage/mainSection/CowHeart";
 
@@ -18,7 +18,7 @@ export function MainSection() {
 				<TagLine />
 				<AnimalSpotlight/>
 				<Stats/>
-				<BlockBelowStat/>
+				<TreeTop/>
 				<About/>
 				<CowHeart/>
 			</div>
@@ -34,7 +34,7 @@ export function MainSection() {
 					<FlyingAnimals/>
 					<TagLine />
 					{/* modified components */}
-					<BlockBelowStat/>
+					<TreeTop/>
 					<About/>
 				</div>
 			</div>

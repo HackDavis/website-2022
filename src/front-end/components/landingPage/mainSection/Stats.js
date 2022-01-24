@@ -5,6 +5,7 @@ export function Stats() {
 
   return (
     <>
+    <div className={styles.wrapper}>
       <section className={styles.container}>
         <h2>
           <span>700+</span> hackers
@@ -17,6 +18,7 @@ export function Stats() {
         </h2>
         <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>
       </section>
+    </div>
     </>
   );
 }
