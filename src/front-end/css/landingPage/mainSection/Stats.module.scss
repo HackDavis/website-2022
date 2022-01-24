@@ -24,10 +24,12 @@
   > h2 {
     @include header1();
     margin-bottom: 24px;
+    word-spacing: -0.5ch;
 
     > span {
       @include header1();
       color: $yellow;
+      word-spacing: -0.5ch;
     }
   }
   > button {
@@ -75,9 +77,14 @@
   .container {
     padding: 64px 64px 153px;
 
-    > h1 {
-      font-size: min(4vw, 48px);
-      line-height: min(4vw, 58px);
+    > h2 {
+      font-size: min(210%, 48px);
+      line-height: 1.4em;
+      // line-height: min(4vw, 58px);
+
+      > span {
+        font-size: inherit;
+      }
     }
 
     > button {

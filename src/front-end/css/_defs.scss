@@ -58,11 +58,14 @@
 @mixin button($white: true) {
   font-family: "Proxima Nova", sans-serif;
   font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.3125rem;
   letter-spacing: 0.1rem;
   border-radius: 100px;
   @if $white {
     color: #043b54;
     background-color: white;
+    border: 3px solid white;
   } @else {
     color: white;
     border: 3px solid white;

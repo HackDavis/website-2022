@@ -67,7 +67,7 @@
       &:last-of-type {
         @include button(false);
       }
-      padding: 10px;
+      padding: 7px;
       width: 100%;
 
       &:first-of-type {
@@ -82,23 +82,35 @@
     padding: 64px 64px 80px;
 
     > h1 {
-      @include title(0);
+      @include title(false);
+      margin-bottom: 32px;
     }
 
-    > h3 {
-      font-size: 24px;
-      line-height: 29px;
-
-      &:last-of-type {
-        line-height: 28px;
+    .info_flex {
+      > h3 {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.02rem;
+        
+        > strong {
+          font-size: 24px;
+        }
+  
+        &:last-of-type {
+          line-height: 28px;
+        }
       }
     }
 
+
     > div {
       flex-flow: row nowrap;
+      align-items: center;
       justify-content: space-between;
 
       > button {
+        flex-grow: 1;
+        width: auto;
         max-width: 202px;
 
         &:first-of-type {
