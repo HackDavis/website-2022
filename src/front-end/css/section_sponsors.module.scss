@@ -25,7 +25,7 @@
   padding: 32px 24px;
   max-width: 1280px;
   height: 912px;
-  margin: 24px auto auto;
+  margin: 24px auto 24px;
   background-color: #173A52;
   border: solid #9EE7E5 3pt;
   border-radius: 10px;
@@ -57,6 +57,7 @@
 @media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
+    margin-bottom: 24px;
   }
   .headerText {
     @include header1($size: 48pt, $line-height: 62px);

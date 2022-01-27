@@ -6,34 +6,55 @@ import Lottie from 'react-lottie';
 import animationData from '../lotties/confetti.json';
 
 const Section_Adventure = () => {
-  // const[isPaused, setIsPaused] = useState(true);
+  const[isPaused, setIsPaused] = useState(true);
+  
   const defaultOptions = {
-    // loop: true,
+    loop: false,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
-    }
+    },
   }
+
   return (
-    <div className={styles.container}>
-      {/* <div onMouseEnter={() => setIsPaused(!isPaused)}> */}
-      <Lottie
-        style={{
-          "z-index": "998",
-          position: "absolute",
-          cursor:"default",
-        }}
-        className={styles.confetti}
-        options={defaultOptions}
-        isClickToPauseDisabled={true}
-        // isPaused={isPaused}
-      />
-      {/* </div> */}
-      <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-      <button className={styles.button}>PRE-REGISTER</button>
-      <img src={AdventureDesktop} className={styles.adventuredesktop} />
-      <img src={AdventureMobile} className={styles.adventuremobile} />
+    <div>
+      {isPaused ? (
+        // if animation is "paused", render the mouse hover event div
+        <div onMouseEnter={() => setIsPaused(!isPaused)}>
+          <div className={styles.container}>
+            <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
+            <button className={styles.button}>PRE-REGISTER</button>
+            <img src={AdventureDesktop} className={styles.adventuredesktop} />
+            <img src={AdventureMobile} className={styles.adventuremobile} />
+          </div>
+        </div>
+      ) : (
+        // else do the animation (10 seconds)
+        <div className={styles.container}>
+          <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
+          <button className={styles.button}>PRE-REGISTER</button>
+          <img src={AdventureDesktop} className={styles.adventuredesktop} />
+          <img src={AdventureMobile} className={styles.adventuremobile} />
+          <Lottie
+            options={defaultOptions}
+            style={{
+              zIndex: "998",
+              position: "absolute",
+              cursor: "default",
+            }}
+            className={styles.confetti}
+            isClickToPauseDisabled={true}
+            eventListeners={[
+              {
+                eventName:"complete",
+                callback: () => setIsPaused(!isPaused)
+              }
+            ]
+            }
+          />
+        </div>
+      )}
     </div>
   );
 }
