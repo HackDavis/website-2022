@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 
-@mixin header1($size: 32pt, $line-height: 42px ) {
+@mixin header1($size: 32pt, $line-height: 42px) {
   font: medium "DM Mono";
   font-size: $size;
   line-height: $line-height;
   letter-spacing: 0%;
-  color: #FFFFFF
+  color: #ffffff;
 }
 @mixin header2($size: 14pt) {
   font: "Proxima Nova";
@@ -16,12 +16,12 @@
 .container {
   display: flex;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1330px;
   margin-top: 24px;
   padding: 32px 24px 40px; // does nothing?
   position: relative;
-  background-color: #173A52;
-  border: solid #9EE7E5 3pt;
+  background-color: #173a52;
+  border: solid #9ee7e5 3pt;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
@@ -42,29 +42,29 @@
 
 .link {
   text-decoration: none;
-  color:#9EE7E5;
+  color: #9ee7e5;
 }
 
 .link:hover {
-  color:#9EE7E5;
+  color: #9ee7e5;
   text-decoration: underline;
 }
 
 :global(.accordion-item) {
-  background-color: #173A52 !important;
+  background-color: #173a52 !important;
 }
 :global(.accordion-button) {
   padding-left: 0 !important;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   font-size: 14pt !important;
-  background-color: #173A52 !important;
+  background-color: #173a52 !important;
 }
 
 :global(.accordion-button:focus) {
   box-shadow: none !important;
   border: none !important;
-  color: #9EE7E5 !important;
-  background-color: #173A52 !important;
+  color: #9ee7e5 !important;
+  background-color: #173a52 !important;
 }
 
 :global(.accordion-button::after) {
@@ -72,18 +72,18 @@
 }
 
 :global(.accordion-body) {
-  background-color: #173A52 !important;
-  color: #FFFFFF !important;
+  background-color: #173a52 !important;
+  color: #ffffff !important;
   overflow-x: hidden !important;
-  border-bottom: #9EE7E5 solid;
+  border-bottom: #9ee7e5 solid;
 }
 :global(.accordion-header) {
   @include header2;
-  border-bottom: #9EE7E5 solid !important;
+  border-bottom: #9ee7e5 solid !important;
 }
 
 :global(.accordion-header:focus) {
-  color: #9EE7E5 !important;
+  color: #9ee7e5 !important;
 }
 
 @media only screen and (min-width: 992px) {

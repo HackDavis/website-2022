@@ -1,40 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 
-@mixin header1($size: 32pt, $line-height: 42px ) {
+@mixin header1($size: 32px, $line-height: 42px) {
   font: medium "DM Mono";
   font-size: $size;
   line-height: $line-height;
   letter-spacing: 0%;
-  color: #FFFFFF
+  color: #ffffff;
 }
-@mixin header2($size: 14pt) {
+@mixin header2($size: 14px) {
   font: "Proxima Nova";
   font-size: $size;
   letter-spacing: 2%;
 }
 
-.background {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-
 .container {
   display: flex;
+  justify-content: center;
   width: 100%;
   padding: 32px 24px;
-  max-width: 1280px;
-  height: 912px;
+  max-width: 1330px;
+  // height: 912px;
   margin: 24px auto 24px;
-  background-color: #173A52;
-  border: solid #9EE7E5 3pt;
+  background-color: #173a52;
+  border: solid #9ee7e5 3pt;
   border-radius: 10px;
+  > a {
+    text-decoration: none;
+  }
 }
 
 .sponsors {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contentWrapper {
@@ -54,6 +53,18 @@
   background-color: blue;
 }
 
+.imageStyle {
+  height: auto;
+  width: 100%;
+  // padding: 20px;
+  user-select: none;
+  cursor: pointer;
+  // transform: scale(0.5);
+  transition: transform 0.5s;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+}
+
 @media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
@@ -61,5 +72,43 @@
   }
   .headerText {
     @include header1($size: 48pt, $line-height: 62px);
+  }
+  .sponsors {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > a {
+      flex-basis: 40%;
+      &:first-of-type {
+        flex-basis: 70%;
+      }
+      &:nth-of-type(2) {
+        flex-basis: 65%;
+      }
+    }
+  }
+  .imageStyle {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .imageStyle_small {
+    transform: scale(0.6);
+  }
+
+  .imageStyle_medium {
+    transform: scale(0.55);
+  }
+
+  .imageStyle:hover {
+    transform: scale(1.1);
+  }
+
+  .imageStyle_medium:hover {
+    transform: scale(0.65);
+  }
+
+  .imageStyle_small:hover {
+    transform: scale(0.7);
   }
 }

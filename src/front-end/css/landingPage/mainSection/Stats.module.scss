@@ -20,7 +20,21 @@
   // margin-bottom: -10px;
   border-radius: 9px;
   // @include border();
+  > a {
+    text-decoration: none;
 
+    > button {
+      background: #000000;
+      border-radius: 100px;
+      padding: 10px;
+      // width: 100%;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      @include button();
+    }
+  }
   > h2 {
     @include header1();
     margin-bottom: 24px;
@@ -32,32 +46,6 @@
       word-spacing: -0.5ch;
     }
   }
-  > button {
-    background: #000000;
-    border-radius: 100px;
-    padding: 10px;
-    width: 100%;
-    color: white;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    @include button();
-  }
-
-  // &:after{
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   content: '';
-  //   background: inherit;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   transform-origin: top left;
-  //   transform: skewY(4deg);
-  // }
 }
 
 .bottom_diagonal_mobile {
@@ -87,12 +75,14 @@
       }
     }
 
-    > button {
+    > a > button {
       max-width: 234px;
     }
+
     .hover_winners {
       &:hover {
         background-color: #ffc53d;
+        border: 3px solid #ffc53d;
       }
     }
   }

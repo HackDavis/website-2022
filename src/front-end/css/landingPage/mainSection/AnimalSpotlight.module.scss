@@ -80,6 +80,19 @@
     flex-grow: 1;
   }
 
+  .cow > img:last-of-type {
+    width: 226px;
+  }
+
+  .frog > img:last-of-type {
+    width: 213px;
+  }
+
+  .chick > img:last-of-type,
+  .bunny > img:last-of-type {
+    width: 227px;
+  }
+
   .spotlight {
     display: block;
     position: absolute;

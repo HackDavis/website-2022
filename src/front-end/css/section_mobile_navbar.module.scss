@@ -17,7 +17,7 @@
   // margin-right: 2rem;
   width: 30px;
   height: 30px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .hamburger:hover {
@@ -32,32 +32,52 @@
   -webkit-animation: fadeIn 200ms;
   -moz-animation: fadeIn 200ms;
   -o-animation: fadeIn 200ms;
-  -ms-animation: fadeIn 200ms; 
+  -ms-animation: fadeIn 200ms;
 }
 
 @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .mlhbanner {
@@ -73,14 +93,14 @@
   top: -100vh;
 }
 
-.scroll{
-  box-shadow: 0px 16px 12px -10px rgba(0,0,0,.5);
+.scroll {
+  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
 }
 
 .menuNav {
   overflow-y: scroll;
   position: fixed;
-  box-shadow: 0px 16px 12px -10px rgba(0,0,0,.5);
+  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
   top: -100%;
   left: 0;
   right: 0;
@@ -96,7 +116,7 @@
 
 .button {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 50px;
 }
 
@@ -118,6 +138,6 @@
   position: absolute;
   height: 100vh;
   z-index: -3;
-  background-color: #000000;
-  opacity: 50%;
+  background-color: grey;
+  opacity: 100%;
 }

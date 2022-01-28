@@ -16,7 +16,9 @@ export function Stats() {
           <br />
           <span>&#36;15,000+</span> prizes
         </h2>
-        <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>
+        <a href="https://hackdavis2021.devpost.com/project-gallery" target="_blank">
+          <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>
+        </a>
       </section>
     </div>
     </>

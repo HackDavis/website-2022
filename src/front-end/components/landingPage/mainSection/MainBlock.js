@@ -17,7 +17,7 @@ export function MainBlock() {
         </div>
         <div>
           <button className={styles.hover_prereg}>PRE-REGISTER</button>
-          <button className={styles.hover_sponsor}>SPONSOR 2022</button>
+          <button className={styles.hover_sponsor} onClick={() => window.open('mailto:team@hackdavis.io')}>SPONSOR 2022</button>
         </div>
       </main>
     </div>

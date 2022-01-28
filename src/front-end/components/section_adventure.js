@@ -39,7 +39,7 @@ const Section_Adventure = () => {
           <Lottie
             options={defaultOptions}
             style={{
-              zIndex: "998",
+              zIndex: "997",
               position: "absolute",
               cursor: "default",
             }}

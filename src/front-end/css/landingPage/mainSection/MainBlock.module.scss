@@ -91,17 +91,16 @@
         font-size: 24px;
         line-height: 29px;
         letter-spacing: 0.02rem;
-        
+
         > strong {
           font-size: 24px;
         }
-  
+
         &:last-of-type {
           line-height: 28px;
         }
       }
     }
-
 
     > div {
       flex-flow: row nowrap;
@@ -121,6 +120,7 @@
     .hover_prereg {
       &:hover {
         background-color: #45d5d9;
+        border: 3px solid #45d5d9;
       }
     }
     .hover_sponsor {

@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 
-@mixin header1($size: 32pt, $line-height: 42px ) {
+@mixin header1($size: 32pt, $line-height: 42px) {
   font: medium "DM Mono";
   font-size: $size;
   line-height: $line-height;
   letter-spacing: 0%;
-  color: #FFFFFF
+  color: #ffffff;
 }
 @mixin header2($size: 14pt) {
   font: "Proxima Nova";
   font-size: $size;
   letter-spacing: 2%;
   line-height: 175%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .container {
@@ -53,7 +53,7 @@
 
 .button {
   @include header2;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #173a52;
   font-size: 13px;
   font-weight: 700;
@@ -61,36 +61,38 @@
   border-radius: 100px;
   padding: 10px;
   width: 60%;
-  z-index: 999;
+  z-index: 998;
 }
 
 .button:active {
-  background: #45D5D9;
+  background: #45d5d9;
 }
 
-
 @media only screen and (min-width: 992px) {
-    .container {
-      height: 491px;
-    }
-    .headerText {
-      @include header2;
-      text-align: center;
-      font-size: 36px;
-      inline-size: auto;
-      overflow-wrap: normal;
-      margin-top: 70px;
-      letter-spacing: 0.2rem;
-    }
-    .button {
-        width: 20%;
-        font-size: 12pt;
-        margin-top: 6px;
-    }
-    .adventuremobile {
-      display: none;
-    }
-    .adventuredesktop {
-      display: block;
-    }
+  .container {
+    height: 491px;
+  }
+  .headerText {
+    @include header2;
+    text-align: center;
+    font-size: 36px;
+    inline-size: auto;
+    overflow-wrap: normal;
+    margin-top: 70px;
+    letter-spacing: 0.2rem;
+  }
+  .button {
+    width: 20%;
+    font-size: 12pt;
+    margin-top: 6px;
+  }
+  .adventuremobile {
+    display: none;
+  }
+  .adventuredesktop {
+    display: block;
+  }
+  .button:hover {
+    background: #45d5d9;
+  }
 }
