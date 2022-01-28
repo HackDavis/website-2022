@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 .background {
   display: flex;
   justify-content: center;
@@ -6,12 +7,14 @@
 
 .container {
   display: flex;
-  flex-direction: column;
-  width: 80vw;
+  width: 100%;
+  padding: 32px 24px;
   max-width: 1280px;
   height: 912px;
-  margin-top: 24px;
-  background-color: #f2f2f2;
+  margin: 24px auto auto;
+  background-color: #173A52;
+  border: solid #9EE7E5 3pt;
+  border-radius: 10px;
 }
 
 .sponsors {
@@ -21,11 +24,33 @@
 }
 
 .contentWrapper {
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 990px;
 }
 
 .headerText {
-  font-size: 40px;
-  font-weight: 700;
+  font: medium "DM Mono";
+  font-size: 32pt;
+  line-height: 42px;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    padding: 5rem;
+  }
+
+  .headerText {
+    font: medium "DM Mono";
+    font-size: 48pt;
+    line-height: 62px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+  }
 }

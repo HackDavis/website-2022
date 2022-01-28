@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
 import styles from "../css/section_mobile_navbar.module.scss";
 import Hamburger from "../images/HamburgerMenu.svg";
+import MLHBanner from "../images/MLHBanner.svg";
+import LogoIcon from "../images/HackDavis Logo.svg";
 
 const Section_Mobile_Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [logo, setLogo] = useState(true);
+
+  const setNavbarLogo = () => {
+    if(window.scrollY > 0) {
+      setLogo(false);
+    } else {
+      setLogo(true);
+    }
+  }
+  window.addEventListener('scroll', setNavbarLogo);
   return (
     <>
-      <div className={`d-flex justify-content-between align-items-center ${styles.container}`}>
-        <div className={`${styles.circle}`} />
+      <img src={MLHBanner} className={`${logo ? "" : `${styles.hide}`} ${isOpen ? `${styles.hide}` : ""} ${styles.mlhbanner}`}/>
+      <div className={`d-flex justify-content-between align-items-center ${logo ? "" : isOpen ? "" : `${styles.scroll}`} ${styles.container}`}>
+        { logo ?
+          isOpen ? <img src={LogoIcon} className={styles.logo} /> : <div className={styles.logo}/> 
+          : <img src={LogoIcon} className={styles.logo} />
+        }
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => (setIsOpen(!isOpen))}/>
-      </div>
-      <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
-        <div className={"d-flex flex-column align-items-center justify-content-between align-items-center"}>
-          <button className={styles.exitDash} onClick={() => (setIsOpen(!isOpen))}> X </button>
-          <h1 style={{display: 'block'}}>This is the dashboard!</h1>
-          <h2 style={{display: 'block'}}>Hackers will see their information here</h2>
+        <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
+          <div className={styles.buttons}>
+            <a className={styles.button} href="">Homepage</a>
+            <a className={styles.button} href="">About us</a>
+            <a className={styles.button} href="">Dashboard</a>
+          </div>
         </div>
       </div>
+      <div className={`${isOpen ? `${styles.removeBg}` : ""}`}/>
     </>
   );
 }

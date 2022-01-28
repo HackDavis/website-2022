@@ -1,17 +1,84 @@
-.background {
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  margin-top: 24px;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 .container {
   display: flex;
-  background-color: #f2f2f2;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  height: 138px;
-  width: 80vw;
-  max-width: 1280px;
+  flex-direction: column;
+  margin: 24px 0 100px;
+  width: 100%;
+  background-color: #123041;
+  border-radius: 10px;
+  position: relative;
+}
+
+.adventuremobile {
+  position: absolute;
+}
+
+.adventuredesktop {
+  position: absolute;
+  display: none;
+}
+
+.headerText {
+  font: "Proxima Nova";
+  font-size: 14pt;
+  letter-spacing: 2%;
+  line-height: 175%;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  inline-size: 280px;
+  overflow-wrap: break-word;
+  margin-top: 15px;
+  z-index: 9999;
+  line-height: normal;
+  background-color: transparent;
+}
+
+.button {
+  font: "Proxima Nova";
+  font-size: 14pt;
+  letter-spacing: 2%;
+  line-height: 175%;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #123041;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  padding: 10px;
+  width: 60%;
+  z-index: 9999;
+}
+
+@media only screen and (min-width: 992px) {
+  .headerText {
+    font: "Proxima Nova";
+    font-size: 14pt;
+    letter-spacing: 2%;
+    line-height: 175%;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 36px;
+    inline-size: auto;
+    overflow-wrap: normal;
+    margin-top: 70px;
+    letter-spacing: 0.2rem;
+  }
+
+  .button {
+    width: 20%;
+    font-size: 12pt;
+    margin-top: 6px;
+  }
+
+  .adventuremobile {
+    display: none;
+  }
+
+  .adventuredesktop {
+    display: block;
+  }
 }

@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+@mixin header1($size: 32pt, $line-height: 42px ) {
+  font: medium "DM Mono";
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: 0%;
+  color: #FFFFFF
+}
+@mixin header2($size: 14pt) {
+  font: "Proxima Nova";
+  font-size: $size;
+  letter-spacing: 2%;
+}
+
 .background {
   display: flex;
   justify-content: center;
@@ -10,8 +25,10 @@
   padding: 32px 24px;
   max-width: 1280px;
   height: 912px;
-  margin: 24px auto auto;
-  background-color: rgba(242, 242, 242, 1);
+  margin: 24px auto 24px;
+  background-color: #173A52;
+  border: solid #9EE7E5 3pt;
+  border-radius: 10px;
 }
 
 .sponsors {
@@ -28,8 +45,7 @@
 }
 
 .headerText {
-  font-size: 40px;
-  font-weight: 700;
+  @include header1;
 }
 
 .box {
@@ -41,5 +57,9 @@
 @media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
+    margin-bottom: 24px;
+  }
+  .headerText {
+    @include header1($size: 48pt, $line-height: 62px);
   }
 }

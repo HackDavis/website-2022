@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../css/section_contact.module.scss";
+import ContactImage from "../images/Contact.svg";
 
 const Section_Contact = () => {
     return (
         <div className={styles.container}>
-            <span>Need help? Contact <strong>team@hackdavis.io</strong></span>
-            {/* <strong className={styles.strong}>team@hackdavis.io</strong> */}
+            <img src={ContactImage}/>
         </div>
     )
 }

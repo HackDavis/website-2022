@@ -4,13 +4,10 @@
   margin: auto;
   padding: 0 25px;
   max-width: 377px;
-  margin-bottom: 75px;
 }
 
 @media (min-width: 992px) {
   .container {
-    // max-height: 2400px;
     max-width: 1280px;
-    margin-bottom: 150px;
   }
 }
