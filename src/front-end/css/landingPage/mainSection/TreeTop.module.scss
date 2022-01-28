@@ -1,0 +1,139 @@
+.top_diagonal_mobile {
+  border-bottom: 50px solid #c4c4c4;
+  border-right: calc(100vw - 24px) solid transparent;
+  max-width: 100%;
+}
+
+.bottom_diagonal_mobile {
+  border-top: 50px solid #c4c4c4;
+  border-left: calc(100vw - 24px) solid transparent;
+  margin-bottom: -20px;
+}
+
+.bottom_diagonal_non_mobile {
+  border-top: 50px solid #c4c4c4;
+  border-left: calc(58.33vw - 24px) solid transparent;
+}
+
+.container {
+  position: relative;
+  height: auto;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  margin-bottom: -10px;
+  overflow: hidden;
+  border-radius: 5px;
+
+  .tree_base_image {
+    width: 100%;
+    z-index: 0;
+  }
+
+  .lightbulb {
+    position: absolute;
+    width: 10%;
+    left: 70%;
+    bottom: 70%;
+    z-index: 1;
+    animation: floatUpDown 2s infinite ease-in-out 0.15s;
+  }
+
+  .floating_cow_wrap {
+    animation: floatUpDown 2s infinite ease-in-out;
+    position: absolute;
+    width: 22%;
+    left: 56%;
+    top: 27.5%;
+    z-index: 1;
+  }
+
+  .floating_cow {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    transform-origin: 50% 25%;
+    animation: pendulum 5s infinite ease-in-out;
+  }
+
+  .leaves_canopy {
+    position: absolute;
+    width: 55%;
+    left: 3%;
+    top: 3%;
+    z-index: 1;
+    transform: translate(0px);
+    transition: transform 1s ease-in-out;
+
+    &:hover {
+      transform: translateX(10px) rotate(10deg) translateY(5px);
+      transition: transform 1s ease-in-out;
+    }
+  }
+
+  .leaves_branch {
+    position: absolute;
+    width: 27%;
+    left: 65.5%;
+    top: 69%;
+    z-index: 1;
+    transform: translate(0px);
+    transition: transform 1s ease-in-out;
+
+    &:hover {
+      transform: translateX(10px) rotate(10deg) translateY(5px);
+      transition: transform 1s ease-in-out;
+    }
+  }
+
+  .left_sunrays {
+    position: absolute;
+    z-index: 2;
+    width: 60%;
+    left: -6%;
+    top: -10%;
+  }
+
+  @keyframes floatUpDown {
+    0% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes pendulum {
+    0% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes pivotLeaves {
+    0% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(-10deg);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    height: auto;
+    flex-grow: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
+  }
+}

@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  margin-bottom: 24px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+
+  .hero_image {
+    width: 100%;
+    z-index: 0;
+  }
+
+  @keyframes pendulum {
+    0% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+
+  .chick {
+    position: absolute;
+    z-index: 1;
+    width: 15%;
+    left: 19%;
+    top: 35%;
+    animation: pendulum 2s infinite ease-in-out;
+    transform-origin: 23% 14%;
+  }
+
+  @keyframes backAndForth {
+    0% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translate(5px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
+  .left_jetpack {
+    position: absolute;
+    z-index: 1;
+    // background-color: black;
+    width: 50%;
+    animation: backAndForth 3s infinite ease-in-out;
+    // max-width: 45px;
+    bottom: -8%;
+    left: -8%;
+  }
+
+  @keyframes forthAndBack {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translate(-10px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+
+  .right_jetpack {
+    position: absolute;
+    z-index: 1;
+    // background-color: black;
+    width: 50%;
+    animation: forthAndBack 5s infinite ease-in-out;
+    // max-width: 45px;
+    bottom: -8%;
+    left: -6%;
+  }
+}

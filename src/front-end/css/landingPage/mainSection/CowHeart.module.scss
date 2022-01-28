@@ -1,0 +1,144 @@
+.container {
+  // background-color: #c4c4c4;
+  height: auto;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+  border-radius: 10px;
+  // margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+
+  .base_image {
+    width: 100%;
+  }
+
+  @keyframes backAndForth {
+    0% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translate(4px);
+    }
+    100% {
+      transform: translateX(-5px);
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(15deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  .hand_up {
+    position: absolute;
+    width: 25%;
+    top: 38%;
+    left: 14%;
+    transform-origin: 65% 60%;
+    transform: rotate(-5deg);
+
+    // &:hover {
+    //   animation: wave 2s infinite ease-in-out;
+    // }
+  }
+
+  .hand_animate {
+    animation: wave 2s 1 ease-in-out;
+  }
+
+  .lightbulb {
+    position: absolute;
+    width: 12%;
+    top: 27.7%;
+    left: -3%;
+    animation: backAndForth 4s infinite ease-in-out;
+  }
+
+  .code_box {
+    position: absolute;
+    width: 12%;
+    top: 11.7%;
+    left: -4%;
+    animation: backAndForth 2.5s infinite ease-in-out;
+  }
+
+  @keyframes pump {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes pumpOnce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .heart {
+    position: absolute;
+    width: 40%;
+    top: 25%;
+    left: 48%;
+    // transform: scale(1);
+    // transition: transform 300ms ease-in-out;
+
+    // &:hover {
+    //   transform: scale(1.3);
+    //   transition: transform 300ms ease-in-out;
+    // }
+  }
+
+  .heart_animate {
+    animation: pumpOnce 600ms 1 ease-in-out;
+  }
+}
+
+.top_diagonal_mobile {
+  border-bottom: 50px solid #c4c4c4;
+  border-right: calc(100vw - 24px) solid transparent;
+}
+
+.top_diagonal_non_mobile {
+  border-bottom: 50px solid #c4c4c4;
+  border-right: calc(41.67vw - 24px) solid transparent;
+}
+
+@media (min-width: 992px) {
+  .container {
+    // margin: 0;
+    // flex-grow: 1;
+    // max-height: 423px;
+
+    &:hover {
+      // .hand_up {
+      //   animation: wave 1.5s infinite ease-in-out;
+      // }
+
+      .heart {
+        transform: scale(1.3);
+        transition: transform 300ms ease-in-out;
+      }
+    }
+
+    .heart {
+      transform: scale(1);
+      transition: transform 300ms ease-in-out;
+    }
+  }
+}

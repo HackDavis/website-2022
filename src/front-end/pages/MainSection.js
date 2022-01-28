@@ -1,40 +1,40 @@
 import React from "react";
 import styles from "../css/landingPage/MainSection.module.scss";
 import { MainBlock } from "../components/landingPage/mainSection/MainBlock";
-import { SecondMainBlock } from "../components/landingPage/mainSection/SecondMainBlock";
+import { FlyingAnimals } from "../components/landingPage/mainSection/FlyingAnimals";
 import { TagLine } from "../components/landingPage/mainSection/TagLine";
-import { SmallBoxes } from "../components/landingPage/mainSection/SmallBoxes";
+import { AnimalSpotlight } from "../components/landingPage/mainSection/AnimalSpotlight";
 import { Stats } from "../components/landingPage/mainSection/Stats";
-import { BlockBelowStat } from "../components/landingPage/mainSection/BlockBelowStat";
+import { TreeTop } from "../components/landingPage/mainSection/TreeTop";
 import { About } from "../components/landingPage/mainSection/About";
-import { LastSlantedBlock } from "../components/landingPage/mainSection/LastSlantedBlock";
+import { CowHeart } from "../components/landingPage/mainSection/CowHeart";
 
 export function MainSection() {
 	return (
 		<>
-			<div className={`d-block d-sm-block d-md-block d-lg-none ${styles.container}`}>
+			<div className={`d-flex d-sm-flex d-md-flex d-lg-none ${styles.container}`}>
 				<MainBlock />
-				<SecondMainBlock />
+				<FlyingAnimals/>
 				<TagLine />
-				<SmallBoxes />
+				<AnimalSpotlight/>
 				<Stats/>
-				<BlockBelowStat/>
+				<TreeTop/>
 				<About/>
-				<LastSlantedBlock/>
+				<CowHeart/>
 			</div>
 			{/* Tablet, Desktop, and Laptop version */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
 				<div>
 					<MainBlock />
-					<SmallBoxes />
+					<AnimalSpotlight/>
 					<Stats/>
-					<LastSlantedBlock/>
+					<CowHeart/>
 				</div>
 				<div>
-					<SecondMainBlock />
+					<FlyingAnimals/>
 					<TagLine />
 					{/* modified components */}
-					<BlockBelowStat/>
+					<TreeTop/>
 					<About/>
 				</div>
 			</div>

@@ -5,18 +5,20 @@ export function Stats() {
 
   return (
     <>
+    <div className={styles.wrapper}>
       <section className={styles.container}>
-        <h1>
-          700+ hackers
+        <h2>
+          <span>700+</span> hackers
           <br />
-          36 hours
+          <span>36 </span>hours
           <br />
-          140+ projects
+          <span>140+</span> projects
           <br />
-          &#36;15,000+ prizes
-        </h1>
-        <button>VIEW 2021 WINNERS</button>
+          <span>&#36;15,000+</span> prizes
+        </h2>
+        <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>
       </section>
+    </div>
     </>
   );
 }

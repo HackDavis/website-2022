@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap");
+@import "../../_defs";
 
 .container {
-  padding: 24px 21px;
-  background-color: #f2f2f2;
+  padding: 21px 24px;
+  background-color: $darker_teal;
   margin-bottom: 24px;
+  @include border();
 
-  > h1 {
-    font-family: "DM Mono";
-    font-weight: 500;
+  > h2 {
+    @include header1();
     font-size: 17px;
-    line-height: 22px;
-    margin: 0;
+    color: $bright_teal;
   }
 }
 
@@ -18,8 +17,10 @@
   .container {
     padding: 48px 64px;
 
-    > h1 {
-      font-size: min(2.6vw, 32px);
+    > h2 {
+      @include header1(false);
+      font-size: 32px;
+      color: $bright_teal;
     }
   }
 }
