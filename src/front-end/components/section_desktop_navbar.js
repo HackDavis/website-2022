@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from "../css/section_desktop_navbar.module.scss";
-import LogoIcon from "../images/HackDavis Logo.svg";
+import LogoIcon from "../images/HackDavisLogo.svg";
+import { Link } from "react-router-dom";
 
 const Section_Desktop_Navbar = () => {
   const [shadow, setShadow] = useState(false);
@@ -20,7 +21,7 @@ const Section_Desktop_Navbar = () => {
           <img className={styles.circle} src={LogoIcon}></img>
           <div className={styles.buttons}>
             <a className={styles.button} href="">Homepage</a>
-            <a className={styles.button} href="">About us</a>
+            <Link to="/about" className={styles.button}>About us</Link>
             <a className={styles.button} href="">Dashboard</a>
           </div>
       </div>

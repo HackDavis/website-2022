@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from "../css/section_mobile_navbar.module.scss";
 import Hamburger from "../images/HamburgerMenu.svg";
 import MLHBanner from "../images/MLHBanner.svg";
-import LogoIcon from "../images/HackDavis Logo.svg";
+import LogoIcon from "../images/HackDavisLogo.svg";
+import { Link } from "react-router-dom";
 
 const Section_Mobile_Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Section_Mobile_Navbar = () => {
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
             <a className={styles.button} href="">Homepage</a>
-            <a className={styles.button} href="">About us</a>
+            <Link to="/about" className={styles.button}>About us</Link>
             <a className={styles.button} href="">Dashboard</a>
           </div>
         </div>
