@@ -28,7 +28,7 @@ const Section_Mobile_Navbar = () => {
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => (setIsOpen(!isOpen))}/>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
-            <a className={styles.button} href="">Homepage</a>
+            <Link to="/" className={styles.button} >Homepage</Link>
             <Link to="/about" className={styles.button}>About us</Link>
             <a className={styles.button} href="">Dashboard</a>
           </div>

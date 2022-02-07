@@ -34,10 +34,11 @@ export function AboutTop() {
             We also partnered with non-profit organizations like Aging 2.0, The Children's 
             Scoliosis Foundation, and Breathe California to support our local communities.
           </div>
-
-            <button className = {styles.sponsor_button} onClick={() => window.open('mailto:team@hackdavis.io')}>
-                    SPONSOR 2022
-          </button>
+            <div className={styles.button_container}>
+                <button className = {styles.sponsor_button} onClick={() => window.open('mailto:team@hackdavis.io')}>
+                        SPONSOR 2022
+            </button>
+          </div>
           
           <div className={styles.stats}>
             <div className={styles.statscontainer}>

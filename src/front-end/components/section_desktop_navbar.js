@@ -20,7 +20,7 @@ const Section_Desktop_Navbar = () => {
       <div className={styles.container}>
           <img className={styles.circle} src={LogoIcon}></img>
           <div className={styles.buttons}>
-            <a className={styles.button} href="">Homepage</a>
+            <Link to="/" className={styles.button}>Homepage </Link>
             <Link to="/about" className={styles.button}>About us</Link>
             <a className={styles.button} href="">Dashboard</a>
           </div>

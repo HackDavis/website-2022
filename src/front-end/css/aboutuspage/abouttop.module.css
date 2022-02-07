@@ -4,8 +4,7 @@
   display: flex;
   overflow: hidden;
   z-index: 0;
-  height: 130vh;
-  /* min-height: 120vh; */
+  height: 1208px;
   background-color: #173a52;
 }
 
@@ -21,7 +20,8 @@
 
 .blue_sky {
   width: 100%;
-
+  flex-grow: 1;
+  height: auto;
   z-index: 0;
   object-fit: cover;
 }
@@ -46,7 +46,7 @@
   font-family: "Proxima Nova";
   display: flex;
   height: 200px;
-  margin-top: 50px;
+  margin-top: 200px;
   /* border: solid black 1px; */
   align-items: center;
   justify-content: center;
@@ -77,22 +77,31 @@
 
 .about_header {
   color: #ffffff;
-  font-size: 90px;
+  font-size: 96px;
   margin-bottom: 2%;
   margin-top: 10%;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
 }
 
 .about_text {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: normal;
   margin-bottom: 6%;
   line-height: 150%;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
 }
 
 .about_text_alt {
   color: #0eb1bb;
-  font-weight: bold;
+}
+
+.stat_text {
+  color: #6fe2ff;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
 }
 
 .about_stats_big {
@@ -100,6 +109,14 @@
   font-size: 43px;
   /* line-height: 130%; */
   margin-top: 6%;
+  color: #6fe2ff;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+}
+
+.button_container {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .sponsor_button {
@@ -113,7 +130,9 @@
   border: 3px solid white;
   background-color: #173a52;
   padding: 7px;
-  width: 50%;
+  width: auto;
+  max-width: 202px;
+  flex-grow: 1;
 }
 
 .sponsor_button:hover {

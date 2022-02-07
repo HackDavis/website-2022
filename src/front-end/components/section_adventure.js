@@ -33,7 +33,7 @@ const Section_Adventure = () => {
         // else do the animation (10 seconds)
         <div className={styles.container}>
           <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-          <button className={styles.button}>PRE-REGISTER</button>
+          <button className={styles.button}>APPLY</button>
           <img src={AdventureDesktop} className={styles.adventuredesktop} />
           <img src={AdventureMobile} className={styles.adventuremobile} />
           <Lottie
