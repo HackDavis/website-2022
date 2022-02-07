@@ -168,6 +168,7 @@ export function AboutBot() {
     cameron: {
       name: "Cameron",
       description: `Technical`,
+      linkedin: `https://www.linkedin.com/in/cam-yee/`,
       image: Cameron
     },
     eric: {
