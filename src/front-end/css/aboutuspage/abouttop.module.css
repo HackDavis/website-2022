@@ -7,6 +7,9 @@
   height: 1208px;
   background-color: #173a52;
 }
+.content {
+  max-width: 1330px;
+}
 
 .about_us_graphic {
   position: absolute;
@@ -37,7 +40,7 @@
   width: 57%;
   flex-direction: column;
   align-content: center;
-  padding: 160px;
+  padding: 140px;
   padding-top: 0px;
 }
 .stats {
@@ -98,12 +101,6 @@
   color: #0eb1bb;
 }
 
-.stat_text {
-  color: #6fe2ff;
-  font-family: "Proxima Nova", sans-serif;
-  font-weight: 700;
-}
-
 .about_stats_big {
   color: #86e4db;
   font-size: 43px;
@@ -155,6 +152,9 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .attendeestext {
@@ -164,6 +164,12 @@
 @media (max-width: 575px) {
   .view_winner {
     margin-top: -14px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .rightSide {
+    padding: 30px;
   }
 }
 

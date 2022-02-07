@@ -82,7 +82,7 @@ export function AboutTop() {
                         37%
                     </div>
                     <div className = {styles.about_stats_small}>
-                        female or nonbinary
+                        female or <br></br>nonbinary
                     </div>
                 </div>
             </div>
