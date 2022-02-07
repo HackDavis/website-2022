@@ -35,11 +35,9 @@ export function AboutTop() {
             Scoliosis Foundation, and Breathe California to support our local communities.
           </div>
 
-          <div className ={styles.view_winner_button_container}>
-            <div className = {styles.view_winner} onClick={() => window.open('mailto:team@hackdavis.io')}>
+            <button className = {styles.sponsor_button} onClick={() => window.open('mailto:team@hackdavis.io')}>
                     SPONSOR 2022
-            </div>
-          </div>
+          </button>
           
           <div className={styles.stats}>
             <div className={styles.statscontainer}>
