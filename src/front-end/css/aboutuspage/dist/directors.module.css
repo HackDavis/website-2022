@@ -22,10 +22,6 @@
 }
 
 .headshot {
-  // background-size: cover;
-  // background-position: center center;
-  // width: 92.5%;
-  // height: auto;
   transition: transform 0.2s ease-in-out;
   border-radius: 10px;
   opacity: 50%;
@@ -33,7 +29,6 @@
 
 .headshot:hover {
   cursor: pointer;
-  // transform: scale(1.025);
 }
 
 .title {
@@ -75,22 +70,23 @@
     width: 100%;
   }
 }
-
 @media (min-width: 768px) {
   .title {
     display: block;
   }
+
   .text {
     display: block;
   }
+
   .container {
     flex-basis: 23%;
   }
+
   .headshot {
     opacity: 100%;
   }
 }
-
 @media (min-width: 992px) {
   .container {
     flex-basis: 18%;

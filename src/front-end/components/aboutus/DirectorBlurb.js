@@ -5,9 +5,6 @@ import styles from "../../css/aboutuspage/directors.module.scss"
 import Fade from "react-reveal/Fade"
 
 const DirectorBlurb = (props) => {
-	const handleClick = () => {
-		window.open(props.linkedin)
-	}
 
 	const checkPresident = (name) => {
 		if ((name === 'Ishani') || (name === 'Vivek')) {
@@ -20,21 +17,23 @@ const DirectorBlurb = (props) => {
 
 	return (
 		<Fade>
-			<div className={'col-12 col-md-6 col-lg-3'} style={{marginBottom: props.sizing}}>
-				<div className={styles.fadeIn}>
-					<img src={props.directorImage} className={styles.headshot} onClick={handleClick}/>
-					<h6 className={styles.title}><br /> {props.directorName}<br /> {checkPresident(props.directorName) ? 
-						<>
-							Co-President 
-							<br />{props.directorDesc}
-						</>
-						: 
-						<>
-							{props.directorDesc}
-						</>
-						}
-					</h6>
+			<div className={styles.container} style={{marginBottom: props.sizing}} onClick={() => {props.setSpotlight(props.director)}}>
+				<div className={styles.image_wrap}>
+						<img src={props.director.image} className={styles.headshot}/>
 				</div>
+				<h6 className={styles.title}><br /> {props.director.name} </h6>
+				<h6 className={styles.text}>
+				{checkPresident(props.director.name) ? 
+					<>
+						Co-President 
+						<br />{props.director.description}
+					</>
+					: 
+					<>
+						{props.director.description}
+					</>
+					}
+				</h6>
 			</div>
 		</Fade>
 	)

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
-
 .background {
   background-color: #ffffff;
   min-height: 100vh;
@@ -8,7 +7,6 @@
 }
 
 .content {
-  
   width: 80%;
   margin: auto;
 }
@@ -69,7 +67,6 @@
 .directors {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   gap: 0 calc(7% / 2);
 }
 
@@ -78,18 +75,16 @@
     font-size: 16px;
     margin-bottom: 12%;
   }
+
   .headerText {
     font-size: 32px;
   }
 }
-
 @media (min-width: 768px) {
   .directors {
-    // flex-basis: 20%;
     gap: 0 calc(8% / 3);
   }
 }
-
 @media (min-width: 992px) {
   .directors {
     gap: 0 calc(10% / 4);
