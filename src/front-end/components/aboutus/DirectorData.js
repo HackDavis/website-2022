@@ -244,7 +244,7 @@ const DirectorData = {
     description: `Technical`,
     linkedin: `https://www.linkedin.com/in/ecni/`,
     image: Eric
-  },
-}
+  }
+};
 
 export default DirectorData;

@@ -20,7 +20,7 @@ const Section_FAQ  = () => {
     "Do I need to know how to code?" : "Nope! HackDavis is proud to be a beginner-focused hackathon, and we welcome hackers from all experience levels and backgrounds - over 40% of our hackers are beginners! HackDavis is the perfect time and place to learn new skills - we host beginner-friendly workshops and our mentors provide guidance to help you build something you can be proud of.",
     "How much does it cost?" : "Zero. Zip. Zilch. Nada. HackDavis is free for all admitted participants, so don’t sweat it! We will provide your WiFi, meals, caffeine, swag, and workspace for the entire weekend.",
     "As an NPO, why should I attend?" : "Because we emphasize social good in our hackathon, each year we partner with three non-profit organizations to raise awareness for issues on which they focus. Representatives come to our hackathon to help envision projects that relate to their non-profit’s goals."
-  }
+  };
 
   return (
       <div className={styles.container}>
@@ -57,7 +57,7 @@ const Section_FAQ  = () => {
         </div>
         <Section_Contact/>
       </div>
-  )
-}
+  );
+};
 
 export default Section_FAQ;

@@ -12,7 +12,7 @@ const Section_Desktop_Navbar = () => {
     } else {
       setShadow(false);
     }
-  }
+  };
   window.addEventListener('scroll', setNavbarShadow);
 
   return (
@@ -27,6 +27,6 @@ const Section_Desktop_Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Section_Desktop_Navbar;

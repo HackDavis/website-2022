@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styles from "../../../css/landingPage/mainSection/AnimalSpotlight.module.scss";
 import cow from "../../../images/main_section/animal_spotlight/cow.svg";
 import bunny from "../../../images/main_section/animal_spotlight/bunny.svg";

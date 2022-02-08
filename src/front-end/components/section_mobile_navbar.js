@@ -15,7 +15,7 @@ const Section_Mobile_Navbar = () => {
     } else {
       setLogo(true);
     }
-  }
+  };
   window.addEventListener('scroll', setNavbarLogo);
   return (
     <>
@@ -25,7 +25,7 @@ const Section_Mobile_Navbar = () => {
           isOpen ? <img src={LogoIcon} className={styles.logo} /> : <div className={styles.logo}/> 
           : <img src={LogoIcon} className={styles.logo} />
         }
-        <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => (setIsOpen(!isOpen))}/>
+        <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => setIsOpen(!isOpen)}/>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
             <Link to="/" className={styles.button} >Homepage</Link>
@@ -37,6 +37,6 @@ const Section_Mobile_Navbar = () => {
       <div className={`${isOpen ? `${styles.removeBg}` : ""}`}/>
     </>
   );
-}
+};
 
 export default Section_Mobile_Navbar;

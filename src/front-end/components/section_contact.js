@@ -7,7 +7,7 @@ const Section_Contact = () => {
         <div className={styles.container}>
             <img src={ContactImage}/>
         </div>
-    )
-}
+    );
+};
 
 export default Section_Contact;

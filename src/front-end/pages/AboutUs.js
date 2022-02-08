@@ -13,5 +13,5 @@ export function AboutUs() {
       <AboutBot/>
       <Footer/>
     </div>
-  ) 
+  );
 }

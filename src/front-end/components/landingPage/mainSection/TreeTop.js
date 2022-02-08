@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "../../../css/landingPage/mainSection/TreeTop.module.scss"
+import styles from "../../../css/landingPage/mainSection/TreeTop.module.scss";
 import tree_base_image from "../../../images/main_section/treetop/tree_base_image.svg";
 import cow from "../../../images/main_section/treetop/cow.svg";
-import lightbulb from "../../../images/main_section/treetop/lightbulb.svg"
-import leaves_canopy from "../../../images/main_section/treetop/leaves_canopy.svg"
-import leaves_branch from "../../../images/main_section/treetop/leaves_branch.svg"
-import left_sunrays from "../../../images/main_section/treetop/left_sunrays.svg"
+import lightbulb from "../../../images/main_section/treetop/lightbulb.svg";
+import leaves_canopy from "../../../images/main_section/treetop/leaves_canopy.svg";
+import leaves_branch from "../../../images/main_section/treetop/leaves_branch.svg";
+import left_sunrays from "../../../images/main_section/treetop/left_sunrays.svg";
 
 export function TreeTop() {
 

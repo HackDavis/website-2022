@@ -14,8 +14,8 @@ const Section_Adventure = () => {
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
-    },
-  }
+    }
+  };
 
   return (
     <div>
@@ -41,7 +41,7 @@ const Section_Adventure = () => {
             style={{
               zIndex: "997",
               position: "absolute",
-              cursor: "default",
+              cursor: "default"
             }}
             className={styles.confetti}
             isClickToPauseDisabled={true}
@@ -57,6 +57,6 @@ const Section_Adventure = () => {
       )}
     </div>
   );
-}
+};
 
 export default Section_Adventure;
