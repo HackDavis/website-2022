@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import styles from "../../css/aboutuspage/aboutbot.module.css";
+import styles from "../../css/aboutuspage/aboutbot.module.scss";
 import DirectorBlurb from "../aboutus/DirectorBlurb";
 import Abhishek from "../../images/headshots/Abhishek.png";
 import Alec from "../../images/headshots/Alec.jpg";

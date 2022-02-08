@@ -1,7 +1,7 @@
 import React from "react"
 // TODO: update paths and include css files 
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import styles from "../../css/aboutuspage/directors.module.css"
+import styles from "../../css/aboutuspage/directors.module.scss"
 import Fade from "react-reveal/Fade"
 
 const DirectorBlurb = (props) => {
