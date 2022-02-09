@@ -29,10 +29,14 @@
   transition: transform 0.2s ease-in-out;
   border-radius: 10px;
   opacity: 50%;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .headshot_spotlight {
   opacity: 100%;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .headshot:hover {
@@ -101,6 +105,8 @@
 
   .headshot {
     opacity: 100%;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
 }
 @media (min-width: 992px) {
