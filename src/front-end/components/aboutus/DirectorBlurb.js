@@ -6,14 +6,6 @@ import Fade from "react-reveal/Fade";
 
 const DirectorBlurb = (props) => {
 
-	const checkSpotlight = (directorname, spotlightname) => {
-		if (isspotlight || (directorname === spotlightname)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	const checkPresident = (name) => {
 		if ((name === 'Ishani') || (name === 'Vivek')) {
 			return true;
