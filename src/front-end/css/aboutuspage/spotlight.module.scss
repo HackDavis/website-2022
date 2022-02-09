@@ -3,6 +3,8 @@
     width: 100%;
 }
 
-.headshot {
-    border-radius: 10px;
-}
+@media (min-width: 768px) {
+    .container {
+        display: none;
+    }
+  }

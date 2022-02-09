@@ -40,6 +40,8 @@ export function AboutBot() {
                     setSpotlight={setSpotlight}
                     sizing={adjustSizing(index)}
                     director={directorInfo[key]}
+                    isspotlight={false}
+                    ispartofspotlight={spotlight.name === directorInfo[key].name ? true : false}
                     // directorImage={directorInfo[key].image}
                     // directorName={directorInfo[key].name}
                     // directorDesc={directorInfo[key].description}
