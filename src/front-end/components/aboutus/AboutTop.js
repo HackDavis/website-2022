@@ -14,9 +14,9 @@ import BlueSkyBG from "../../images/about/BlueSkyBG.svg";
 import BunnyBushRay from "../../images/about/BunnyBushRay.svg";
 import FrontRays from "../../images/about/FrontRays.svg";
 
-export function AboutTop() {
+export function AboutTop({ myReference }) {
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.graphic_wrapper}>
           <img className={styles.graphic_mobile} src={AboutUsGraphicBackgroundMobile} />
@@ -74,7 +74,7 @@ export function AboutTop() {
           </section>
         </div>
       </div>
-      <div className={styles.diagonal}></div>
-    </>
+      <div className={styles.diagonal} ref={myReference}></div>
+      </div>
   );
 }

@@ -1,3 +1,7 @@
+.wrapper {
+  overflow-x: hidden;
+}
+
 .container {
   width: 100%;
   position: relative;
@@ -123,6 +127,7 @@
   border-bottom-color: transparent;
   margin-top: calc(-11vw + 1px);
   z-index: 1;
+  max-width: 100%;
 }
 
 @media only screen and (min-width: 992px) {

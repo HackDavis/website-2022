@@ -1,9 +1,10 @@
 .container {
     display: flex;
+    justify-content:center;
     width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .container {
         display: none;
     }

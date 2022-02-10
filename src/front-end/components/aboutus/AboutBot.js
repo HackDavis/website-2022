@@ -1,13 +1,19 @@
-import  {React, useState} from "react";
+import  {React, useState, useRef} from "react";
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import styles from "../../css/aboutuspage/aboutbot.module.scss";
 import DirectorBlurb from "../aboutus/DirectorBlurb";
 import directorInfo from "./DirectorData";
 import Spotlight from "./Spotlight";
 
-export function AboutBot() {
+export function AboutBot({ myReference }) {
   // Set first person (Vivek) as the default spotlight
   const [spotlight, setSpotlight] = useState(directorInfo.vivek);
+  const executeScroll = () => {
+    // myReference.current.scrollIntoView();
+    if (window.innerWidth < 992) {
+      myReference.current.scrollIntoView();
+    }
+  }
   
   function adjustSizing(index) {
     if (index == Object.keys(directorInfo).length - 1) {
@@ -33,7 +39,7 @@ export function AboutBot() {
               the country.
             </p>
             <Spotlight director={spotlight}/>
-            <div className={styles.directors}>
+            <div className={styles.directors} onClick={executeScroll}>
               {Object.keys(directorInfo).map((key, index) => {
                 return (
                   <DirectorBlurb
