@@ -39,12 +39,15 @@ const DirectorData = {
     name: "Vivek",
     description: `Sponsorship Lead`,
     linkedin: `https://www.linkedin.com/in/vivekshome/`,
+    instagram: `https://www.instagram.com/vivekshome/`,
     image: Vivek
   },
   ishani: {
     name: "Ishani",
     description: `Operations Co-Lead`,
     linkedin: `https://www.linkedin.com/in/ishani-pandya/`,
+    instagram: `https://www.instagram.com/ishaniip/`,
+    github: `https://github.com/ishanip24`,
     image: Ishani
   },
   cheryl: {
@@ -57,6 +60,7 @@ const DirectorData = {
     name: "Joyce",
     description: `External Lead`,
     linkedin: `https://www.linkedin.com/in/joycelu17/`,
+    instagram : `https://www.instagram.com/joyceeeluuu/`,
     image: Joyce
   },
   stephenie: {
@@ -75,18 +79,21 @@ const DirectorData = {
     name: "Alex",
     description: `Technical Co-Lead`,
     linkedin: `https://www.linkedin.com/in/alelong/`,
+    github: `https://github.com/ale-long`,
     image: Alex
   },
   justin: {
     name: "Justin",
     description: `Technical Co-Lead`,
     linkedin: `https://www.linkedin.com/in/justin-godfrey-rusit-5a2327196/`,
+    github: `https://github.com/Jalastin`,
     image: Justin
   },
   rachel: {
     name: "Rachel",
     description: `Design`,
     linkedin: `https://www.linkedin.com/in/rachelyapp/`,
+    instagram: `https://www.instagram.com/rachell.yap/`,
     image: Rachel
   },
   fajar: {
@@ -189,6 +196,7 @@ const DirectorData = {
     name: "Eugenia",
     description: `Operations`,
     linkedin: `https://www.linkedin.com/in/eugenia-zhang1`,
+    instagram: `https://www.instagram.com/eugenia.zhang/`,
     image: Eugenia
   },
   sriya: {
@@ -206,13 +214,14 @@ const DirectorData = {
   daphne: {
     name: "Daphne",
     description: `Sponsorship`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/daphne-lee-84b4a4223`,
+    instagram: `https://www.instagram.com/axel_vanderlin_/`,
     image: Daphne
   },
   shelly: {
     name: "Shelly",
     description: `Sponsorship`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/shellysagy`,
     image: Shelly
   },
   sivani: {
@@ -225,24 +234,32 @@ const DirectorData = {
     name: "Trishna",
     description: `Technical`,
     linkedin: `https://www.linkedin.com/in/trishnasharma/`,
+    instagram: `https://www.instagram.com/trishnasharmaa/`,
+    github: `https://github.com/trishnasharma`,
     image: Trishna
   },
   alec: {
     name: "Alec",
     description: `Technical`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/alecatienza`,
+    instagram: `https://www.instagram.com/_a.lec/`,
+    github: `https://github.com/alecF2`,
     image: Alec
   },
   cameron: {
     name: "Cameron",
     description: `Technical`,
     linkedin: `https://www.linkedin.com/in/cam-yee/`,
+    instagram: `https://www.instagram.com/fdphurqbhh/`,
+    github: `https://github.com/Cameron327`,
     image: Cameron
   },
   eric: {
     name: "Eric",
     description: `Technical`,
     linkedin: `https://www.linkedin.com/in/ecni/`,
+    instagram: `https://www.instagram.com/ericni/`,
+    github: `https://github.com/ecni19`,
     image: Eric
   }
 };

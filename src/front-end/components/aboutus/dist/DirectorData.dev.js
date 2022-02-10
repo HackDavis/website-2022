@@ -82,12 +82,15 @@ var DirectorData = {
     name: "Vivek",
     description: "Sponsorship Lead",
     linkedin: "https://www.linkedin.com/in/vivekshome/",
+    instagram: "https://www.instagram.com/vivekshome/",
     image: _Vivek["default"]
   },
   ishani: {
     name: "Ishani",
     description: "Operations Co-Lead",
     linkedin: "https://www.linkedin.com/in/ishani-pandya/",
+    instagram: "https://www.instagram.com/ishaniip/",
+    github: "https://github.com/ishanip24",
     image: _Ishani["default"]
   },
   cheryl: {
@@ -100,6 +103,7 @@ var DirectorData = {
     name: "Joyce",
     description: "External Lead",
     linkedin: "https://www.linkedin.com/in/joycelu17/",
+    instagram: "https://www.instagram.com/joyceeeluuu/",
     image: _Joyce["default"]
   },
   stephenie: {
@@ -118,18 +122,21 @@ var DirectorData = {
     name: "Alex",
     description: "Technical Co-Lead",
     linkedin: "https://www.linkedin.com/in/alelong/",
+    github: "https://github.com/ale-long",
     image: _Alex["default"]
   },
   justin: {
     name: "Justin",
     description: "Technical Co-Lead",
     linkedin: "https://www.linkedin.com/in/justin-godfrey-rusit-5a2327196/",
+    github: "https://github.com/Jalastin",
     image: _Justin["default"]
   },
   rachel: {
     name: "Rachel",
     description: "Design",
     linkedin: "https://www.linkedin.com/in/rachelyapp/",
+    instagram: "https://www.instagram.com/rachell.yap/",
     image: _rachel["default"]
   },
   fajar: {
@@ -232,6 +239,7 @@ var DirectorData = {
     name: "Eugenia",
     description: "Operations",
     linkedin: "https://www.linkedin.com/in/eugenia-zhang1",
+    instagram: "https://www.instagram.com/eugenia.zhang/",
     image: _Eugenia["default"]
   },
   sriya: {
@@ -249,13 +257,14 @@ var DirectorData = {
   daphne: {
     name: "Daphne",
     description: "Sponsorship",
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: "https://www.linkedin.com/in/daphne-lee-84b4a4223",
+    instagram: "https://www.instagram.com/axel_vanderlin_/",
     image: _Daphne["default"]
   },
   shelly: {
     name: "Shelly",
     description: "Sponsorship",
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: "https://www.linkedin.com/in/shellysagy",
     image: _Shelly["default"]
   },
   sivani: {
@@ -268,24 +277,32 @@ var DirectorData = {
     name: "Trishna",
     description: "Technical",
     linkedin: "https://www.linkedin.com/in/trishnasharma/",
+    instagram: "https://www.instagram.com/trishnasharmaa/",
+    github: "https://github.com/trishnasharma",
     image: _Trishna["default"]
   },
   alec: {
     name: "Alec",
     description: "Technical",
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: "https://www.linkedin.com/in/alecatienza",
+    instagram: "https://www.instagram.com/_a.lec/",
+    github: "https://github.com/alecF2",
     image: _Alec["default"]
   },
   cameron: {
     name: "Cameron",
     description: "Technical",
     linkedin: "https://www.linkedin.com/in/cam-yee/",
+    instagram: "https://www.instagram.com/fdphurqbhh/",
+    github: "https://github.com/Cameron327",
     image: _Cameron["default"]
   },
   eric: {
     name: "Eric",
     description: "Technical",
     linkedin: "https://www.linkedin.com/in/ecni/",
+    instagram: "https://www.instagram.com/ericni/",
+    github: "https://github.com/ecni19",
     image: _Eric["default"]
   }
 };
