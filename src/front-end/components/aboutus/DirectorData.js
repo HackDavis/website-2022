@@ -85,7 +85,7 @@ const DirectorData = {
   justin: {
     name: "Justin",
     description: `Technical Co-Lead`,
-    linkedin: `https://www.linkedin.com/in/justin-godfrey-rusit-5a2327196/`,
+    linkedin: `https://www.linkedin.com/in/jrusit/`,
     github: `https://github.com/Jalastin`,
     image: Justin
   },
