@@ -24,7 +24,7 @@ const Section_Adventure = () => {
         <div onMouseEnter={() => setIsPaused(!isPaused)}>
           <div className={styles.container}>
             <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-            <button className={styles.button}>PRE-REGISTER</button>
+            <button className={styles.button}>APPLY</button>
             <img src={AdventureDesktop} className={styles.adventuredesktop} />
             <img src={AdventureMobile} className={styles.adventuremobile} />
           </div>

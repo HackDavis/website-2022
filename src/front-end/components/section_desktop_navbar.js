@@ -18,7 +18,7 @@ const Section_Desktop_Navbar = () => {
   return (
     <div className={`${shadow ? `${styles.scroll}` : ""} ${styles.buttonContainer}`}>
       <div className={styles.container}>
-          <img className={styles.circle} src={LogoIcon}></img>
+          <Link to="/"><img className={styles.circle} src={LogoIcon}></img></Link>
           <div className={styles.buttons}>
             <Link to="/" className={styles.button}>Homepage </Link>
             <Link to="/about" className={styles.button}>About us</Link>

@@ -22,8 +22,8 @@ const Section_Mobile_Navbar = () => {
       <img src={MLHBanner} className={`${logo ? "" : `${styles.hide}`} ${isOpen ? `${styles.hide}` : ""} ${styles.mlhbanner}`}/>
       <div className={`d-flex justify-content-between align-items-center ${logo ? "" : isOpen ? "" : `${styles.scroll}`} ${styles.container}`}>
         { logo ?
-          isOpen ? <img src={LogoIcon} className={styles.logo} /> : <div className={styles.logo}/> 
-          : <img src={LogoIcon} className={styles.logo} />
+          isOpen ? <Link to="/"><img src={LogoIcon} className={styles.logo} /></Link>: <div className={styles.logo}/> 
+          : <Link to="/"><img src={LogoIcon} className={styles.logo} /></Link>
         }
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => setIsOpen(!isOpen)}/>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
