@@ -25,7 +25,7 @@ export function TagLine() {
 
   return (
     <section className={styles.container}>
-      <h2 id="typed">// code for social good</h2>
+      <h2 id="typed">// code for social good_</h2>
     </section>
   );
 }

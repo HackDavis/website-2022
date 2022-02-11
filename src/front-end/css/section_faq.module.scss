@@ -54,7 +54,7 @@
   background-color: #173a52 !important;
 }
 :global(.accordion-button) {
-  padding-left: 0 !important;
+  padding-left: 0px !important;
   color: #ffffff !important;
   font-size: 14pt !important;
   background-color: #173a52 !important;
@@ -95,5 +95,14 @@
   }
   :global(.accordion-header) {
     @include header2($size: 24pt);
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  :global(.accordion-button) {
+    font-size: 13px !important;
+  }
+  :global(.accordion-body) {
+    font-size: 13px !important;
   }
 }

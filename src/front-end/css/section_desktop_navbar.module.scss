@@ -15,8 +15,17 @@
   z-index: 999;
 }
 
-.scroll{
-  box-shadow: 0 10px 12px 0 rgba(0,0,0,.3);
+.scroll {
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  transition: 300ms;
+  background-color: transparent;
 }
 
 .circle {
@@ -31,7 +40,6 @@
   max-width: 485px;
   justify-content: flex-end;
   column-gap: 56px;
-  
 }
 
 .button {
