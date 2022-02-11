@@ -30,7 +30,7 @@ const Section_Mobile_Navbar = () => {
           <div className={styles.buttons}>
             <Link to="/" className={styles.button} >Homepage</Link>
             <Link to="/about" className={styles.button}>About us</Link>
-            <a className={styles.button} href="">Dashboard</a>
+            {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>
       </div>

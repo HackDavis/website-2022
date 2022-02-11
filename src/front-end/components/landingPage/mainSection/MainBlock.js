@@ -13,7 +13,7 @@ export function MainBlock() {
         </div>
         <div className={`${styles.info_flex} ${styles.location_container} `}>
           <img src={location_icon} className={styles.location_icon}/>
-          <h3>UC Davis University Credit Union Center</h3>
+          <h3>UC Davis University <br></br>Credit Union Center</h3>
         </div>
         <div>
           <button className={styles.hover_prereg}>APPLY</button>
