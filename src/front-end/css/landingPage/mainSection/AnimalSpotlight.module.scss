@@ -26,14 +26,14 @@
   background-color: #9ee7e5;
 
   > img:last-of-type {
-    width: 128px;
+    width: 85%;
   }
 }
 
 .bunny {
   background-color: #ffc5ab;
   > img:last-of-type {
-    width: 128px;
+    width: 85%;
   }
 }
 
@@ -41,14 +41,14 @@
   background-color: #afd157;
 
   > img:last-of-type {
-    width: 121px;
+    width: 85%;
   }
 }
 
 .chick {
   background-color: #ffc53d;
   > img:last-of-type {
-    width: 129px;
+    width: 85%;
   }
 }
 
@@ -80,18 +80,18 @@
     flex-grow: 1;
   }
 
-  .cow > img:last-of-type {
-    width: 226px;
-  }
+  // .cow > img:last-of-type {
+  //   width: 75%;
+  // }
 
-  .frog > img:last-of-type {
-    width: 213px;
-  }
+  // .frog > img:last-of-type {
+  //   width: 213px;
+  // }
 
-  .chick > img:last-of-type,
-  .bunny > img:last-of-type {
-    width: 227px;
-  }
+  // .chick > img:last-of-type,
+  // .bunny > img:last-of-type {
+  //   width: 227px;
+  // }
 
   .spotlight {
     display: block;
