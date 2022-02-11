@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from '../../../css/landingPage/mainSection/MainBlock.module.scss';
 import date_icon from '../../../images/main_section/date_icon.svg';
 import location_icon from '../../../images/main_section/location_icon.svg';

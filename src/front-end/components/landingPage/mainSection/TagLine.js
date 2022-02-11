@@ -1,8 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../../css/landingPage/mainSection/TagLine.module.scss";
 // import Typed from "typed.js";
 
 export function TagLine() {
+  const [tagline, setTagLine] = useState("// code for social good_")
+
+  useEffect(() => {
+    setInterval(() => {
+      setTagLine(tagline === "// code for social good_" ? "// code for social good" : "// code for social good_" )
+    }, 1000)
+  }, [])
+  
   // let typed;
   // useEffect(() => {
   //   // set typed
@@ -25,7 +33,7 @@ export function TagLine() {
 
   return (
     <section className={styles.container}>
-      <h2 id="typed">// code for social good</h2>
+      <h2 id="typed">{tagline}</h2>
     </section>
   );
 }
