@@ -5,6 +5,19 @@
   background: #173a52;
 }
 
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  // transition: 300ms;
+  background-color: transparent;
+}
+
+.mlhbanner.hide {
+  top: -100vh;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -17,15 +30,6 @@
 
 .scroll {
   box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.3);
-}
-
-.mlhbanner {
-  width: 60px;
-  position: fixed;
-  top: 100px;
-  right: 10px;
-  transition: 300ms;
-  background-color: transparent;
 }
 
 .circle {

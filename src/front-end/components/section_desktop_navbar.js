@@ -17,17 +17,19 @@ const Section_Desktop_Navbar = () => {
   window.addEventListener('scroll', setNavbarShadow);
 
   return (
-    <div className={`${shadow ? `${styles.scroll}` : ""} ${styles.buttonContainer}`}>
-      <div className={styles.container}>
+    <>
+      <div className={`${shadow ? `${styles.scroll}` : ""} ${styles.buttonContainer}`}>
+        <div className={styles.container}>
           <Link to="/"><img className={styles.circle} src={LogoIcon}></img></Link>
           <div className={styles.buttons}>
             <Link to="/" className={styles.button}>Homepage </Link>
             <Link to="/about" className={styles.button}>About us</Link>
-            <a className={styles.button} href="">Dashboard</a>
+            {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
+        </div>
       </div>
-      <img src={MLHBanner} alt="MLH Banner" className={styles.mlhbanner}/>
-    </div>
+
+    </>
   );
 };
 

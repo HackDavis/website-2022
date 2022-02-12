@@ -81,3 +81,18 @@
     left: -6%;
   }
 }
+
+.mlhbanner {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .mlhbanner {
+    width: 90px;
+    right: 2%;
+    position: absolute;
+    display: block;
+    transition: 300ms;
+    background-color: transparent;
+  }
+}
