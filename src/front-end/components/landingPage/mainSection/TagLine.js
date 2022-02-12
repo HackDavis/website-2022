@@ -9,7 +9,7 @@ export function TagLine() {
   useEffect(() => {
     const interval = setInterval(() => {
       setUnderline((u) => !u);
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 
@@ -20,26 +20,6 @@ export function TagLine() {
       setTagline("// code for social good");
     }
   }, [underline]);
-  
-  // let typed;
-  // useEffect(() => {
-  //   // set typed
-  //   typed = new Typed("#typed", {
-  //       strings: ["// code for social good"],
-  //       typeSpeed: 30,
-  //       backSpeed: 30,
-  //       backDelay: 3500,
-  //       startDelay: 1000,
-  //       fadeOut: false,
-  //       loop: true,
-  //       shuffle: false,
-  //   })
-  //    // Cleanup event handlers
-  //    return () => {
-  //     // clean up the event handler when the component unmounts
-  //     typed.destroy()
-  //   }
-  // })
 
   return (
     <section className={styles.container}>

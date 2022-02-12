@@ -61,7 +61,7 @@
 
     > span {
       @include body();
-      color: $medium_teal;
+      color: $bright_teal;
     }
   }
 
@@ -154,6 +154,7 @@
       top: 215px;
       left: 400px;
       z-index: -1;
+      opacity: 0;
     }
 
     > .bunny_bush_ray {
@@ -161,6 +162,7 @@
       top: 125px;
       left: 250px;
       z-index: -2;
+      opacity: 0;
       // right: -200px;
     }
 
@@ -221,15 +223,16 @@
   }
 }
 
-@media only screen and (min-width: 1060px) {
+@media only screen and (min-width: 1090px) {
   .graphic_wrapper {
     .cow {
+      opacity: 1;
       z-index: 1;
     }
   }
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1340px) {
   .graphic_wrapper {
     .cow {
       z-index: 3;
@@ -241,6 +244,7 @@
 
     .bunny_bush_ray {
       z-index: 1;
+      opacity: 1;
     }
 
     .front_rays {

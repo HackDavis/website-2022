@@ -6,8 +6,9 @@
 }
 
 .image_wrap {
-  background-color: #86E4DB;
+  background-color: #86e4db;
   border-radius: 10px;
+  position: relative;
 }
 
 .container {
@@ -26,10 +27,6 @@
 }
 
 .headshot {
-  // background-size: cover;
-  // background-position: center center;
-  // width: 92.5%;
-  // height: auto;
   transition: transform 0.2s ease-in-out;
   border-radius: 10px;
   opacity: 50%;
@@ -45,7 +42,6 @@
 
 .headshot:hover {
   cursor: pointer;
-  // transform: scale(1.025);
 }
 
 .title {
@@ -69,7 +65,32 @@
   margin-left: 5px;
 }
 
+.desktop_icon {
+  width: 100%;
+}
+.desktop_icon_wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  column-gap: 10px;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 21.5px;
+  padding-right: 20.75px;
+  text-align: right;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  z-index: 100;
+  height: 100%;
 
+  > a {
+    width: 24px;
+    height: 24px;
+  }
+}
 .icon_wrap {
   position: absolute;
   right: 0;
@@ -106,7 +127,7 @@
   border-left: 100vw solid transparent;
 }
 .text_container {
-  position:relative;
+  position: relative;
 }
 
 .margin {
@@ -152,7 +173,8 @@
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
   }
-  .headshot:hover {
-    opacity: 85%;
+  .desktop_icon_wrap:hover {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
   }
 }
