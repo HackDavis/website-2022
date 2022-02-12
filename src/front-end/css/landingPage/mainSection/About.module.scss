@@ -70,7 +70,7 @@
   }
 
   .container {
-    padding: 108px 64px 80px;
+    padding: 108px min(10%, 64px) 80px;
     clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
     margin: 0;
 

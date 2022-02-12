@@ -79,10 +79,11 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px 64px 80px;
+    padding: 64px min(12%, 64px) 80px;
 
     > h1 {
       @include title(false);
+      font-size: min(5rem, 6vw);
       margin-bottom: 32px;
     }
 
@@ -114,6 +115,7 @@
 
         &:first-of-type {
           margin: 0;
+          margin-right: 15px;
         }
       }
     }
