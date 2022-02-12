@@ -90,7 +90,7 @@
 }
 
 .mlhbanner.hide {
-  top: -100vh;
+  display: none;
 }
 
 .scroll {
@@ -105,7 +105,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 27%;
+  height: 18%; // 27% originally when Dashboard is included
   background-color: #173a52;
   width: 100vw;
   overflow: hidden;
