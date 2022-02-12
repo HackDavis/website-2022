@@ -15,7 +15,7 @@ const DirectorBlurb = (props) => {
 	const spotlightClick = (director) => {
 		props.setSpotlight(director);
 		
-	} 
+	};
 
 	const checkPresident = (name) => {
 		if ((name === 'Ishani') || (name === 'Vivek')) {
