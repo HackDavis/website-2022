@@ -24,36 +24,75 @@
 
 .cow {
   background-color: #9ee7e5;
+  overflow: hidden;
+
+  > .jump {
+    width: 85%;
+    position: absolute;
+    bottom: -31px;
+  }
 
   > img:last-of-type {
     width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
   }
 }
 
 .bunny {
   background-color: #ffc5ab;
+  overflow: hidden;
+
+  > .jump {
+    width: 85%;
+    position: absolute;
+    bottom: -31px;
+  }
+
   > img:last-of-type {
     width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
   }
 }
 
 .frog {
   background-color: #afd157;
+  overflow: hidden;
+
+  > .jump {
+    width: 85%;
+    position: absolute;
+    bottom: -31px;
+  }
 
   > img:last-of-type {
     width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
   }
 }
 
 .chick {
   background-color: #ffc53d;
+  overflow: hidden;
+
+  > .jump {
+    width: 85%;
+    position: absolute;
+    bottom: -31px;
+  }
+
   > img:last-of-type {
     width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
   }
 }
 
 .spotlight {
   display: none;
+  z-index: 5;
 }
 
 @keyframes fadeIn {
@@ -101,13 +140,55 @@
     border-radius: 16px;
     object-fit: cover;
     height: 100%;
+
     &:hover {
       opacity: 1;
       width: 100%;
       border-radius: 16px;
       object-fit: cover;
       transition: opacity 0.3s ease-in-out;
+
+      @keyframes moveUp {
+        0% {
+          transform: none;
+        }
+        100% {
+          // transform: none;
+          transform: translateY(-50px);
+        }
+      }
+
+      @keyframes moveDown {
+        0% {
+          transform: translateY(-50px);
+        }
+        100% {
+          transform: none;
+        }
+      }
+
+      & + .jump {
+        opacity: 1;
+        display: block;
+        transform: translateY(-50px);
+        transition: transform 0.2s ease-in-out;
+        // translate: 0 100px;
+        // animation: moveUp 0.1s ease-out;
+
+      }
+
+      & ~ img {
+        opacity: 0;
+        transition: opacity 0s ease-in;
+      }
     }
+  }
+
+  .jump {
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out, opacity 0s ease-in-out 0.2s;
+    // transition: opacity 0.3s ease-in-out;
   }
 
   .box {
