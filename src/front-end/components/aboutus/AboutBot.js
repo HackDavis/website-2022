@@ -13,7 +13,7 @@ export function AboutBot({ myReference }) {
     if (window.innerWidth < 992) {
       myReference.current.scrollIntoView();
     }
-  }
+  };
   
   function adjustSizing(index) {
     if (index == Object.keys(directorInfo).length - 1) {

@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import styles from "../css/aboutuspage/about.module.scss";
 
 export function AboutUs() {
-  const myRef = useRef(null)
+  const myRef = useRef(null);
   return (
     <div className={styles.container}>
       <Section_Navbar/>

@@ -3,23 +3,23 @@ import styles from "../../../css/landingPage/mainSection/TagLine.module.scss";
 // import Typed from "typed.js";
 
 export function TagLine() {
-  const [underline, setUnderline] = useState(true)
-  const [tagline, setTagline] = useState("// code for social good_")
+  const [underline, setUnderline] = useState(true);
+  const [tagline, setTagline] = useState("// code for social good_");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setUnderline((u) => !u)
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [])
+      setUnderline((u) => !u);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (underline) {
-      setTagline("// code for social good_")
+      setTagline("// code for social good_");
     } else {
-      setTagline("// code for social good")
+      setTagline("// code for social good");
     }
-  }, [underline])
+  }, [underline]);
   
   // let typed;
   // useEffect(() => {
