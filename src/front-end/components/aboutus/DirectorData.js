@@ -69,6 +69,12 @@ const DirectorData = {
     linkedin: `https://www.linkedin.com/in/stepheniecho/`,
     image: Stephenie
   },
+  calla: {
+    name: "Calla",
+    description: `Marketing Lead`,
+    linkedin: `https://www.linkedin.com/in/calla-yang/`,
+    image: Calla
+  },
   abhishek: {
     name: "Abhishek",
     description: `Operations Co-Lead`,
@@ -80,6 +86,7 @@ const DirectorData = {
     description: `Technical Co-Lead`,
     linkedin: `https://www.linkedin.com/in/alelong/`,
     github: `https://github.com/ale-long`,
+    instagram: `https://www.instagram.com/a_long_one/`,
     image: Alex
   },
   justin: {
@@ -105,13 +112,13 @@ const DirectorData = {
   andy: {
     name: "Andy",
     description: `Design`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/andy-do/`,
     image: Andy
   },
   chelsea: {
     name: "Chelsea",
     description: `External`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/chelseahuffman2/`,
     image: Chelsea
   },
   shounak: {
@@ -123,13 +130,13 @@ const DirectorData = {
   takumi: {
     name: "Takumi",
     description: `External`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/takumi-imanaka/`,
     image: Takumi
   },
   willie: {
     name: "Willie",
     description: `External`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/williefl/`,
     image: Willie
   },
   alyson: {
@@ -147,31 +154,25 @@ const DirectorData = {
   matt: {
     name: "Matt",
     description: `Finance`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/matthewedwardlee31/`,
     image: Matt
   },
   miles: {
     name: "Miles",
     description: `Finance`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/miles-chen-698325191/`,
     image: Miles
   },
   arjun: {
     name: "Arjun",
     description: `Marketing`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/arjun-kahlon/`,
     image: Arjun
-  },
-  calla: {
-    name: "Calla",
-    description: `Marketing`,
-    // linkedin: `https://www.linkedin.com/in//,`
-    image: Calla
   },
   hanah: {
     name: "Hanah",
     description: `Marketing`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/hanah-shih/`,
     image: Hanah
   },
   jennifer: {
@@ -183,7 +184,7 @@ const DirectorData = {
   zaynah: {
     name: "Zaynah",
     description: `Marketing`,
-    // linkedin: `https://www.linkedin.com/in//,`
+    linkedin: `https://www.linkedin.com/in/zaynahcochinwala/`,
     image: Zaynah
   },
   ashwin: {
