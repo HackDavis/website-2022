@@ -16,7 +16,7 @@ export function MainBlock() {
           <h3>UC Davis University <br></br>Credit Union Center</h3>
         </div>
         <div>
-          <button className={styles.hover_prereg}>APPLY</button>
+        <button className={styles.hover_prereg} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
           <button className={styles.hover_sponsor} onClick={() => window.open('mailto:team@hackdavis.io')}>SPONSOR 2022</button>
         </div>
       </main>

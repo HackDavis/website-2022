@@ -5,7 +5,7 @@ import ContactImage from "../images/Contact.svg";
 const Section_Contact = () => {
     return (
         <div className={styles.container}>
-            <img src={ContactImage}/>
+            <img src={ContactImage} alt="contact image"/>
         </div>
     );
 };

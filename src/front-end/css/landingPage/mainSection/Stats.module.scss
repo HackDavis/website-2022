@@ -78,11 +78,14 @@
     > a > button {
       max-width: 234px;
     }
-
+    .hover_winners {
+      transition: 250ms ease-in-out;
+    }
     .hover_winners {
       &:hover {
         background-color: #ffc53d;
         border: 3px solid #ffc53d;
+        transition: 250ms ease-in-out;
       }
     }
   }
