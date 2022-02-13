@@ -48,12 +48,6 @@ export function AboutBot({ myReference }) {
                     director={directorInfo[key]}
                     isspotlight={false}
                     ispartofspotlight={spotlight.name === directorInfo[key].name ? true : false}
-                    // directorImage={directorInfo[key].image}
-                    // directorName={directorInfo[key].name}
-                    // directorDesc={directorInfo[key].description}
-                    // linkedin={directorInfo[key].linkedin}
-                    // add onClick function that calls local function that sets setSpotlight to current director
-                    // onClick={() => setActiveDeveloper(directorInfo[key].name)}
                   ></DirectorBlurb>
                 );
               })}

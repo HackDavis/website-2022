@@ -7,12 +7,13 @@
 
 .image_wrap {
   background-color: #86e4db;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
 }
 
 .container {
   flex-basis: 31%;
+  margin-bottom: 15px;
 }
 
 .container_spotlight {
@@ -28,7 +29,7 @@
 
 .headshot {
   transition: transform 0.2s ease-in-out;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 50%;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
@@ -62,7 +63,7 @@
 .icon {
   width: 24px;
   height: 24px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .desktop_icon {
@@ -109,6 +110,7 @@
   font-size: 15px;
   line-height: 19px;
   font-weight: 500;
+  margin-bottom: 30px;
   display: none;
 }
 
@@ -150,8 +152,12 @@
   .container {
     flex-basis: 23%;
   }
+  .image_wrap {
+    border-radius: 10px;
+  }
   .headshot {
     opacity: 50%;
+    border-radius: 10px;
   }
   .headshot_spotlight {
     opacity: 100%;

@@ -11,10 +11,6 @@ export default function Spotlight(props) {
           sizing={0}
           director={props.director}
           isspotlight={true}
-          // directorImage={props.directorImage}
-          // directorName={props.director.name}
-          // directorDesc={props.director.description}
-          // linkedin={props.director.linkedin}
         />
     </div>
   );

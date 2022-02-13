@@ -27,7 +27,7 @@ const DirectorBlurb = (props) => {
 
 	return (
 		<Fade>
-			<div className={`${styles.container} ${props.isspotlight ? `${styles.container_spotlight}` : ""}`} style={{marginBottom: props.sizing}} onClick={() => !props.isspotlight ? spotlightClick(props.director) : ""}>
+			<div className={`${styles.container} ${props.isspotlight ? `${styles.container_spotlight}` : ""}`} onClick={() => !props.isspotlight ? spotlightClick(props.director) : ""}>
 				<div className={styles.image_wrap}>
 						<img src={props.director.image} className={`${styles.headshot} ${props.isspotlight || props.ispartofspotlight ? `${styles.headshot_spotlight}` : ""}`}/>
 						<div className={styles.desktop_icon_wrap}>
