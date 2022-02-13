@@ -71,6 +71,7 @@
     &:hover {
       border: 3px solid#45d5d9;
       color: #45d5d9;
+      transition: 250ms ease-in-out;
     }
   }
 }
@@ -207,6 +208,7 @@
 
     > button {
       max-width: 202px;
+      transition: 250ms ease-in-out;
     }
   }
 
