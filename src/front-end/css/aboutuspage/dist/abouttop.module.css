@@ -92,6 +92,11 @@
   color: #45d5d9;
   transition: 250ms ease-in-out;
 }
+.main_block > button:active {
+  border: 3px solid #45d5d9;
+  color: #45d5d9;
+  transition: 250ms ease-in-out;
+}
 
 .stats_block {
   display: flex;
@@ -178,7 +183,7 @@
     z-index: -2;
   }
   .graphic_wrapper > .chicky {
-    width: 115px;
+    width: 130px;
     top: 400px;
     left: 260px;
     z-index: -2;

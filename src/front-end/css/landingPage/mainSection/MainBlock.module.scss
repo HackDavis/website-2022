@@ -135,9 +135,19 @@
         border: 3px solid #45d5d9;
         transition: 250ms ease-in-out;
       }
+      &:active {
+        background-color: #45d5d9;
+        border: 3px solid #45d5d9;
+        transition: 250ms ease-in-out;
+      }
     }
     .hover_sponsor {
       &:hover {
+        border: 3px solid#45d5d9;
+        color: #45d5d9;
+        transition: 250ms ease-in-out;
+      }
+      &:active {
         border: 3px solid#45d5d9;
         color: #45d5d9;
         transition: 250ms ease-in-out;

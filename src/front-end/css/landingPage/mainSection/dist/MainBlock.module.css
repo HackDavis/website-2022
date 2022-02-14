@@ -152,7 +152,17 @@
     border: 3px solid #45d5d9;
     transition: 250ms ease-in-out;
   }
+  .container .hover_prereg:active {
+    background-color: #45d5d9;
+    border: 3px solid #45d5d9;
+    transition: 250ms ease-in-out;
+  }
   .container .hover_sponsor:hover {
+    border: 3px solid #45d5d9;
+    color: #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_sponsor:active {
     border: 3px solid #45d5d9;
     color: #45d5d9;
     transition: 250ms ease-in-out;
