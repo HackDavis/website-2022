@@ -8,7 +8,7 @@
   color: #ffffff;
 }
 @mixin header2($size: 14px) {
-  font: "Proxima Nova";
+  font-family: "Proxima Nova";
   font-size: $size;
   letter-spacing: 2%;
 }

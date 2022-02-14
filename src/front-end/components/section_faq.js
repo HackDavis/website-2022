@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import styles from '../css/section_faq.module.scss';
 import { UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
 import Section_Contact from './section_contact.js';
-
+import arrow_forward from "../images/main_section/arrow_forward.svg";
 const Section_FAQ  = () => {
   const [open, setOpen] = useState();
 
   const faqItems = {
     "What is a hackathon?":"A hackathon is where you transform your crazy ideas into real stuff. Hundreds of students from across California form teams around an idea and collaboratively create technical solutions to problems we face in our local communities. These ideas turn into websites, mobile apps, hardware, and more! \n\nCome make the most incredible things you can imagine alongside fellow creators. You take care of building and we'll take care of you. \n\n We will be following ",
+    "New to hackathons? No experience?": "",
     "When will HackDavis take place?":"HackDavis 2022 will take place on the 16th and 17th of April, 2022.",
     "Is HackDavis in-person or virtual?":"We are planning to host HackDavis 2022 as a hybrid event. Participants will have the option to participate in-person at the University Credit Union Center in Davis, or participate virtually from the comfort of their homes! \n\nHackDavis will be organized in accordance with CDC, California, City of Davis, and UC Davis protocols. However, all plans are subject to change with evolving public health guidance.",
     "Who can attend?":"HackDavis is open to all enrolled undergraduate and graduate students from all majors, and graduates who have completed their degrees within the past year. As long as you're prepared to learn, brainstorm, and build cool things, we welcome you to join!",
@@ -49,6 +50,9 @@ const Section_FAQ  = () => {
                       MLH's Code of Conduct.
                     </a> 
                     : ""
+                  }
+                  {key == "New to hackathons? No experience?" ? <p className={styles.new_text}>No worries, we’ll teach you the ropes! Check out our <a target="_blank" href="https://tinyurl.com/hackdavis-starterpack">Starter Pack <img src={arrow_forward} /></a></p>: ""
+
                   }
                 </AccordionBody>
               </AccordionItem>
