@@ -15,10 +15,10 @@ export function About() {
           participants to hack for social good, and create an opportunity for us
           to explore the intersection between technology and society.
           <br /> <br />
-          On January 16-17, over 700 students, hackers, and creators came
-          together virtually for 36 hours of hacking. For the 6th year in a row,
-          we brought the most talented students in California (and beyond!) to
-          address the world’s most pressing issues.
+          This April, over 800 students, hackers, and creators will come 
+          together for a weekend of hacking. For the 7th year in a row, 
+          we will bring the most talented students in California 
+          (and beyond!) to address the world’s most pressing issues.
         </p>
       </section>
     </div>

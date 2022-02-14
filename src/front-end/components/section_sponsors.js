@@ -10,7 +10,7 @@ const Section_Sponsors = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentWrapper}>
-                <div className={styles.headerText}>Sponsors</div>
+                <div className={styles.headerText}>Sponsors and Partners</div>
                 <div className={styles.sponsors}>
                     <a href="https://www.fordfund.org/" target="_blank">
                         <img className={`${styles.imageStyle}`} src={Fmc} />
