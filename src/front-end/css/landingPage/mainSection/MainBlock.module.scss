@@ -6,6 +6,33 @@
   margin-bottom: 24px;
   @include border();
 
+  > p {
+    width: 85%;
+    @include body();
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    margin: auto;
+
+    
+    > a {
+      @include body();
+      color: $bright_teal;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 700;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+
+      > img {
+        width: auto;
+      }
+    }
+  }
+
   > .info_flex {
     display: flex;
     justify-content: center;
@@ -67,6 +94,8 @@
   > div {
     display: flex;
     flex-flow: column nowrap;
+    margin-bottom: 26px;
+
     > button {
       &:first-of-type {
         @include button();
@@ -86,12 +115,20 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px min(12%, 64px) 80px;
+    padding: 64px min(12%, 64px) 42px;
 
     > h1 {
       @include title(false);
       font-size: min(5rem, 6vw);
       margin-bottom: 32px;
+    }
+
+    > p {
+      width: auto;
+
+      > br {
+        display: none;
+      }
     }
 
     .info_flex {
