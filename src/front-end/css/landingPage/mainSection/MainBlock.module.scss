@@ -38,10 +38,6 @@
         line-height: 21px;
         font-weight: 700;
       }
-
-      // &:last-of-type {
-      //   margin-bottom: 24px;
-      // }
     }
   }
 
@@ -59,7 +55,6 @@
   > div {
     display: flex;
     flex-flow: column nowrap;
-
     > button {
       &:first-of-type {
         @include button();
@@ -79,10 +74,11 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px 64px 80px;
+    padding: 64px min(12%, 64px) 80px;
 
     > h1 {
       @include title(false);
+      font-size: min(5rem, 6vw);
       margin-bottom: 32px;
     }
 
@@ -114,19 +110,28 @@
 
         &:first-of-type {
           margin: 0;
+          margin-right: 15px;
         }
       }
+    }
+    .hover_prereg {
+      transition: 250ms ease-in-out;
+    }
+    .hover_sponsor {
+      transition: 250ms ease-in-out;
     }
     .hover_prereg {
       &:hover {
         background-color: #45d5d9;
         border: 3px solid #45d5d9;
+        transition: 250ms ease-in-out;
       }
     }
     .hover_sponsor {
       &:hover {
         border: 3px solid#45d5d9;
         color: #45d5d9;
+        transition: 250ms ease-in-out;
       }
     }
   }

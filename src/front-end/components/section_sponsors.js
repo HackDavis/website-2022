@@ -27,7 +27,7 @@ const Section_Sponsors = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Section_Sponsors;

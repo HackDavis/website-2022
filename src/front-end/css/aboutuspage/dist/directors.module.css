@@ -1,0 +1,160 @@
+.background {
+  background-color: #0b2638;
+  min-height: 100vh;
+  font-family: "Proxima Nova";
+  color: #ffffff;
+}
+
+.image_wrap {
+  background-color: #86E4DB;
+  border-radius: 10px;
+}
+
+.container {
+  flex-basis: 31%;
+}
+
+.container_spotlight {
+  flex-basis: 100%;
+}
+
+.headerText {
+  margin-top: 10rem;
+  margin-bottom: 2.5rem;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.headshot {
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  opacity: 50%;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.headshot_spotlight {
+  opacity: 100%;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.headshot:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.title_spotlight {
+  display: block;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+}
+
+.icon_wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  text-align: right;
+}
+
+.icons_spotlight {
+  display: block;
+}
+
+.text {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 500;
+  display: none;
+}
+
+.text_spotlight {
+  display: block;
+}
+
+.bottom_diagonal {
+  padding-top: 10rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #ffffff;
+  border-left: 100vw solid transparent;
+}
+
+.text_container {
+  position: relative;
+}
+
+.margin {
+  margin-bottom: 19rem;
+}
+
+@media (max-width: 425px) {
+  .headshot {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    display: block;
+  }
+
+  .text {
+    display: block;
+  }
+
+  .container {
+    flex-basis: 23%;
+  }
+
+  .headshot {
+    opacity: 50%;
+  }
+
+  .headshot_spotlight {
+    opacity: 100%;
+  }
+
+  .container_spotlight {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    flex-basis: 18%;
+  }
+
+  .image_wrap {
+    background-color: black;
+  }
+
+  .headshot {
+    opacity: 100%;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+
+  .headshot:hover {
+    opacity: 85%;
+  }
+}

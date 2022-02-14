@@ -23,7 +23,6 @@
   // margin: 24px 0 250px;
   width: 100%;
   background-color: #123041;
-  border-radius: 10px;
   position: relative;
 }
 
@@ -85,6 +84,7 @@
     width: 20%;
     font-size: 12pt;
     margin-top: 6px;
+    transition: 250ms ease-in-out;
   }
   .adventuremobile {
     display: none;
@@ -94,5 +94,6 @@
   }
   .button:hover {
     background: #45d5d9;
+    transition: 250ms ease-in-out;
   }
 }

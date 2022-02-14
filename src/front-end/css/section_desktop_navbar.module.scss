@@ -5,6 +5,19 @@
   background: #173a52;
 }
 
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  // transition: 300ms;
+  background-color: transparent;
+}
+
+.mlhbanner.hide {
+  top: -100vh;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -15,8 +28,8 @@
   z-index: 999;
 }
 
-.scroll{
-  box-shadow: 0 10px 12px 0 rgba(0,0,0,.3);
+.scroll {
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 .circle {
@@ -31,7 +44,6 @@
   max-width: 485px;
   justify-content: flex-end;
   column-gap: 56px;
-  
 }
 
 .button {
@@ -41,7 +53,7 @@
   width: auto;
 
   &:hover {
-    color: black;
+    color: #9ee7e5;
   }
 }
 

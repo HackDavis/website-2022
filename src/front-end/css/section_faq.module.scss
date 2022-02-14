@@ -21,10 +21,11 @@
   padding: 32px 24px 40px; // does nothing?
   position: relative;
   background-color: #173a52;
-  border: solid #9ee7e5 3pt;
-  border-radius: 10px;
+  border: solid #9ee7e5 3.5px;
+  // border-radius: 10px;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .contentWrapper {
@@ -54,7 +55,8 @@
   background-color: #173a52 !important;
 }
 :global(.accordion-button) {
-  padding-left: 0 !important;
+  font-weight: 600;
+  padding-left: 0px !important;
   color: #ffffff !important;
   font-size: 14pt !important;
   background-color: #173a52 !important;
@@ -95,5 +97,23 @@
   }
   :global(.accordion-header) {
     @include header2($size: 24pt);
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  :global(.accordion-button) {
+    font-size: 14px !important;
+  }
+  :global(.accordion-body) {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  :global(.accordion-button) {
+    font-size: 13px !important;
+  }
+  :global(.accordion-body) {
+    font-size: 13px !important;
   }
 }

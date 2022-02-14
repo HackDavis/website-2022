@@ -12,7 +12,7 @@ const Section_Navbar = () => {
                 <Section_Desktop_Navbar/>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Section_Navbar;

@@ -14,8 +14,8 @@ const Section_Adventure = () => {
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
-    },
-  }
+    }
+  };
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Section_Adventure = () => {
         <div onMouseEnter={() => setIsPaused(!isPaused)}>
           <div className={styles.container}>
             <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-            <button className={styles.button}>PRE-REGISTER</button>
+            <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
             <img src={AdventureDesktop} className={styles.adventuredesktop} />
             <img src={AdventureMobile} className={styles.adventuremobile} />
           </div>
@@ -33,7 +33,7 @@ const Section_Adventure = () => {
         // else do the animation (10 seconds)
         <div className={styles.container}>
           <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-          <button className={styles.button}>PRE-REGISTER</button>
+          <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
           <img src={AdventureDesktop} className={styles.adventuredesktop} />
           <img src={AdventureMobile} className={styles.adventuremobile} />
           <Lottie
@@ -41,7 +41,7 @@ const Section_Adventure = () => {
             style={{
               zIndex: "997",
               position: "absolute",
-              cursor: "default",
+              cursor: "default"
             }}
             className={styles.confetti}
             isClickToPauseDisabled={true}
@@ -57,6 +57,6 @@ const Section_Adventure = () => {
       )}
     </div>
   );
-}
+};
 
 export default Section_Adventure;

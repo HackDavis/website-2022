@@ -4,10 +4,10 @@
   width: 80%;
   margin: 24px 0px 0px auto;
   max-width: 1280px;
-  justify-content: end;
+  justify-content: flex-end;
   position: absolute;
   bottom: 0;
-  right: 0px;
+  right: -15px;
 }
 
 @media (min-width: 992px) {

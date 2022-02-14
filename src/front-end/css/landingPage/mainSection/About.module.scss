@@ -7,7 +7,7 @@
   background-color: $bright_teal;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
   padding: 3px 0 3px;
-  border-radius: 10px;
+  // border-radius: 10px;
   margin-bottom: -20px;
 }
 
@@ -18,7 +18,7 @@
   padding: 45px 21px 77px;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
   // margin-bottom: -10px;
-  border-radius: 9px;
+  // border-radius: 9px;
   // @include border();
 
   > h2 {
@@ -70,7 +70,7 @@
   }
 
   .container {
-    padding: 108px 64px 80px;
+    padding: 108px min(10%, 64px) 80px;
     clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
     margin: 0;
 

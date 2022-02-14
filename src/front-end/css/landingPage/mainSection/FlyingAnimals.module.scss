@@ -4,7 +4,6 @@
   max-height: 550px;
   margin-bottom: 24px;
   position: relative;
-  border-radius: 5px;
   overflow: hidden;
   z-index: 0;
 
@@ -31,7 +30,7 @@
     width: 15%;
     left: 19%;
     top: 35%;
-    animation: pendulum 2s infinite ease-in-out;
+    animation: pendulum 3.5s infinite ease-in-out;
     transform-origin: 23% 14%;
   }
 
@@ -79,5 +78,20 @@
     // max-width: 45px;
     bottom: -8%;
     left: -6%;
+  }
+}
+
+.mlhbanner {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .mlhbanner {
+    width: 90px;
+    right: 2%;
+    position: absolute;
+    display: block;
+    transition: 300ms;
+    background-color: transparent;
   }
 }

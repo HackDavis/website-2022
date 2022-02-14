@@ -7,7 +7,7 @@
   background-color: $bright_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
   padding: 3px 0;
-  border-radius: 10px;
+  // border-radius: 10px;
   margin-bottom: -20px;
 }
 
@@ -18,7 +18,7 @@
   background-color: $darker_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
   // margin-bottom: -10px;
-  border-radius: 9px;
+  // border-radius: 9px;
   // @include border();
   > a {
     text-decoration: none;
@@ -63,10 +63,10 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px 64px 153px;
+    padding: 64px min(12%, 64px) 153px;
 
     > h2 {
-      font-size: min(210%, 48px);
+      font-size: min(2.9rem, 3.5vw);
       line-height: 1.4em;
       // line-height: min(4vw, 58px);
 
@@ -78,11 +78,14 @@
     > a > button {
       max-width: 234px;
     }
-
+    .hover_winners {
+      transition: 250ms ease-in-out;
+    }
     .hover_winners {
       &:hover {
         background-color: #ffc53d;
         border: 3px solid #ffc53d;
+        transition: 250ms ease-in-out;
       }
     }
   }
