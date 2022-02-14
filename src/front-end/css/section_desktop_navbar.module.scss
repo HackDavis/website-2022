@@ -52,11 +52,15 @@
   color: white;
   width: auto;
   font: "Proxima Nova";
-  font-weight: 700;
+  font-weight: 400;
 
   &:hover {
     color: #9ee7e5;
   }
+}
+
+.bold_navitem {
+  font-weight: 700;
 }
 
 @media (min-width: 992px) {

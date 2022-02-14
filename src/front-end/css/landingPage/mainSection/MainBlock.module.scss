@@ -25,16 +25,19 @@
         height: 22px;
       }
     }
-
-    > a {
-      text-decoration: none;
-      color: white;
+    > p {
+      > a {
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+        letter-spacing: 2%;
+        font-family: "Proxima Nova", sans-serif;
+        font-weight: 500;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
-
-    > a:hover {
-      text-decoration: underline;
-    }
-
     > h3 {
       @include body();
       font-size: 17px;
@@ -92,6 +95,11 @@
     }
 
     .info_flex {
+      > p {
+        > a {
+          font-size: 20px;
+        }
+      }
       > h3 {
         font-size: 24px;
         line-height: 29px;
@@ -153,5 +161,11 @@
         transition: 250ms ease-in-out;
       }
     }
+  }
+}
+
+@media (min-width: 1240px) {
+  .linebreak {
+    display: none;
   }
 }
