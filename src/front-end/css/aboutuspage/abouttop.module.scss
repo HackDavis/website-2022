@@ -31,12 +31,14 @@
     left: 38%;
     top: 50%;
     z-index: 1;
+    animation: popInOut 5s infinite ease-in-out;
   }
 
   > .cow {
     width: 16%;
     left: 55%;
     top: 29%;
+    animation: floatUpDown 2s infinite ease-in-out;
   }
 }
 
@@ -121,6 +123,30 @@
   margin-top: calc(-11vw + 1px);
   z-index: 1;
   max-width: 100%;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes popInOut {
+  0% {
+    transform: translateX(-80px);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
 }
 
 @media only screen and (min-width: 992px) {
