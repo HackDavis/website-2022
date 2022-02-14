@@ -141,17 +141,21 @@
   .headshot {
     width: 100%;
   }
+  .container {
+    margin-bottom: 3%;
+  }
 }
 
 @media (min-width: 768px) {
-  .title {
-    display: block;
-  }
-  .text {
-    display: block;
-  }
+  // .title {
+  //   display: block;
+  // }
+  // .text {
+  //   display: block;
+  // }
   .container {
     flex-basis: 23%;
+    margin-bottom: 2.5%;
   }
   .image_wrap {
     border-radius: 10px;

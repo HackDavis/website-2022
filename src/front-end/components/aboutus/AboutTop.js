@@ -24,7 +24,7 @@ export function AboutTop({ myReference }) {
           
           <img className={styles.chicky} src={Chicky} />
           <img className={styles.cow} src={CowWithHat} />
-
+          <img className={styles.leaves} src={Leaves}/>
           <img className={styles.sky} src={BlueSkyBG} />
           <img className={styles.bunny_bush_ray} src={BunnyBushRay} />
           <img className={styles.front_rays} src={FrontRays} />

@@ -1,16 +1,34 @@
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #173a52;
+}
+
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background-color: transparent;
+}
+
+.mlhbanner.hide {
+  top: -100vh;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  width: 100vw;
+  max-width: 1280px;
   margin: auto;
   z-index: 999;
-  background: #173a52;
 }
 
 .scroll {
-  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 .circle {
@@ -25,7 +43,6 @@
   max-width: 485px;
   justify-content: flex-end;
   column-gap: 56px;
-  margin-right: 2vw;
 }
 
 .button {
@@ -33,9 +50,11 @@
   text-decoration: none;
   color: white;
   width: auto;
+  font: "Proxima Nova";
+  font-weight: 700;
 }
 .button:hover {
-  color: black;
+  color: #9ee7e5;
 }
 
 @media (min-width: 992px) {

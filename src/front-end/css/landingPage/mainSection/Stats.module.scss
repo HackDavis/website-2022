@@ -87,6 +87,11 @@
         border: 3px solid #ffc53d;
         transition: 250ms ease-in-out;
       }
+      &:active {
+        background-color: #ffc53d;
+        border: 3px solid #ffc53d;
+        transition: 250ms ease-in-out;
+      }
     }
   }
 }

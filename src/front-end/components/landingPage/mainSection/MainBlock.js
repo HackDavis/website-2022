@@ -13,7 +13,7 @@ export function MainBlock() {
         </div>
         <div className={`${styles.info_flex} ${styles.location_container} `}>
           <img src={location_icon} className={styles.location_icon}/>
-          <h3>UC Davis University <br></br>Credit Union Center</h3>
+          <a target="_blank" href="https://goo.gl/maps/hQkGyYxFzoFgbRwf7" className={styles.location_text}><h3> University Credit Union Center<br></br>UC Davis</h3></a>
         </div>
         <div>
         <button className={styles.hover_prereg} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>

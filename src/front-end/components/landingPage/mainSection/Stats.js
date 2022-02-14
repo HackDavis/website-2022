@@ -8,13 +8,13 @@ export function Stats() {
     <div className={styles.wrapper}>
       <section className={styles.container}>
         <h2>
-          <span>700+</span> hackers
+          <span>750+</span> hackers
           <br />
           <span>36 </span>hours
           <br />
-          <span>140+</span> projects
+          <span>150+</span> projects
           <br />
-          <span>&#36;15,000+</span> prizes
+          <span>&#36;14,000+</span> prizes
         </h2>
         <a href="https://hackdavis2021.devpost.com/project-gallery" target="_blank">
           <button className={styles.hover_winners}>VIEW 2021 WINNERS</button>

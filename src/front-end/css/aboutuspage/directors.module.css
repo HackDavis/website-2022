@@ -1,0 +1,56 @@
+.background {
+  background-color: #0b2638;
+  min-height: 100vh;
+  font-family: "Proxima Nova";
+  color: #ffffff;
+}
+
+.headerText {
+  margin-top: 10rem;
+  margin-bottom: 2.5rem;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.headshot {
+  background-size: cover;
+  background-position: center center;
+  width: 92.5%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.headshot:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+.title {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+.bottom_diagonal {
+  padding-top: 10rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #ffffff;
+  border-left: 100vw solid transparent;
+}
+
+.margin {
+  margin-bottom: 19rem;
+}
+
+@media (max-width: 425px) {
+  .headshot {
+    width: 100%;
+  }
+}

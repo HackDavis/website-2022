@@ -75,6 +75,11 @@
       color: #45d5d9;
       transition: 250ms ease-in-out;
     }
+    &:active {
+      border: 3px solid#45d5d9;
+      color: #45d5d9;
+      transition: 250ms ease-in-out;
+    }
   }
 }
 
@@ -170,7 +175,7 @@
     }
 
     > .chicky {
-      width: 115px;
+      width: 130px;
       top: 400px;
       left: 260px;
       z-index: -2;
@@ -182,6 +187,30 @@
       left: 400px;
       z-index: -1;
       opacity: 0;
+    }
+
+    
+
+    > .leaves {
+      width: 200px;
+      top: 530px;
+      left: 460px;
+      opacity: 0;
+      @keyframes pendulum {
+        0% {
+          transform: rotate(-10deg);
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: rotate(10deg);
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: rotate(-10deg);
+          transform: translateX(-10px);
+        }
+      }
+      animation: pendulum 3.5s infinite ease-in-out;
     }
 
     > .bunny_bush_ray {
@@ -267,6 +296,11 @@
     }
 
     .about_us_graphic {
+      z-index: 2;
+    }
+
+    .leaves {
+      opacity: 1;
       z-index: 2;
     }
 
