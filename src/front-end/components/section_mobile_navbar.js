@@ -19,7 +19,7 @@ const Section_Mobile_Navbar = () => {
   window.addEventListener('scroll', setNavbarLogo);
   return (
     <>
-      <img src={MLHBanner} className={`${logo ? "" : `${styles.hide}`} ${isOpen ? `${styles.hide}` : ""} ${styles.mlhbanner}`}/>
+      <a href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white" target="_blank"><img src={MLHBanner} className={`${logo ? "" : `${styles.hide}`} ${isOpen ? `${styles.hide}` : ""} ${styles.mlhbanner}`}/></a>
       <div className={`d-flex justify-content-between align-items-center ${logo ? "" : isOpen ? "" : `${styles.scroll}`} ${styles.container}`}>
         { logo ?
           isOpen ? <Link to="/"><img src={LogoIcon} className={styles.logo} /></Link>: <div className={styles.logo}/> 

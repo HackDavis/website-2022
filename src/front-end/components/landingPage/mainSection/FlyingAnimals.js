@@ -23,7 +23,7 @@ export function FlyingAnimals() {
   return (
     <section className={styles.container}>
       <img src={swinging_chicky} className={styles.chick}/>
-      <img src={MLHBanner} alt="MLH Banner" className={`${logo ? "" : `${styles.hide}`} ${styles.mlhbanner}`}/>
+      <a href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white" target="_blank"><img src={MLHBanner} alt="MLH Banner" className={`${logo ? "" : `${styles.hide}`} ${styles.mlhbanner}`}/></a>
       <img src={hero_image} className={styles.hero_image}/>
       <img src={leftjetpack} className={styles.left_jetpack}/>
       <img src={rightjetpack} className={styles.right_jetpack}/>

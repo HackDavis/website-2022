@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from "../css/section_desktop_navbar.module.scss";
 import LogoIcon from "../images/HackDavisLogo.svg";
 import { Link } from "react-router-dom";
-import MLHBanner from "../images/MLHBanner.svg";
 
 const Section_Desktop_Navbar = () => {
   const [shadow, setShadow] = useState(false);
