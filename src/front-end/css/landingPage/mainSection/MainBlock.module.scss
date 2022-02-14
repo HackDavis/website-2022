@@ -26,6 +26,15 @@
       }
     }
 
+    > a {
+      text-decoration: none;
+      color: white;
+    }
+
+    > a:hover {
+      text-decoration: underline;
+    }
+
     > h3 {
       @include body();
       font-size: 17px;
