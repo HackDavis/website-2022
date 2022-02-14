@@ -14,7 +14,7 @@ import BlueSkyBG from "../../images/about/BlueSkyBG.svg";
 import BunnyBushRay from "../../images/about/BunnyBushRay.svg";
 import FrontRays from "../../images/about/FrontRays.svg";
 
-export function AboutTop({ myReference }) {
+export function AboutTop() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -74,7 +74,7 @@ export function AboutTop({ myReference }) {
           </section>
         </div>
       </div>
-      <div className={styles.diagonal} ref={myReference}></div>
+      <div className={styles.diagonal}></div>
       </div>
   );
 }

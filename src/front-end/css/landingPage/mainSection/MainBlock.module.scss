@@ -14,7 +14,6 @@
     font-weight: 500;
     margin: auto;
 
-    
     > a {
       @include body();
       color: $bright_teal;
@@ -22,9 +21,14 @@
       line-height: 19px;
       font-weight: 700;
       text-decoration: none;
-      
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 250ms ease-in-out;
+
       &:hover {
-        text-decoration: underline;
+        // text-decoration: underline;
+        border-bottom-color: $bright_teal;
+        transition: border-bottom 250ms ease-in-out;
       }
 
       > img {

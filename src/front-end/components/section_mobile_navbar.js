@@ -28,8 +28,8 @@ const Section_Mobile_Navbar = () => {
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => setIsOpen(!isOpen)}/>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
-            <Link to="/" className={`${styles.button} ${window.location.href == "https://hackdavis.io/" ? `${styles.bold_navitem}`: null}`} >Homepage</Link>
-            <Link to="/about" className={`${styles.button} ${window.location.href == "https://hackdavis.io/about" ? `${styles.bold_navitem}`: null}`}>About us</Link>
+            <p><Link to="/" className={`${styles.button} ${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: null}`} >Homepage</Link></p>
+            <p><Link to="/about" className={`${styles.button} ${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}`: null}`}>About us</Link></p>
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>

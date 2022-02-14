@@ -8,9 +8,12 @@
 .buttons {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   text-align: right;
   padding-right: 20px;
+  > p {
+    margin-bottom: 0px;
+  }
 }
 
 .hamburger {
@@ -27,7 +30,6 @@
 .logo {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   animation: fadeIn 200ms;
   -webkit-animation: fadeIn 200ms;
   -moz-animation: fadeIn 200ms;
@@ -94,20 +96,20 @@
 }
 
 .scroll {
-  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 .menuNav {
   overflow-y: scroll;
   position: fixed;
-  box-shadow: 0px 16px 12px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.5);
   top: -100%;
   left: 0;
   right: 0;
   bottom: 0;
   height: 18%; // 27% originally when Dashboard is included
   background-color: #173a52;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   transform: scaleY(1);
   transition: 200ms;
@@ -120,14 +122,17 @@
   line-height: 50px;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 400;
+  padding-bottom: 3px;
 }
 
 .bold_navitem {
   font-weight: 700;
+  color: #9ee7e5;
+  border-bottom: 2px solid #9ee7e5;
 }
 
 .button:active {
-  color: #9ee7e5;
+  color: #9ee7e5 !important;
 }
 
 .menuNav.showMenu {

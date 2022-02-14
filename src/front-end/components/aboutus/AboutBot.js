@@ -38,6 +38,7 @@ export function AboutBot({ myReference }) {
               that we can host the best possible experience for hackers around
               the country.
             </p>
+            <hr ref={myReference} />
             <Spotlight director={spotlight}/>
             <div className={styles.directors} onClick={executeScroll}>
               {Object.keys(directorInfo).map((key, index) => {

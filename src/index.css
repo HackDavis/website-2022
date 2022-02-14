@@ -17,7 +17,7 @@
   /* overflow-x: hidden; */
   width: 100%;
   /*Note: fix this on merge later*/
-  /* background-color: #173A52; */ 
+  /* background-color: #173A52; */
 }
 
 *,
@@ -45,4 +45,4 @@
   src: url(./front-end/fonts/ProximaNova-Regular.otf) format("opentype");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500;700&display=swap");

@@ -10,6 +10,12 @@
 .content {
   width: 80%;
   margin: auto;
+
+  > hr {
+    position: relative;
+    z-index: -100;
+    bottom: 105px;
+  }
 }
 
 .headerText {

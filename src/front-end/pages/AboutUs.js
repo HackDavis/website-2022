@@ -10,7 +10,7 @@ export function AboutUs() {
   return (
     <div className={styles.container}>
       <Section_Navbar/>
-      <AboutTop myReference={myRef} />
+      <AboutTop />
       <AboutBot myReference={myRef} />
       <Footer/>
     </div>
