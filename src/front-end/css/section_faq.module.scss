@@ -8,7 +8,7 @@
   color: #ffffff;
 }
 @mixin header2($size: 14pt) {
-  font: "Proxima Nova";
+  font-family: "Proxima Nova";
   font-size: $size;
   letter-spacing: 2%;
 }
@@ -74,7 +74,7 @@
 }
 
 :global(.accordion-body) {
-  font: "Proxima Nova" !important;
+  font-family: "Proxima Nova" !important;
   background-color: #173a52 !important;
   color: #ffffff !important;
   overflow-x: hidden !important;
