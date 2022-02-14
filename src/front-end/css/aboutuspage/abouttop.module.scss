@@ -184,6 +184,30 @@
       opacity: 0;
     }
 
+    
+
+    > .leaves {
+      width: 200px;
+      top: 530px;
+      left: 460px;
+      opacity: 0;
+      @keyframes pendulum {
+        0% {
+          transform: rotate(-10deg);
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: rotate(10deg);
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: rotate(-10deg);
+          transform: translateX(-10px);
+        }
+      }
+      animation: pendulum 3.5s infinite ease-in-out;
+    }
+
     > .bunny_bush_ray {
       width: 600px;
       top: 125px;
@@ -267,6 +291,11 @@
     }
 
     .about_us_graphic {
+      z-index: 2;
+    }
+
+    .leaves {
+      opacity: 1;
       z-index: 2;
     }
 

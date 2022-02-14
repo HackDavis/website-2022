@@ -141,6 +141,9 @@
   .headshot {
     width: 100%;
   }
+  .container {
+    margin-bottom: 3%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -152,6 +155,7 @@
   // }
   .container {
     flex-basis: 23%;
+    margin-bottom: 2.5%;
   }
   .image_wrap {
     border-radius: 10px;

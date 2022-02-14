@@ -76,9 +76,9 @@
 }
 .container .heart {
   position: absolute;
-  width: 40%;
-  top: 25%;
-  left: 48%;
+  width: 33%;
+  top: 28%;
+  left: 51%;
 }
 .container .heart_animate {
   animation: pumpOnce 600ms 1 ease-in-out;
