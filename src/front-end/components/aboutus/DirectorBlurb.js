@@ -13,7 +13,11 @@ const DirectorBlurb = (props) => {
 
 	const spotlightClick = (director) => {
 		props.setSpotlight(director);
-		
+
+		// scroll to director description
+		if (window.innerWidth < 992) {
+      props.myReference.current.scrollIntoView();
+    }
 	};
 
 	const checkPresident = (name) => {

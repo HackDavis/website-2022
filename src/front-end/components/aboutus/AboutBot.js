@@ -8,12 +8,6 @@ import Spotlight from "./Spotlight";
 export function AboutBot({ myReference }) {
   // Set first person (Vivek) as the default spotlight
   const [spotlight, setSpotlight] = useState(directorInfo.vivek);
-  const executeScroll = () => {
-    // myReference.current.scrollIntoView();
-    if (window.innerWidth < 992) {
-      myReference.current.scrollIntoView();
-    }
-  };
   
   function adjustSizing(index) {
     if (index == Object.keys(directorInfo).length - 1) {
@@ -40,11 +34,12 @@ export function AboutBot({ myReference }) {
             </p>
             <hr ref={myReference} />
             <Spotlight director={spotlight}/>
-            <div className={styles.directors} onClick={executeScroll}>
+            <div className={styles.directors}>
               {Object.keys(directorInfo).map((key, index) => {
                 return (
                   <DirectorBlurb
                     key={key}
+                    myReference={myReference}
                     setSpotlight={setSpotlight}
                     sizing={adjustSizing(index)}
                     director={directorInfo[key]}
