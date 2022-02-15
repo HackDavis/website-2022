@@ -115,6 +115,11 @@
   z-index: 1;
 }
 
+.menuNav.showMenu {
+  top: 4.875rem;
+  z-index: -2;
+}
+
 .button {
   text-decoration: none;
   color: #ffffff;
@@ -132,11 +137,6 @@
 
 .button:active {
   color: #9ee7e5 !important;
-}
-
-.menuNav.showMenu {
-  top: 8vh;
-  z-index: -2;
 }
 
 .exitDash {

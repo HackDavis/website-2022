@@ -32,6 +32,7 @@ const Section_Mobile_Navbar = () => {
           : <Link to="/"><img src={LogoIcon} className={styles.logo} /></Link>
         }
         <img className={`${styles.hamburger}`} src={Hamburger} onClick={() => setIsOpen(!isOpen)}/>
+      </div>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
             <p><Link to="/" className={`${styles.button} ${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: null}`} >Homepage</Link></p>
@@ -39,7 +40,6 @@ const Section_Mobile_Navbar = () => {
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>
-      </div>
       <div className={`${isOpen ? `${styles.removeBg}` : ""}`}/>
     </>
   );
