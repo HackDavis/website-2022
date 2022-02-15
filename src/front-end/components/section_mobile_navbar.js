@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../css/section_mobile_navbar.module.scss";
 import Hamburger from "../images/HamburgerMenu.svg";
 import MLHBanner from "../images/MLHBanner.svg";
@@ -16,7 +16,13 @@ const Section_Mobile_Navbar = () => {
       setLogo(true);
     }
   };
-  window.addEventListener('scroll', setNavbarLogo);
+  useEffect(()=> {
+    window.addEventListener('scroll', setNavbarLogo);
+    return () => {
+      window.removeEventListener('scroll', setNavbarLogo);
+    };
+  }, []);
+
   return (
     <>
       <a href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white" target="_blank"><img src={MLHBanner} className={`${logo ? "" : `${styles.hide}`} ${isOpen ? `${styles.hide}` : ""} ${styles.mlhbanner}`}/></a>

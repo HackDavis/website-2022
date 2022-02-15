@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "../css/section_desktop_navbar.module.scss";
 import LogoIcon from "../images/HackDavisLogo.svg";
 import { Link } from "react-router-dom";
@@ -13,7 +13,12 @@ const Section_Desktop_Navbar = () => {
       setShadow(false);
     }
   };
-  window.addEventListener('scroll', setNavbarShadow);
+  useEffect(()=> {
+    window.addEventListener('scroll', setNavbarShadow);
+    return () => {
+      window.removeEventListener('scroll', setNavbarShadow);
+    };
+  }, []);
 
   return (
     <>

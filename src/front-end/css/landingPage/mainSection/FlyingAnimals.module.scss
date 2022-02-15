@@ -49,10 +49,8 @@
   .left_jetpack {
     position: absolute;
     z-index: 1;
-    // background-color: black;
     width: 50%;
     animation: backAndForth 3s infinite ease-in-out;
-    // max-width: 45px;
     bottom: -8%;
     left: -8%;
   }
@@ -72,10 +70,8 @@
   .right_jetpack {
     position: absolute;
     z-index: 1;
-    // background-color: black;
     width: 50%;
     animation: forthAndBack 5s infinite ease-in-out;
-    // max-width: 45px;
     bottom: -12%;
     left: -6%;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../../css/landingPage/mainSection/FlyingAnimals.module.scss';
 import hero_image from '../../../images/main_section/flying_animals/hero_image.svg';
 import swinging_chicky from "../../../images/main_section/flying_animals/swinging_chicky.svg";
@@ -18,7 +18,13 @@ export function FlyingAnimals() {
       setLogo(true);
     }
   };
-  window.addEventListener('scroll', setNavbarLogo);
+
+  useEffect(()=> {
+    window.addEventListener('scroll', setNavbarLogo);
+    return () => {
+      window.removeEventListener('scroll', setNavbarLogo);
+    };
+  });
   
   return (
     <section className={styles.container}>

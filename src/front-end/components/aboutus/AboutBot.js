@@ -44,6 +44,7 @@ export function AboutBot({ myReference }) {
               {Object.keys(directorInfo).map((key, index) => {
                 return (
                   <DirectorBlurb
+                    key={key}
                     setSpotlight={setSpotlight}
                     sizing={adjustSizing(index)}
                     director={directorInfo[key]}

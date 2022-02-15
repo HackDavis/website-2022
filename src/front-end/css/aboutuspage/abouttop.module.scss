@@ -11,7 +11,6 @@
   flex-direction: column;
   overflow: hidden;
   z-index: 0;
-  // height: 1208px;
 }
 
 .graphic_wrapper {
@@ -89,7 +88,6 @@
   background: $darker_teal;
   flex-wrap: wrap;
   margin: auto;
-  // padding: 50px 0;
   gap: 10px min(10%, 60px);
 }
 
@@ -169,7 +167,6 @@
 
     > .about_us_graphic {
       top: -1px;
-      // right: -20vw;
       width: 850px;
       z-index: -2;
     }
@@ -188,8 +185,6 @@
       z-index: -1;
       opacity: 0;
     }
-
-    
 
     > .leaves {
       width: 200px;
@@ -219,7 +214,6 @@
       left: 250px;
       z-index: -2;
       opacity: 0;
-      // right: -200px;
     }
 
     > .front_rays {
@@ -274,7 +268,6 @@
     gap: 0;
     justify-content: space-between;
     max-width: 500px;
-    // padding: 10%;
     padding-top: 0;
     padding-bottom: 20%;
   }

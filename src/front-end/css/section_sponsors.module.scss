@@ -20,11 +20,9 @@
   width: 100%;
   padding: 32px 24px;
   max-width: 1330px;
-  // height: 912px;
   margin: 24px auto 24px;
   background-color: #173a52;
   border: solid #9ee7e5 3.5px;
-  // border-radius: 10px;
   > a {
     text-decoration: none;
   }
@@ -39,9 +37,6 @@
 
 .contentWrapper {
   max-width: 990px;
-  // width: 60vw;
-  // margin-left: auto;
-  // margin-right: auto;
 }
 
 .headerText {
@@ -59,10 +54,8 @@
 .imageStyle {
   height: auto;
   width: 100%;
-  // padding: 20px;
   user-select: none;
   cursor: pointer;
-  // transform: scale(0.5);
   transition: transform 0.5s;
   margin-bottom: 3.5rem;
   margin-top: 1rem;

@@ -7,7 +7,6 @@
   background-color: $bright_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
   padding: 3px 0;
-  // border-radius: 10px;
   margin-bottom: -20px;
 }
 
@@ -17,9 +16,7 @@
   padding: 29px 19px 77px 21px;
   background-color: $darker_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
-  // margin-bottom: -10px;
-  // border-radius: 9px;
-  // @include border();
+
   > a {
     text-decoration: none;
 
@@ -27,7 +24,6 @@
       background: #000000;
       border-radius: 100px;
       padding: 10px;
-      // width: 100%;
       color: white;
       font-size: 17px;
       font-weight: 700;
@@ -68,7 +64,6 @@
     > h2 {
       font-size: min(2.9rem, 3.5vw);
       line-height: 1.4em;
-      // line-height: min(4vw, 58px);
 
       > span {
         font-size: inherit;

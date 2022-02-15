@@ -30,6 +30,7 @@ const Section_FAQ  = () => {
           {Object.keys(faqItems).map((key, ind) => {
             return (
             <UncontrolledAccordion
+              key={key}
               flush
               open={open}
               style={{width: "100%", maxWidth: "1280px"}}
@@ -37,11 +38,11 @@ const Section_FAQ  = () => {
             >
               <AccordionItem>
                 <AccordionHeader
-                  targetId={ind}
+                  targetId={`${ind}`}
                 >
                   {key}
                 </AccordionHeader>
-                <AccordionBody accordionId={ind}>
+                <AccordionBody accordionId={`${ind}`}>
                   {faqItems[key]}
                   {ind === 0 ? 
                     <a target="_blank" rel="noopener noreferrer" 
@@ -51,7 +52,7 @@ const Section_FAQ  = () => {
                     </a> 
                     : ""
                   }
-                  {key == "New to hackathons? No experience?" ? <p className={styles.new_text}>No worries, we’ll teach you the ropes! Check out our <a target="_blank" href="https://tinyurl.com/hackdavis-starterpack">Starter Pack <img src={arrow_forward} /></a></p>: ""
+                  {key == "New to hackathons? No experience?" ? <p className={styles.new_text}>No worries, we’ll teach you the ropes! Check out our <a target="_blank" href="https://hackdavis.notion.site/hackdavis/HackDavis-2022-Starter-Pack-9295e5896d524b28914844559b087aac">Starter Pack <img src={arrow_forward} /></a></p>: ""
 
                   }
                 </AccordionBody>

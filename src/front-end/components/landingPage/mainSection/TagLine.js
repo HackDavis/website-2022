@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../css/landingPage/mainSection/TagLine.module.scss";
-// import Typed from "typed.js";
 
 export function TagLine() {
   const [underline, setUnderline] = useState(true);

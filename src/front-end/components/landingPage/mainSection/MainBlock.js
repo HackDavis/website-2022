@@ -23,7 +23,7 @@ export function MainBlock() {
         <p>
           New to hackathons?&nbsp;
           <br />
-          Check out our <a target="_blank" href="https://tinyurl.com/hackdavis-starterpack">Starter Pack <img src={arrow_forward} /></a>
+          Check out our <a target="_blank" href="https://hackdavis.notion.site/hackdavis/HackDavis-2022-Starter-Pack-9295e5896d524b28914844559b087aac">Starter Pack <img src={arrow_forward} /></a>
         </p>
       </main>
     </div>

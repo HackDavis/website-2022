@@ -19,7 +19,6 @@
 
     > h2 {
       @include header1(false);
-      // font-size: 32px;
       font-size: min(2rem, 2.7vw);
       line-height: 41px;
       color: $bright_teal;
