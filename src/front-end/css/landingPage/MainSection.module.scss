@@ -1,9 +1,11 @@
+@import "../_defs";
 .container {
   display: flex;
   flex-direction: column;
   margin: auto;
   padding: 0 25px;
   max-width: 377px;
+  background-color: $darker_teal;
 }
 
 .non_mobile_container {
@@ -11,32 +13,23 @@
   flex-direction: row;
   flex-wrap: nowrap;
   max-height: 2400px;
-  max-width: 1280px;
+  max-width: 1330px;
   padding: 0 25px;
   margin: auto;
   column-gap: 24px;
+  background-color: $darker_teal;
 
   > div:first-of-type {
-    width: 45%;
+    width: 44.3%;
     flex-grow: 0;
     display: flex;
     flex-direction: column;
   }
 
   > div:last-of-type {
-    width: 55%;
+    width: 55.7%;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
   }
 }
-
-// @media only screen and (min-width: 768px) {
-//   .container {
-//     align-content: space-between;
-//     width: 90%;
-//     max-height: 1621px;
-//     max-width: 1280px;
-//     flex-wrap: wrap;
-//   }
-// }

@@ -16,6 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
   /* overflow-x: hidden; */
   width: 100%;
+  /*Note: fix this on merge later*/
+  /* background-color: #173A52; */
 }
 
 *,
@@ -23,3 +25,24 @@
 *::after {
   box-sizing: border-box;
 }
+
+/* fonts */
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  src: url(./front-end/fonts/ProximaNova-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 600;
+  src: url(./front-end/fonts/Proxima\ Nova\ Semibold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  src: url(./front-end/fonts/ProximaNova-Regular.otf) format("opentype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500;700&display=swap");

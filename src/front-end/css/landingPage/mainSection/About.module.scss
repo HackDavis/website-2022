@@ -1,38 +1,30 @@
-.contents {
-  position: relative;
-  background-color: #f2f2f2;
-  padding: 48px 24px 80px;
-  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
-  margin-bottom: -10px;
-  z-index: -1;
+@import "../../_defs";
 
-  > h1 {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
-    margin-bottom: 24px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright_teal;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  padding: 3px 0 3px;
+  margin-bottom: -20px;
+}
+
+.container {
+  width: calc(100% - 6px);
+  position: relative;
+  background-color: $darker_teal;
+  padding: 72px 21px 88px;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+
+  > h2 {
+    @include header1();
+    margin-bottom: 18px;
   }
 
   > p {
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0.02em;
+    @include body();
   }
-
-  // &:before {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   content: '';
-  //   background: inherit;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   transform-origin: top left;
-  //   transform: skewY(4deg);
-  // }
 }
 
 .top_diagonal_mobile {
@@ -52,14 +44,20 @@
 }
 
 @media (min-width: 992px) {
-  .contents {
-    padding: 108px 64px 80px;
+  .wrapper {
     clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
-    margin: 0;  
+    padding-bottom: 3px;
+    margin-bottom: 0;
+  }
 
-    > h1 {
-      font-size: 48px;
-      line-height: 58px;
+  .container {
+    padding: 108px min(10%, 64px) 80px;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin: 0;
+
+    > h2 {
+      @include header1(false);
+      margin-bottom: 25px;
     }
 
     > p {

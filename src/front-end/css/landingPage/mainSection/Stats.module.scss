@@ -1,43 +1,47 @@
-.container {
-  position: relative;
-  padding: 32px 24px 80px;
-  background-color: #f2f2f2;
+@import "../../_defs";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright_teal;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
-  margin-bottom: -10px;
-  z-index: -1;
+  padding: 3px 0;
+  margin-bottom: -20px;
+}
 
-  > h1 {
-    font-size: 32px;
-    line-height: 39px;
-    font-weight: 700;
-    margin-bottom: 34px;
+.container {
+  width: calc(100% - 6px);
+  position: relative;
+  padding: 29px 19px 77px 21px;
+  background-color: $darker_teal;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
+
+  > a {
+    text-decoration: none;
+
+    > button {
+      background: #000000;
+      border-radius: 100px;
+      padding: 10px;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      @include button();
+    }
   }
+  > h2 {
+    @include header1();
+    margin-bottom: 24px;
+    word-spacing: -0.5ch;
 
-  > button {
-    background: #000000;
-    border-radius: 100px;
-    padding: 10px;
-    width: 100%;
-    color: white;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    > span {
+      @include header1();
+      color: $yellow;
+      word-spacing: -0.5ch;
+    }
   }
-
-  // &:after{
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   content: '';
-  //   background: inherit;
-  //   z-index: -1;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   transform-origin: top left;
-  //   transform: skewY(4deg);
-  // }
 }
 
 .bottom_diagonal_mobile {
@@ -55,15 +59,34 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px 64px 153px;
+    padding: 64px min(12%, 64px) 153px;
 
-    > h1 {
-      font-size: min(4vw, 48px);
-      line-height: min(4vw, 58px);
+    > h2 {
+      font-size: min(2.9rem, 3.5vw);
+      line-height: 1.4em;
+
+      > span {
+        font-size: inherit;
+      }
     }
 
-    > button {
+    > a > button {
       max-width: 234px;
+    }
+    .hover_winners {
+      transition: 250ms ease-in-out;
+    }
+    .hover_winners {
+      &:hover {
+        background-color: #ffc53d;
+        border: 3px solid #ffc53d;
+        transition: 250ms ease-in-out;
+      }
+      &:active {
+        background-color: #ffc53d;
+        border: 3px solid #ffc53d;
+        transition: 250ms ease-in-out;
+      }
     }
   }
 }

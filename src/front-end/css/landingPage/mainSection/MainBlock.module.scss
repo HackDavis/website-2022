@@ -1,77 +1,211 @@
+@import "../../_defs";
+
 .container {
   padding: 40px 25px;
-  background-color: #f2f2f2;
+  background-color: $darker_teal;
   margin-bottom: 24px;
+  @include border();
 
-  > h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  > p {
+    width: 85%;
+    @include body();
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    margin: auto;
+
+    > a {
+      @include body();
+      color: $bright_teal;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 700;
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 250ms ease-in-out;
+
+      &:hover {
+        border-bottom-color: $bright_teal;
+        transition: border-bottom 250ms ease-in-out;
+      }
+
+      > img {
+        width: auto;
+      }
+    }
   }
 
-  > h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
+  > .info_flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 15px;
+    margin-bottom: 16px;
+    > img {
+      &:first-of-type {
+        width: 20px;
+        height: 20px;
+      }
 
-    > strong {
-      font-weight: 700;
+      &:last-of-type {
+        width: 18px;
+        height: 22px;
+      }
     }
+    > p {
+      > a {
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+        letter-spacing: 2%;
+        font-family: "Proxima Nova", sans-serif;
+        font-weight: 500;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    > h3 {
+      @include body();
+      font-size: 17px;
+      line-height: 21px;
+      margin: 0;
 
-    &:last-of-type {
-      margin-bottom: 24px;
+      > strong {
+        @include header2();
+        font-size: 17px;
+        line-height: 21px;
+        font-weight: 700;
+      }
     }
+  }
+
+  > .location_container {
+    margin-bottom: 25px;
+  }
+
+  > h1 {
+    @include title();
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
   }
 
   > div {
     display: flex;
     flex-flow: column nowrap;
+    margin-bottom: 26px;
 
     > button {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      background-color: black;
-      color: white;
-      border-radius: 100px;
-      padding: 10px;
+      &:first-of-type {
+        @include button();
+      }
+      &:last-of-type {
+        @include button(false);
+      }
+      padding: 7px;
       width: 100%;
-  
+
       &:first-of-type {
         margin-bottom: 8px;
       }
     }
   }
-
 }
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px 64px 80px;
+    padding: 64px min(12%, 64px) 42px;
 
     > h1 {
-      font-size: min(5.5vw, 80px);
+      @include title(false);
+      font-size: min(5rem, 6vw);
+      margin-bottom: 32px;
     }
-    
-    > h3 {
-      font-size: 24px;
-      line-height: 29px;
-  
-      &:last-of-type {
-        line-height: 28px;
+
+    > p {
+      width: auto;
+
+      > br {
+        display: none;
+      }
+    }
+
+    .info_flex {
+      > p {
+        > a {
+          font-size: 20px;
+        }
+      }
+      > h3 {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.02rem;
+
+        > strong {
+          font-size: 24px;
+        }
+
+        &:last-of-type {
+          line-height: 28px;
+        }
       }
     }
 
     > div {
       flex-flow: row nowrap;
+      align-items: center;
       justify-content: space-between;
 
       > button {
+        flex-grow: 1;
+        width: auto;
         max-width: 202px;
 
         &:first-of-type {
           margin: 0;
+          margin-right: 15px;
         }
       }
     }
+    .hover_prereg {
+      transition: 250ms ease-in-out;
+    }
+    .hover_sponsor {
+      transition: 250ms ease-in-out;
+    }
+    .hover_prereg {
+      &:hover {
+        background-color: #45d5d9;
+        border: 3px solid #45d5d9;
+        transition: 250ms ease-in-out;
+      }
+      &:active {
+        background-color: #45d5d9;
+        border: 3px solid #45d5d9;
+        transition: 250ms ease-in-out;
+      }
+    }
+    .hover_sponsor {
+      &:hover {
+        border: 3px solid#45d5d9;
+        color: #45d5d9;
+        transition: 250ms ease-in-out;
+      }
+      &:active {
+        border: 3px solid#45d5d9;
+        color: #45d5d9;
+        transition: 250ms ease-in-out;
+      }
+    }
+  }
+}
+
+@media (min-width: 1240px) {
+  .linebreak {
+    display: none;
   }
 }

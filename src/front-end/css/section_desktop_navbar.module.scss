@@ -1,20 +1,39 @@
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #173a52;
+}
+
+.mlhbanner {
+  width: 60px;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background-color: transparent;
+}
+
+.mlhbanner.hide {
+  top: -100vh;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  width: 100vw;
-  max-width: 1280px;
+  max-width: 1330px;
   margin: auto;
   z-index: 999;
-  background: white;
+}
+
+.scroll {
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.3);
 }
 
 .circle {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #c4c4c4;
 }
 
 .buttons {
@@ -28,16 +47,22 @@
 .button {
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: white;
   width: auto;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
 
   &:hover {
-    color: black;
+    color: #9ee7e5;
   }
+}
+
+.bold_navitem {
+  font-weight: 700;
 }
 
 @media (min-width: 992px) {
   .container {
-    padding: 40px 24px 24px;
+    padding: 24px;
   }
 }

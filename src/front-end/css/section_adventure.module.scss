@@ -1,31 +1,106 @@
-// .background {
-//     display: flex;
-//     width: 100vw;
-//     justify-content: center;
-//     margin-top: 24px;
-//     margin-bottom: 24px;
-// }
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // flex-wrap: wrap;
-    margin: 24px 0;
-    height: 138px;
-    width: 100%;
-    // max-width: 1280px;
-    background-color: rgba(242, 242, 242, 1);
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
 
-    > p {
-        text-align: center;
-        max-width: 226px;
-        font-size: 24px;
-        margin: 0;
-    }
+@mixin header1($size: 24px, $line-height: 29px) {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+@mixin header2($size: 14px) {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: $size;
+  letter-spacing: 2%;
+  line-height: 175%;
+  color: #ffffff;
 }
 
-@media (min-width: 992px) {
-    .container > p {
-        max-width: 350px;
-    }
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 276px;
+  width: 100%;
+  background-color: #123041;
+  position: relative;
+}
+
+.adventuremobile {
+  position: absolute;
+  bottom: 0;
+}
+
+.adventuredesktop {
+  position: absolute;
+  display: none;
+  bottom: 0;
+}
+
+.headerText {
+  @include header2;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  inline-size: 280px;
+  overflow-wrap: break-word;
+  margin-top: 15px;
+  z-index: 998;
+  line-height: normal;
+  background-color: transparent;
+}
+
+.button {
+  @include header2;
+  background-color: #ffffff;
+  color: #173a52;
+  font-size: 17px;
+  line-height: 21px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  padding: 10px;
+  width: 60%;
+  z-index: 998;
+}
+
+.button:active {
+  background: #45d5d9;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    height: 491px;
+  }
+  .headerText {
+    @include header2;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    inline-size: auto;
+    overflow-wrap: normal;
+    margin-top: 70px;
+    letter-spacing: 0.2rem;
+  }
+  .button {
+    width: 20%;
+    font-size: 17px;
+    margin-top: 6px;
+    transition: 250ms ease-in-out;
+  }
+  .adventuremobile {
+    display: none;
+  }
+  .adventuredesktop {
+    display: block;
+  }
+  .button:hover {
+    background: #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+  .button:active {
+    background: #45d5d9;
+    transition: 250ms ease-in-out;
+  }
 }

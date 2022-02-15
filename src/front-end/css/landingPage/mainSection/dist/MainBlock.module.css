@@ -1,0 +1,170 @@
+.container {
+  padding: 40px 25px;
+  background-color: #173a52;
+  margin-bottom: 24px;
+  border: 3px solid #9ee7e5;
+}
+.container > .info_flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 15px;
+  margin-bottom: 16px;
+}
+.container > .info_flex > img:first-of-type {
+  width: 20px;
+  height: 20px;
+}
+.container > .info_flex > img:last-of-type {
+  width: 18px;
+  height: 22px;
+}
+.container > .info_flex > a {
+  text-decoration: none;
+  color: white;
+}
+.container > .info_flex > a:hover {
+  text-decoration: underline;
+}
+.container > .info_flex > h3 {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.02rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-size: 17px;
+  line-height: 21px;
+  margin: 0;
+}
+.container > .info_flex > h3 > strong {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 600;
+  line-height: 175%;
+  letter-spacing: 2%;
+  margin: 0;
+  font-size: 0.875rem;
+  font-size: 17px;
+  line-height: 21px;
+  font-weight: 700;
+}
+.container > .location_container {
+  margin-bottom: 25px;
+}
+.container > h1 {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 2%;
+  margin: 0;
+  font-size: 3.5rem;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.container > div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.container > div > button {
+  padding: 7px;
+  width: 100%;
+}
+.container > div > button:first-of-type {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.1rem;
+  border-radius: 100px;
+  color: #043b54;
+  background-color: white;
+  border: 3px solid white;
+}
+.container > div > button:last-of-type {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0.1rem;
+  border-radius: 100px;
+  color: white;
+  border: 3px solid white;
+  background-color: #173a52;
+}
+.container > div > button:first-of-type {
+  margin-bottom: 8px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 64px min(12%, 64px) 80px;
+  }
+  .container > h1 {
+    color: white;
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin: 0;
+    font-size: 5rem;
+    font-size: min(5rem, 6vw);
+    margin-bottom: 32px;
+  }
+  .container .info_flex > h3 {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.02rem;
+  }
+  .container .info_flex > h3 > strong {
+    font-size: 24px;
+  }
+  .container .info_flex > h3:last-of-type {
+    line-height: 28px;
+  }
+  .container > div {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container > div > button {
+    flex-grow: 1;
+    width: auto;
+    max-width: 202px;
+  }
+  .container > div > button:first-of-type {
+    margin: 0;
+    margin-right: 15px;
+  }
+  .container .hover_prereg {
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_sponsor {
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_prereg:hover {
+    background-color: #45d5d9;
+    border: 3px solid #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_prereg:active {
+    background-color: #45d5d9;
+    border: 3px solid #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_sponsor:hover {
+    border: 3px solid #45d5d9;
+    color: #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+  .container .hover_sponsor:active {
+    border: 3px solid #45d5d9;
+    color: #45d5d9;
+    transition: 250ms ease-in-out;
+  }
+}

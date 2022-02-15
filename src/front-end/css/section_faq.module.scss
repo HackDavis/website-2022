@@ -1,49 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&display=swap");
+@import "./defs.scss";
+
+@mixin header1($size: 32px, $line-height: 42px) {
+  font-family: "DM Mono";
+  font-weight: 500;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+@mixin header2($size: 14px) {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: $size;
+  letter-spacing: 2%;
+}
+
 .container {
   display: flex;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1330px;
   margin-top: 24px;
   padding: 32px 24px 40px;
-  background-color: rgba(242, 242, 242, 1);
+  position: relative;
+  background-color: #173a52;
+  border: solid #9ee7e5 3.5px;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .contentWrapper {
   max-width: 990px;
-  // width: 60vw;
-  // margin-left: auto;
-  // margin-right: auto;
+  padding-bottom: 50px;
+}
+.new_text {
+  width: 100%;
+  @include body();
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  > a {
+    @include body();
+    color: $bright_teal;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 250ms ease-in-out;
+    &:hover {
+      border-bottom-color: $bright_teal;
+      transition: border-bottom 250ms ease-in-out;
+    }
+    > img {
+      width: auto;
+    }
+  }
 }
 
 .headerText {
-  font-size: 40px;
-  font-weight: 700;
+  @include header1;
+  margin-bottom: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #9ee7e5;
+}
+
+.link:hover {
+  color: #9ee7e5;
+  text-decoration: underline;
 }
 
 :global(.accordion-item) {
-  background-color: rgba(242, 242, 242, 1) !important;
+  background-color: #173a52 !important;
 }
 :global(.accordion-button) {
-  padding-left: 0 !important;
-  color: black !important;
-  font-size: 14pt !important;
-  max-width: 70vw !important;
-  background-color: rgba(242, 242, 242, 1) !important;
+  font-weight: 600;
+  padding-left: 0px !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  background-color: #173a52 !important;
 }
+
 :global(.accordion-button:focus) {
   box-shadow: none !important;
   border: none !important;
-  background-color: rgba(242, 242, 242, 1) !important;
+  color: #9ee7e5 !important;
+  background-color: #173a52 !important;
 }
+
 :global(.accordion-button::after) {
-  content: none !important;
+  background-image: url("../images/Vector131.svg") !important;
 }
+
 :global(.accordion-body) {
-  background-color: rgba(242, 242, 242, 1) !important;
+  font-family: "Proxima Nova" !important;
+  background-color: #173a52 !important;
+  color: #ffffff !important;
   overflow-x: hidden !important;
+  border-bottom: #9ee7e5 solid;
+}
+:global(.accordion-header) {
+  @include header2;
+  border-bottom: #9ee7e5 solid !important;
+}
+
+:global(.accordion-header:focus) {
+  color: #9ee7e5 !important;
 }
 
 @media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
+  }
+  .headerText {
+    @include header1($size: 48px, $line-height: 62px);
+  }
+  :global(.accordion-button) {
+    font-size: 24px !important;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  :global(.accordion-button) {
+    font-size: 14px !important;
+  }
+  :global(.accordion-body) {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  :global(.accordion-button) {
+    font-size: 13px !important;
+  }
+  :global(.accordion-body) {
+    font-size: 13px !important;
   }
 }
