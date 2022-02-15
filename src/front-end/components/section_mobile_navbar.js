@@ -35,8 +35,8 @@ const Section_Mobile_Navbar = () => {
       </div>
         <div className={`${styles.menuNav} ${isOpen ? `${styles.showMenu}` : ""}`}>
           <div className={styles.buttons}>
-            <p><Link to="/" className={`${styles.button} ${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: null}`} >Homepage</Link></p>
-            <p><Link to="/about" className={`${styles.button} ${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}`: null}`}>About us</Link></p>
+            <p><Link to="/" className={`${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: `${styles.button}`}`} >Homepage</Link></p>
+            <p><Link to="/about" className={`${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}`: `${styles.button}`}`}>About us</Link></p>
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>

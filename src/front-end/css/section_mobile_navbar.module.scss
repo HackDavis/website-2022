@@ -130,6 +130,10 @@
 }
 
 .bold_navitem {
+  text-decoration: none;
+  line-height: 50px;
+  font-family: "Proxima Nova", sans-serif;
+  padding-bottom: 3px;
   font-weight: 700;
   color: #9ee7e5;
   border-bottom: 2px solid #9ee7e5;
@@ -137,6 +141,14 @@
 
 .button:active {
   color: #9ee7e5 !important;
+}
+
+.button:visited {
+  color: #ffffff;
+}
+
+.bold_navitem:visited {
+  color: #9ee7e5;
 }
 
 .exitDash {
