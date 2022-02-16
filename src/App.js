@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { MainSection } from "./front-end/pages/MainSection";
 import { FAQOnwards } from "./front-end/pages/FAQOnwards";
 import Section_Navbar from "./front-end/components/section_navbar.js";
@@ -18,6 +18,14 @@ function LandingPage() {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.cookie.split(";").forEach((c) => {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+  });
+
   return (
     <Router>
       <Routes>
