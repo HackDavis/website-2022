@@ -18,9 +18,9 @@ function LandingPage() {
 }
 
 export default function App() {
+  // Used to remove cookies 
   useEffect(() => {
     document.cookie.split(";").forEach((c) => {
-      console.log("cookie: " + c);
       document.cookie = c
         .replace(/^ +/, "")
         .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
