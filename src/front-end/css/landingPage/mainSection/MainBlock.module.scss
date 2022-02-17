@@ -63,8 +63,12 @@
         letter-spacing: 2%;
         font-family: "Proxima Nova", sans-serif;
         font-weight: 500;
+        padding-bottom: 3px;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 250ms ease-in-out;
         &:hover {
-          text-decoration: underline;
+          border-bottom-color: white;
+          transition: border-bottom 250ms ease-in-out;
         }
       }
     }
