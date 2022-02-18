@@ -6,11 +6,12 @@ import lightbulb from "../../../images/main_section/treetop/lightbulb.svg";
 import leaves_canopy from "../../../images/main_section/treetop/leaves_canopy.svg";
 import leaves_branch from "../../../images/main_section/treetop/leaves_branch.svg";
 import left_sunrays from "../../../images/main_section/treetop/left_sunrays.svg";
+import Fade from "react-reveal/Fade";
 
 export function TreeTop() {
 
   return (
-    <>
+    <Fade>
       <section className={styles.container}>
         <img src={tree_base_image} className={styles.tree_base_image} alt="tree image"/>
         <div className={styles.floating_cow_wrap}>
@@ -21,6 +22,6 @@ export function TreeTop() {
         <img src={leaves_canopy} className={styles.leaves_canopy} alt="canopy leaves"/>
         <img src={left_sunrays} className={styles.left_sunrays} alt="sun rays"/>
       </section>
-    </>  
+    </Fade>  
   );
 }

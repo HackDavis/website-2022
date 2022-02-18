@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../css/landingPage/mainSection/TagLine.module.scss";
+import Fade from "react-reveal/Fade";
 
 export function TagLine() {
   const [underline, setUnderline] = useState(true);
@@ -21,8 +22,10 @@ export function TagLine() {
   }, [underline]);
 
   return (
-    <section className={styles.container}>
-      <h2 id="typed">{tagline}</h2>
-    </section>
+    <Fade>
+      <section className={styles.container}>
+        <h2 id="typed">{tagline}</h2>
+      </section>
+    </Fade>
   );
 }
