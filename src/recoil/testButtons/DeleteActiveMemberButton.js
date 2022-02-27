@@ -2,7 +2,7 @@ import { groupStateAtom } from "../atoms/groupAtom";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { SetUserGroupID } from "../selectors/setUserGroupID.js";
 import { deleteActiveMember } from "../DBQueries/deleteActiveMember.js";
-import { SetGroupMembers } from "../selectors/setGroupMembers"
+import { SetGroupMembers } from "../selectors/setGroupMembers";
 
 function DeleteActiveMemberButton() {
     const [group, setGroup] = useRecoilState(groupStateAtom);

@@ -13,7 +13,7 @@ export async function deleteUserGroupID(user_id) {
     try {
         console.log(user_id);
         await updateDoc(docRef, {
-            group_id:"",
+            group_id:""
         });
     } catch(e) {
         console.log("error with deleteUserGroupID: ", e);

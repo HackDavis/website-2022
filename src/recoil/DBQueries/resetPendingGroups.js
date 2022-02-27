@@ -11,7 +11,7 @@ export async function resetPendingGroups(userID) {
     const docRef = doc(dbConfig, "2022-users", userID);
     try {
         await updateDoc(docRef, {
-            pending_groups: [],
+            pending_groups: []
         });
         let newPendingGroups = [];
         console.log("resetPendingGroup success");

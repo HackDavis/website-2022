@@ -19,7 +19,7 @@ export async function deleteActiveMember(user_id, group_id) {
     group_members_copy.splice(groupIndex, 1);
     console.log(group_members_copy);
     await updateDoc(docRef, {
-        members: group_members_copy,
+        members: group_members_copy
     });
     
 

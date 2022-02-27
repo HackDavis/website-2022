@@ -18,5 +18,5 @@ export function SetGroupIDButton() {
             <button onClick={setGroupIDClick}>setGroupID</button>
             {user ? <h1>{user.group_id}</h1> : <h1> no user group id</h1>}
         </div>
-    )
+    );
 }

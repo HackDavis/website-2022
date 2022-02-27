@@ -20,5 +20,5 @@ export function AddGroupMemberButton () {
             <button onClick={addGroupMemberClick}>AddGroupMemberButton</button>
             {groupData ? <h1>{JSON.stringify(groupData.members)}</h1> : <h1> group data does not exist</h1>}
         </div>
-    )
+    );
 }

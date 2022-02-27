@@ -81,7 +81,7 @@ function App(props) {
         hd_director:
           user.email.substring(
             user.email.lastIndexOf("@") + 1
-          ) === "hackdavis.io",
+          ) === "hackdavis.io"
       };
 
       await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);

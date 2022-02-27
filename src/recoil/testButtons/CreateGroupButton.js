@@ -3,7 +3,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../atoms/userAtom.js";
 import { groupStateAtom } from "../atoms/groupAtom.js";
 import {SetUserGroupID} from "../selectors/setUserGroupID";
-import {SetUserPendingGroups} from "../selectors/setUserPendingGroups"
+import {SetUserPendingGroups} from "../selectors/setUserPendingGroups";
 import { SetUserPendingInvitations } from "../selectors/setUserPendingInvitations.js";
 import { createGroup } from '../DBQueries/createGroup.js';
 

@@ -19,13 +19,13 @@ export async function addGroupMember(user_id, group_id) {
             members_map_copy[user_id] = [userData.name, userData.email, userData.leader_status];
 
             await updateDoc(docRef, {
-                members: members_map_copy,
+                members: members_map_copy
             });
             console.log("new member added");
             return members_map_copy;
         } else {
             console.log("can't add members because the max limit has been reached or the user being added does not exist");
-            return groupData.members
+            return groupData.members;
         }
     } catch (e) {
         console.log ("error updatting group's member field", e);

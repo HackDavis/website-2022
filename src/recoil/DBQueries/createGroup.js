@@ -12,7 +12,7 @@ export async function createGroup(email, user_id, newGroupDesc) {
         pending_members: {},
         pending_invitations: [],
         tags1: [],
-        tags2: [],
+        tags2: []
     };
     // note: can just fix frontend to avoid this issue
     if (getUser(user_id).group_id != "") {
@@ -25,7 +25,7 @@ export async function createGroup(email, user_id, newGroupDesc) {
     try {
         await updateDoc(docRef, {
             group_id: docRef.id
-        })
+        });
     } catch(e) {
         console.log(`error adding group in createGroup: ${e}`);
     }
@@ -35,7 +35,7 @@ export async function createGroup(email, user_id, newGroupDesc) {
     try {
         await updateDoc(docRef2, {
             group_id: docRef.id,
-            pending_groups: [],
+            pending_groups: []
         });
     } catch(e) {
         console.log(`error updating user in createGroup: ${e}`);

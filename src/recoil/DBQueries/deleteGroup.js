@@ -4,7 +4,7 @@ import { getGroup } from "./getGroup";
 import { deleteUserPendingGroup } from "./deleteUserPendingGroup";
 import { getUser } from "./getUser";
 import { deleteUserPendingInvitation } from "./deleteUserPendingInvitation";
-import { deleteUserGroupID } from "./deleteUserGroupID"
+import { deleteUserGroupID } from "./deleteUserGroupID";
 
 //Purpose: Deletes a group
 //Input: group_id (string)
@@ -33,7 +33,7 @@ export async function deleteGroup(groupID) {
 
         // 1. removing group_id from all user's pending_groups
         let keys_p_mem = Object.keys(pending_members_map);
-        console.log("initial pending_members:", keys_p_mem)
+        console.log("initial pending_members:", keys_p_mem);
         for(let id of keys_p_mem) {
             await deleteUserPendingGroup(id, groupID);
         }

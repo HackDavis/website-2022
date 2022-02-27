@@ -17,7 +17,7 @@ export async function addPendingMember(user_id, group_id) {
         pending_members_map_copy[user_id] = [userData.name, userData.email, userData.leader_status];
     
         await updateDoc(docRef, {
-            pending_members: pending_members_map_copy,
+            pending_members: pending_members_map_copy
         });
 
         return pending_members_map_copy;

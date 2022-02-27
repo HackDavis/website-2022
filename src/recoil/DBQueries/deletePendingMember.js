@@ -13,7 +13,7 @@ export async function deletePendingMember(user_id, group_id) {
                                                             // otherwise you do a shallow copy of nested objects 
         delete new_pending_members[userData.user_id]; 
         await updateDoc(docRef, {
-            pending_members: new_pending_members,
+            pending_members: new_pending_members
         });
         return new_pending_members;
     } catch(e) {

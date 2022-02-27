@@ -17,7 +17,7 @@ export async function deleteUserPendingInvitation(user_id, group_id) {
         delete pending_invitations_copy[group_id];
         
         await updateDoc(docRef, {
-            pending_invitations: pending_invitations_copy,
+            pending_invitations: pending_invitations_copy
         });
         
     } catch(e) {

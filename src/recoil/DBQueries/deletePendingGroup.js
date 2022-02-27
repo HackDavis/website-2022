@@ -15,7 +15,7 @@ export async function deletePendingGroup(user_id, group_id) {
         let groupIndex = new_pending_groups.indexOf(groupData.group_id);
         new_pending_groups.splice(groupIndex, 1); 
         await updateDoc(docRef, {
-            pending_groups: new_pending_groups,
+            pending_groups: new_pending_groups
         });
         console.log("deletePendingGroup success");
         return new_pending_groups;

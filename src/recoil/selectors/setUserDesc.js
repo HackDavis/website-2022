@@ -5,8 +5,8 @@ export const SetUserDescription = selector({
     key:"SetUserDescription",
     get: ({get}) => ({...get(userStateAtom)}), 
     set: ({set, get}, desc) => { 
-        let userStateCopy = {...get(userStateAtom)}
+        let userStateCopy = {...get(userStateAtom)};
         userStateCopy.description = desc; 
-        set(userStateAtom, userStateCopy)
-    }, 
+        set(userStateAtom, userStateCopy);
+    }
 });

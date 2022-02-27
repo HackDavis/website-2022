@@ -32,5 +32,5 @@ export function MemberAcceptedButton () {
             {group ? <h1>groupMembers: {JSON.stringify(group.members)}</h1>: <h1>no group</h1>}  
             {group ? <h1>groupPendingMembers: {JSON.stringify(group.pending_members)}</h1>: <h1>no group</h1>}     
         </div>
-    )
+    );
 }

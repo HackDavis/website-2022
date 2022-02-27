@@ -8,5 +8,5 @@ export const DeletePendingGroup = selector({
         let userStateCopy = {...get(userStateAtom)}; 
         userStateCopy.pending_groups = new_pending_groups; 
         set(userStateAtom, userStateCopy); 
-    }, 
+    }
 });

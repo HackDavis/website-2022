@@ -13,7 +13,7 @@ export async function addPendingGroup(user_id, group_id) {
         let pending_groups_arr = userData.pending_groups;
         pending_groups_arr.push(group_id);
         await updateDoc(docRef, {
-            pending_groups: pending_groups_arr,
+            pending_groups: pending_groups_arr
         });
 
     } catch(e) {

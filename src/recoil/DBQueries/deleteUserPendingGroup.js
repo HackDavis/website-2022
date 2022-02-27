@@ -21,7 +21,7 @@ export async function deleteUserPendingGroup(user_id, group_id) {
         //console.log(pending_groups_copy);
 
         await updateDoc(docRef, {
-            pending_groups: pending_groups_copy,
+            pending_groups: pending_groups_copy
         });
     } catch(e) {
         console.log("error with deleteMultiplePendingMembers: ", e);
