@@ -36,6 +36,8 @@ import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberBut
 import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
 
 import GroupWithdrawButton from "./recoil/testButtons/GroupWithdrawButton";
+import UpdateUserDescButton from "./recoil/testButtons/updateUserDescButton";
+
 require("dotenv").config();
 
 function App(props) {
@@ -72,9 +74,9 @@ function App(props) {
         qr_code: "",
         about_me: "",
         group_id: "",
+        description: "",
         leader_status: false,
         pending_groups: [],
-        tags: [],
         pending_invitations: {},
         hd_director:
           user.email.substring(
@@ -253,6 +255,7 @@ function App(props) {
     <CreateGroupButton/> */}
     <GroupApplicationButton/>
     <GroupWithdrawButton/>
+    <UpdateUserDescButton/>
     {/* <DenyGroupRequestButton/> 
     <DeleteGroupButton/>
     <SetGroupIDButton/>
