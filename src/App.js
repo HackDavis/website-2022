@@ -34,6 +34,8 @@ import DenyGroupRequestButton from "./recoil/testButtons/DenyGroupRequestButton"
 import DeleteGroupButton from "./recoil/testButtons/DeleteGroupButton";
 import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberButton";
 import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
+
+import GroupWithdrawButton from "./recoil/testButtons/GroupWithdrawButton";
 require("dotenv").config();
 
 function App(props) {
@@ -247,15 +249,16 @@ function App(props) {
     <TestRecoil/>
     <GetUserButton/>
     <GetGroupButton/> 
-    <ResetPendingGroupsButton/>
-    <CreateGroupButton/>
+    {/* <ResetPendingGroupsButton/>
+    <CreateGroupButton/> */}
     <GroupApplicationButton/>
-    <DenyGroupRequestButton/> 
+    <GroupWithdrawButton/>
+    {/* <DenyGroupRequestButton/> 
     <DeleteGroupButton/>
     <SetGroupIDButton/>
     <DeleteActiveMemberButton/>
     <AddGroupMemberButton/>
-    <MemberAcceptedButton/>
+    <MemberAcceptedButton/> */}
     </div>
   );
 }
