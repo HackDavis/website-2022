@@ -43,6 +43,6 @@ export async function groupApplication(user_id, group_id) {
             return pending_members_map_copy;
         }
     } catch (e) {
-        console.log("error with groupApplication handler ", e);
+        console.log("error with groupApplication handler: ", e);
     }
 }

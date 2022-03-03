@@ -36,7 +36,10 @@ import DeleteActiveMemberButton from "./recoil/testButtons/DeleteActiveMemberBut
 import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
 
 import GroupWithdrawButton from "./recoil/testButtons/GroupWithdrawButton";
-import UpdateUserDescButton from "./recoil/testButtons/updateUserDescButton";
+import UpdateUserDescButton from "./recoil/testButtons/UpdateUserDescButton";
+import UpdateGroupDescButton from "./recoil/testButtons/UpdateGroupDescButton";
+import SetRolesButton from "./recoil/testButtons/SetRolesButton.js";
+import SetTagsButton from "./recoil/testButtons/SetTagsButton.js";
 
 require("dotenv").config();
 
@@ -251,11 +254,14 @@ function App(props) {
     <TestRecoil/>
     <GetUserButton/>
     <GetGroupButton/> 
-    {/* <ResetPendingGroupsButton/>
-    <CreateGroupButton/> */}
+    {/* <ResetPendingGroupsButton/> */}
+    <CreateGroupButton/>
     <GroupApplicationButton/>
     <GroupWithdrawButton/>
     <UpdateUserDescButton/>
+    <UpdateGroupDescButton/>
+    <SetRolesButton/>
+    <SetTagsButton/>
     {/* <DenyGroupRequestButton/> 
     <DeleteGroupButton/>
     <SetGroupIDButton/>

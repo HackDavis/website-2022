@@ -11,11 +11,12 @@ export async function createGroup(email, user_id, newGroupDesc) {
         members: [user_id],
         pending_members: {},
         pending_invitations: [],
-        tags1: [],
-        tags2: []
+        tags1: [], // Roles needed
+        tags2: [] // Technologies needed
     };
     // note: can just fix frontend to avoid this issue
-    if (getUser(user_id).group_id != "") {
+    if (getUser(user_id).group_id != undefined) {
+        console.log(getUser(user_id).group_id);
         console.log('error in createGroup: user is already in a group');
         return null;
     }
