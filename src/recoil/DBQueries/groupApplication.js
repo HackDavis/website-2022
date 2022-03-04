@@ -3,10 +3,10 @@ import { addPendingMember } from "./addPendingMember.js";
 import { getUser } from "./getUser.js";
 import { getGroup } from "./getGroup.js";
 
-// user_id, user_name, email will be obtained from the User Recoil Atom
+// user_id, user_name, email will be obtained from the User Recoil Atom, user's reason for applying
 //how do we access group_id? (probably on the page))
 // dont use 'name' as it is a reserved word; use 'user_name' instead
-export async function groupApplication(user_id, group_id) {
+export async function groupApplication(user_id, group_id, reason) {
 
     function findUser(pending_members) {
         return pending_members == user_id;
@@ -39,7 +39,7 @@ export async function groupApplication(user_id, group_id) {
             return null;
         } else {
             await addPendingGroup(user_id, group_id);
-            let pending_members_map_copy = await addPendingMember(user_id, group_id);
+            let pending_members_map_copy = await addPendingMember(user_id, group_id, reason);
             return pending_members_map_copy;
         }
     } catch (e) {
