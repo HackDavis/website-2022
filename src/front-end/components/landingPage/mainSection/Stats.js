@@ -11,7 +11,7 @@ export function Stats() {
           <h2>
             <span>750+</span> hackers
             <br />
-            <span>36 </span>hours
+            <span>24 </span>hours
             <br />
             <span>150+</span> projects
             <br />
