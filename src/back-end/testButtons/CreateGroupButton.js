@@ -1,24 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
+<<<<<<< HEAD:src/recoil/testButtons/CreateGroupButton.js
+import { userStateAtom } from "../atoms/userAtom.js";
+import { groupStateAtom } from "../atoms/groupAtom.js";
+import {SetUserGroupID} from "../selectors/setUserGroupID";
+import {SetUserPendingGroups} from "../selectors/setUserPendingGroups";
+import { SetUserPendingInvitations } from "../selectors/setUserPendingInvitations.js";
+=======
 import { userStateAtom } from "../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../recoil/atoms/groupAtom";
 import {SetUserGroupID} from "../../recoil/selectors/setUserGroupID";
 import {SetUserPendingGroups} from "../../recoil/selectors/setUserPendingGroups";
 import { SetUserPendingInvitations } from "../../recoil/selectors/setUserPendingInvitations.js";
+>>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474:src/back-end/testButtons/CreateGroupButton.js
 import { createGroup } from '../DBQueries/createGroup.js';
 
 export function CreateGroupButton() {
+    const [name, setName] = useState('');
+    const [desc, setDesc] = useState('');
+    
     const [user, setUser] = useRecoilState(userStateAtom);
     const [group, setGroup] = useRecoilState(groupStateAtom);
+
     const setUserGroupID = useSetRecoilState(SetUserGroupID);
     const setUserPendingGroups = useSetRecoilState(SetUserPendingGroups);
     const setUserPendingInvitations = useSetRecoilState(SetUserPendingInvitations);
 
-    async function createGroupClick() {
-        // note: error checking here if group_id is blank or something
-        const newGroupDesc = document.getElementById("inputGroupDesc").value;
+    const changeName = (event) => {
+        setName(event.target.value);
+    };
 
-        const newGroup = await createGroup(user.email, user.user_id, newGroupDesc);
+    const changeDesc = (event) => {
+        setDesc(event.target.value);
+    };
+
+    async function createGroupClick() {
+
+        const newGroup = await createGroup(user.email, user.user_id, name, desc);
         if (newGroup == null) {
             console.log("createGroup Error: user is already in a group");
         } else {
@@ -33,8 +51,18 @@ export function CreateGroupButton() {
     return (
         <div>
             <div>
+                Group Name: <br />
+                <input type="text" value={name} maxLength = "20" onChange={changeName}></input>
+            </div>
+            <div>
+                {name.length}/20 characters
+            </div>
+            <div>
                 Group Description: <br />
-                <input type="text" id="inputGroupDesc"></input>
+                <input type="text" value={desc} maxLength = "250" onChange={changeDesc}></input>
+            </div>
+            <div>
+                {desc.length}/250 characters
             </div>
             <button onClick={createGroupClick}>createGroup</button>
             {user ? <h1>{user.group_id}</h1> : <h1>createGroup not called yet</h1>}

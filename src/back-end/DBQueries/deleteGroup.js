@@ -30,6 +30,10 @@ export async function deleteGroup(groupID) {
 
         // 1. removing group_id from all user's pending_groups
         let keys_p_mem = Object.keys(pending_members_map);
+<<<<<<< HEAD:src/recoil/DBQueries/deleteGroup.js
+        console.log("initial pending_members:", keys_p_mem);
+=======
+>>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474:src/back-end/DBQueries/deleteGroup.js
         for(let id of keys_p_mem) {
             await deleteUserPendingGroup(id, groupID);
         }
