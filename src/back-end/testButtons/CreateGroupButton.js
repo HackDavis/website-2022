@@ -1,18 +1,10 @@
 import React, {useState} from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
-<<<<<<< HEAD:src/recoil/testButtons/CreateGroupButton.js
-import { userStateAtom } from "../atoms/userAtom.js";
-import { groupStateAtom } from "../atoms/groupAtom.js";
-import {SetUserGroupID} from "../selectors/setUserGroupID";
-import {SetUserPendingGroups} from "../selectors/setUserPendingGroups";
-import { SetUserPendingInvitations } from "../selectors/setUserPendingInvitations.js";
-=======
 import { userStateAtom } from "../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../recoil/atoms/groupAtom";
 import {SetUserGroupID} from "../../recoil/selectors/setUserGroupID";
 import {SetUserPendingGroups} from "../../recoil/selectors/setUserPendingGroups";
 import { SetUserPendingInvitations } from "../../recoil/selectors/setUserPendingInvitations.js";
->>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474:src/back-end/testButtons/CreateGroupButton.js
 import { createGroup } from '../DBQueries/createGroup.js';
 
 export function CreateGroupButton() {

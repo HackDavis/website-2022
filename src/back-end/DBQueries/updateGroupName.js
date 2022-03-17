@@ -1,5 +1,5 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../../db/dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 
 // Input: groupID and new team name group leader wants to use for their updated profile
 // Expected Results: Updates that group's description

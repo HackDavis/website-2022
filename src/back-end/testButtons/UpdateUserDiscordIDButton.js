@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { userStateAtom } from "../atoms/userAtom.js";
-import { SetUserDiscordID } from "../selectors/setUserDiscordID.js";
+import { userStateAtom } from "../../recoil/atoms/userAtom.js";
+import { SetUserDiscordID } from "../../recoil/selectors/setUserDiscordID.js";
 import { updateUserDiscordID } from "../DBQueries/updateUserDiscordID.js";
 
 function UpdateUserDiscordIDButton() {

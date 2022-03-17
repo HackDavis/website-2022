@@ -1,9 +1,9 @@
 import React from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { userStateAtom } from "../atoms/userAtom.js";
-import { groupStateAtom } from "../atoms/groupAtom";
-import { SetUserPendingGroups } from "../selectors/setUserPendingGroups";
-import { updateGroupPendingMember } from "../selectors/updateGroupPendingMember";
+import { userStateAtom } from "../../recoil/atoms/userAtom.js";
+import { groupStateAtom } from "../../recoil/atoms/groupAtom";
+import { SetUserPendingGroups } from "../../recoil/selectors/setUserPendingGroups";
+import { updateGroupPendingMember } from "../../recoil/selectors/updateGroupPendingMember";
 import { groupWithdraw } from "../DBQueries/groupWithdraw.js";
 
 function GroupWithdrawButton() {

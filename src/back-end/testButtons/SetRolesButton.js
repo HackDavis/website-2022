@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { userStateAtom } from "../atoms/userAtom.js";
-import { groupStateAtom } from "../atoms/groupAtom.js";
-import { SetRolesState } from "../selectors/setRolesState.js";
+import { userStateAtom } from "../../recoil/atoms/userAtom.js";
+import { groupStateAtom } from "../../recoil/atoms/groupAtom.js";
+import { SetRolesState } from "../../recoil/selectors/setRolesState";
 import { setRoles } from "../DBQueries/setRoles.js";
 
 function SetRolesButton() {

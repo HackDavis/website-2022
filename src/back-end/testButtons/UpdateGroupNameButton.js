@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { userStateAtom } from "../atoms/userAtom.js";
-import { groupStateAtom } from "../atoms/groupAtom.js";
-import { SetGroupName } from "../selectors/setGroupName.js";
+import { userStateAtom } from "../../recoil/atoms/userAtom.js";
+import { groupStateAtom } from "../../recoil/atoms/groupAtom.js";
+import { SetGroupName } from "../../recoil/selectors/setGroupName.js";
 import { updateGroupName } from "../DBQueries/updateGroupName.js";
 
 function UpdateGroupNameButton() {

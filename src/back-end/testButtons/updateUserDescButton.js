@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { userStateAtom } from "../atoms/userAtom.js";
-import { SetUserDescription } from "../selectors/setUserDesc.js";
+import { userStateAtom } from "../../recoil/atoms/userAtom.js";
+import { SetUserDescription } from "../../recoil/selectors/setUserDesc.js";
 import { updateUserDesc } from "../DBQueries/updateUserDesc.js";
 
 function UpdateUserDescButton() {
