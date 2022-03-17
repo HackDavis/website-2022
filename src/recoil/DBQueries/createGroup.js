@@ -2,12 +2,13 @@ import { doc, getDoc, setDoc, updateDoc, addDoc, collection } from "firebase/fir
 import { dbConfig } from "../../db/dbConfig.js";
 import { getUser } from "./getUser.js";
 
-export async function createGroup(email, user_id, newGroupDesc) {
+export async function createGroup(email, user_id, newGroupDesc, group_name) {
     // first, create a group locally
     var newGroup = {
         contact_email: email,
         description: newGroupDesc,
         group_id: "",
+        group_name: group_name,
         members: [user_id],
         pending_members: {},
         pending_invitations: [],

@@ -37,7 +37,9 @@ import { memberAccepted } from "./recoil/DBQueries/memberAccepted";
 
 import GroupWithdrawButton from "./recoil/testButtons/GroupWithdrawButton";
 import UpdateUserDescButton from "./recoil/testButtons/UpdateUserDescButton";
+import UpdateUserDiscordIDButton from "./recoil/testButtons/UpdateUserDiscordIDButton";
 import UpdateGroupDescButton from "./recoil/testButtons/UpdateGroupDescButton";
+import UpdateGroupNameButton from "./recoil/testButtons/UpdateGroupNameButton";
 import SetRolesButton from "./recoil/testButtons/SetRolesButton.js";
 import SetTagsButton from "./recoil/testButtons/SetTagsButton.js";
 
@@ -81,6 +83,7 @@ function App(props) {
         leader_status: false,
         pending_groups: [],
         pending_invitations: {},
+        discord_id: "",
         hd_director:
           user.email.substring(
             user.email.lastIndexOf("@") + 1
@@ -259,7 +262,9 @@ function App(props) {
     <GroupApplicationButton/>
     <GroupWithdrawButton/>
     <UpdateUserDescButton/>
+    <UpdateUserDiscordIDButton/>
     <UpdateGroupDescButton/>
+    <UpdateGroupNameButton/>
     <SetRolesButton/>
     <SetTagsButton/>
     {/* <DenyGroupRequestButton/> 

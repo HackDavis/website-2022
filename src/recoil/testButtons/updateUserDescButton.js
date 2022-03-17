@@ -22,7 +22,10 @@ function UpdateUserDescButton() {
 
     return  (
         <div>
-            <input type="text" value={text} onChange={onChange} />
+            <input type="text" value={text} maxLength = "250" onChange={onChange} />
+            <div>
+                {text.length}/250 characters
+            </div>
             <button onClick={setUserDescClick}>updateUserDesc</button>
             {user ? <h1>{user.description}</h1> : <h1> no user description</h1>}
         </div>
