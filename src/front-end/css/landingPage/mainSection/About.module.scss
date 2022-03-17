@@ -1,0 +1,72 @@
+@import "../../_defs";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright_teal;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  padding: 3px 0 3px;
+  margin-bottom: -20px;
+}
+
+.container {
+  width: calc(100% - 6px);
+  position: relative;
+  background-color: $darker_teal;
+  padding: 72px 21px 88px;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+
+  > h2 {
+    @include header1();
+    margin-bottom: 18px;
+  }
+
+  > p {
+    @include body();
+  }
+}
+
+.top_diagonal_mobile {
+  border-bottom: 50px solid #f2f2f2;
+  border-right: calc(100vw - 24px) solid transparent;
+}
+
+.bottom_diagonal_mobile {
+  border-top: 50px solid #f2f2f2;
+  border-left: calc(100vw - 24px) solid transparent;
+  margin-bottom: -20px;
+}
+
+.top_diagonal_non_mobile {
+  border-bottom: 50px solid #f2f2f2;
+  border-right: calc(58.33vw - 24px) solid transparent;
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    padding-bottom: 3px;
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding: 108px min(10%, 64px) 80px;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin: 0;
+
+    > h2 {
+      @include header1(false);
+      margin-bottom: 25px;
+    }
+
+    > p {
+      font-size: 17px;
+      line-height: 25px;
+    }
+
+    > button {
+      font-size: 17px;
+    }
+  }
+}

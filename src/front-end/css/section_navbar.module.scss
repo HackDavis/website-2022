@@ -1,0 +1,19 @@
+.container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop {
+    display: initial;
+  }
+  .mobile {
+    display: none;
+  }
+}

@@ -1,7 +1,12 @@
-// !!Make sure to import env file while updating data into Firestore!!
+import React, {useEffect} from "react";
+import { MainSection } from "./front-end/pages/MainSection";
+import { FAQOnwards } from "./front-end/pages/FAQOnwards";
+import Section_Navbar from "./front-end/components/section_navbar.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AboutUs } from "./front-end/pages/AboutUs";
 
-import React, { useState, useEffect } from "react";
 import "./App.css";
+<<<<<<< HEAD
 import "firebase/analytics";
 import "firebase/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -191,8 +196,12 @@ function App(props) {
         console.log(errorCode, errorMessage);
       });
   }
+=======
+>>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474
 
+function LandingPage() {
   return (
+<<<<<<< HEAD
     <div className="App">
       {/* Google Sign In */}
       <button onClick={handleSignIn}>
@@ -273,8 +282,32 @@ function App(props) {
     <DeleteActiveMemberButton/>
     <AddGroupMemberButton/>
     <MemberAcceptedButton/> */}
+=======
+    <div className="app_container">
+      <Section_Navbar />
+      <MainSection />
+      <FAQOnwards />
+>>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  // Used to remove cookies 
+  useEffect(() => {
+    document.cookie.split(";").forEach((c) => {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+  });
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage/>} />
+        <Route path="/about" element={<AboutUs/>}/>
+      </Routes>
+    </Router>
+  );
+}

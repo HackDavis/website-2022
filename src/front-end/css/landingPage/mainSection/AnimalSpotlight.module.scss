@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  height: 400px;
+  margin-bottom: 24px;
+
+  > div {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+  }
+}
+
+.box {
+  flex-basis: 50%;
+  background-color: #c4c4c4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cow {
+  background-color: #9ee7e5;
+  overflow: hidden;
+
+  > .jump {
+    display: none;
+    opacity: 0;
+    width: 87.5%;
+    position: absolute;
+    left: 5.5%;
+    bottom: -10.6%;
+  }
+
+  > img:last-of-type {
+    width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
+  }
+}
+
+.bunny {
+  background-color: #ffc5ab;
+  overflow: hidden;
+
+  > .jump {
+    display: none;
+    opacity: 0;
+    width: 89%;
+    position: absolute;
+    left: 5.5%;
+    bottom: -9.5%;
+  }
+
+  > img:last-of-type {
+    width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
+  }
+}
+
+.frog {
+  background-color: #c2e567;
+  overflow: hidden;
+
+  > .jump {
+    display: none;
+    opacity: 0;
+    width: 98.5%;
+    position: absolute;
+    left: -1.2%;
+    bottom: -7.7%;
+  }
+
+  > img:last-of-type {
+    width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
+  }
+}
+
+.chick {
+  background-color: #ffc53d;
+  overflow: hidden;
+
+  > .jump {
+    display: none;
+    opacity: 0;
+    width: 89%;
+    position: absolute;
+    bottom: -10%;
+  }
+
+  > img:last-of-type {
+    width: 85%;
+    opacity: 1;
+    transition: opacity 0s ease-in 0.2s;
+  }
+}
+
+.spotlight {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 16px;
+  object-fit: cover;
+  height: 100%;
+  z-index: 5;
+
+  &:hover {
+    opacity: 1;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+
+    & + .jump {
+      opacity: 1;
+      transform: translateY(-27%);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    & ~ img {
+      opacity: 0;
+      transition: opacity 0s ease-in;
+    }
+  }
+}
+
+.cow > .jump,
+.bunny > .jump,
+.chick > .jump,
+.frog > .jump {
+  display: block;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out, opacity 0s ease-in-out 0.2s;
+}
+
+.box {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .container {
+    flex-grow: 1;
+  }
+
+  .box {
+    position: relative;
+  }
+}
