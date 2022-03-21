@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styles from "../../css/dashboard/dashboard.module.scss";
 import pill from "../../images/dashboard/pill.svg";
+import DashboardPanel from "./DashboardPanel";
+import EditDashboard from "./EditDashboard";
 
 function DashboardButton(props) {
   return (
@@ -14,8 +16,10 @@ function DashboardButton(props) {
   );
 }
 
-export default function dashboard() {
+export default function Dashboard() {
   const [showDashboard, setShowDashboard] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+
   return (
     <div>
       <DashboardButton
@@ -29,28 +33,7 @@ export default function dashboard() {
             styles.dashboard
           }`}
         >
-          <div className={styles.dashboardContainer}>
-            <div className={styles.text}>Profile</div>
-            <div className={styles.profileCard}>
-              <div className={styles.edit}>Edit</div>
-              <div className={styles.dashPfp}></div>
-              <div className={styles.name}>Vivek Shome</div>
-              <div>
-                <div className={styles.email}>hoopla@gmail.com</div>
-                <div className={styles.discord}>discord username</div>
-              </div>
-              <div className={styles.bio}>
-                👋 Hey! I’m Vivek, a junior at UC Davis, where I'm
-                double-majoring in Computer Science and Applied Mathematics! My
-                strengths include C, C++, MATLAB, and leadership. 👋 Hey! I’m
-                Vivek, a junior at UC Davis, where I'm double-majoring in
-                Computer Scien
-              </div>
-              <div className={styles.tags}></div>
-            </div>
-            <div className={styles.text}>Application Status</div>
-            <div className={styles.appStatusCard}>Pending Approval</div>
-          </div>
+          {showEdit ? <EditDashboard/> : <DashboardPanel showEdit={showEdit} setShowEdit={setShowEdit}/>}
         </div>
       </div>
     </div>

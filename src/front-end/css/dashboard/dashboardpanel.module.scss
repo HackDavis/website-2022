@@ -1,0 +1,61 @@
+.dashboardContainer {
+  margin-top: 88px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .text {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    width: 450px;
+    font-weight: 600;
+  }
+  .profileCard {
+    width: 450px;
+    height: 500px;
+    padding: 20px;
+    background-color: #043B54;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .edit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      
+      width: 90px;
+      height: 30px;
+      
+      border-radius: 20px;
+      background-color: #2A586E;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .edit:hover {
+      cursor: pointer;
+    }
+    .dashPfp {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: grey;
+      border: solid 2px #9EE7E5;
+    }
+    .name {
+      font-weight: 600;
+      font-size: 16pt;
+    }
+  }
+  .appStatusCard {
+    width: 450px;
+    height: 100px;
+    background-color: #043B54;
+    border-radius: 10px
+  }
+}

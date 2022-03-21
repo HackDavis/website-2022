@@ -1,0 +1,66 @@
+.container {
+  margin-top: 88px;
+  padding: 20px;
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-items: center;
+  .pfp {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+  .text {
+    color: white;
+    text-align: center;
+    // font-size: 14pt;
+    margin-top: 20px;
+  }
+  .textField {
+    margin-top: 35px;
+    padding: 10px;
+    height: 50px;
+    // width: 430px;
+
+    color: #51919D;
+    background-color: #043B54;
+    border: solid 1px #9EE7E5;
+  }
+  .textArea {
+    margin-top: 25px;
+    padding: 10px;
+    resize: none;
+    height: 200px;
+    // width: 430px;
+
+    color: #51919D;
+    background-color: #043B54;
+    border: solid 1px #9EE7E5;
+  }
+
+}
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9EE7E5;
+  width: 120px;
+  height: 35px;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  border: solid 2px #9EE7E5;
+  margin-left: 20px;
+  font-weight: 600;
+}
+.submit:hover {
+  color: white;
+  border: white 2px solid;
+  cursor: pointer;
+}
+
+.submit:active {
+  background-color: #9EE7E5;
+  border: solid 2px #9EE7E5;
+  color: #00425A;
+}

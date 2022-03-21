@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "../components/dashboard/dashboard";
+import Dashboard from "../components/dashboard/Dashboard";
 import Section_Navbar from "../components/section_navbar";
 import Footer from "../components/footer";
 
