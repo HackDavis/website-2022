@@ -28,6 +28,7 @@ const Section_Desktop_Navbar = () => {
           <div className={styles.buttons}>
             <Link to="/" className={`${styles.button} ${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: null}`}>Homepage </Link>
             <Link to="/about" className={`${styles.button} ${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}`: null} `}>About us</Link>
+            <Link to="/teamFinder" className={`${styles.button} ${window.location.href == `${window.location.origin}/teamFinder` ? `${styles.bold_navitem}`: null} `}>Team Finder</Link>
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>
