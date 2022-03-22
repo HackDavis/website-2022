@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "../../css/dashboard/editdashboard.module.scss";
+import x from "../../images/dashboard/x.svg";
 
-export default function EditDashboard() {
+export default function EditDashboard(props) {
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.pfp}></div>
+        <img src={x} className={styles.x} alt="close" onClick={() => props.setShowEdit(!props.showEdit)}/>
+        <div className={styles.pfp}/>
         <div className={styles.text}>Edit Profile Picture</div>
         <form>
           <input

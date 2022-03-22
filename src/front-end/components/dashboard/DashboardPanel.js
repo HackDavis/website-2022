@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "../../css/dashboard/dashboardpanel.module.scss";
+import x from "../../images/dashboard/x.svg";
 
 export default function DashboardPanel(props) {
   return (
     <div className={styles.dashboardContainer}>
+      <img src={x} className={styles.x} alt="close" onClick={() => props.setShowDashboard(!props.showDashboard)}/>
       <div className={styles.text}>Profile</div>
       <div className={styles.profileCard}>
         <div className={styles.edit} onClick={() => props.setShowEdit(!props.showEdit)}>
