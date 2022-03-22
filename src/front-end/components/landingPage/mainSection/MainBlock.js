@@ -28,6 +28,9 @@ export function MainBlock() {
             <br />
             Check out our <a target="_blank" href="https://hackdavis.notion.site/hackdavis/HackDavis-2022-Starter-Pack-9295e5896d524b28914844559b087aac">Starter Pack <img src={arrow_forward} /></a>
           </p>
+          <p className={styles.mentorVolunteer}>
+            Apply to be a <a target="_blank" href="https://hackdavis.typeform.com/mentor2022">Mentor</a> or <a target="_blank" href="https://hackdavis.typeform.com/volunteer2022">Volunteer</a> 
+          </p>
         </main>
       </div>
     </Fade>

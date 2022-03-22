@@ -9,7 +9,7 @@ export function GetUserButton() {
     // Calls the query function and updates the recoil state 
     async function setUserState () {
         // user hardcoded for testing
-        const userData = await getUser("Sboor4BfCHXztpYs7RnNqHi7Yz33");
+        const userData = await getUser("12iCuIXLM7hs7CU8jkKrpVokpd73");
         setUser(userData);
     }
     return (
