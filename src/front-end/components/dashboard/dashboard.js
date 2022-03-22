@@ -22,7 +22,7 @@ export default function Dashboard() {
   const [showEdit, setShowEdit] = useState(false);
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.mainContent}>
         <div className={styles.text}>
           <div className={styles.hi}>Hi Vivek</div>

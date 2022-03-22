@@ -34,7 +34,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         <Route path="/about" element={<AboutUs/>}/>
-        <Route path="/teamFinder" element={<TeamFinder/>}/>
+        <Route path="/teamfinder" element={<TeamFinder/>}/>
       </Routes>
     </Router>
   );
