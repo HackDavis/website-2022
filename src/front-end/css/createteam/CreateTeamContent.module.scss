@@ -1,0 +1,176 @@
+.banner {
+  height: 160px;
+  padding: 56px 90px;
+  background-image: url("../../images/createteam/createBanner.svg");
+  background-size: cover;
+  > a {
+    display: flex;
+    align-items: center;
+    font-family: "Proxima Nova";
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    text-decoration: none;
+    color: white !important;
+  }
+}
+
+.content {
+  padding: 54px 80px;
+  background: #043c54;
+
+  > h2 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: white;
+
+    > img {
+      width: 47px;
+    }
+  }
+}
+
+.backarrow {
+  width: 12px;
+  margin-right: 16px;
+}
+
+.setup {
+  display: flex;
+  gap: 0 75px;
+
+  p {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.column1 {
+  max-width: 392px;
+
+  > label {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 16px;
+  }
+
+  > input,
+  > textarea {
+    padding: 17px 24px;
+    border: 2px solid #9ee7e5;
+    background-color: transparent;
+    resize: none;
+    color: white !important;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 16px;
+  }
+}
+
+.tags {
+  border: 2px solid #9ee7e5;
+  padding: 17px 24px;
+  margin-bottom: 40px;
+  height: 396px;
+
+  .skillsContainer,
+  .toolsContainer {
+    margin-bottom: 33px;
+
+    > div,
+    > div > div {
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: #9ee7e5;
+    }
+  }
+
+  input {
+    border: 1px solid white;
+    accent-color: #043c54;
+    width: auto;
+    margin-right: 12px;
+  }
+
+  label {
+    display: inline;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    color: white;
+  }
+}
+
+.toolsContainer {
+  // width: 100%;
+  > div {
+    // width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 130px;
+    justify-content: flex-start;
+    gap: 0 30px;
+
+    > div {
+      width: 130px;
+    }
+  }
+}
+
+.createTeamButton {
+  font-family: "Proxima Nova";
+  font-size: 17px;
+  flex-direction: row;
+  color: #043b54;
+  justify-content: center;
+  align-self: flex-end;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 100px;
+  background: #9ee7e5;
+  font-weight: 700;
+  width: 400px;
+  transition: 250ms ease-in-out;
+  &:hover {
+    background: white;
+    transition: 250ms ease-in-out;
+  }
+}

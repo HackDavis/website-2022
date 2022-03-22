@@ -1,11 +1,12 @@
 const Tags = [
-    "React.js",
-    "Figma",
-    "HTML",
-    "CSS",
+    "React",
+    "Java",
     "JavaScript",
-    "Python",
-    "C++"
+    "R",
+    "Figma",
+    "Sketch",
+    "Adobe XD",
+    "Python"
 ];
 
 export default Tags;
