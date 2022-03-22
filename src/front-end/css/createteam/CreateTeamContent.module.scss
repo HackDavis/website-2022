@@ -26,8 +26,12 @@
     font-size: 48px;
     line-height: 58px;
     color: white;
+    margin-bottom: 54px;
+    display: flex;
+    align-items: center;
 
     > img {
+      margin-left: 20px;
       width: 47px;
     }
   }
@@ -40,6 +44,7 @@
 
 .setup {
   display: flex;
+  align-items: flex-start;
   gap: 0 75px;
 
   p {
@@ -49,11 +54,21 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
+  p:first-of-type {
+    margin-bottom: 16px;
   }
 }
 
 .column1 {
   max-width: 392px;
+  display: flex;
+  flex-direction: column;
+  height: 458px;
 
   > label {
     color: white !important;
@@ -77,6 +92,10 @@
       opacity: 0.5;
     }
   }
+
+  > textarea:last-of-type {
+    flex-grow: 2;
+  }
 }
 
 .column2 {
@@ -98,26 +117,6 @@
   border: 2px solid #9ee7e5;
   padding: 17px 24px;
   margin-bottom: 40px;
-  height: 396px;
-
-  .skillsContainer,
-  .toolsContainer {
-    margin-bottom: 33px;
-
-    > div,
-    > div > div {
-      margin-bottom: 8px;
-    }
-
-    h4 {
-      font-family: "DM Sans";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 26px;
-      color: #9ee7e5;
-    }
-  }
 
   input {
     border: 1px solid white;
@@ -137,17 +136,33 @@
   }
 }
 
+.skillsContainer,
 .toolsContainer {
-  // width: 100%;
+  margin-bottom: 33px;
+
+  > div > div {
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #9ee7e5;
+  }
+}
+
+.toolsContainer {
   > div {
-    // width: 500px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     height: 130px;
     justify-content: flex-start;
-    gap: 0 30px;
+    gap: 0 54px;
+    max-width: 400px;
 
     > div {
       width: 130px;
@@ -158,15 +173,16 @@
 .createTeamButton {
   font-family: "Proxima Nova";
   font-size: 17px;
-  flex-direction: row;
+  font-weight: 700;
   color: #043b54;
+  letter-spacing: 0.1rem;
+  flex-direction: row;
   justify-content: center;
   align-self: flex-end;
   align-items: center;
   padding: 10px 30px;
   border-radius: 100px;
   background: #9ee7e5;
-  font-weight: 700;
   width: 400px;
   transition: 250ms ease-in-out;
   &:hover {

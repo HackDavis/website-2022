@@ -17,6 +17,7 @@ import { SetRolesState } from "../../../recoil/selectors/setRolesState";
 import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
 
 import { SignInHardCode } from "./SignInHardCode.js";
+import { Checkbox } from './Checkbox'
 
 export function CreateTeamContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -86,9 +87,9 @@ export function CreateTeamContent() {
     setUserTags(newTags);
   }
 
-  // useEffect(() => {
-  //   console.log({roles: Array.from(roles), tags: Array.from(tags)})
-  // }, [roles, tags])
+  useEffect(() => {
+    console.log({ roles: Array.from(roles), tags: Array.from(tags) })
+  }, [roles, tags])
 
   return (
     <>
@@ -128,7 +129,7 @@ export function CreateTeamContent() {
               value={desc}
               maxLength="250"
               onChange={changeDesc}
-              rows="9"
+              // rows="9"
               required
             ></textarea>
             <p>{desc.length}/250 characters</p>
@@ -138,52 +139,36 @@ export function CreateTeamContent() {
             <div className={styles.tags}>
               <div className={styles.skillsContainer}>
                 <h4>Skillset</h4>
-                {Roles.map((role) => {
-                  return (
-                    <div key={role}>
-                      <input
-                        type="checkbox"
-                        id={role}
-                        name={role}
-                        value={role}
-                        label={role}
-                        onChange={changeRole}
-                      />
-                      <label htmlFor={role}>{role}</label>
-                      <br />
-                    </div>
-                  );
-                })}
+                <div>
+                  {Roles.map((role) => {
+                    return (
+                      <div key={role}>
+                        <Checkbox name={role} onChange={changeRole} />
+                        <br />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               <div className={styles.toolsContainer}>
-              <h4>Tools</h4>
+                <h4>Tools</h4>
                 <div>
-                {Tags.map((tag) => {
-                  return (
-                    <div key={tag}>
-                      <input
-                        type="checkbox"
-                        id={tag}
-                        name={tag}
-                        value={tag}
-                        label={tag}
-                        onChange={changeTags}
-                      />
-                      <label htmlFor={tag}>{tag}</label>
-                      <br />
-                    </div>
-                  );
-                })}
+                  {Tags.map((tag) => {
+                    return (
+                      <div key={tag}>
+                        <Checkbox name={tag} onChange={changeTags} />
+                        <br />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
-            {/* <div className={styles.buttonContainer}> */}
             <input
               type="submit"
               className={styles.createTeamButton}
-              value="Create Your Team"
+              value="CREATE YOUR TEAM"
             />
-            {/* </div> */}
           </div>
           {/* {user ? <h1>{user.group_id}</h1> : <h1>createGroup not called yet</h1>} */}
         </form>
