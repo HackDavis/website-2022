@@ -57,9 +57,19 @@
       background-color: grey;
       border: solid 2px #9EE7E5;
     }
+    .pfp {
+      
+      border-radius: 50%;
+    }
     .name {
       font-weight: 600;
       font-size: 16pt;
+    }
+    .icons {
+      display: inline;
+      width: 20px;
+      margin-right: 10px;
+      margin-bottom: 2px;
     }
   }
   .appStatusCard {

@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
 }
 
-.profile {
+.profileBtn {
   display: flex;
   justify-content: flex-end;
 
@@ -17,7 +17,14 @@ body {
     margin-top: 50px;
     margin-right: 115px;
   } 
-  .pfp {
+  .rectangle {
+    height: 70px;
+    width: 150px;
+    background: #2A586E;
+    position: absolute;
+    left: 50%;
+  }
+  .pfpContainer {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -27,12 +34,8 @@ body {
     top: 12%;
     left: 12%;
   }
-  .rectangle {
-    height: 70px;
-    width: 150px;
-    background: #2A586E;
-    position: absolute;
-    left: 50%;
+  .pfp {
+    border-radius: 50%;
   }
   .myProfile {
     color: white;
@@ -40,22 +43,21 @@ body {
     width: 100px;
     font-weight: 600;
     transform: translate(70%, 100%);
-    // border: 1px solid black;
     margin-bottom: 0;
     z-index: 998;
   }
 }
-.profile:hover {
+.profileBtn:hover {
   cursor: pointer;
 }
 
 .mainContent {
   margin-top: 50px;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   align-items: center;
   color: white;
   .text {
@@ -66,7 +68,6 @@ body {
     }
     .welcome {
       font-weight: 600;
-      margin-top: 25  px;
       font-size: 40pt;
     }
     .meet {
@@ -75,25 +76,23 @@ body {
       font-size: 16pt;
     }
   }
-
 }
 
 .dashboard {
   width: 500px;
   height: 100%;
-  background-color: #2A586E;
+  position: absolute;
   top: 0;
   right: -500px;
-  position: absolute;
-  visibility: hidden;
   z-index: 998;
+  background-color: #2A586E;
+  visibility: hidden;
   transition: all 200ms ease-out;
 }
 .showDashboard {
   visibility:visible;
   right:0px;
 }
-
 
 .teamButtonCont {
   display: flex;
@@ -107,7 +106,7 @@ body {
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.16);
     img {
       width: 100%;
-      height: 280px;
+      max-height: 280px;
       object-fit: cover;
     }
     .findJoinTeam {

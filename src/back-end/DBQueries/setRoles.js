@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../db/dbConfig";
+import { dbConfig } from "../db/dbConfig.js";
 
 //Purpose: set this group's roles to the new ones they specified
 //How it works: adds the roles tags to the grouip

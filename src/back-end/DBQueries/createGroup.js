@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc, addDoc, collection } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import { getUser } from "./getUser.js";
 
 export async function createGroup(email, user_id, newGroupDesc, group_name) {

@@ -15,11 +15,14 @@
   .x:hover {
     cursor: pointer;
   }
-  .pfp {
+  .pfpContainer {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: grey;
+  }
+  .pfp {
+    border-radius: 50%;
   }
   .text {
     color: white;
@@ -27,9 +30,24 @@
     // font-size: 14pt;
     margin-top: 20px;
   }
+  .text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .textCont {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  .icon {
+    position: absolute;
+    width: 20px;
+    top: 63%;
+    left: 2.5%;
+  }
   .textField {
     margin-top: 35px;
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
     height: 50px;
     // width: 430px;
 
@@ -37,6 +55,7 @@
     background-color: #043B54;
     border: solid 1px #9EE7E5;
   }
+
   .textArea {
     margin-top: 25px;
     padding: 10px;
