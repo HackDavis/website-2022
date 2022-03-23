@@ -6,8 +6,14 @@ import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
 import emailImg from 'front-end/images/myteam/email.svg';
 import discImg from 'front-end/images/myteam/discord.svg';
 
-export function MemberCard([name, email, discord, desc, pfp, user_id]) {
+import { useEffect } from 'react'
+
+export function MemberCard([name, email, discord, desc, pfp, uid]) {
   const [group, setGroup] = useRecoilState(groupStateAtom);
+
+  useEffect(() => {
+    console.log({name, email, desc, pfp, uid});
+  }, []);
 
   return (
     <div className={styles.container} key={name}>

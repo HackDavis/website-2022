@@ -3,12 +3,12 @@ import goldenTicket from "../../images/createteam/goldenTicket.svg";
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
-import { editTeamAtom} from "recoil/atoms/editTeamAtom";
+import { editTeamAtom } from "recoil/atoms/editTeamAtom";
 import { getGroup } from '../../../back-end/DBQueries/getGroup';
 import { getUser } from '../../../back-end/DBQueries/getUser';
 import { GroupCard } from 'front-end/components/myteamadmin/GroupCard';
 import { MemberCard } from './MemberCard';
-import {EditTeamModal} from "front-end/components/myteamadmin/EditTeamModal";
+import { EditTeamModal } from "front-end/components/myteamadmin/EditTeamModal";
 
 import { useEffect } from 'react';
 
@@ -37,7 +37,9 @@ export function MyTeamAdminContent() {
     if (typeof group === "string") {
       return null;
     }
-    return Object.values(group.members).map(MemberCard);
+    return Object.entries(group.members).map(([uid, rest]) => {
+      return MemberCard([...rest, uid]);
+    });
   }
 
   return (
@@ -70,7 +72,7 @@ export function MyTeamAdminContent() {
           </div>
         </div>
       </div>
-      {isEditTeam ? <EditTeamModal/> : null}
+      {isEditTeam ? <EditTeamModal /> : null}
     </>
   );
 }
