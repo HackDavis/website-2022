@@ -55,19 +55,26 @@
     background-color: #043B54;
     border: solid 1px #9EE7E5;
   }
+  .descContainer {
+    position: relative;
+    .textArea {
+      margin-top: 25px;
+      padding: 10px;
+      resize: none;
+      height: 200px;
 
-  .textArea {
-    margin-top: 25px;
-    padding: 10px;
-    resize: none;
-    height: 200px;
-    // width: 430px;
-
-    color: #51919D;
-    background-color: #043B54;
-    border: solid 1px #9EE7E5;
-  }
-
+      color: #51919D;
+      background-color: #043B54;
+      border: solid 1px #9EE7E5;
+    }
+    .characterCount {
+      color: white;
+      position: absolute;
+      font-weight: 600;
+      top: 80%;
+      left: 68.5%;
+    }
+  } 
 }
 .submit {
   display: flex;

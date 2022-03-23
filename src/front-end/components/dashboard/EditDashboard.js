@@ -53,12 +53,16 @@ export default function EditDashboard(props) {
           onClick={() => props.setShowEdit(!props.showEdit)}
         />
         <div className={styles.pfpContainer}>
-          <img src={props.user.profile_picture} className={styles.pfp} alt="profile picture"/>
+          <img
+            src={props.user.profile_picture}
+            className={styles.pfp}
+            alt="profile picture"
+          />
         </div>
         {/* <div className={styles.text}>Edit Profile Picture</div> */}
         <form>
           <div className={styles.textCont}>
-            <img src={discord} className={styles.icon} alt="discord icon"/>
+            <img src={discord} className={styles.icon} alt="discord icon" />
             <input
               className={styles.textField}
               type="text"
@@ -68,17 +72,23 @@ export default function EditDashboard(props) {
               maxLength={37}
             />
           </div>
-          <textarea
-            className={styles.textArea}
-            placeholder="Write a 250 character bio here. Share what your skills and hackathon interests..."
-            name="description"
-            onChange={handleDescChange}
-            maxLength={250}
-          />
-          <div>{text.length}/250 Characters</div>
+          <div className={styles.descContainer}>
+            <textarea
+              className={styles.textArea}
+              placeholder="Write a 250 character bio here. Share what your skills and hackathon interests..."
+              name="description"
+              onChange={handleDescChange}
+              maxLength={250}
+            />
+            <div className={styles.characterCount}>
+              {text.length}/250 Characters
+            </div>
+          </div>
         </form>
       </div>
-      <div className={styles.submit} onClick={submitClick}>SUBMIT</div>
+      <div className={styles.submit} onClick={submitClick}>
+        SUBMIT
+      </div>
     </div>
   );
 }

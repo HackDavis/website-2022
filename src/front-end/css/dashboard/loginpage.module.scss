@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  position: relative;
+  
+  .cloudLeft {
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+  }
+  .cloudRight {
+    position: absolute;
+    width: 95%;
+    bottom: 0;
+    right: 0;
+  }
+  .cow {
+    position: absolute;
+    width: 35%;
+    left: 15%;
+    top: -15%;
+  }
+  .chicky {
+    position: absolute;
+    width: 6%;
+    left: 7%;
+    top: 2%;
+  }
+  .left {
+    width: 50%;
+    background-color: #063D56;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #043B54;
+    .text {
+      max-width: 600px;
+      margin-bottom: 50px;
+    }
+    .adventure {
+      color: white;
+      font-size: 40pt;
+      font-weight: 600;
+    }
+    .register {
+      color:#9EE7E5;
+      font-size: 16pt;
+      font-weight: 600;
+    }
+
+  }
+}

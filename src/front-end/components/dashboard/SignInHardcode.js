@@ -6,6 +6,7 @@ import { dbConfig } from "../../../back-end/db/dbConfig.js";
 import { useRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { getUser } from "../../../back-end/DBQueries/getUser";
+import styles from "../../css/dashboard/login.module.scss";
 
 export function SignInHardCode() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -62,7 +63,7 @@ export function SignInHardCode() {
 
   return (
     <>
-      <button onClick={handleSignIn}>Click me to sign in with Google</button>
+      <div className={styles.login} onClick={handleSignIn}>Sign up with Google</div>
     </>
   );
 }
