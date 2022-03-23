@@ -1,18 +1,21 @@
 import styles from '../../css/myteamadmin/MyTeamAdminContent.module.scss';
 import goldenTicket from "../../images/createteam/goldenTicket.svg";
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
+import { editTeamAtom} from "recoil/atoms/editTeamAtom";
 import { getGroup } from '../../../back-end/DBQueries/getGroup';
 import { getUser } from '../../../back-end/DBQueries/getUser';
 import { GroupCard } from 'front-end/components/myteamadmin/GroupCard';
 import { MemberCard } from './MemberCard';
+import {EditTeamModal} from "front-end/components/myteamadmin/EditTeamModal";
 
 import { useEffect } from 'react';
 
 export function MyTeamAdminContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
   const [group, setGroup] = useRecoilState(groupStateAtom);
+  const isEditTeam = useRecoilValue(editTeamAtom);
 
   async function setGroupState() {
     // user hardcoded for testing
@@ -24,17 +27,17 @@ export function MyTeamAdminContent() {
 
   useEffect(() => {
     setGroupState();
-  }, [])
+  }, []);
 
   useEffect(() => {
-    console.log(group)
-  }, [group])
+    console.log(group);
+  }, [group]);
 
   function RenderCards() {
     if (typeof group === "string") {
-      return null
+      return null;
     }
-    return Object.values(group.members).map(MemberCard)
+    return Object.values(group.members).map(MemberCard);
   }
 
   return (
@@ -67,6 +70,7 @@ export function MyTeamAdminContent() {
           </div>
         </div>
       </div>
+      {isEditTeam ? <EditTeamModal/> : null}
     </>
-  )
+  );
 }

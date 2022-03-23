@@ -15,5 +15,5 @@ export function Checkbox({ name, onChange }) {
         <div className={styles['b-input']}></div>
       </label>
     </>
-  )
+  );
 }

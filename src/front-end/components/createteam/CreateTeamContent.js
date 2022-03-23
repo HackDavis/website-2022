@@ -17,7 +17,7 @@ import { SetRolesState } from "../../../recoil/selectors/setRolesState";
 import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
 
 import { SignInHardCode } from "./SignInHardCode.js";
-import { Checkbox } from './Checkbox'
+import { Checkbox } from './Checkbox';
 
 export function CreateTeamContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -86,8 +86,8 @@ export function CreateTeamContent() {
   }
 
   useEffect(() => {
-    console.log({ roles: Array.from(roles), tags: Array.from(tags) })
-  }, [roles, tags])
+    console.log({ roles: Array.from(roles), tags: Array.from(tags) });
+  }, [roles, tags]);
 
   return (
     <>

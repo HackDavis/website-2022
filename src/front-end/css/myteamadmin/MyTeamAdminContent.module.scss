@@ -57,8 +57,8 @@
         font-size: 17px;
         line-height: 21px;
         color: white;
-        
-        background: #F95A5A;
+
+        background: #f95a5a;
         padding: 4px 9px;
         margin-left: 13px;
         border-radius: 50%;
@@ -82,7 +82,13 @@
       border: solid 3px #f95a5a;
       border-radius: 100px;
       color: #f95a5a;
+      transition: 250ms ease-in-out;
       padding: 10px;
+      &:hover {
+        background-color: #f95a5a;
+        color: white;
+        transition: 250ms ease-in-out;
+      }
     }
   }
 }

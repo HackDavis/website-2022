@@ -1,18 +1,16 @@
-import styles from 'front-end/css/myteamadmin/MemberCard.module.scss'
-import goldenTicket from 'front-end/images/createteam/goldenTicket.svg'
-import blueTicket from 'front-end/images/myteam/blueTicket.svg'
+import styles from 'front-end/css/myteamadmin/MemberCard.module.scss';
+import goldenTicket from 'front-end/images/createteam/goldenTicket.svg';
+import blueTicket from 'front-end/images/myteam/blueTicket.svg';
 import { useRecoilState } from 'recoil';
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
-import emailImg from 'front-end/images/myteam/email.svg'
+import emailImg from 'front-end/images/myteam/email.svg';
 import discImg from 'front-end/images/myteam/discord.svg';
-
-import { useEffect } from 'react'
 
 export function MemberCard([name, email, discord, desc, pfp, user_id]) {
   const [group, setGroup] = useRecoilState(groupStateAtom);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} key={name}>
       <div className={styles.top}>
         <div>
           <img src={pfp} />
@@ -39,5 +37,5 @@ export function MemberCard([name, email, discord, desc, pfp, user_id]) {
         }
       </div>
     </div>
-  )
+  );
 }

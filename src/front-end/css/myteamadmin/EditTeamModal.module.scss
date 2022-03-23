@@ -1,0 +1,29 @@
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  .modalContent {
+    background-color: #074967;
+    border-radius: 16px;
+    margin: 150px auto;
+    padding: 28px 33px 37px 61px;
+    width: 80%;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .exitButton {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    width: auto;
+    background-color: transparent;
+  }
+}

@@ -1,20 +1,21 @@
-import React from 'react'
-import { useRecoilState } from 'recoil';
+import React from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { groupStateAtom } from '../../../recoil/atoms/groupAtom';
-import Roles from "../../../back-end/db/Roles.js";
-import Tags from "../../../back-end/db/Tags.js";
+import {editTeamAtom} from 'recoil/atoms/editTeamAtom';
 import styles from "front-end/css/myteamadmin/GroupCard.module.scss";
 
 export function GroupCard() {
 
-  const [group, setGroup] = useRecoilState(groupStateAtom);
+  const group = useRecoilValue(groupStateAtom);
+  const setIsEditTeam = useSetRecoilState(editTeamAtom);
 
   return (
+    
     <div className={styles.groupCardContainer}>
       <div className={styles.cardContent}>
         <div className={styles.titleContent}>
           <h2 className={styles.title}>{group.group_name}</h2>
-          <button className={styles.editButton} onClick={() => console.log("clicked on edit")}> Edit</button>
+          <button className={styles.editButton} onClick={() => setIsEditTeam(true)}> Edit</button>
         </div>
         <span className={styles.id}>ID # {group.group_id}</span>
         <p className={styles.groupDesc}>{group.description}<br /></p>
@@ -23,20 +24,15 @@ export function GroupCard() {
         <div className={styles.tagContainer}>
           {group.tags1 ? group.tags1.map((tag) => {
             return (
-              <>
-                <span className={styles.tags1}>{tag}</span>
-              </>
+                <span key={tag} className={styles.tags1}>{tag}</span>
             );
           }): null}
           {group.tags2 ? group.tags2.map((tag) => {
             return (
-              <>
-                <span className={styles.tags2}>{tag}</span>
-              </>
+                <span key={tag} className={styles.tags2}>{tag}</span>
             );
           }) : null}
         </div>
-
       </div>
     </div>
   );
