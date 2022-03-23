@@ -16,7 +16,7 @@ export async function addGroupMember(user_id, group_id) {
         if (Object.keys(groupData.members).length < 4 && userData) {
             let members_map_copy = new Map();
             members_map_copy = groupData.members;
-            members_map_copy[user_id] = [userData.name, userData.email, userData.leader_status];
+            members_map_copy[user_id] = [userData.name, userData.email, userData.discord_id, userData.description, userData.profile_picture, userData.user_id];
 
             await updateDoc(docRef, {
                 members: members_map_copy

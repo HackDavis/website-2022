@@ -6,7 +6,7 @@ const Tags = [
     "Figma",
     "Sketch",
     "Adobe XD",
-    "Python"
+    "Python",
 ];
 
 export default Tags;

@@ -5,6 +5,7 @@ import Section_Navbar from "./front-end/components/section_navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AboutUs } from "./front-end/pages/AboutUs";
 import { CreateTeam } from "./front-end/pages/CreateTeam";
+import { MyTeamAdmin } from "./front-end/pages/MyTeamAdmin";
 
 import "./App.css";
 
@@ -26,14 +27,15 @@ export default function App() {
         .replace(/^ +/, "")
         .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
     });
-  });
+  }, []);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage/>} />
-        <Route path="/about" element={<AboutUs/>}/>
-        <Route path="/createteam" element={<CreateTeam/>}/>
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/createteam" element={<CreateTeam/>} />
+        <Route path="/myteam" element={<MyTeamAdmin/>} />
       </Routes>
     </Router>
   );

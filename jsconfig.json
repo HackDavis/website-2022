@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["./front-end/components/*"],
+      "@css/*": ["./front-end/css/*"],
+      "@images/*": ["./front-end/images/*"],
+      "@db/*": ["./back-end/db/*"],
+      "@DBQueries/*": ["./back-end/DBQueries/*"],
+      "@testButtons/*": ["./back-end/testButtons/db/*"],
+      "@recoil/*": ["./recoil/*"]
+    }
+  },
+  "include": [
+    "src"
+  ]
+}

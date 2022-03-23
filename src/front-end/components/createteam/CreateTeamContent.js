@@ -66,7 +66,6 @@ export function CreateTeamContent() {
   }
 
   function changeRole(e) {
-    console.log(e.target.checked);
     const newRoles = new Set(roles);
     if (e.target.checked) {
       newRoles.add(e.target.name);
@@ -77,7 +76,6 @@ export function CreateTeamContent() {
   }
 
   function changeTags(e) {
-    // console.log(e.target.checked);
     const newTags = new Set(tags);
     if (e.target.checked) {
       newTags.add(e.target.name);
