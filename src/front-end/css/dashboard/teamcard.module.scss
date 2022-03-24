@@ -1,0 +1,87 @@
+.container {
+  width: 600px;
+  height: 720px;
+  background-color: #074967;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border: solid 4px transparent;
+  > h3 {
+    color: white;
+    font-size: 24pt;
+    padding: 0;
+    margin: 0;
+    > span {
+      color: #136E90;
+      font-size: 22pt;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+  }
+  .id {
+    margin-top: 5px;
+    color: white;
+    font-size: 17pt;
+    font-weight: normal;
+    font: "Proxima Nova";
+  }
+  > p {
+    color: white;
+    font-size: 17pt;
+    margin-top: 30px;
+  }
+  .group {
+    display: flex;
+    width: 510px;
+    justify-content: space-between;
+    height: 150px;
+    flex-wrap: wrap;
+  }
+  > h5 {
+    color: white;
+    font-size: 17pt;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  > .group > .names {
+    position: relative;
+    width: 250px;
+    height: 70px;
+    background-color: #043B54;
+    border-radius: 60px;
+    .pfp {
+      position: absolute;
+      top: 5px;
+      margin-left: 5px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: grey;
+    }
+    .memberName {
+      position: absolute;
+      top: 25px;
+      left: 65px;
+      color: white;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+  }
+  .skillsetGroup {
+    display: flex;
+    flex-wrap: wrap;
+    .skill {
+      border-radius: 20px;
+      width: fit-content;
+      padding: 5px 20px;
+      margin-right: 15px;
+      margin-top: 20px;
+      background-color: #E86560;
+      color: white;
+    }
+  }
+}
+.container:hover {
+  border: solid 4px #12A8B1;
+  cursor: pointer;
+}

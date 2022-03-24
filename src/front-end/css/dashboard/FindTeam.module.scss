@@ -15,10 +15,20 @@
     color: #043B54;
   }
 }
-.hi {
-  padding: 50px 0 0 50px;
-  color: white;
-  font-size: 48pt;
+.greeting {
+  margin: 50px 0 0 100px;
+  position: relative;
+  .hi {
+    color: white;
+    font-size: 48pt;
+    display: inline;
+    margin-right: 30px;
+  }
+  .blankTicket {
+    width: 75px;
+    top: 15px;
+    position: absolute;
+  }
 }
 .backarrow {
   width: 12px;
@@ -36,11 +46,10 @@
     min-width: 400px;
     height: 875px;
     flex-direction: column;
-    padding: 50px;
+    padding: 50px 50px 50px 100px;
     > form {
       position: relative;
       width: 400px;
-      
     }
     .search {
       padding: 10px;
@@ -48,18 +57,18 @@
       color: #51919D;
       background-color: #043B54;
       border: solid 3px #9EE7E5;
-      width: 400px;
+      width: 500px;
     }
     .searchIcon {
       position: absolute;
       width: 20px;
       top: 15px;
-      left: 360px;
+      left: 460px;
       // right: 20px;
     }
     .skillset {
-      height: 80vh;
-      width: 400px;
+      height: 800px;
+      width: 500px;
       margin-top: 20px;
       border: solid 3px #9EE7E5;
       padding: 25px;
@@ -105,7 +114,7 @@
       text-align: left;
       color: #043b54;
       width: 30%;
-      width: 400px;
+      width: 500px;
       margin-top: 20px;
       background-color: #9ee7e5;
       // padding: 22px 27px;
@@ -113,8 +122,11 @@
     }
   }
   .right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 25px;
     width: 70%;
-    
+    padding: 50px;
   }
 }
 

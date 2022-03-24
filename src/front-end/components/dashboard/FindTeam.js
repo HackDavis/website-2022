@@ -3,8 +3,10 @@ import styles from "../../css/dashboard/findteam.module.scss";
 import { Checkbox } from "./Checkbox";
 import DashboardButton from "./DashboardButton";
 import Dashboard from "./Dashboard";
+import TeamCard from "./TeamCard";
 import backarrow from "../../images/dashboard/backarrow.svg";
 import search from "../../images/dashboard/search.svg";
+import blankTicket from "../../images/dashboard/blankTicket.svg";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 import Roles from "../../../back-end/db/Roles";
@@ -34,7 +36,14 @@ export default function FindTeam() {
         showDashboard={showDashboard}
         setShowDashboard={setShowDashboard}
       />
-      <h1 className={styles.hi}>Hi Vivek</h1>
+      <div className={styles.greeting}>
+        <h1 className={styles.hi}>Hi Vivek</h1>
+        <img
+          src={blankTicket}
+          className={styles.blankTicket}
+          alt="blank ticket"
+        />
+      </div>
       <div className={styles.container}>
         <div className={styles.left}>
           <form>
@@ -78,7 +87,11 @@ export default function FindTeam() {
             Your Pending Requests
           </button>
         </div>
-        <div className={styles.right}></div>
+        <div className={styles.right}>
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
+        </div>
       </div>
     </div>
   );
