@@ -1,36 +1,39 @@
-import styles from '../../css/myteamadmin/MyTeamAdminContent.module.scss';
+import styles from "../../css/myteamadmin/MyTeamAdminContent.module.scss";
 import goldenTicket from "../../images/createteam/goldenTicket.svg";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import blueTicket from "front-end/images/myteam/blueTicket.svg";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
-import { isDissolveGroupAtom} from "recoil/atoms/isDissolveGroupAtom";
+import { isDissolveGroupAtom } from "recoil/atoms/isDissolveGroupAtom";
 import { editTeamAtom } from "recoil/atoms/editTeamAtom";
-import {isMemberRemoveAtom} from "recoil/atoms/isMemberRemoveAtom";
+import { isMemberRemoveAtom } from "recoil/atoms/isMemberRemoveAtom";
 import { isPendingRequestsAtom } from "../../../recoil/atoms/isPendingRequestsAtom";
-import { getGroup } from '../../../back-end/DBQueries/getGroup';
-import { getUser } from '../../../back-end/DBQueries/getUser';
-import { GroupCard } from 'front-end/components/myteamadmin/GroupCard';
-import { MemberCard } from './MemberCard';
+import { getGroup } from "../../../back-end/DBQueries/getGroup";
+import { getUser } from "../../../back-end/DBQueries/getUser";
+import { GroupCard } from "front-end/components/myteamadmin/GroupCard";
+import { MemberCard } from "./MemberCard";
 import { EditTeamModal } from "front-end/components/myteamadmin/EditTeamModal";
-import {DissolveGroupModal} from "front-end/components/myteamadmin/DissolveGroupModal";
-import {RemoveMemberModal} from "front-end/components/myteamadmin/RemoveMemberModal";
+import { DissolveGroupModal } from "front-end/components/myteamadmin/DissolveGroupModal";
+import { RemoveMemberModal } from "front-end/components/myteamadmin/RemoveMemberModal";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 export function MyTeamAdminContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
   const [group, setGroup] = useRecoilState(groupStateAtom);
-  const [isDissolveGroup, setIsDissolveGroup] = useRecoilState(isDissolveGroupAtom);
+  const [isDissolveGroup, setIsDissolveGroup] =
+    useRecoilState(isDissolveGroupAtom);
   const isRemoveMemberModal = useRecoilValue(isMemberRemoveAtom);
   const isEditTeam = useRecoilValue(editTeamAtom);
   const setIsPendingRequests = useSetRecoilState(isPendingRequestsAtom);
-  
-  //TODO: Remove this function on merge, user and group should already be loaded on sign in 
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  //TODO: Remove this function on merge, user and group should already be loaded on sign in
   async function setGroupState() {
     // user hardcoded for testing
-    const groupData = await getGroup("6Qqimu0dE51rAw4jZ5tF");
+    const groupData = await getGroup("CPxu7JS3FPenPOBDD5Yi");
     setGroup(groupData);
-    const userData = await getUser("IJIL5vrI8JO7hdaUoflWvIoQ8yx1");
+    const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
     setUser(userData);
   }
 
@@ -40,7 +43,12 @@ export function MyTeamAdminContent() {
   }, []);
 
   useEffect(() => {
+    if (typeof group === "string") return;
     console.log(group);
+    // Check if the user is an admin
+    if (user.email == group.contact_email) {
+      setIsAdmin(true);
+    }
   }, [group]);
 
   function RenderCards() {
@@ -58,6 +66,19 @@ export function MyTeamAdminContent() {
       <div className={styles.wrapper}>
         <h2>
           Hi {user.name}!{" "}
+          {isAdmin ? (
+            <img
+              src={goldenTicket}
+              className={styles.goldenTicket}
+              alt="golden ticket"
+            />
+          ) : (
+            <img
+              src={blueTicket}
+              className={styles.goldenTicket}
+              alt="golden ticket"
+            />
+          )}
           <img
             src={goldenTicket}
             className={styles.goldenTicket}
@@ -68,11 +89,23 @@ export function MyTeamAdminContent() {
         <div className={styles.content}>
           <div>
             <GroupCard />
-            <button className={styles.pendingButton} onClick={() => setIsPendingRequests(true)}>
+            <button
+              className={styles.pendingButton}
+              onClick={() => setIsPendingRequests(true)}
+            >
               Your Pending Requests
-              <span>{typeof group === "string" ? 0 : Object.keys(group.pending_members).length}</span>
+              <span>
+                {typeof group === "string"
+                  ? 0
+                  : Object.keys(group.pending_members).length}
+              </span>
             </button>
-            <button className={styles.deleteButton} onClick={()=> setIsDissolveGroup(true)}>Delete</button>
+            <button
+              className={styles.deleteButton}
+              onClick={() => setIsDissolveGroup(true)}
+            >
+              Delete
+            </button>
           </div>
           <div className={styles.members}>
             <h3>Team Members</h3>
@@ -83,9 +116,8 @@ export function MyTeamAdminContent() {
         </div>
       </div>
       {isEditTeam ? <EditTeamModal /> : null}
-      {isDissolveGroup ? <DissolveGroupModal/> : null }
-      {isRemoveMemberModal ? <RemoveMemberModal/> : null }
-
+      {isDissolveGroup ? <DissolveGroupModal /> : null}
+      {isRemoveMemberModal ? <RemoveMemberModal /> : null}
     </>
   );
 }

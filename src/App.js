@@ -36,6 +36,7 @@ export default function App() {
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/createteam" element={<CreateTeam/>} />
         <Route path="/myteam" element={<MyTeamAdmin/>} />
+        
       </Routes>
     </Router>
   );

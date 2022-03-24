@@ -15,7 +15,7 @@ import { setRoles } from "../../../back-end/DBQueries/setRoles.js";
 import { setTags } from "../../../back-end/DBQueries/setTags.js";
 import { SetRolesState } from "../../../recoil/selectors/setRolesState";
 import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
-
+import { useNavigate } from "react-router-dom";
 import { SignInHardCode } from "./SignInHardCode.js";
 import { Checkbox } from './Checkbox';
 
@@ -27,6 +27,8 @@ export function CreateTeamContent() {
   const [desc, setDesc] = useState("");
 
   const [group, setGroup] = useRecoilState(groupStateAtom);
+  
+  const navigate = useNavigate();
 
   const setUserGroupID = useSetRecoilState(SetUserGroupID);
   const setUserPendingGroups = useSetRecoilState(SetUserPendingGroups);
@@ -62,6 +64,7 @@ export function CreateTeamContent() {
       await setTags(newGroup.group_id, Array.from(tags));
       setRolesSelector(Array.from(roles));
       setTagsSelector(Array.from(tags));
+      navigate("/myteam");
     }
   }
 
@@ -106,7 +109,7 @@ export function CreateTeamContent() {
             alt="golden ticket"
           />
         </h2>
-        {/* <SignInHardCode /> */}
+        <SignInHardCode />
         <form onSubmit={createGroupClick} className={styles.setup}>
           <div className={styles.column1}>
             <label>Team Name</label>
