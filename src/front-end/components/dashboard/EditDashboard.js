@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../../css/dashboard/editdashboard.module.scss";
 import x from "../../images/dashboard/x.svg";
 import discord from "../../images/dashboard/discord.svg";
+import backarrow from "../../images/dashboard/whiteBackArrow.svg";
 import { updateUserDiscordID } from "../../../back-end/DBQueries/updateUserDiscordID";
 import { updateUserDesc } from "../../../back-end/DBQueries/updateUserDesc";
 import { SetUserDescription } from "../../../recoil/selectors/setUserDesc";
@@ -40,9 +41,12 @@ export default function EditDashboard(props) {
     await updateUserDesc(props.user.user_id, form.description);
     setUserDescription(form.description);
 
-    props.setShowEdit(!props.showEdit);
+    props.setShowEdit(false);
   }
-
+  const handleExit = (setShowEdit, setShowDashboard) => {
+    setShowEdit(false);
+    setShowDashboard(false);
+  };
   return (
     <div>
       <div className={styles.container}>
@@ -50,16 +54,13 @@ export default function EditDashboard(props) {
           src={x}
           className={styles.x}
           alt="close"
-          onClick={() => props.setShowEdit(!props.showEdit)}
+          onClick={() => handleExit(props.setShowEdit, props.setShowDashboard)}
         />
-        <div className={styles.pfpContainer}>
-          <img
-            src={props.user.profile_picture}
-            className={styles.pfp}
-            alt="profile picture"
-          />
+        <div className={styles.cancelButton} onClick={() => props.setShowEdit(false)}>
+          <img src={backarrow} className={styles.backArrow} alt="back arrow" />
+          <div className={styles.cancel}>Cancel</div>
         </div>
-        {/* <div className={styles.text}>Edit Profile Picture</div> */}
+        <div className={styles.text}>Edit Profile</div>
         <form>
           <div className={styles.textCont}>
             <img src={discord} className={styles.icon} alt="discord icon" />
@@ -85,9 +86,9 @@ export default function EditDashboard(props) {
             </div>
           </div>
         </form>
-      </div>
-      <div className={styles.submit} onClick={submitClick}>
-        SUBMIT
+        <div className={styles.submit} onClick={submitClick}>
+          SAVE
+        </div>
       </div>
     </div>
   );

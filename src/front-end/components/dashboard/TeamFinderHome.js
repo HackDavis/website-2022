@@ -27,9 +27,9 @@ export default function TeamFinderHome() {
       />
       <div className={styles.mainContent}>
         <div className={styles.text}>
-          <div className={styles.hi}>Hi {user.name}</div>
-          <div className={styles.welcome}>Welcome to Team Finder</div>
-          <div className={styles.meet}>Meet some cool people.</div>
+          <h2 className={styles.hi}>Hi {user.name}</h2>
+          <h1 className={styles.welcome}>Welcome to Team Finder</h1>
+          <h4 className={styles.meet}>Meet some cool people.</h4>
         </div>
         <div className={styles.teamButtonCont}>
           <div className={styles.teamButtons}>

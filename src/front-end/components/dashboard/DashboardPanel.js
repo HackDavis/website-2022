@@ -14,13 +14,13 @@ export default function DashboardPanel(props) {
         src={x}
         className={styles.x}
         alt="close"
-        onClick={() => props.setShowDashboard(!props.showDashboard)}
+        onClick={() => props.setShowDashboard(false)}
       />
       <div className={styles.text}>Profile</div>
       <div className={styles.profileCard}>
         <div
           className={styles.edit}
-          onClick={() => props.setShowEdit(!props.showEdit)}
+          onClick={() => props.setShowEdit(true)}
         >
           EDIT
         </div>
@@ -45,8 +45,6 @@ export default function DashboardPanel(props) {
         <div className={styles.bio}>{props.user.description}</div>
         <div className={styles.tags}></div>
       </div>
-      <div className={styles.text}>Application Status</div>
-      <div className={styles.appStatusCard}>{props.user.app_status}</div>
     </div>
   );
 }

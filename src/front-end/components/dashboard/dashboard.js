@@ -13,15 +13,13 @@ export default function Dashboard(props) {
       {props.showEdit ? (
         <EditDashboard
           user={props.user}
-          showEdit={props.showEdit}
           setShowEdit={props.setShowEdit}
+          setShowDashboard={props.setShowDashboard}
         />
       ) : (
         <DashboardPanel
           user={props.user}
-          showDashboard={props.showDashboard}
           setShowDashboard={props.setShowDashboard}
-          showEdit={props.showEdit}
           setShowEdit={props.setShowEdit}
         />
       )}

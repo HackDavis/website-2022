@@ -5,6 +5,7 @@
   background-size: cover;
   > a {
     display: flex;
+    width: 200px;
     align-items: center;
     font-family: "Proxima Nova";
     font-weight: 700;
@@ -14,33 +15,51 @@
     color: #043B54;
   }
 }
+.hi {
+  padding: 50px 0 0 50px;
+  color: white;
+  font-size: 48pt;
+}
 .backarrow {
   width: 12px;
   margin-right: 16px;
 }
 
-
-
 .container {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #043B54;
   display: flex;
   .left {
-    width: 30%;
     display: flex;
+    width: 30%;
+    min-width: 400px;
+    height: 875px;
     flex-direction: column;
     padding: 50px;
-
+    > form {
+      position: relative;
+      width: 400px;
+      
+    }
     .search {
       padding: 10px;
       height: 50px;
       color: #51919D;
       background-color: #043B54;
       border: solid 3px #9EE7E5;
+      width: 400px;
+    }
+    .searchIcon {
+      position: absolute;
+      width: 20px;
+      top: 15px;
+      left: 360px;
+      // right: 20px;
     }
     .skillset {
       height: 80vh;
+      width: 400px;
       margin-top: 20px;
       border: solid 3px #9EE7E5;
       padding: 25px;
@@ -48,11 +67,12 @@
         font-weight: 600;
         font-size: 28pt;
         color: white;
+        margin-bottom: 30px;
       }
       .roleContainer, .toolContainer {
-        margin-bottom: 30px;
         color: white;
         h4 {
+          margin-bottom: 30px;
           font-style: normal;
           font-weight: 700;
           font-size: 20px;
@@ -76,7 +96,21 @@
         }
       }
     }
-
+    .pendingButton {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: left;
+      color: #043b54;
+      width: 30%;
+      width: 400px;
+      margin-top: 20px;
+      background-color: #9ee7e5;
+      // padding: 22px 27px;
+      padding: 22px 0px 22px 22px;
+    }
   }
   .right {
     width: 70%;

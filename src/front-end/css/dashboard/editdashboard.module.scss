@@ -3,8 +3,10 @@
   padding: 20px;
   display: flex;
   width: 500px;
+  height: 85vh;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   .x {
     position: absolute;
@@ -13,6 +15,26 @@
     right: 25px;
   }
   .x:hover {
+    cursor: pointer;
+  }
+  .cancelButton {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 100px;
+    .backArrow {
+      width: 17px;
+      margin-bottom: 5px;
+    }
+    .cancel {
+      display: inline;
+      color: white;
+      font-size: 16pt;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+  }
+  .cancelButton:hover {
     cursor: pointer;
   }
   .pfpContainer {
@@ -27,12 +49,8 @@
   .text {
     color: white;
     text-align: center;
-    // font-size: 14pt;
-    margin-top: 20px;
-  }
-  .text:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    font-size: 24pt;
+    font-weight: 600;
   }
   .textCont {
     position: relative;
@@ -83,20 +101,20 @@
   color: #9EE7E5;
   width: 120px;
   height: 35px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   border-radius: 20px;
-  border: solid 2px #9EE7E5;
-  margin-left: 20px;
+  border: solid 4px #9EE7E5;
+  margin-top: 50px;
   font-weight: 600;
 }
 .submit:hover {
   color: white;
-  border: white 2px solid;
+  border: white 4px solid;
   cursor: pointer;
 }
 
 .submit:active {
   background-color: #9EE7E5;
-  border: solid 2px #9EE7E5;
+  border: solid 4px #9EE7E5;
   color: #00425A;
 }

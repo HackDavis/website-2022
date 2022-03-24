@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import styles from "../../css/dashboard/FindTeam.module.scss";
-import Roles from "../../../back-end/db/Roles";
-import Tags from "../../../back-end/db/Tags";
-import backarrow from "../../images/dashboard/backarrow.svg";
+import styles from "../../css/dashboard/findteam.module.scss";
 import { Checkbox } from "./Checkbox";
 import DashboardButton from "./DashboardButton";
 import Dashboard from "./Dashboard";
+import backarrow from "../../images/dashboard/backarrow.svg";
+import search from "../../images/dashboard/search.svg";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
+import Roles from "../../../back-end/db/Roles";
+import Tags from "../../../back-end/db/Tags";
 
 export default function FindTeam() {
   const [user] = useRecoilState(userStateAtom);
@@ -33,6 +34,7 @@ export default function FindTeam() {
         showDashboard={showDashboard}
         setShowDashboard={setShowDashboard}
       />
+      <h1 className={styles.hi}>Hi Vivek</h1>
       <div className={styles.container}>
         <div className={styles.left}>
           <form>
@@ -41,6 +43,7 @@ export default function FindTeam() {
               type="text"
               placeholder="Search by ID number"
             />
+            <img src={search} className={styles.searchIcon} alt="search icon" />
           </form>
           <div className={styles.skillset}>
             <div className={styles.title}>Your Skillset</div>
@@ -71,6 +74,9 @@ export default function FindTeam() {
               </div>
             </div>
           </div>
+          <button className={styles.pendingButton}>
+            Your Pending Requests
+          </button>
         </div>
         <div className={styles.right}></div>
       </div>

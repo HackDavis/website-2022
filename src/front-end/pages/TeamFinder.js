@@ -11,8 +11,8 @@ export function TeamFinder() {
     <div className={styles.container}>
       <Section_Navbar />
       {/* <Login/> */}
-      {/* <TeamFinderHome /> */}
-      <FindTeam />
+      <TeamFinderHome />
+      {/* <FindTeam /> */}
       {/* <Footer/> */}
     </div>
   );

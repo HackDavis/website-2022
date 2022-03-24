@@ -14,18 +14,19 @@ body {
   color: white;
   .text {
     width: 90%;
-    .hi {
-      font-weight: 600;
-      font-size: 32pt;
-    }
-    .welcome {
+    > h2 {
       font-weight: 600;
       font-size: 40pt;
+      margin-bottom: 50px;
     }
-    .meet {
+    > h1 {
+      font-weight: 600;
+      font-size: 48pt;
+    }
+    > h4 {
       font-weight: 600;
       color: #9EE7E5;
-      font-size: 16pt;
+      font-size: 18pt;
     }
   }
 }
