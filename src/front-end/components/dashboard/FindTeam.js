@@ -5,8 +5,7 @@ import Tags from "../../../back-end/db/Tags";
 import backarrow from "../../images/dashboard/backarrow.svg";
 import { Checkbox } from "./Checkbox";
 import DashboardButton from "./DashboardButton";
-import DashboardPanel from "./DashboardPanel";
-import EditDashboard from "./EditDashboard";
+import Dashboard from "./Dashboard";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 
@@ -27,27 +26,13 @@ export default function FindTeam() {
         setShowDashboard={setShowDashboard}
         showDashboard={showDashboard}
       />
-      <div
-        className={`${showDashboard ? `${styles.showDashboard}` : ""} ${
-          styles.dashboard
-        }`}
-      >
-        {showEdit ? (
-          <EditDashboard
-            user={user}
-            showEdit={showEdit}
-            setShowEdit={setShowEdit}
-          />
-        ) : (
-          <DashboardPanel
-            user={user}
-            showDashboard={showDashboard}
-            setShowDashboard={setShowDashboard}
-            showEdit={showEdit}
-            setShowEdit={setShowEdit}
-          />
-        )}
-      </div>
+      <Dashboard
+        user={user}
+        showEdit={showEdit}
+        setShowEdit={setShowEdit}
+        showDashboard={showDashboard}
+        setShowDashboard={setShowDashboard}
+      />
       <div className={styles.container}>
         <div className={styles.left}>
           <form>

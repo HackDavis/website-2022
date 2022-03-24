@@ -25,7 +25,11 @@ export default function DashboardPanel(props) {
           EDIT
         </div>
         <div className={styles.dashPfp}>
-          <img src={props.user.profile_picture} className={styles.pfp} alt="profile picture" />
+          <img
+            src={props.user.profile_picture}
+            className={styles.pfp}
+            alt="profile picture"
+          />
         </div>
         <div className={styles.name}>{props.user.name}</div>
         <div>

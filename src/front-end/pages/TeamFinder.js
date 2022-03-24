@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "../components/dashboard/Dashboard";
+import TeamFinderHome from "../components/dashboard/TeamFinderHome";
 import Login from "../components/dashboard/login";
 import Section_Navbar from "../components/section_navbar";
 import FindTeam from "../components/dashboard/FindTeam";
@@ -11,7 +11,7 @@ export function TeamFinder() {
     <div className={styles.container}>
       <Section_Navbar />
       {/* <Login/> */}
-      {/* <Dashboard /> */}
+      {/* <TeamFinderHome /> */}
       <FindTeam />
       {/* <Footer/> */}
     </div>
