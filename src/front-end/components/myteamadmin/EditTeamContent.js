@@ -124,7 +124,7 @@ export function EditTeamContent() {
                     {Roles.map((role) => {
                     return (
                         <div key={role}>
-                        <Checkbox name={role} onChange={changeRole} />
+                        <Checkbox name={role} onChange={changeRole} checked={true} />
                         <br />
                         </div>
                     );
