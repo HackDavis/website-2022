@@ -5,7 +5,7 @@ import Section_Navbar from "./front-end/components/section_navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AboutUs } from "./front-end/pages/AboutUs";
 import { CreateTeam } from "./front-end/pages/CreateTeam";
-import { MyTeamAdmin } from "./front-end/pages/MyTeamAdmin";
+import { MyTeam } from "./front-end/pages/MyTeam";
 
 import "./App.css";
 
@@ -35,8 +35,7 @@ export default function App() {
         <Route path="/" element={<LandingPage/>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/createteam" element={<CreateTeam/>} />
-        <Route path="/myteam" element={<MyTeamAdmin/>} />
-        
+        <Route path="/myteam" element={<MyTeam/>} />
       </Routes>
     </Router>
   );

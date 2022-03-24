@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "front-end/css/myteamadmin/DissolveGroupModal.module.scss";
+import styles from "front-end/css/myteam/DissolveGroupModal.module.scss";
 import { useSetRecoilState, useRecoilValue, useRecoilState } from "recoil";
 import { isDissolveGroupAtom } from "recoil/atoms/isDissolveGroupAtom";
 import { deleteGroup } from "back-end/DBQueries/deleteGroup";
@@ -45,7 +45,7 @@ export function DissolveGroupModal() {
         </div>
         <div className={styles.bottomHalf}>
           <h2 className={styles.warningText}>
-            Are you sure you want to <span>dissolve</span> your team?
+            Are you sure you want <br/> to <span>dissolve</span> your team?
           </h2>
           <div className={styles.buttonContainer}>
             <button

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from "front-end/css/myteamadmin/EditTeamModal.module.scss";
+import styles from "front-end/css/myteam/EditTeamModal.module.scss";
 import { useSetRecoilState} from 'recoil';
 import { editTeamAtom } from 'recoil/atoms/editTeamAtom';
-import { EditTeamContent} from "front-end/components/myteamadmin/EditTeamContent";
+import { EditTeamContent} from "front-end/components/myteam/EditTeamContent";
 import exitButton from "front-end/images/myteam/x.svg";
 
 export function EditTeamModal() {

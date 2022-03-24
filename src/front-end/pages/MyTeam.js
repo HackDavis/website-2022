@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import Section_Desktop_Navbar from "../components/section_desktop_navbar";
-import { MyTeamAdminContent } from '../components/myteamadmin/MyTeamAdminContent';
-import { PendingMemberRequests } from 'front-end/components/myteamadmin/PendingMemberRequests';
+import { MyTeamContent } from '../components/myteam/MyTeamContent';
+import { PendingMemberRequests } from 'front-end/components/myteam/PendingMemberRequests';
 import { isPendingRequestsAtom } from "../../recoil/atoms/isPendingRequestsAtom";
 
-export function MyTeamAdmin() {
+export function MyTeam() {
   const isPendingRequests = useRecoilValue(isPendingRequestsAtom);
 
   return (
@@ -13,7 +13,7 @@ export function MyTeamAdmin() {
       <Section_Desktop_Navbar />
       { isPendingRequests
         ? <PendingMemberRequests />
-        : <MyTeamAdminContent />
+        : <MyTeamContent />
       }
     </>
   );

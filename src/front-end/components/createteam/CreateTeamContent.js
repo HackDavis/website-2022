@@ -95,10 +95,12 @@ export function CreateTeamContent() {
   return (
     <>
       <div className={styles.banner}>
-        <a href="">
-          <img src={BackArrow} className={styles.backarrow} />
-          Back to Team Finder
-        </a>
+        <div>
+          <a href="">
+            <img src={BackArrow} className={styles.backarrow} />
+            Back to Team Finder
+          </a>
+        </div>
       </div>
       <div className={styles.content}>
         <h2>
@@ -109,7 +111,7 @@ export function CreateTeamContent() {
             alt="golden ticket"
           />
         </h2>
-        <SignInHardCode />
+        {/* <SignInHardCode /> */}
         <form onSubmit={createGroupClick} className={styles.setup}>
           <div className={styles.column1}>
             <label>Team Name</label>

@@ -15,7 +15,7 @@ export async function createGroup(email, user_id, newGroupDesc, group_name) {
     
     let members_map = {
         [user_id]: [userData.name, userData.email, userData.discord_id, userData.description, userData.profile_picture]
-    }
+    };
 
     let newGroup = {
         contact_email: email,

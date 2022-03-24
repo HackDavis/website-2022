@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "front-end/css/myteamadmin/RemoveMemberModal.module.scss";
+import styles from "front-end/css/myteam/RemoveMemberModal.module.scss";
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import {isMemberRemoveAtom} from "recoil/atoms/isMemberRemoveAtom";
 import {deleteActiveMember} from "back-end/DBQueries/deleteActiveMember";
@@ -18,7 +18,7 @@ export function RemoveMemberModal() {
     const setGroupMembers = useSetRecoilState(SetGroupMembers);
 
     async function Remove() {
-        console.log(` remove active member uid: ${removeActiveMemberUID}`)
+        console.log(` remove active member uid: ${removeActiveMemberUID}`);
         let new_group_members = await deleteActiveMember(removeActiveMemberUID, group.group_id);
         setUserGroupID("");
         setGroupMembers(new_group_members);
@@ -36,7 +36,7 @@ export function RemoveMemberModal() {
                 <img src={AngryCow} alt="angry cow image"/>
             </div>
             <div className={styles.bottomHalf}>
-                <h2 className={styles.warningText}>Are you sure you want to <span>remove</span> this member?</h2>
+                <h2 className={styles.warningText}>Are you sure you want <br/> to <span>remove</span> this member?</h2>
                 <div className={styles.buttonContainer}>
                     <button className={styles.keepButton} onClick={() => setIsMemberRemoveModal(false)}>KEEP</button>
                     <button className={styles.removeButton} onClick={Remove}>REMOVE</button>

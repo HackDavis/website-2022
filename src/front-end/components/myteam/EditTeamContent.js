@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import styles from "../../css/myteamadmin/EditTeamContent.module.scss";
+import styles from "../../css/myteam/EditTeamContent.module.scss";
 import Roles from "../../../back-end/db/Roles.js";
 import Tags from "../../../back-end/db/Tags.js";
 import { useRecoilState, useSetRecoilState } from "recoil";
@@ -33,7 +33,7 @@ export function EditTeamContent() {
       setUserRoles(newRoles);
       setUserTags(newTags);      
     }
-  }, [group])
+  }, [group]);
 
   const setRolesSelector = useSetRecoilState(SetRolesState);
   const setTagsSelector = useSetRecoilState(SetTagsState);

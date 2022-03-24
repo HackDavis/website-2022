@@ -1,7 +1,8 @@
-import styles from "front-end/css/myteamadmin/PendingMemberCard.module.scss";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import styles from "front-end/css/myteam/PendingMemberCard.module.scss";
+import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
+import { isAdminAtom } from "../../../recoil/atoms/isAdminAtom";
 import { DeletePendingGroup } from "../../../recoil/selectors/deletePendingGroup";
 import { DeletePendingMember } from "../../../recoil/selectors/deletePendingMember";
 import { SetGroupMembers } from "../../../recoil/selectors/setGroupMembers.js";
@@ -19,6 +20,7 @@ export function PendingMemberCard([name, email, _, reason, uid]) {
   const setDeletePendingMember = useSetRecoilState(DeletePendingMember);
   const updateGroupMembers = useSetRecoilState(SetGroupMembers);
   const setUserGroupID = useSetRecoilState(SetUserGroupID);
+  const isAdmin = useRecoilValue(isAdminAtom);
 
   useEffect(() => {
     console.log({ name, email, _, reason, uid });
@@ -65,10 +67,14 @@ export function PendingMemberCard([name, email, _, reason, uid]) {
         <p>{reason}</p>
         <div></div>
       </div>
-      <div className={styles.buttons}>
-        <button onClick={denyGroupRequestClick}>DENY</button>
-        <button onClick={addGroupMemberClick}>APPROVE</button>
-      </div>
+      {isAdmin 
+        ? <div className={styles.buttons}>
+            <button onClick={denyGroupRequestClick}>DENY</button>
+            <button onClick={addGroupMemberClick}>APPROVE</button>
+          </div>
+        : null
+      }
+      
     </div>
   );
 }

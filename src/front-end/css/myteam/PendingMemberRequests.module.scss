@@ -3,8 +3,11 @@
 }
 
 .container {
+  margin: auto;
   background: #043c54;
-  padding: 46px 80px;
+  max-width: 1330px;
+  padding: 46px 24px;
+  // padding: 46px 80px;
 }
 
 .back {

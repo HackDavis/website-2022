@@ -1,4 +1,4 @@
-import styles from "front-end/css/myteamadmin/PendingMemberRequests.module.scss";
+import styles from "front-end/css/myteam/PendingMemberRequests.module.scss";
 
 import backArrow from "front-end/images/createteam/backArrow.svg";
 import { PendingMemberCard } from "./PendingMemberCard.js";
@@ -15,7 +15,7 @@ export function PendingMemberRequests() {
       return null;
     }
     return Object.entries(group.pending_members).map(([uid, rest]) => {
-      console.log(uid)
+      console.log(uid);
       return PendingMemberCard([...rest, uid]);
     });
   }

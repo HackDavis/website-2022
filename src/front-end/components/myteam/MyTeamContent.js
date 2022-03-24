@@ -1,5 +1,5 @@
-import styles from "../../css/myteamadmin/MyTeamAdminContent.module.scss";
-import goldenTicket from "../../images/createteam/goldenTicket.svg";
+import styles from "../../css/myteam/MyTeamContent.module.scss";
+import goldenTicket from "front-end/images/createteam/goldenTicket.svg";
 import blueTicket from "front-end/images/myteam/blueTicket.svg";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
@@ -8,17 +8,21 @@ import { isDissolveGroupAtom } from "recoil/atoms/isDissolveGroupAtom";
 import { editTeamAtom } from "recoil/atoms/editTeamAtom";
 import { isMemberRemoveAtom } from "recoil/atoms/isMemberRemoveAtom";
 import { isPendingRequestsAtom } from "../../../recoil/atoms/isPendingRequestsAtom";
+import { removeActiveMemberUIDAtom } from "recoil/atoms/removeActiveMemberUIDAtom";
+import { isAdminAtom } from "../../../recoil/atoms/isAdminAtom";
+import { isLeaveGroupAtom } from "recoil/atoms/isLeaveGroupAtom";
 import { getGroup } from "../../../back-end/DBQueries/getGroup";
 import { getUser } from "../../../back-end/DBQueries/getUser";
-import { GroupCard } from "front-end/components/myteamadmin/GroupCard";
+import { GroupCard } from "front-end/components/myteam/GroupCard";
 import { MemberCard } from "./MemberCard";
-import { EditTeamModal } from "front-end/components/myteamadmin/EditTeamModal";
-import { DissolveGroupModal } from "front-end/components/myteamadmin/DissolveGroupModal";
-import { RemoveMemberModal } from "front-end/components/myteamadmin/RemoveMemberModal";
+import { EditTeamModal } from "front-end/components/myteam/EditTeamModal";
+import { DissolveGroupModal } from "front-end/components/myteam/DissolveGroupModal";
+import { RemoveMemberModal } from "front-end/components/myteam/RemoveMemberModal";
+import {LeaveGroupModal} from "front-end/components/myteam/LeaveGroupModal";
 
 import { useEffect, useState } from "react";
 
-export function MyTeamAdminContent() {
+export function MyTeamContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
   const [group, setGroup] = useRecoilState(groupStateAtom);
   const [isDissolveGroup, setIsDissolveGroup] =
@@ -26,14 +30,21 @@ export function MyTeamAdminContent() {
   const isRemoveMemberModal = useRecoilValue(isMemberRemoveAtom);
   const isEditTeam = useRecoilValue(editTeamAtom);
   const setIsPendingRequests = useSetRecoilState(isPendingRequestsAtom);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useRecoilState(isAdminAtom);
+  const [isLeaveGroup, setIsLeaveGroup] = useRecoilState(isLeaveGroupAtom);
+  const setRemoveActiveMemberUID = useSetRecoilState(removeActiveMemberUIDAtom);
 
+  function RemoveOnClick() {
+    setRemoveActiveMemberUID(user.user_id);
+    setIsLeaveGroup(true);
+  }
   //TODO: Remove this function on merge, user and group should already be loaded on sign in
   async function setGroupState() {
     // user hardcoded for testing
     const groupData = await getGroup("CPxu7JS3FPenPOBDD5Yi");
     setGroup(groupData);
-    const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
+    const userData = await getUser("12iCuIXLM7hs7CU8jkKrpVokpd73");
+    // const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
     setUser(userData);
   }
 
@@ -43,13 +54,13 @@ export function MyTeamAdminContent() {
   }, []);
 
   useEffect(() => {
-    if (typeof group === "string") return;
+    if (typeof group === "string" || typeof user === "string") return;
     console.log(group);
     // Check if the user is an admin
     if (user.email == group.contact_email) {
       setIsAdmin(true);
     }
-  }, [group]);
+  }, [group, user]);
 
   function RenderCards() {
     if (typeof group === "string") {
@@ -58,6 +69,27 @@ export function MyTeamAdminContent() {
     return Object.entries(group.members).map(([uid, rest]) => {
       return MemberCard([...rest, uid]);
     });
+  }
+
+  function RenderDeleteLeaveButton() {
+    if (isAdmin) {
+      return (
+        <button
+          className={styles.deleteButton}
+          onClick={() => setIsDissolveGroup(true)}
+        >
+          Delete
+        </button>
+      );
+    }
+    return (
+      <button
+        className={styles.deleteButton}
+        onClick={RemoveOnClick}
+      >
+        Leave Group
+      </button>
+    );
   }
 
   return (
@@ -76,14 +108,9 @@ export function MyTeamAdminContent() {
             <img
               src={blueTicket}
               className={styles.goldenTicket}
-              alt="golden ticket"
+              alt="blue ticket"
             />
           )}
-          <img
-            src={goldenTicket}
-            className={styles.goldenTicket}
-            alt="golden ticket"
-          />
         </h2>
         {/* <SignInHardCode /> */}
         <div className={styles.content}>
@@ -100,12 +127,7 @@ export function MyTeamAdminContent() {
                   : Object.keys(group.pending_members).length}
               </span>
             </button>
-            <button
-              className={styles.deleteButton}
-              onClick={() => setIsDissolveGroup(true)}
-            >
-              Delete
-            </button>
+            <RenderDeleteLeaveButton />
           </div>
           <div className={styles.members}>
             <h3>Team Members</h3>
@@ -118,6 +140,7 @@ export function MyTeamAdminContent() {
       {isEditTeam ? <EditTeamModal /> : null}
       {isDissolveGroup ? <DissolveGroupModal /> : null}
       {isRemoveMemberModal ? <RemoveMemberModal /> : null}
+      {isLeaveGroup ? <LeaveGroupModal/> : null}
     </>
   );
 }

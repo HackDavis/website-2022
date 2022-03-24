@@ -1,8 +1,9 @@
-import styles from "front-end/css/myteamadmin/MemberCard.module.scss";
+import styles from "front-end/css/myteam/MemberCard.module.scss";
 import goldenTicket from "front-end/images/createteam/goldenTicket.svg";
 import blueTicket from "front-end/images/myteam/blueTicket.svg";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
+import { isAdminAtom } from "../../../recoil/atoms/isAdminAtom";
 import { removeActiveMemberUIDAtom } from "recoil/atoms/removeActiveMemberUIDAtom";
 import { isMemberRemoveAtom } from "recoil/atoms/isMemberRemoveAtom";
 import emailImg from "front-end/images/myteam/email.svg";
@@ -13,6 +14,7 @@ export function MemberCard([name, email, discord, desc, pfp, uid]) {
   const [group, setGroup] = useRecoilState(groupStateAtom);
   const setIsMemberRemove = useSetRecoilState(isMemberRemoveAtom);
   const setRemoveActiveMemberUID = useSetRecoilState(removeActiveMemberUIDAtom);
+  const isAdmin = useRecoilValue(isAdminAtom);
 
   function RemoveOnClick() {
     setRemoveActiveMemberUID(uid);
@@ -47,9 +49,10 @@ export function MemberCard([name, email, discord, desc, pfp, uid]) {
         </div>
         <p>{desc}</p>
       </div>
-      {group.contact_email == email ? null : (
-        <button onClick={RemoveOnClick}>Remove Member</button>
-      )}
+      {group.contact_email != email && isAdmin 
+        ? (<button onClick={RemoveOnClick}>Remove Member</button>)
+        : null
+      }
     </div>
   );
 }

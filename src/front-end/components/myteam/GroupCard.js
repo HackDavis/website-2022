@@ -2,12 +2,14 @@ import React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { groupStateAtom } from '../../../recoil/atoms/groupAtom';
 import {editTeamAtom} from 'recoil/atoms/editTeamAtom';
-import styles from "front-end/css/myteamadmin/GroupCard.module.scss";
+import styles from "front-end/css/myteam/GroupCard.module.scss";
+import { isAdminAtom } from "../../../recoil/atoms/isAdminAtom";
 
 export function GroupCard() {
 
   const group = useRecoilValue(groupStateAtom);
   const setIsEditTeam = useSetRecoilState(editTeamAtom);
+  const isAdmin = useRecoilValue(isAdminAtom);
 
   return (
     
@@ -15,7 +17,7 @@ export function GroupCard() {
       <div className={styles.cardContent}>
         <div className={styles.titleContent}>
           <h2 className={styles.title}>{group.group_name}</h2>
-          <button className={styles.editButton} onClick={() => setIsEditTeam(true)}> Edit</button>
+          {isAdmin ? <button className={styles.editButton} onClick={() => setIsEditTeam(true)}> Edit</button> : null}
         </div>
         <span className={styles.id}>ID # {group.group_id}</span>
         <p className={styles.groupDesc}>{group.description}<br /></p>
