@@ -1,5 +1,5 @@
 import { doc, deleteDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig";
+import { dbConfig } from "../db/dbConfig";
 import { getGroup } from "./getGroup";
 import { deleteUserPendingGroup } from "./deleteUserPendingGroup";
 import { deleteUserPendingInvitation } from "./deleteUserPendingInvitation";
@@ -44,7 +44,8 @@ export async function deleteGroup(groupID) {
 
         //3. removing group_id from all members of the group
         // console.log("initial members:", members_arr);
-        for(let id of members_arr) {
+        
+        for(let id in members_arr) {
             await deleteUserGroupID(id);
         }
 

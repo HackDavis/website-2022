@@ -1,6 +1,6 @@
 import styles from '../../css/createteam/Checkbox.module.scss';
 
-export function Checkbox({ name, onChange }) {
+export function Checkbox({ name, onChange, checked }) {
   return (
     <>
       <label className={styles['b-contain']}>
@@ -8,7 +8,8 @@ export function Checkbox({ name, onChange }) {
         <input type="checkbox"
           id={name}
           name={name}
-          value={name}
+          // value={name}
+          checked={checked}
           label={name}
           onChange={onChange}
         />

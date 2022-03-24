@@ -1,5 +1,5 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 
 // Purpose: Update a user's group ID to indicate which group they belong to 
 // How it works: Query the DB for the specific user and update their group ID field 

@@ -1,0 +1,76 @@
+:global(body) {
+  background: #043c54;
+}
+
+.container {
+  background: #043c54;
+  padding: 46px 80px;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin-bottom: 40px;
+  width: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  > img {
+    width: 12px;
+    margin-right: 16px;
+  }
+
+  > p {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    color: white;
+    margin: 0;
+    width: auto;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0 22px;
+  margin-bottom: 40px;
+
+  > h2 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: white;
+    width: auto;
+    margin: 0;
+  }
+
+  > span {
+    display: block;
+    background: #f95a5a;
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 50%;
+
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    color: white;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}

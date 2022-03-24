@@ -19,10 +19,21 @@ import { Checkbox } from '../createteam/Checkbox';
 export function EditTeamContent() {
   const [roles, setUserRoles] = useState(new Set());
   const [tags, setUserTags] = useState(new Set());
+  const [group, setGroup] = useRecoilState(groupStateAtom);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
-
-  const [group, setGroup] = useRecoilState(groupStateAtom);
+  
+  useEffect(() => {
+    if (typeof group !== "string") {
+      const newRoles = new Set(group.tags1);
+      const newTags = new Set(group.tags2);
+      console.log(group);
+      setName(group.group_name);
+      setDesc(group.description);
+      setUserRoles(newRoles);
+      setUserTags(newTags);      
+    }
+  }, [group])
 
   const setRolesSelector = useSetRecoilState(SetRolesState);
   const setTagsSelector = useSetRecoilState(SetTagsState);
@@ -91,7 +102,7 @@ export function EditTeamContent() {
                 rows="1"
                 required
             ></textarea>
-            <p>{name.length}/20 characters</p>
+            <p>{typeof group !== "string" ? name.length : 0}/20 characters</p>
             <label>Team Description</label>
             <textarea
                 type="text"
@@ -102,7 +113,7 @@ export function EditTeamContent() {
                 // rows="9"
                 required
             ></textarea>
-            <p>{desc.length}/250 characters</p>
+            <p>{typeof group !== "string" ? desc.length : 0}/250 characters</p>
             </div>
             <div className={styles.column2}>
             <label>What skills/tools are you looking for?</label>

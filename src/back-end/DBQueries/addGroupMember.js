@@ -1,5 +1,5 @@
 import {doc, updateDoc} from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import {getGroup} from "./getGroup";
 import { getUser } from "./getUser.js";
 // Purpose: Add a new member to the group 
@@ -25,7 +25,7 @@ export async function addGroupMember(user_id, group_id) {
             return members_map_copy;
         } else {
             console.log("can't add members because the max limit has been reached or the user being added does not exist");
-            return groupData.members;
+            return "error";
         }
     } catch (e) {
         console.log ("error updatting group's member field", e);
