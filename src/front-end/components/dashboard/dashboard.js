@@ -4,31 +4,18 @@ import DashboardPanel from "./DashboardPanel";
 import EditDashboard from "./EditDashboard";
 import CreateTeam from "../../images/dashboard/CreateTeam.svg";
 import JoinTeam from "../../images/dashboard/JoinTeam.svg";
-import { SignInHardCode } from "./SignInHardcode";
+import DashboardButton from "./DashboardButton";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 
-function DashboardButton(props) {
-  return (
-    <div className={styles.profileBtn} onClick={() => props.setShowDashboard(!props.showDashboard)}>
-      <div className={styles.circle}>
-        <div className={styles.pfpContainer}>
-          <img src={props.user.profile_picture} className={styles.pfp} alt="profile picture"/>
-        </div>
-        <div className={styles.rectangle}/>
-        <p className={styles.myProfile}>My Profile</p>
-      </div>
-    </div>
-  );
-}
+
 
 export default function Dashboard() {
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [user, setUser] = useRecoilState(userStateAtom);
+  const [user] = useRecoilState(userStateAtom);
   return (
     <div className={styles.container}>
-      <SignInHardCode />
       <div className={styles.mainContent}>
         <div className={styles.text}>
           <div className={styles.hi}>Hi {user.name}</div>

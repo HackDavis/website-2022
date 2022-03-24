@@ -1,0 +1,47 @@
+.profileBtn {
+  position: absolute;
+  width: 186px;
+  right: 0;
+  margin-top: 50px;
+  .circle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #2A586E;
+    margin-right: 115px;
+  } 
+  .rectangle {
+    height: 70px;
+    width: 150px;
+    background: #2A586E;
+    position: absolute;
+    left: 50%;
+  }
+  .pfpContainer {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    z-index: 998;
+    top: 12%;
+    left: 12%;
+  }
+  .pfp {
+    border-radius: 50%;
+  }
+  .myProfile {
+    color: white;
+    position: absolute;
+    width: 100px;
+    font-weight: 600;
+    transform: translate(70%, 100%);
+    margin-bottom: 0;
+    z-index: 998;
+  }
+}
+.profileBtn:hover {
+  cursor: pointer;
+}
+
