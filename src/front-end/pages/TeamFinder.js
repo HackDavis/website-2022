@@ -3,6 +3,7 @@ import TeamFinderHome from "../components/dashboard/TeamFinderHome";
 import Login from "../components/dashboard/login";
 import Section_Navbar from "../components/section_navbar";
 import FindTeam from "../components/dashboard/FindTeam";
+import PendingTeams from "../components/dashboard/PendingTeams";
 
 import styles from "../css/dashboard/teamfinder.module.scss";
 
@@ -13,6 +14,7 @@ export function TeamFinder() {
       {/* <Login/> */}
       {/* <TeamFinderHome /> */}
       <FindTeam />
+      {/* <PendingTeams/> */}
       {/* <Footer/> */}
     </div>
   );

@@ -1,11 +1,26 @@
 .container {
   width: 600px;
-  height: 650px;
   background-color: #074967;
   padding: 40px;
   display: flex;
   flex-direction: column;
   border: solid 4px transparent;
+  position: relative;
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    font-size: 17pt;
+    font-weight: 600;
+    top: -3px;
+    left: 446px;
+    border-bottom-left-radius: 20px;
+    color: #074967;
+    background-color: #9CD43D;
+  }
   > h3 {
     color: white;
     font-size: 24pt;
@@ -33,8 +48,8 @@
   .group {
     display: flex;
     width: 510px;
-    justify-content: space-between;
     height: 150px;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   > h5 {
@@ -70,7 +85,7 @@
   .skillsetGroup {
     display: flex;
     flex-wrap: wrap;
-    .role {
+    .skill {
       border-radius: 20px;
       width: fit-content;
       padding: 5px 20px;
@@ -79,18 +94,21 @@
       background-color: #E86560;
       color: white;
     }
-    .skill {
-      border-radius: 20px;
-      width: fit-content;
-      padding: 5px 20px;
-      margin-right: 15px;
-      margin-top: 20px;
-      background-color: #916AFF;
-      color: white;
-    }
   }
-}
-.container:hover {
-  border: solid 4px #12A8B1;
-  cursor: pointer;
+  .btn {
+    margin-top: 40px;
+    color: white;
+    border: solid white 4px;
+    padding: 5px 0;
+    background: transparent;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 14pt;
+  }
+  .btn:hover {
+    cursor: pointer;
+    color: #074967;
+    background-color: white;
+  }
 }

@@ -36,14 +36,13 @@
 }
 
 .container {
-  width: 100%;
   min-height: 100vh;
   background-color: #043B54;
   display: flex;
   .left {
     display: flex;
     width: 30%;
-    min-width: 400px;
+    min-width: 650px;
     height: 875px;
     flex-direction: column;
     padding: 50px 50px 50px 100px;
@@ -126,7 +125,13 @@
     flex-wrap: wrap;
     gap: 25px 25px;
     width: 70%;
+    min-width: 1200px;
     padding: 50px;
+    > h5 {
+      color: white;
+      font-size: 17pt;
+      font-weight: 600;
+    }
   }
 }
 
@@ -144,4 +149,10 @@
 .showDashboard {
   visibility:visible;
   right:0px;
+}
+
+@media screen and (max-width:768px) {
+  .container {
+    flex-direction: column;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../css/dashboard/findteam.module.scss";
 import { Checkbox } from "./Checkbox";
 import DashboardButton from "./DashboardButton";
@@ -11,11 +11,38 @@ import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 import Roles from "../../../back-end/db/Roles";
 import Tags from "../../../back-end/db/Tags";
+import { getAllGroups } from "../../../back-end/DBQueries/getAllGroups";
 
 export default function FindTeam() {
+  const [allGroups, setAllGroups] = useState([]);
+  const [groupId, setGroupId] = useState();
+  const [tags, setTags] = useState(new Set())
   const [user] = useRecoilState(userStateAtom);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+    
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getAllGroups();
+      setAllGroups(data);
+      console.log("group data: ", data);
+    };
+    fetchData()
+      .catch(console.error);
+  }, []);
+
+  const handleCheck = (e) => {
+    // If tags set contains the tag, user is unchecking the check box
+    const newTags = new Set(tags);
+    if(e.target.checked) {
+      newTags.add(e.target.name);
+    } else {
+      newTags.delete(e.target.name);
+    }
+    setTags(newTags);
+    console.log("tags: ", tags);
+  }
+
   return (
     <div>
       <div className={styles.banner}>
@@ -51,6 +78,7 @@ export default function FindTeam() {
               className={styles.search}
               type="text"
               placeholder="Search by ID number"
+              onChange={(e) => setGroupId(e.target.value)}
             />
             <img src={search} className={styles.searchIcon} alt="search icon" />
           </form>
@@ -62,7 +90,7 @@ export default function FindTeam() {
                 {Roles.map((role) => {
                   return (
                     <div key={role}>
-                      <Checkbox name={role} />
+                      <Checkbox name={role} onChange={handleCheck}/>
                       <br />
                     </div>
                   );
@@ -75,7 +103,7 @@ export default function FindTeam() {
                 {Tags.map((tag) => {
                   return (
                     <div key={tag}>
-                      <Checkbox name={tag} />
+                      <Checkbox name={tag} onChange={handleCheck}/>
                       <br />
                     </div>
                   );
@@ -88,9 +116,15 @@ export default function FindTeam() {
           </button>
         </div>
         <div className={styles.right}>
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
+          {groupId ? null : <h5>Teams <span>({allGroups.length} results)</span></h5>}
+          {groupId ? allGroups.filter(group => group.group_id.includes(groupId) || group.group_id.includes(groupId.substring(1)))
+            .map((group, ind) => {
+              return <TeamCard key={ind} data={group}/>})
+            : 
+            allGroups.map((group, ind) => {
+              return <TeamCard key={ind} data={group}/>
+            })
+          }
         </div>
       </div>
     </div>

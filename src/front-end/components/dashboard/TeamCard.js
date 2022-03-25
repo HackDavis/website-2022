@@ -1,45 +1,48 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "../../css/dashboard/teamcard.module.scss";
+import { getUser } from "../../../back-end/DBQueries/getUser";
 
-export default function TeamCard() {
+export default function TeamCard(props) {
+  const [members, setMembers] = useState([]);
+  useEffect(() => {
+    let allMembers = [];
+    props.data.members?.forEach(async memberId => {
+      const memberData = await getUser(memberId);
+      allMembers.push(memberData);
+    })
+    setMembers(allMembers);
+  }, [])
+
+  const content = members.map((member) => (
+    <div className={styles.names}>
+      <div className={styles.pfp}>{member.profile_picture}</div>
+      <div className={styles.memberName}>{member.name}</div>
+    </div>
+  ));
+
   return (
     <div className={styles.container}>
       <h3>
-        Team name <span>3/4</span>
+        {props.data.group_name} <span>{props.data.members?.length}/4</span>
       </h3>
-      <h5 className={styles.id}>ID #12345678910</h5>
+      <h5 className={styles.id}>ID #{props.data.group_id}</h5>
       <p>
-        This is my description!! computer science and hack davis and cows and
-        hack davis operations team is the best
+        {props.data.description}
       </p>
       <h5>TEAM</h5>
       <div className={styles.group}>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
+        {content}
       </div>
       <h5>We are looking for:</h5>
       <div className={styles.skillsetGroup}>
-        <div className={styles.skill}>HHHHHHHHHH</div>
-        <div className={styles.skill}>Kotlin</div>
-        <div className={styles.skill}>UI/UX</div>
-        <div className={styles.skill}>Android</div>
-        <div className={styles.skill}>Text here</div>
-        <div className={styles.skill}>Text here</div>
-        <div className={styles.skill}>Text here</div>
+        {/* tag1 = red = roles, 
+        tag2 = purple = skills */}
+        {props.data.tags1.map(tag1 => {
+          return (<div className={styles.role}>{tag1}</div>);
+        })}
+        {props.data.tags2.map(tag2 => {
+          return (<div className={styles.skill}>{tag2}</div>);
+        })}
       </div>
     </div>
   );

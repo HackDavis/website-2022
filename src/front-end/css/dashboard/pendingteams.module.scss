@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  min-width: 768px;
+  background-color: #043B54;
+  gap: 25px 25px;
+  flex-wrap: wrap;
+  padding: 50px 75px;
+  > h1 {
+    color: white;
+    margin-bottom: 50px;
+  }
+}
