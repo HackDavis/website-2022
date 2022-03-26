@@ -3,10 +3,12 @@ import styles from "../../css/dashboard/pendingteams.module.scss";
 import PendingTeamCard from "./PendingTeamCard";
 import Dashboard from "./Dashboard";
 import DashboardButton from "./DashboardButton";
+import backarrow from "../../images/dashboard/whiteBackArrow.svg";
+
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 
-export default function PendingTeams() {
+export default function PendingTeams(props) {
   const [user] = useRecoilState(userStateAtom);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -25,6 +27,10 @@ export default function PendingTeams() {
         setShowDashboard={setShowDashboard}
       />
       <div className={styles.container}>
+        <a className={styles.back} onClick={() => props.setShowPending(false)}>
+          <img src={backarrow} className={styles.backarrow} />
+          Back to Search
+        </a>
         <h1>Your Pending Requests</h1>
         <PendingTeamCard />
         <PendingTeamCard />

@@ -4,17 +4,16 @@ import Login from "../components/dashboard/login";
 import Section_Navbar from "../components/section_navbar";
 import FindTeam from "../components/dashboard/FindTeam";
 import PendingTeams from "../components/dashboard/PendingTeams";
-
-import styles from "../css/dashboard/teamfinder.module.scss";
-
+import SubmitRequest from "../components/dashboard/SubmitRequest";
 export function TeamFinder() {
   return (
-    <div className={styles.container}>
+    <div >
       <Section_Navbar />
       {/* <Login/> */}
-      {/* <TeamFinderHome /> */}
-      <FindTeam />
+      <TeamFinderHome />
+      {/* <FindTeam /> */}
       {/* <PendingTeams/> */}
+      {/* <SubmitRequest/> */}
       {/* <Footer/> */}
     </div>
   );

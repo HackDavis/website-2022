@@ -15,6 +15,7 @@ function LandingPage() {
       <Section_Navbar />
       <MainSection />
       <FAQOnwards />
+      <TeamFinder />
     </div>
   );
 }

@@ -14,10 +14,14 @@
     text-decoration: none;
     color: #043B54;
   }
+  > :hover {
+    cursor: pointer;
+  }
 }
 .greeting {
-  margin: 50px 0 0 100px;
+  padding: 50px 0 0 100px;
   position: relative;
+  background: #043B54;
   .hi {
     color: white;
     font-size: 48pt;
@@ -26,7 +30,7 @@
   }
   .blankTicket {
     width: 75px;
-    top: 15px;
+    bottom: 10px;
     position: absolute;
   }
 }
@@ -36,8 +40,7 @@
 }
 
 .container {
-  min-height: 100vh;
-  background-color: #043B54;
+  background: #043B54;
   display: flex;
   .left {
     display: flex;
@@ -118,6 +121,19 @@
       background-color: #9ee7e5;
       // padding: 22px 27px;
       padding: 22px 0px 22px 22px;
+      > span {
+        font-family: "Proxima Nova";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        color: white;
+
+        background: #f95a5a;
+        padding: 4px 9px;
+        margin-left: 13px;
+        border-radius: 50%;
+      }
     }
   }
   .right {

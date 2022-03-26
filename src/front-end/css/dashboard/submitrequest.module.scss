@@ -1,0 +1,72 @@
+
+.back {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 40px;
+
+  .backarrow {
+    width: 12px;
+    margin-right: 16px;
+  }
+}
+.back:hover {
+  color: white;
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  background: #043c54;
+  padding: 100px 75px;
+  height: 100vh;
+  display: flex;
+  gap: 0 75px;
+  .teamCard {
+    width: 600px;
+    height: 650px;
+    background-color: #074967;
+  }
+  > form {
+    width: 1200px;
+    height: 650px;
+    position: relative;
+    // border: solid black 1px;
+    > label {
+      color: white;
+      font-size: 17pt;
+      font-weight: 600;
+    }
+    .textArea {
+      margin-top: 10px;
+      width: 1200px;
+      height: 550px;
+      background-color: transparent;
+      border: solid 2px #9EE7E5;
+      padding: 25px;
+      color: #51919D;
+      resize: none;
+    }
+    .characterCount {
+
+    }
+    .submit {
+      width: 214px;
+      height: 40px;
+      background-color: #9EE7E5;
+      color: #043B54;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-radius: 20px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
