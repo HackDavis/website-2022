@@ -1,8 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+
   > h2 {
-    padding-top: 53px;
+    margin-top: 53px;
     text-align: center;
     font-family: "Proxima Nova";
     font-style: normal;
@@ -27,5 +28,14 @@
       line-height: 24px;
       color: white;
     }
+  }
+  .errorCode {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .errorCode {
+    width: 80%;
   }
 }
