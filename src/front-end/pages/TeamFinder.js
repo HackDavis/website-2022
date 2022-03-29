@@ -9,8 +9,8 @@ export function TeamFinder() {
   return (
     <div >
       <Section_Navbar />
-      {/* <Login/> */}
-      <TeamFinderHome />
+      <Login/>
+      {/* <TeamFinderHome /> */}
       {/* <FindTeam /> */}
       {/* <PendingTeams/> */}
       {/* <SubmitRequest/> */}

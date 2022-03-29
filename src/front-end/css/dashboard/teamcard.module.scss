@@ -1,6 +1,6 @@
 .container {
-  width: 600px;
-  height: 650px;
+  width: 450px;
+  height: 500px;
   background-color: #074967;
   padding: 40px;
   display: flex;
@@ -8,12 +8,12 @@
   border: solid 4px transparent;
   > h3 {
     color: white;
-    font-size: 24pt;
+    font-size: 18pt;
     padding: 0;
     margin: 0;
     > span {
       color: #136E90;
-      font-size: 22pt;
+      font-size: 16pt;
       font-weight: 700;
       margin-left: 10px;
     }
@@ -21,13 +21,13 @@
   .id {
     margin-top: 5px;
     color: white;
-    font-size: 17pt;
+    font-size: 12pt;
     font-weight: normal;
     font: "Proxima Nova";
   }
   > p {
     color: white;
-    font-size: 17pt;
+    font-size: 12pt;
     margin-top: 30px;
   }
   .group {
@@ -39,29 +39,29 @@
   }
   > h5 {
     color: white;
-    font-size: 17pt;
+    font-size: 16pt;
     font-weight: 600;
     margin-top: 20px;
   }
   > .group > .names {
     position: relative;
-    width: 250px;
-    height: 70px;
+    width: 200px;
+    height: 60px;
     background-color: #043B54;
     border-radius: 60px;
     .pfp {
       position: absolute;
       top: 5px;
       margin-left: 5px;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background-color: grey;
     }
     .memberName {
       position: absolute;
-      top: 25px;
-      left: 65px;
+      top: 17px;
+      left: 60px;
       color: white;
       font-weight: 600;
       margin-left: 10px;
@@ -93,4 +93,11 @@
 .container:hover {
   border: solid 4px #12A8B1;
   cursor: pointer;
+}
+
+.removeEffect {
+  .container:hover {
+    border: solid 4px transparent;
+    cursor: default;
+  }
 }

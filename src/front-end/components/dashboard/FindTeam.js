@@ -13,27 +13,51 @@ import Roles from "../../../back-end/db/Roles";
 import Tags from "../../../back-end/db/Tags";
 import { getAllGroups } from "../../../back-end/DBQueries/getAllGroups";
 import PendingTeams from "./PendingTeams";
+import SubmitRequest from "./SubmitRequest";
 // import { SignInHardCode } from "./SignInHardcode";
 
 export default function FindTeam(props) {
   const [allGroups, setAllGroups] = useState([]);
+  const [constAllGroups, setConstAllGroups] = useState([]);
   const [groupId, setGroupId] = useState();
+  const [requestGroup, setRequestGroup] = useState({});
   const [tags, setTags] = useState(new Set());
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showPending, setShowPending] = useState(false);
-
+  const [showRequest, setShowRequest] = useState(false);
   const [user] = useRecoilState(userStateAtom);
     
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllGroups();
-      setAllGroups(data);
-      console.log("group data: ", data);
-    };
-    fetchData()
-      .catch(console.error);
-  }, []);
+    if(tags.size > 0 && allGroups.length > 0) {
+      filterGroupsByTags();
+    } else if(tags.size == 0 && allGroups.length > 0) {
+      setAllGroups(constAllGroups);
+    } else {
+      const fetchData = async () => {
+        const data = await getAllGroups();
+        setAllGroups(data);
+        setConstAllGroups(data);
+        console.log("group data: ", data);
+      };
+      fetchData()
+        .catch(console.error);
+    }
+  }, [tags]);
+
+  // Update the allGroups state to only show groups that have tags equal to the tags selected
+  const filterGroupsByTags = () => {
+    let tagArray = Array.from(tags);
+    
+    let filteredGroups = [];
+    allGroups.forEach(group => {
+      if(group.tags1.some(tag1 => tagArray.indexOf(tag1) >= 0) || group.tags2.some(tag2 => tagArray.indexOf(tag2) >= 0)) {
+        filteredGroups.push(group);
+      }
+    });
+    console.log("filtered Groups: ", filteredGroups);
+    setAllGroups(filteredGroups);
+  };
 
   const handleCheck = (e) => {
     // If tags set contains the tag, user is unchecking the check box
@@ -44,13 +68,21 @@ export default function FindTeam(props) {
       newTags.delete(e.target.name);
     }
     setTags(newTags);
-    console.log("tags: ", tags);
+    setAllGroups(constAllGroups);
+  };
+
+  const onCardClick = (group) => {
+    setShowRequest(true);
+    console.log("Groupaaaa: " + group);
+    setRequestGroup(group);
   };
 
   return (
     <div>
       {showPending ? (
         <PendingTeams setShowPending={setShowPending} />
+      ) : showRequest ? (
+        <SubmitRequest group={requestGroup} showRequest={showRequest} setShowRequest={setShowRequest} />
       ) : (
         <div>
           {" "}
@@ -104,7 +136,10 @@ export default function FindTeam(props) {
                     {Roles.map((role) => {
                       return (
                         <div key={role}>
-                          <Checkbox name={role} onChange={handleCheck} />
+                          <Checkbox
+                            name={role}
+                            onChange={(e) => handleCheck(e)}
+                          />
                           <br />
                         </div>
                       );
@@ -125,14 +160,17 @@ export default function FindTeam(props) {
                   </div>
                 </div>
               </div>
-              <button className={styles.pendingButton} onClick={() => setShowPending(true)}>
+              <button
+                className={styles.pendingButton}
+                onClick={() => setShowPending(true)}
+              >
                 Your Pending Requests
                 <span>{user.pending_groups?.length}</span>
               </button>
             </div>
             <div className={styles.right}>
               {groupId ? null : (
-                <h5>
+                <h5 className={styles.results}>
                   Teams <span>({allGroups.length} results)</span>
                 </h5>
               )}
@@ -144,10 +182,18 @@ export default function FindTeam(props) {
                         group.group_id.includes(groupId.substring(1))
                     )
                     .map((group, ind) => {
-                      return <TeamCard key={ind} data={group} />;
+                      return (
+                        <div onClick={() => onCardClick(group)}>
+                          <TeamCard key={ind} data={group} />
+                        </div>
+                      );
                     })
                 : allGroups.map((group, ind) => {
-                    return <TeamCard key={ind} data={group} />;
+                    return (
+                      <div onClick={() => onCardClick(group)}>
+                        <TeamCard key={ind} data={group} />
+                      </div>
+                    );
                   })}
             </div>
           </div>

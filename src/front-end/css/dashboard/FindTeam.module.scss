@@ -137,19 +137,27 @@
     }
   }
   .right {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px 25px;
+    display: grid;
+    grid-template-columns: 425px 425px;
+    gap: 25px 50px;
     width: 70%;
     min-width: 1200px;
     padding: 50px;
-    > h5 {
-      color: white;
-      font-size: 17pt;
-      font-weight: 600;
-    }
+    margin-top: 50px;
+    position: relative;
   }
+  .results {
+    padding: 50px;
+    color: white;
+    font-size: 17pt;
+    font-weight: 600;
+    top: -50px;
+    left: 0;
+    position: absolute;
+  }
+  
 }
+
 
 .dashboard {
   width: 500px;

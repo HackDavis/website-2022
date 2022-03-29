@@ -6,10 +6,8 @@
   right: -500px;
   z-index: 998;
   background-color: #2A586E;
-  visibility: hidden;
   transition: all 200ms ease-out;
 }
 .showDashboard {
-  visibility:visible;
   right:0px;
 }
