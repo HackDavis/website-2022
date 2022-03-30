@@ -27,8 +27,8 @@ export default function SubmitRequest(props) {
           <img src={backarrow} className={styles.backarrow} />
           Back to Search
         </a>
-        <TeamCard showRequest={props.showRequest}  data={props.group}/>
-        <form>
+        <TeamCard showRequest={props.showRequest} data={props.group} />
+        <form onSubmit={handleSubmit}>
           <label>
             Join the team
             <textarea
@@ -37,12 +37,17 @@ export default function SubmitRequest(props) {
               name="request"
               onChange={handleDescChange}
               maxLength={250}
+              required
             />
             <div className={styles.characterCount}>
               {reason.length}/250 Characters
             </div>
           </label>
-          <button className={styles.submit} onClick={handleSubmit}>SUBMIT REQUEST</button>
+          <input
+            type="submit"
+            value="SUBMIT REQUEST"
+            className={styles.submit}
+          />
         </form>
       </div>
     </div>

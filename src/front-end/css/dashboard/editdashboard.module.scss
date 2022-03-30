@@ -1,17 +1,17 @@
 .container {
-  margin-top: 120px;
-  padding: 20px;
+  background-color: #074967;
+  padding: 120px 20px 20px 20px;
   display: flex;
   width: 500px;
-  height: 85vh;
+  height: 100vh;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   justify-content: center;
   position: relative;
   .x {
     position: absolute;
     width: 30px;
-    top: 0;
+    top: 120px;
     right: 25px;
   }
   .x:hover {
@@ -19,7 +19,7 @@
   }
   .cancelButton {
     position: absolute;
-    top: 0;
+    top: 120px;
     left: 25px;
     width: 100px;
     .backArrow {
@@ -89,18 +89,16 @@
       color: white;
       position: absolute;
       font-weight: 600;
-      top: 80%;
-      left: 68.5%;
+      bottom: 20px;
+      left: 150px;
     }
   } 
 }
 .submit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #043B54;;
   color: #9EE7E5;
-  width: 120px;
-  height: 35px;
+  width: 130px;
+  height: 40px;
   letter-spacing: 2px;
   border-radius: 20px;
   border: solid 4px #9EE7E5;

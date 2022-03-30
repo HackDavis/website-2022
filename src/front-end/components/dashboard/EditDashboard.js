@@ -56,12 +56,15 @@ export default function EditDashboard(props) {
           alt="close"
           onClick={() => handleExit(props.setShowEdit, props.setShowDashboard)}
         />
-        <div className={styles.cancelButton} onClick={() => props.setShowEdit(false)}>
+        <div
+          className={styles.cancelButton}
+          onClick={() => props.setShowEdit(false)}
+        >
           <img src={backarrow} className={styles.backArrow} alt="back arrow" />
           <div className={styles.cancel}>Cancel</div>
         </div>
         <div className={styles.text}>Edit Profile</div>
-        <form>
+        <form onSubmit={submitClick}>
           <div className={styles.textCont}>
             <img src={discord} className={styles.icon} alt="discord icon" />
             <input
@@ -71,6 +74,7 @@ export default function EditDashboard(props) {
               name="discord"
               onChange={handleDiscordChange}
               maxLength={37}
+              required
             />
           </div>
           <div className={styles.descContainer}>
@@ -80,15 +84,14 @@ export default function EditDashboard(props) {
               name="description"
               onChange={handleDescChange}
               maxLength={250}
+              required
             />
             <div className={styles.characterCount}>
               {text.length}/250 Characters
             </div>
           </div>
+          <input type="submit" value="SAVE" className={styles.submit} />
         </form>
-        <div className={styles.submit} onClick={submitClick}>
-          SAVE
-        </div>
       </div>
     </div>
   );

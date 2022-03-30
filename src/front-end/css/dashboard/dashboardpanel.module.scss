@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #074967;
+  height: 100vh;
   position: relative;
   .x {
     position: absolute;
@@ -71,11 +73,5 @@
       margin-right: 10px;
       margin-bottom: 2px;
     }
-  }
-  .appStatusCard {
-    width: 450px;
-    height: 100px;
-    background-color: #043B54;
-    border-radius: 10px;
   }
 }
