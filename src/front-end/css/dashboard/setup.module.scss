@@ -1,0 +1,130 @@
+.container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  .left {
+    padding: 200px 0 200px 150px;
+    width: 50%;
+    height: 90vh;
+    
+    background-color: #074967;
+
+    .welcomeMsg {
+      
+      .cow {
+        width: 250px;
+      }
+      > h1 {
+        color: white;
+        margin-top: 20px;
+      }
+      > h4 {
+        margin-top: 20px;
+        color: white;
+        font-weight: normal;
+        font-size: 14pt;
+      }
+
+    }
+
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    height: 90vh;
+    padding-top: 50px;
+    justify-content: center;
+    background-color: #043B54;
+    .setupForm {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      .pfp {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: grey;
+      }
+      .name {
+        color: white;
+        font-size: 14pt;
+        margin-top: 20px;
+      }
+      .textCont {
+        position: relative;
+        padding: 0;
+        margin: 0;
+      }
+      .icon {
+        position: absolute;
+        width: 20px;
+        top: 63%;
+        left: 2.5%;
+      }
+      .textField {
+        margin-top: 35px;
+        padding: 10px 10px 10px 40px;
+        height: 50px;
+        // width: 430px;
+    
+        color: #51919D;
+        background-color: #043B54;
+        border: solid 1px #9EE7E5;
+      }
+      .descContainer {
+        position: relative;
+        .textArea {
+          margin-top: 25px;
+          padding: 10px;
+          resize: none;
+          height: 200px;
+    
+          color: #51919D;
+          background-color: #043B54;
+          border: solid 1px #9EE7E5;
+        }
+        .characterCount {
+          color: white;
+          position: absolute;
+          
+          bottom: 20px;
+          left: 120px;
+        }
+      } 
+    }
+  }
+}
+
+.submit {
+  background-color: #043B54;;
+  color: #9EE7E5;
+
+  height: 40px;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: solid 4px #9EE7E5;
+  margin-top: 25px;
+  font-weight: 600;
+}
+.submit:hover {
+  color: white;
+  border: white 4px solid;
+  cursor: pointer;
+}
+
+.submit:active {
+  background-color: #9EE7E5;
+  border: solid 4px #9EE7E5;
+  color: #00425A;
+}
+
+.setupLater {
+  margin-top: 15px;
+  color: white;
+}
+
+.setupLater:hover {
+  color: white;
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../css/dashboard/loginpage.module.scss";
-// import JoinTeam from "../../images/dashboard/JoinTeam.svg";
 import { SignInHardCode } from "./SignInHardcode";
 import CloudLeft from "../../images/dashboard/CloudLeft.svg";
 import CloudRight from "../../images/dashboard/CloudRight.svg";
