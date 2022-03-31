@@ -12,6 +12,7 @@ export default function PendingTeams(props) {
   const [user] = useRecoilState(userStateAtom);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+
   return (
     <div>
       <DashboardButton
@@ -32,12 +33,9 @@ export default function PendingTeams(props) {
           Back to Search
         </a>
         <h1>Your Pending Requests</h1>
-        <PendingTeamCard />
-        <PendingTeamCard />
-        <PendingTeamCard />
-        <PendingTeamCard />
-        <PendingTeamCard />
-        <PendingTeamCard />
+        {props.pendingTeams?.map((groupId) => {
+          return <PendingTeamCard groupId={groupId} />
+        })}
       </div>
     </div>
   );

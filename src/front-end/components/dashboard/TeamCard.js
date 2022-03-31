@@ -12,12 +12,10 @@ export default function TeamCard(props) {
         allMembers.push(memberData);
       }
     };
-    fetchMembers();
-    setMembers(allMembers);
-    // props.data.members?.forEach(async memberId => {
-    //   const memberData = await getUser(memberId);
-    //   allMembers.push(memberData);
-    // })
+    fetchMembers().then(() => {
+      setMembers(allMembers);
+    });
+    
   }, []);
 
   const content = members.map((member, ind) => (

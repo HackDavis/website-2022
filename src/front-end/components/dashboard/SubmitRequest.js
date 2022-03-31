@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import TeamCard from "./TeamCard";
+import SubmitModal from "./SubmitModal";
 import styles from "../../css/dashboard/submitrequest.module.scss";
 import backarrow from "../../images/dashboard/whiteBackArrow.svg";
 import { groupApplication } from "../../../back-end/DBQueries/groupApplication";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState} from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { updateUserPendingGroup } from "../../../recoil/selectors/updateUserPendingGroup";
+import { updateGroupPendingMember } from "../../../recoil/selectors/updateGroupPendingMember";
 
 export default function SubmitRequest(props) {
   const [reason, setReason] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const [user] = useRecoilState(userStateAtom);
+  const setUpdateUserPendingGroup = useSetRecoilState(updateUserPendingGroup);
+  const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
 
   const handleDescChange = (e) => {
     setReason(e.target.value);
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // probably need to change this to an actual page redirection
     e.preventDefault();
-    groupApplication(user.user_id, props.group.group_id, reason);
+    let pending_members_map_copy = await groupApplication(user.user_id, props.group.group_id, reason);
+    setUpdateUserPendingGroup(props.group.group_id);
+    setUpdateGroupPendingMember(pending_members_map_copy);
+    setShowModal(true);
   };
 
   return (
@@ -50,6 +59,7 @@ export default function SubmitRequest(props) {
           />
         </form>
       </div>
+      {showModal ? <SubmitModal setShowModal={setShowModal} setShowRequest={props.setShowRequest}/> : null}
     </div>
   );
 }

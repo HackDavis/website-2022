@@ -1,50 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../css/dashboard/pendingteamcard.module.scss";
+import { getUser } from "../../../back-end/DBQueries/getUser";
+import { getGroup } from "../../../back-end/DBQueries/getGroup";
 
-export default function PendingTeamCard() {
+export default function PendingTeamCard(props) {
+  const [members, setMembers] = useState([]);
+  const [group, setGroup] = useState({});
+  
+  useEffect(() => {
+    let allMembers = [];
+    let groupData = {};
+
+    const fetchData = async () => {
+      const getGroupData = await getGroup(props.groupId);
+      for(const memberId of getGroupData.members) {
+        const memberData = await getUser(memberId);
+        allMembers.push(memberData);
+      }
+      groupData = getGroupData;
+    };
+  
+    fetchData().then(() => {
+      setGroup(groupData);
+      setMembers(allMembers);
+    });
+  }, []);
+
+  const content = members.map((member, ind) => (
+    <div className={styles.names} key={ind}>
+      <div className={styles.pfp}>{member.profile_picture}</div>
+      <div className={styles.memberName}>{member.name}</div>
+    </div>
+  ));
+
   return (
     <div className={styles.container}>
-      {/* for denied teams: */}
-      {/* <div style={{opacity:"50%"}}> */}
       <div className={styles.status}>Pending</div>
       <h3>
-        Team name <span>3/4</span>
+        {group.group_name} <span>{group.members?.length}/4</span>
       </h3>
-      <h5 className={styles.id}>ID #12345678910</h5>
-      <p>
-        This is my description!! computer science and hack davis and cows and
-        hack davis operations team is the best
-      </p>
+      <h5 className={styles.id}>ID #{group.group_id}</h5>
+      <p>{group.description}</p>
       <h5>TEAM</h5>
-      <div className={styles.group}>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-        <div className={styles.names}>
-          <div className={styles.pfp}></div>
-          <div className={styles.memberName}>Name</div>
-        </div>
-      </div>
+      <div className={styles.group}>{content}</div>
       <h5>We are looking for:</h5>
       <div className={styles.skillsetGroup}>
-        <div className={styles.skill}>HHHHHHHHHH</div>
-        <div className={styles.skill}>Kotlin</div>
-        <div className={styles.skill}>UI/UX</div>
-        <div className={styles.skill}>Android</div>
-        <div className={styles.skill}>Text here</div>
-        <div className={styles.skill}>Text here</div>
-        <div className={styles.skill}>Text here</div>
+        {group.tags1?.map((tag1) => {
+          return <div className={styles.role}>{tag1}</div>;
+        })}
+        {group.tags2?.map((tag2) => {
+          return <div className={styles.skill}>{tag2}</div>;
+        })}
       </div>
-      {/* </div> */}
       <button className={styles.btn}>JOIN TEAM</button>
     </div>
   );

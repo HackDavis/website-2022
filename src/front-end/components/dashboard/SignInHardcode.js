@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, updateDoc } from "firebase/firestore";
 import { dbConfig } from "../../../back-end/db/dbConfig.js";
 import { useRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
@@ -47,6 +47,7 @@ export function SignInHardCode() {
           pending_groups: [],
           pending_invitations: {},
           discord_id: "",
+          first_sign_in: true,
           hd_director:
             user.email.substring(user.email.lastIndexOf("@") + 1) ===
             "hackdavis.io"

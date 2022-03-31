@@ -8,6 +8,8 @@ import chicky from "../../images/dashboard/chicky.svg";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
 import TeamFinderHome from "./TeamFinderHome";
+import Setup from "./Setup";
+
 export default function Login() {
   const [user, setUser] = useRecoilState(userStateAtom);
   console.log(typeof user);
@@ -29,7 +31,7 @@ export default function Login() {
           </div>
           <SignInHardCode className={styles.login} />
         </div>
-      </div>) : <TeamFinderHome/>}
+      </div>) : user.first_sign_in ? <Setup /> : <TeamFinderHome/>}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 .container {
-  width: 600px;
+  width: 450px;
+  height: 600px;
   background-color: #074967;
   padding: 40px;
   display: flex;
@@ -16,7 +17,7 @@
     font-size: 17pt;
     font-weight: 600;
     top: -3px;
-    left: 446px;
+    right: -3px;
     border-bottom-left-radius: 20px;
     color: #074967;
     background-color: #9CD43D;
@@ -85,13 +86,22 @@
   .skillsetGroup {
     display: flex;
     flex-wrap: wrap;
+    .role {
+      border-radius: 20px;
+      width: fit-content;
+      padding: 5px 20px;
+      margin-right: 15px;
+      margin-top: 20px;
+      background-color: #35B1D1;
+      color: white;
+    }
     .skill {
       border-radius: 20px;
       width: fit-content;
       padding: 5px 20px;
       margin-right: 15px;
       margin-top: 20px;
-      background-color: #E86560;
+      background-color: #136E90;
       color: white;
     }
   }

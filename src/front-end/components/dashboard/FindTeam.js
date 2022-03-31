@@ -14,7 +14,7 @@ import Tags from "../../../back-end/db/Tags";
 import { getAllGroups } from "../../../back-end/DBQueries/getAllGroups";
 import PendingTeams from "./PendingTeams";
 import SubmitRequest from "./SubmitRequest";
-// import { SignInHardCode } from "./SignInHardcode";
+import { SignInHardCode } from "./SignInHardcode";
 
 export default function FindTeam(props) {
   const [allGroups, setAllGroups] = useState([]);
@@ -80,12 +80,11 @@ export default function FindTeam(props) {
   return (
     <div>
       {showPending ? (
-        <PendingTeams setShowPending={setShowPending} />
+        <PendingTeams setShowPending={setShowPending} pendingTeams={user.pending_groups}/>
       ) : showRequest ? (
         <SubmitRequest group={requestGroup} showRequest={showRequest} setShowRequest={setShowRequest} />
       ) : (
         <div>
-          {" "}
           <div className={styles.banner}>
             <a onClick={() => props.setShowFinder(false)}>
               <img src={backarrow} className={styles.backarrow} />
@@ -104,9 +103,9 @@ export default function FindTeam(props) {
             showDashboard={showDashboard}
             setShowDashboard={setShowDashboard}
           />
-          {/* <SignInHardCode/> */}
           <div className={styles.greeting}>
-            <h1 className={styles.hi}>Hi Vivek</h1>
+          <SignInHardCode/>
+            <h1 className={styles.hi}>Hi {user.name}</h1>
             <img
               src={blankTicket}
               className={styles.blankTicket}

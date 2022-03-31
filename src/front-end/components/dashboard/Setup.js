@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../css/dashboard/setup.module.scss";
 import WelcomeCow from "../../images/dashboard/WelcomeCow.svg";
 import discord from "../../images/dashboard/discord.svg";
@@ -7,6 +7,11 @@ import { updateUserDesc } from "../../../back-end/DBQueries/updateUserDesc";
 import { SetUserDescription } from "../../../recoil/selectors/setUserDesc";
 import { SetUserDiscordID } from "../../../recoil/selectors/setUserDiscordID";
 import { useSetRecoilState} from 'recoil';
+import { useRecoilState } from "recoil";
+import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
+import { doc, updateDoc } from "firebase/firestore";
+import { dbConfig } from "../../../back-end/db/dbConfig.js";
+// import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export default function Setup() {
   const [form, setForm] = useState({
@@ -14,6 +19,7 @@ export default function Setup() {
     discord: ""
   });
   const [text, setText] = useState("");
+  const [user, setUser] = useRecoilState(userStateAtom);
   
   const handleDiscordChange = (event) => {
     setForm({
@@ -34,14 +40,23 @@ export default function Setup() {
   const setUserDiscordID = useSetRecoilState(SetUserDiscordID);
 
   async function submitClick() {
-    await updateUserDiscordID(props.user.user_id, form.discord);
+    await updateUserDiscordID(user.user_id, form.discord);
     setUserDiscordID(form.discord);
 
-    await updateUserDesc(props.user.user_id, form.description);
+    await updateUserDesc(user.user_id, form.description);
     setUserDescription(form.description);
 
-    props.setShowEdit(false);
+    // await updateDoc(doc(dbConfig, "2022-users", user.user_id), {
+    //   first_sign_in: false
+    // });
   }
+
+  // useEffect(() => {
+  //   console.log("user id: ", user.user_id);
+    
+  //   console.log("use effect working!");
+  //   updateUser;
+  // }, []);
 
   return (
     <div className={styles.container}>
