@@ -32,9 +32,9 @@ export default function PendingTeams(props) {
           <img src={backarrow} className={styles.backarrow} />
           Back to Search
         </a>
-        <h1>Your Pending Requests</h1>
+        <h1>Your Pending Requests <span>{user.pending_groups.length}</span></h1>
         {props.pendingTeams?.map((groupId) => {
-          return <PendingTeamCard groupId={groupId} />
+          return <PendingTeamCard groupId={groupId} />;
         })}
       </div>
     </div>

@@ -23,6 +23,7 @@
 
 .container {
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   background: #043B54;
 }
@@ -37,5 +38,17 @@
   > h1 {
     color: white;
     margin: 50px 0;
+    > span {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      color: white;
+
+      background: #f95a5a;
+      padding: 3px 12px;
+      margin-left: 5px;
+      border-radius: 50%;
+    }
   }
 }

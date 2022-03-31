@@ -3,6 +3,9 @@
   padding: 56px 90px;
   background-image: url("../../images/dashboard/banner.svg");
   background-size: cover;
+  // position: sticky;
+  // top: 85px;
+  // z-index: 1;
   > a {
     display: flex;
     width: 200px;

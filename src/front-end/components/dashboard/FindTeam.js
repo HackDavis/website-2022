@@ -105,7 +105,7 @@ export default function FindTeam(props) {
           />
           <div className={styles.greeting}>
           <SignInHardCode/>
-            <h1 className={styles.hi}>Hi {user.name}</h1>
+            <h1 className={styles.hi}>Hi {user.name.split(' ')[0]}</h1>
             <img
               src={blankTicket}
               className={styles.blankTicket}

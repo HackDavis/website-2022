@@ -21,7 +21,7 @@ export default function TeamCard(props) {
   const content = members.map((member, ind) => (
     <div className={styles.names} key={ind}>
       <div className={styles.pfpContainer}><img src={member.profile_picture} className={styles.pfp} alt="member pfp"/></div>
-      <div className={styles.memberName}>{member.name}</div>
+      <div className={styles.memberName}>{member.name.split(' ')[0]}</div>
     </div>
   ));
 

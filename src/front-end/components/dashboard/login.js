@@ -31,7 +31,7 @@ export default function Login() {
           </div>
           <SignInHardCode className={styles.login} />
         </div>
-      </div>) : user.first_sign_in ? <Setup /> : <TeamFinderHome/>}
+      </div>) : user.discord_id === "" && user.description === "" ? <Setup /> : <TeamFinderHome/>}
     </div>
   );
 }

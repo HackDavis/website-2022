@@ -1,5 +1,5 @@
 import { doc, getDoc, updateDoc} from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import {getGroup} from "./getGroup";
 import { getUser } from "./getUser.js";
 

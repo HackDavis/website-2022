@@ -10,13 +10,28 @@
   .content {
     position: relative;
   }
-  .status {
+  .statusPending {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 120px;
-    height: 50px;
+    width: 110px;
+    height: 45px;
+    font-size: 17pt;
+    font-weight: 600;
+    top: -3px;
+    right: -3px;
+    border-bottom-left-radius: 20px;
+    color: #074967;
+    background-color: #FFC53D;
+  }
+  .statusAccepted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 110px;
+    height: 45px;
     font-size: 17pt;
     font-weight: 600;
     top: -3px;
@@ -25,6 +40,7 @@
     color: #074967;
     background-color: #9CD43D;
   }
+
   > h3 {
     color: white;
     font-size: 18pt;

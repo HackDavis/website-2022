@@ -41,11 +41,14 @@
       flex-direction: column;
       text-align: center;
       align-items: center;
-      .pfp {
+      .pfpContainer {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         background-color: grey;
+        .pfp {
+          border-radius: 50%;
+        }
       }
       .name {
         color: white;
