@@ -1,19 +1,22 @@
 .modal {
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 1000; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
+  overflow-y: hidden; /* Enable scroll if needed */
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   .modalContent {
+    max-height: 700px; 
     background-color: #074967;
     border-radius: 16px;
-    margin: 150px auto;
-    padding: 28px 33px 37px 61px;
+    margin: 88px auto;
+    padding: 28px 33px 35px 33px;
     width: 80%;
+    max-width: 1330px;
+    overflow-y: auto;
   }
   .buttonContainer {
     display: flex;

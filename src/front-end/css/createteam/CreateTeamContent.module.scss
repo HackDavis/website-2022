@@ -80,7 +80,7 @@
   max-width: 392px;
   display: flex;
   flex-direction: column;
-  height: 458px;
+  height: 471px;
 
   > label {
     color: white !important;
@@ -150,8 +150,6 @@
 
 .skillsContainer,
 .toolsContainer {
-  margin-bottom: 33px;
-
   > div > div {
     margin-bottom: 8px;
   }
@@ -164,21 +162,28 @@
     line-height: 26px;
     color: #9ee7e5;
   }
-}
 
-.toolsContainer {
   > div {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    height: 130px;
     justify-content: flex-start;
     gap: 0 54px;
-    max-width: 750px;
 
     > div {
       width: 140px;
     }
+  }
+}
+
+.skillsContainer {
+  margin-bottom: 33px;
+  max-width: 400px;
+}
+
+.toolsContainer {
+  > div {
+    max-width: 750px;
   }
 }
 

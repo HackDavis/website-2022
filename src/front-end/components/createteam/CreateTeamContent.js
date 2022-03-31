@@ -50,7 +50,7 @@ export function CreateTeamContent() {
 
   async function createGroupClick(e) {
     e.preventDefault();
-    const newGroup = await createGroup(user.email, user.user_id, name, desc);
+    const newGroup = await createGroup(user.email, user.user_id, desc, name);
 
     if (newGroup == null) {
       console.log("createGroup Error: user is already in a group");
@@ -121,7 +121,7 @@ export function CreateTeamContent() {
             alt="golden ticket"
           />
         </h2>
-        {/* <SignInHardCode /> */}
+        <SignInHardCode />
         <form onSubmit={createGroupClick} className={styles.setup}>
           <div className={styles.column1}>
             <label>Team Name</label>
