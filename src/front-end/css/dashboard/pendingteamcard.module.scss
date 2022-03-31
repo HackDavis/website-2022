@@ -69,7 +69,7 @@
     height: 60px;
     background-color: #043B54;
     border-radius: 60px;
-    .pfp {
+    .pfpContainer {
       position: absolute;
       top: 5px;
       margin-left: 5px;
@@ -77,6 +77,9 @@
       height: 50px;
       border-radius: 50%;
       background-color: grey;
+      .pfp {
+        border-radius: 50%;
+      }
     }
     .memberName {
       position: absolute;

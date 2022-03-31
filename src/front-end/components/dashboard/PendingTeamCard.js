@@ -28,7 +28,7 @@ export default function PendingTeamCard(props) {
 
   const content = members.map((member, ind) => (
     <div className={styles.names} key={ind}>
-      <div className={styles.pfp}>{member.profile_picture}</div>
+      <div className={styles.pfpContainer}><img src={member.profile_picture} className={styles.pfp} /></div>
       <div className={styles.memberName}>{member.name}</div>
     </div>
   ));
