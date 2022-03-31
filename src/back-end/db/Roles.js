@@ -1,7 +1,10 @@
 const Roles = [
     "Front-End",
     "Back-End",
-    "Designer"
+    "Design/UX",
+    "Mobile",
+    "Data Science",
+    "ML/AI"
 ];
 
 export default Roles;

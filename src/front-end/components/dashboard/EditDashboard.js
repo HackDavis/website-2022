@@ -34,7 +34,8 @@ export default function EditDashboard(props) {
   const setUserDescription = useSetRecoilState(SetUserDescription);
   const setUserDiscordID = useSetRecoilState(SetUserDiscordID);
 
-  async function submitClick() {
+  async function submitClick(e) {
+    e.preventDefault();
     await updateUserDiscordID(props.user.user_id, form.discord);
     setUserDiscordID(form.discord);
 

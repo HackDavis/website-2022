@@ -42,11 +42,12 @@
 .container {
   background: #043B54;
   display: flex;
+  min-height: 100vh;
   .left {
     display: flex;
     width: 30%;
     min-width: 650px;
-    height: 875px;
+    min-height: 1000px;
     flex-direction: column;
     padding: 50px 50px 50px 100px;
     > form {
@@ -69,7 +70,7 @@
       // right: 20px;
     }
     .skillset {
-      height: 800px;
+      height: 1150px;
       width: 500px;
       margin-top: 20px;
       border: solid 3px #9EE7E5;

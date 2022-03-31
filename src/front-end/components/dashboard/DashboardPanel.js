@@ -18,10 +18,7 @@ export default function DashboardPanel(props) {
       />
       <div className={styles.text}>Profile</div>
       <div className={styles.profileCard}>
-        <div
-          className={styles.edit}
-          onClick={() => props.setShowEdit(true)}
-        >
+        <div className={styles.edit} onClick={() => props.setShowEdit(true)}>
           EDIT
         </div>
         <div className={styles.dashPfp}>
@@ -32,15 +29,13 @@ export default function DashboardPanel(props) {
           />
         </div>
         <div className={styles.name}>{props.user.name}</div>
-        <div>
-          <div className={styles.email}>
-            <img className={styles.icons} src={email} alt="email icon" />
-            {props.user.email}
-          </div>
-          <div className={styles.discord}>
-            <img className={styles.icons} src={discord} alt="discord icon" />
-            {props.user.discord_id}
-          </div>
+        <div className={styles.email}>
+          <img className={styles.icons} src={email} alt="email icon" />
+          {props.user.email}
+        </div>
+        <div className={styles.discord}>
+          <img className={styles.icons} src={discord} alt="discord icon" />
+          {props.user.discord_id}
         </div>
         <div className={styles.bio}>{props.user.description}</div>
         <div className={styles.tags}></div>
