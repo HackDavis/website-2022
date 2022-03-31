@@ -41,9 +41,9 @@ export function MyTeamContent() {
   //TODO: Remove this function on merge, user and group should already be loaded on sign in
   async function setGroupState() {
     // user hardcoded for testing
-    const groupData = await getGroup("CPxu7JS3FPenPOBDD5Yi");
+    const groupData = await getGroup("5BJysSBy7fTv0b5RqeMo");
     setGroup(groupData);
-    const userData = await getUser("12iCuIXLM7hs7CU8jkKrpVokpd73");
+    const userData = await getUser("SH0tYYf5RKPXb0n0rFY0bb5cmBX2");
     // const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
     setUser(userData);
   }

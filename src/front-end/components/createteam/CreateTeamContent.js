@@ -38,6 +38,8 @@ export function CreateTeamContent() {
   const setRolesSelector = useSetRecoilState(SetRolesState);
   const setTagsSelector = useSetRecoilState(SetTagsState);
 
+  const maxChecks = 5;
+
   const changeName = (event) => {
     setName(event.target.value);
   };
@@ -69,23 +71,31 @@ export function CreateTeamContent() {
   }
 
   function changeRole(e) {
-    const newRoles = new Set(roles);
-    if (e.target.checked) {
-      newRoles.add(e.target.name);
+    if (roles.size == maxChecks && e.target.checked) {
+      e.target.checked = !e.target.checked;
     } else {
-      newRoles.delete(e.target.name);
+      const newRoles = new Set(roles);
+      if (e.target.checked) {
+        newRoles.add(e.target.name);
+      } else {
+        newRoles.delete(e.target.name);
+      }
+      setUserRoles(newRoles);
     }
-    setUserRoles(newRoles);
   }
 
   function changeTags(e) {
-    const newTags = new Set(tags);
-    if (e.target.checked) {
-      newTags.add(e.target.name);
+    if (tags.size == maxChecks && e.target.checked) {
+      e.target.checked = !e.target.checked;
     } else {
-      newTags.delete(e.target.name);
+      const newTags = new Set(tags);
+      if (e.target.checked) {
+        newTags.add(e.target.name);
+      } else {
+        newTags.delete(e.target.name);
+      }
+      setUserTags(newTags);
     }
-    setUserTags(newTags);
   }
 
   useEffect(() => {

@@ -34,12 +34,12 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage/>} />
-        <Route path="/about" element={<AboutUs/>} />
-        <Route path="/createteam" element={<CreateTeam/>} />
-        <Route path="/myteam" element={<MyTeam/>} />
-        <Route path="/loginerror" element={<LoginError/>}/>
-        <Route path="/*" element={<PageNotFound/>}/>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/createteam" element={<CreateTeam />} />
+        <Route path="/myteam" element={<MyTeam />} />
+        <Route path="/loginerror" element={<LoginError />}/>
+        <Route path="/*" element={<PageNotFound />}/>
       </Routes>
     </Router>
   );

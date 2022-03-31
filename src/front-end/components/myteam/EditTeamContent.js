@@ -4,15 +4,15 @@ import Roles from "../../../back-end/db/Roles.js";
 import Tags from "../../../back-end/db/Tags.js";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
-import {editTeamAtom} from "recoil/atoms/editTeamAtom";
+import { editTeamAtom } from "recoil/atoms/editTeamAtom";
 import { updateGroupDesc } from "back-end/DBQueries/updateGroupDesc";
 import { updateGroupName } from "back-end/DBQueries/updateGroupName";
 import { setRoles } from "../../../back-end/DBQueries/setRoles.js";
 import { setTags } from "../../../back-end/DBQueries/setTags.js";
 import { SetRolesState } from "../../../recoil/selectors/setRolesState";
 import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
-import {SetGroupDescription} from "recoil/selectors/setGroupDesc.js";
-import {SetGroupName} from "recoil/selectors/setGroupName.js";
+import { SetGroupDescription } from "recoil/selectors/setGroupDesc.js";
+import { SetGroupName } from "recoil/selectors/setGroupName.js";
 
 import { Checkbox } from '../createteam/Checkbox';
 
@@ -22,7 +22,7 @@ export function EditTeamContent() {
   const [group, setGroup] = useRecoilState(groupStateAtom);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
-  
+
   useEffect(() => {
     if (typeof group !== "string") {
       const newRoles = new Set(group.tags1);
@@ -31,7 +31,7 @@ export function EditTeamContent() {
       setName(group.group_name);
       setDesc(group.description);
       setUserRoles(newRoles);
-      setUserTags(newTags);      
+      setUserTags(newTags);
     }
   }, [group]);
 
@@ -40,6 +40,8 @@ export function EditTeamContent() {
   const setGroupDescriptionSelector = useSetRecoilState(SetGroupDescription);
   const setGroupNameSelector = useSetRecoilState(SetGroupName);
   const setIsEditTeam = useSetRecoilState(editTeamAtom);
+
+  const maxChecks = 5;
 
   const changeName = (event) => {
     setName(event.target.value);
@@ -62,26 +64,34 @@ export function EditTeamContent() {
     setGroupDescriptionSelector(desc);
     // Close Edit Team Modal on success
     setIsEditTeam(false);
-}
+  }
 
   function changeRole(e) {
-    const newRoles = new Set(roles);
-    if (e.target.checked) {
-      newRoles.add(e.target.name);
+    if (roles.size == maxChecks && e.target.checked) {
+      e.target.checked = !e.target.checked;
     } else {
-      newRoles.delete(e.target.name);
+      const newRoles = new Set(roles);
+      if (e.target.checked) {
+        newRoles.add(e.target.name);
+      } else {
+        newRoles.delete(e.target.name);
+      }
+      setUserRoles(newRoles);
     }
-    setUserRoles(newRoles);
   }
 
   function changeTags(e) {
-    const newTags = new Set(tags);
-    if (e.target.checked) {
-      newTags.add(e.target.name);
+    if (tags.size == maxChecks && e.target.checked) {
+      e.target.checked = !e.target.checked;
     } else {
-      newTags.delete(e.target.name);
+      const newTags = new Set(tags);
+      if (e.target.checked) {
+        newTags.add(e.target.name);
+      } else {
+        newTags.delete(e.target.name);
+      }
+      setUserTags(newTags);
     }
-    setUserTags(newTags);
   }
 
   useEffect(() => {
@@ -90,68 +100,68 @@ export function EditTeamContent() {
 
   return (
     <>
-        <form onSubmit={editTeamClick} className={styles.setup}>
-            <div className={styles.column1}>
-            <label>Team Name</label>
-            <textarea
-                type="text"
-                placeholder="Best team ever"
-                value={name}
-                maxLength="20"
-                onChange={changeName}
-                rows="1"
-                required
-            ></textarea>
-            <p>{typeof group !== "string" ? name.length : 0}/20 characters</p>
-            <label>Team Description</label>
-            <textarea
-                type="text"
-                placeholder="Project goals, professional interests, what you are looking for..."
-                value={desc}
-                maxLength="250"
-                onChange={changeDesc}
-                // rows="9"
-                required
-            ></textarea>
-            <p>{typeof group !== "string" ? desc.length : 0}/250 characters</p>
+      <form onSubmit={editTeamClick} className={styles.setup}>
+        <div className={styles.column1}>
+          <label>Team Name</label>
+          <textarea
+            type="text"
+            placeholder="Best team ever"
+            value={name}
+            maxLength="20"
+            onChange={changeName}
+            rows="1"
+            required
+          ></textarea>
+          <p>{typeof group !== "string" ? name.length : 0}/20 characters</p>
+          <label>Team Description</label>
+          <textarea
+            type="text"
+            placeholder="Project goals, professional interests, what you are looking for..."
+            value={desc}
+            maxLength="250"
+            onChange={changeDesc}
+            // rows="9"
+            required
+          ></textarea>
+          <p>{typeof group !== "string" ? desc.length : 0}/250 characters</p>
+        </div>
+        <div className={styles.column2}>
+          <label>What skills/tools are you looking for?</label>
+          <div className={styles.tags}>
+            <div className={styles.skillsContainer}>
+              <h4>Skillset</h4>
+              <div>
+                {Roles.map((role) => {
+                  return (
+                    <div key={role}>
+                      <Checkbox name={role} onChange={changeRole} checked={roles.has(role)} />
+                      <br />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div className={styles.column2}>
-            <label>What skills/tools are you looking for?</label>
-            <div className={styles.tags}>
-                <div className={styles.skillsContainer}>
-                <h4>Skillset</h4>
-                <div>
-                    {Roles.map((role) => {
-                    return (
-                        <div key={role}>
-                        <Checkbox name={role} onChange={changeRole} checked={true} />
-                        <br />
-                        </div>
-                    );
-                    })}
-                </div>
-                </div>
-                <div className={styles.toolsContainer}>
-                <h4>Tools</h4>
-                <div>
-                    {Tags.map((tag) => {
-                    return (
-                        <div key={tag}>
-                        <Checkbox name={tag} onChange={changeTags} />
-                        <br />
-                        </div>
-                    );
-                    })}
-                </div>
-                </div>
+            <div className={styles.toolsContainer}>
+              <h4>Tools</h4>
+              <div>
+                {Tags.map((tag) => {
+                  return (
+                    <div key={tag}>
+                      <Checkbox name={tag} onChange={changeTags} checked={tags.has(tag)} />
+                      <br />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <input
-                type="submit"
-                className={styles.saveButton}
-                value="SAVE"
-            />
-            </div>
-        </form>
+          </div>
+          <input
+            type="submit"
+            className={styles.saveButton}
+            value="SAVE"
+          />
+        </div>
+      </form>
     </>
   );
 }
