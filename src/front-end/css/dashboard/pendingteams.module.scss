@@ -23,8 +23,14 @@
 
 .container {
   display: flex;
-  position: relative;
+  justify-content: center;
   background: #043B54;
+}
+
+.content {
+  display: flex;
+  max-width: 1600px;
+  position: relative;
   gap: 25px 25px;
   flex-wrap: wrap;
   padding: 50px 75px;

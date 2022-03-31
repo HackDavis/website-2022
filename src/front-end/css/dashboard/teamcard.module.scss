@@ -1,8 +1,8 @@
 .container {
   width: 450px;
-  height: 500px;
+  height: 550px;
   background-color: #074967;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   border: solid 4px transparent;
@@ -33,8 +33,9 @@
   .group {
     display: flex;
     width: 510px;
-    justify-content: space-between;
     height: 150px;
+    gap: 0px 5px;
+    border: solid black 1px;
     flex-wrap: wrap;
   }
   > h5 {
@@ -61,7 +62,7 @@
     .memberName {
       position: absolute;
       top: 17px;
-      left: 60px;
+      left: 55px;
       color: white;
       font-weight: 600;
       margin-left: 10px;
@@ -70,6 +71,7 @@
   .skillsetGroup {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -10px;
     .role {
       border-radius: 20px;
       width: fit-content;

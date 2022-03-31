@@ -26,7 +26,11 @@ export default function TeamCard(props) {
   ));
 
   return (
-    <div className={`${props.showRequest ?`${styles.removeEffect}` : ""} ${styles.container}`}>
+    <div
+      className={`${props.showRequest ? `${styles.removeEffect}` : ""} ${
+        styles.container
+      }`}
+    >
       <h3>
         {props.data.group_name} <span>{props.data.members?.length}/4</span>
       </h3>

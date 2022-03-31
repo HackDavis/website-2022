@@ -14,7 +14,7 @@ export default function PendingTeams(props) {
   const [showEdit, setShowEdit] = useState(false);
 
   return (
-    <div>
+    <div className={styles.container}>
       <DashboardButton
         user={user}
         setShowDashboard={setShowDashboard}
@@ -27,7 +27,7 @@ export default function PendingTeams(props) {
         showDashboard={showDashboard}
         setShowDashboard={setShowDashboard}
       />
-      <div className={styles.container}>
+      <div className={styles.content}>
         <a className={styles.back} onClick={() => props.setShowPending(false)}>
           <img src={backarrow} className={styles.backarrow} />
           Back to Search

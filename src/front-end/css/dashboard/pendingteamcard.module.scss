@@ -2,17 +2,20 @@
   width: 450px;
   height: 600px;
   background-color: #074967;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   border: solid 4px transparent;
   position: relative;
+  .content {
+    position: relative;
+  }
   .status {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 150px;
+    width: 120px;
     height: 50px;
     font-size: 17pt;
     font-weight: 600;
@@ -24,12 +27,12 @@
   }
   > h3 {
     color: white;
-    font-size: 24pt;
+    font-size: 18pt;
     padding: 0;
     margin: 0;
     > span {
       color: #136E90;
-      font-size: 22pt;
+      font-size: 16pt;
       font-weight: 700;
       margin-left: 10px;
     }
@@ -37,47 +40,48 @@
   .id {
     margin-top: 5px;
     color: white;
-    font-size: 17pt;
+    font-size: 12pt;
     font-weight: normal;
     font: "Proxima Nova";
   }
   > p {
     color: white;
-    font-size: 17pt;
+    font-size: 12pt;
     margin-top: 30px;
   }
   .group {
     display: flex;
     width: 510px;
-    height: 150px;
-    justify-content: space-between;
+    height: 130px;
+    gap: 0px 5px;
+    // justify-content: space-between;
     flex-wrap: wrap;
   }
   > h5 {
     color: white;
-    font-size: 17pt;
+    font-size: 16pt;
     font-weight: 600;
     margin-top: 20px;
   }
   > .group > .names {
     position: relative;
-    width: 250px;
-    height: 70px;
+    width: 200px;
+    height: 60px;
     background-color: #043B54;
     border-radius: 60px;
     .pfp {
       position: absolute;
       top: 5px;
       margin-left: 5px;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background-color: grey;
     }
     .memberName {
       position: absolute;
-      top: 25px;
-      left: 65px;
+      top: 17px;
+      left: 55px;
       color: white;
       font-weight: 600;
       margin-left: 10px;
@@ -86,6 +90,7 @@
   .skillsetGroup {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -10px;
     .role {
       border-radius: 20px;
       width: fit-content;
@@ -108,6 +113,10 @@
   .btn {
     margin-top: 40px;
     color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    width: 400px;
     border: solid white 4px;
     padding: 5px 0;
     background: transparent;
