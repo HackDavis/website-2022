@@ -27,7 +27,7 @@ export function CreateTeamContent() {
   const [desc, setDesc] = useState("");
 
   const [group, setGroup] = useRecoilState(groupStateAtom);
-  
+
   const navigate = useNavigate();
 
   const setUserGroupID = useSetRecoilState(SetUserGroupID);
@@ -122,61 +122,66 @@ export function CreateTeamContent() {
           />
         </h2>
         <SignInHardCode />
-        <form onSubmit={createGroupClick} className={styles.setup}>
-          <div className={styles.column1}>
-            <label>Team Name</label>
-            <textarea
-              type="text"
-              placeholder="Best team ever"
-              value={name}
-              maxLength="20"
-              onChange={changeName}
-              rows="1"
-              required
-            ></textarea>
-            <p>{name.length}/20 characters</p>
-            <label>Team Description</label>
-            <textarea
-              type="text"
-              placeholder="Project goals, professional interests, what you are looking for..."
-              value={desc}
-              maxLength="250"
-              onChange={changeDesc}
-              // rows="9"
-              required
-            ></textarea>
-            <p>{desc.length}/250 characters</p>
-          </div>
-          <div className={styles.column2}>
-            <label>What skills/tools are you looking for?</label>
-            <div className={styles.tags}>
-              <div className={styles.skillsContainer}>
-                <h4>Skillset</h4>
-                <div>
-                  {Roles.map((role) => {
-                    return (
-                      <div key={role}>
-                        <Checkbox name={role} onChange={changeRole} />
-                        <br />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-              <div className={styles.toolsContainer}>
-                <h4>Tools</h4>
-                <div>
-                  {Tags.map((tag) => {
-                    return (
-                      <div key={tag}>
-                        <Checkbox name={tag} onChange={changeTags} />
-                        <br />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+        <form onSubmit={createGroupClick}>
+          <div className={styles.setup}>
+            <div className={styles.column1}>
+              <label>Team Name</label>
+              <textarea
+                type="text"
+                placeholder="Best team ever"
+                value={name}
+                maxLength="20"
+                onChange={changeName}
+                rows="1"
+                required
+              ></textarea>
+              <p>{name.length}/20 characters</p>
+              <label>Team Description</label>
+              <textarea
+                type="text"
+                placeholder="Project goals, professional interests, what you are looking for..."
+                value={desc}
+                maxLength="250"
+                onChange={changeDesc}
+                // rows="9"
+                required
+              ></textarea>
+              <p>{desc.length}/250 characters</p>
             </div>
+            <div className={styles.column2}>
+              <label>What skills/tools are you looking for?</label>
+              <div className={styles.tags}>
+                <div className={styles.skillsContainer}>
+                  <h4>Skillset</h4>
+                  <div>
+                    {Roles.map((role) => {
+                      return (
+                        <div key={role}>
+                          <Checkbox name={role} onChange={changeRole} />
+                          <br />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className={styles.toolsContainer}>
+                  <h4>Tools</h4>
+                  <div>
+                    {Tags.map((tag) => {
+                      return (
+                        <div key={tag}>
+                          <Checkbox name={tag} onChange={changeTags} />
+                          <br />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+              <p>5 skills and 5 tools maximum</p>
+            </div>
+          </div>
+          <div className={styles.submitWrap}>
             <input
               type="submit"
               className={styles.createTeamButton}

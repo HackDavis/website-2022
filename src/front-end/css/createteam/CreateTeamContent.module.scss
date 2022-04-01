@@ -56,8 +56,8 @@
 
 .setup {
   display: flex;
-  align-items: flex-start;
   gap: 0 75px;
+  margin-bottom: 20px;
 
   p {
     color: white !important;
@@ -70,17 +70,12 @@
     margin-bottom: 0;
     margin-top: 10px;
   }
-
-  p:first-of-type {
-    margin-bottom: 16px;
-  }
 }
 
 .column1 {
   max-width: 392px;
   display: flex;
   flex-direction: column;
-  height: 471px;
 
   > label {
     color: white !important;
@@ -108,6 +103,10 @@
   > textarea:last-of-type {
     flex-grow: 2;
   }
+
+  > p:first-of-type {
+    margin-bottom: 16px;
+  }
 }
 
 .column2 {
@@ -123,12 +122,16 @@
     line-height: 21px;
     margin-bottom: 16px;
   }
+
+  > p {
+    margin: 0;
+    margin-top: 10px;
+  }
 }
 
 .tags {
   border: 2px solid #9ee7e5;
-  padding: 17px 24px;
-  margin-bottom: 40px;
+  padding: 28px 32px;
 
   input {
     border: 1px solid white;
@@ -185,6 +188,10 @@
   > div {
     max-width: 750px;
   }
+}
+
+.submitWrap {
+  text-align: right;
 }
 
 .createTeamButton {
