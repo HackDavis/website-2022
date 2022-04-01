@@ -55,7 +55,6 @@ export default function FindTeam(props) {
         filteredGroups.push(group);
       }
     });
-    console.log("filtered Groups: ", filteredGroups);
     setAllGroups(filteredGroups);
   };
 
@@ -73,7 +72,6 @@ export default function FindTeam(props) {
 
   const onCardClick = (group) => {
     setShowRequest(true);
-    console.log("Groupaaaa: " + group);
     setRequestGroup(group);
   };
 
@@ -105,7 +103,7 @@ export default function FindTeam(props) {
           />
           <div className={styles.greeting}>
           <SignInHardCode/>
-            <h1 className={styles.hi}>Hi {user.name.split(' ')[0]}</h1>
+            <h1 className={styles.hi}>Hi {user === "" ? name : user.name.split(' ')[0]}</h1>
             <img
               src={blankTicket}
               className={styles.blankTicket}

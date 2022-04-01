@@ -34,7 +34,7 @@ export default function PendingTeams(props) {
         </a>
         <h1>Your Pending Requests <span>{user.pending_groups.length}</span></h1>
         {props.pendingTeams?.map((groupId) => {
-          return <PendingTeamCard groupId={groupId} />;
+          return <PendingTeamCard groupId={groupId} key={groupId} />;
         })}
       </div>
     </div>

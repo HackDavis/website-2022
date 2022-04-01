@@ -45,12 +45,10 @@
 .container {
   background: #043B54;
   display: flex;
-  min-height: 100vh;
   .left {
     display: flex;
     width: 30%;
     min-width: 650px;
-    min-height: 1000px;
     flex-direction: column;
     padding: 50px 50px 50px 100px;
     > form {
@@ -141,13 +139,17 @@
     }
   }
   .right {
+    // display: flex;
+    // flex-wrap: wrap;
     display: grid;
-    grid-template-columns: 425px 425px;
-    gap: 25px 50px;
-    width: 70%;
-    min-width: 1200px;
+    grid-template-columns: 450px 450px;
+    gap: 20px 20px;
+    min-height: 100vh;
+    max-width: 70%;
+    // min-width: 1200px;
     padding: 50px;
     margin-top: 50px;
+    border: solid black 1px;
     position: relative;
   }
   .results {
@@ -159,9 +161,7 @@
     left: 0;
     position: absolute;
   }
-  
 }
-
 
 .dashboard {
   width: 500px;
@@ -177,10 +177,4 @@
 .showDashboard {
   visibility:visible;
   right:0px;
-}
-
-@media screen and (max-width:768px) {
-  .container {
-    flex-direction: column;
-  }
 }

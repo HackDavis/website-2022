@@ -32,6 +32,9 @@ export function SignInHardCode() {
         setUser(userData);
       } else {
         // Add new user to DB
+
+        //TODO: Cross check with csv of accepted applicants, if they exist in the csv proceed with creating the user data and all the code below, else don't make a new user and redirect them to the 401 page. 
+
         const newUserData = {
           name: user.displayName, // there should be a name field somewhere in the sign up that feeds into this
           email: user.email,

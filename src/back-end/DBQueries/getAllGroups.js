@@ -11,7 +11,7 @@ export async function getAllGroups() {
     let allGroups = [];
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         if(doc.data().members?.length < 4) {
           allGroups.push(doc.data());
         }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../css/dashboard/pendingteamcard.module.scss";
+import DeleteModal from "./DeleteModal";
 import { getUser } from "../../../back-end/DBQueries/getUser";
 import { getGroup } from "../../../back-end/DBQueries/getGroup";
 import { groupWithdraw } from "../../../back-end/DBQueries/groupWithdraw";
@@ -14,7 +15,7 @@ export default function PendingTeamCard(props) {
   const [user, setUser] = useRecoilState(userStateAtom);
   const setSetUserPendingGroup = useSetRecoilState(SetUserPendingGroups);
   const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
-  
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     let allMembers = [];
     let groupData = {};
@@ -42,22 +43,20 @@ export default function PendingTeamCard(props) {
   ));
 
   async function deleteRequestClick() {
+    console.log(user.pending_groups);
     const pending_members_map_copy = await groupWithdraw(user.user_id, group.group_id);
     if (pending_members_map_copy != null) {
       console.log(pending_members_map_copy);
 
       let pending_groups_copy = [...user.pending_groups];
-
-      //  let groupIndex = pending_groups_copy.indexOf(group_id);
-      //  pending_groups_copy.splice(groupIndex, 1);
-
-      pending_groups_copy.splice(
-        pending_groups_copy.indexOf(group.group_id),
-        1
-      );
+      console.log(pending_groups_copy);
       
+      let groupIndex = pending_groups_copy.indexOf(group.group_id);
+      pending_groups_copy.splice(groupIndex, 1);
+      console.log("Pending groups copy: ", pending_groups_copy);
       setSetUserPendingGroup(pending_groups_copy);
       setUpdateGroupPendingMember(pending_members_map_copy);
+      setShowModal(false);
     }
   };
   return (
@@ -77,15 +76,17 @@ export default function PendingTeamCard(props) {
       <h5>We are looking for:</h5>
       <div className={styles.skillsetGroup}>
         {group.tags1?.map((tag1) => {
-          return <div className={styles.role}>{tag1}</div>;
+          return <div className={styles.role} key={tag1}>{tag1}</div>;
         })}
         {group.tags2?.map((tag2) => {
-          return <div className={styles.skill}>{tag2}</div>;
+          return <div className={styles.skill} key={tag2}>{tag2}</div>;
         })}
       </div>
-      <button className={styles.btn} onClick={deleteRequestClick}>
+      <button className={styles.btn} onClick={() => setShowModal(true)}>
         DELETE REQUEST
       </button>
+
+      {showModal ? <DeleteModal setShowModal={setShowModal} deleteRequestClick={deleteRequestClick}/> : null}
     </div>
   );
 }

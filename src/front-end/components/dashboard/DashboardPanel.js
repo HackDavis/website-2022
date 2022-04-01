@@ -5,9 +5,6 @@ import discord from "../../images/dashboard/discord.svg";
 import email from "../../images/dashboard/email.svg";
 
 export default function DashboardPanel(props) {
-  console.log("user: ", props.user);
- // console.log(user.user_id);
-
   return (
     <div className={styles.dashboardContainer}>
       <img

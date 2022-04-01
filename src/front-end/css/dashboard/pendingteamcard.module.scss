@@ -1,6 +1,6 @@
 .container {
   width: 450px;
-  height: 600px;
+  height: 800px;
   background-color: #074967;
   padding: 30px;
   display: flex;
@@ -63,21 +63,23 @@
   > p {
     color: white;
     font-size: 12pt;
-    margin-top: 30px;
+    height: 146px;
+    margin-top: 10px;
+    word-break: break-all;
+    white-space: normal;
   }
   .group {
     display: flex;
+    flex-wrap: wrap;
     width: 510px;
     height: 130px;
-    gap: 0px 5px;
-    // justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 2px 2px;
   }
   > h5 {
     color: white;
     font-size: 16pt;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   > .group > .names {
     position: relative;
@@ -110,9 +112,11 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: -10px;
+    min-height: 50px;
     .role {
       border-radius: 20px;
       width: fit-content;
+      height: fit-content;
       padding: 5px 20px;
       margin-right: 15px;
       margin-top: 20px;
@@ -122,6 +126,7 @@
     .skill {
       border-radius: 20px;
       width: fit-content;
+      height: fit-content;
       padding: 5px 20px;
       margin-right: 15px;
       margin-top: 20px;
