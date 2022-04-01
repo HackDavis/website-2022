@@ -11,7 +11,7 @@ body {
   background: #043c54;;
 }
 .mainContent {
-  padding-top: 50px;
+  padding-top: 20px;
   height: 100vh;
   
   display: flex;
@@ -22,20 +22,21 @@ body {
     width: 90%;
     position: relative;
     > img {
-      width: 60px;
-      top: 15px;
+      width: 50px;
+      top: 10px;
       position: absolute;
     }
     > h2 {
       font-weight: 600;
-      font-size: 40pt;
+      font-size: 32pt;
       margin-bottom: 50px;
-      margin-right: 30px;
+      margin-right: 25px;
       display: inline;
     }
     > h1 {
       font-weight: 600;
       font-size: 48pt;
+      padding-top: 50px;
     }
     > h4 {
       font-weight: 600;

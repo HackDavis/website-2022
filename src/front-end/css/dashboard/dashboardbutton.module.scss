@@ -2,32 +2,24 @@
   position: absolute;
   width: 186px;
   right: 0;
-  margin-top: 50px;
+  top: 115px;
   z-index: 1;
-  .circle {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #2A586E;
-    margin-right: 115px;
-  } 
   .rectangle {
     height: 70px;
-    width: 150px;
-    background: #2A586E;
-    position: absolute;
-    left: 50%;
+    width: 200px;
+    border-radius: 10rem 0 0 10rem ;
+    background-color: rgba(255,255,255,0.2);
+    position: relative;
   }
   .pfpContainer {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: grey;
     position: absolute;
     z-index: 998;
-    top: 12%;
-    left: 12%;
+    top: 5px;
+    left: 5px;
   }
   .pfp {
     border-radius: 50%;
@@ -37,7 +29,9 @@
     position: absolute;
     width: 100px;
     font-weight: 600;
-    transform: translate(70%, 100%);
+    font-size: 18px;
+    top: 23px;
+    left: 80px;
     margin-bottom: 0;
     z-index: 998;
   }

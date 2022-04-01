@@ -35,10 +35,10 @@ export default function TeamFinderHome() {
           />
           <div className={styles.mainContent}>
             <div className={styles.text}>
-              <h2 className={styles.hi}>Hi {user.name.split(' ')[0]}</h2>
+              <h2>Hi {user.name.split(' ')[0]}</h2>
               <img src={blankTicket} alt="blank ticket" />
-              <h1 className={styles.welcome}>Welcome to Team Finder</h1>
-              <h4 className={styles.meet}>Meet some cool people.</h4>
+              <h1>Welcome to Team Finder</h1>
+              <h4>Meet some cool people.</h4>
             </div>
             <div className={styles.teamButtonCont}>
               <div className={styles.teamButtons}>

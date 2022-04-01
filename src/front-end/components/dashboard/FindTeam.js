@@ -102,13 +102,13 @@ export default function FindTeam(props) {
             setShowDashboard={setShowDashboard}
           />
           <div className={styles.greeting}>
-          <SignInHardCode/>
-            <h1 className={styles.hi}>Hi {user === "" ? name : user.name.split(' ')[0]}</h1>
-            <img
+          {/* <SignInHardCode/> */}
+            {/* <h1 className={styles.hi}>Hi {user === "" ? name : user.name.split(' ')[0]}</h1> */}
+            {/* <img
               src={blankTicket}
               className={styles.blankTicket}
               alt="blank ticket"
-            />
+            /> */}
           </div>
           <div className={styles.container}>
             <div className={styles.left}>
