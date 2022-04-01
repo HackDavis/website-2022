@@ -10,6 +10,14 @@ import cs from "../images/sponsors/cs.png";
 import globalaffairs from "../images/sponsors/globalaffairs.png";
 import asucd from "../images/sponsors/asucd.png";
 import cfc from "../images/sponsors/cfc.png";
+import twilio from "../images/sponsors/twilio.png";
+import citris from "../images/sponsors/citris.png";
+import visityolo from "../images/sponsors/visityolo.png";
+import gsec from "../images/sponsors/gsec.png";
+import athletics from "../images/sponsors/athletics.png";
+import iet from "../images/sponsors/iet.png";
+import cpe from "../images/sponsors/cpe.png";
+import shds from "../images/sponsors/shds.png";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -23,17 +31,35 @@ const Section_Sponsors = () => {
             <a href="https://www.fordfund.org/" target="_blank">
               <img className={`${styles.imageStyle}`} src={Fmc} />
             </a>
+            <a href="https://www.twilio.com/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={twilio} />
+            </a>
+            <a href="https://mtx.gg/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={Matrix} />
+            </a>
+            <a href="https://citris-uc.org/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={citris} />
+            </a>
+            <a href="https://visityolo.com/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={visityolo} />
+            </a>
+            <a href="https://www.greatersacramento.com/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={gsec} />
+            </a>
+            <a href="https://lettersandscience.ucdavis.edu/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={Ucdcls} />
+            </a>
             <a href="https://engineering.ucdavis.edu/" target="_blank">
               <img className={`${styles.imageStyle}`} src={coe} />
-            </a>
-            <a href="https://cs.ucdavis.edu/" target="_blank">
-              <img className={`${styles.imageStyle}`} src={cs} />
             </a>
             <a href="https://globalaffairs.ucdavis.edu/" target="_blank">
               <img className={`${styles.imageStyle}`} src={globalaffairs} />
             </a>
-            <a href="https://mtx.gg/" target="_blank">
-              <img className={`${styles.imageStyle}`} src={Matrix} />
+            <a href="https://cs.ucdavis.edu/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={cs} />
+            </a>
+            <a href="https://ucdavisaggies.com/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={athletics} />
             </a>
             <a
               href=" https://gsm.ucdavis.edu/master-science-business-analytics-msba"
@@ -41,8 +67,14 @@ const Section_Sponsors = () => {
             >
               <img className={`${styles.imageStyle}`} src={ucdavismsba} />
             </a>
-            <a href="https://lettersandscience.ucdavis.edu/" target="_blank">
-              <img className={`${styles.imageStyle}`} src={Ucdcls} />
+            <a href="https://iet.ucdavis.edu/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={iet} />
+            </a>
+            <a href="https://cpe.ucdavis.edu/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={cpe} />
+            </a>
+            <a href="https://housing.ucdavis.edu/dining/" target="_blank">
+              <img className={`${styles.imageStyle}`} src={shds} />
             </a>
             <a href=" https://ucdavisstores.com/home/" target="_blank">
               <img className={`${styles.imageStyle}`} src={Ucdavisstore} />
