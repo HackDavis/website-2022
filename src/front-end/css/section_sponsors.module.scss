@@ -6,7 +6,7 @@
   font-size: $size;
   line-height: $line-height;
   letter-spacing: 0%;
-  color: #ffffff;
+  color: #9ee7e5;
 }
 @mixin header2($size: 14px) {
   font-family: "Proxima Nova";
@@ -34,25 +34,23 @@
   flex-direction: column;
   align-items: center;
 
-  > a {
+  a {
+    display: block;
     height: auto;
-    // width: 100%;
     user-select: none;
     cursor: pointer;
-    transition: transform 0.5s;
-    margin-bottom: 5rem;
-    &:nth-of-type(6) {
-      transform: scale(1.2);
-    }
-    &:nth-of-type(9) {
-      transform: scale(0.7);
-      margin-top: -2rem;
-    }
-    &:nth-of-type(10) {
-      transform: scale(0.9);
-      margin-top: -2rem;
-    }
+    margin-bottom: 3rem;
   }
+
+  .asucd {
+    width: 65%;
+    margin-inline: auto;
+  }
+}
+
+.sponsors .matrix,
+.mini a {
+  margin-bottom: 4.5rem;
 }
 
 .contentWrapper {
@@ -62,7 +60,7 @@
 .headerText {
   text-align: center;
   @include header1();
-  margin-bottom: 24px;
+  margin-bottom: 59px;
 }
 
 .box {
@@ -87,151 +85,119 @@
     @include header1($size: 48px, $line-height: 62px);
   }
   .sponsors {
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 5rem 0;
+    a {
+      margin: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+      transform: scale(1);
 
-    > a {
-      flex-basis: 33%;
-      margin-bottom: 0;
-
-      &:first-of-type {
-        flex-basis: 70%;
-      }
-      &:nth-of-type(2) {
-        flex-basis: 70%;
-        // transform: scale(0.5);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 50%;
-        }
-      }
-      &:nth-of-type(3) {
-        flex-basis: 70%;
-        // transform: scale(0.5);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 50%;
-        }
-      }
-      &:nth-of-type(4) {
-        flex-basis: 33%;
-        // transform: scale(0.8);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(5) {
-        flex-basis: 33%;
-        // transform: scale(0.8);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(6) {
-        flex-basis: 33%;
-        transform: scale(1);
-      }
-      &:nth-of-type(7) {
-        flex-basis: 50%;
-        // transform: scale(0.8);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(8) {
-        flex-basis: 50%;
-        // transform: scale(0.8);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(9) {
-        flex-basis: 33%;
-        transform: scale(1);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(10) {
-        flex-basis: 33%;
-        transform: scale(1);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(11) {
-        flex-basis: 33%;
-        transform: scale(1);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 80%;
-        }
-      }
-      &:nth-of-type(12) {
-        flex-basis: 50%;
-      }
-      &:nth-of-type(13) {
-        flex-basis: 50%;
-        // transform: scale(0.6);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 60%;
-        }
-      }
-      &:nth-of-type(14) {
-        flex-basis: 50%;
-      }
-      &:nth-of-type(15) {
-        flex-basis: 50%;
-        // transform: scale(0.6);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 60%;
-        }
-      }
-      &:nth-of-type(16) {
-        flex-basis: 33%;
-      }
-      &:nth-of-type(17) {
-        flex-basis: 33%;
-        // transform: scale(0.5);
-        display:flex;
-        justify-content: center;
-        > img {
-          width: 50%;
-        }
-      }
-      &:nth-of-type(18) {
-        flex-basis: 33%;
-      }
       &:hover {
+        transition: transform 0.3s ease-in-out;
         transform: scale(1.15);
       }
     }
-  }
 
-  .imageStyle {
-    width: 100%;
-    height: 100%;
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: auto;
+    }
+
+    .break {
+      flex-basis: 100%;
+      height: 0;
+      margin: 30px 0;
+    }
+
+    .ford {
+      width: 624px;
+      margin-bottom: 46px;
+    }
+
+    .twilio {
+      width: 264px;
+      margin-bottom: 60px;
+    }
+
+    .matrix {
+      width: 300px;
+      margin-bottom: 85px;
+    }
+
+    .citris {
+      width: 22.3%;
+      // max-width: 221px;
+    }
+
+    .yolo {
+      width: 26.7%;
+      // max-width: 264px;
+    }
+
+    .gsec {
+      width: 38.3%;
+      // max-width: 379px;
+    }
+
+    .cls {
+      width: 36.7%;
+      // max-width: 364px;
+    }
+
+    .coe {
+      width: 35.8%;
+      // max-width: 354px;
+    }
+
+    .globalaffairs {
+      width: 23.5%;
+      // max-width: 233px;
+    }
+
+    .cs {
+      width: 25.5%;
+      // max-width: 252px;
+    }
+
+    .athletics {
+      width: 23.5%;
+      // max-width: 233px;
+    }
+
+    .msba {
+      width: 40.6%;
+      // max-width: 402px;
+    }
+
+    .iet {
+      width: 30.5%;
+      // max-width: 302px;
+    }
+
+    .cpe {
+      width: 37.6%;
+      // max-width: 372px;
+    }
+
+    .shds {
+      width: 19.7%;
+      // max-width: 195px;
+    }
+
+    .store {
+      width: 30.3%;
+      // max-width: 300px;
+    }
+
+    .asucd {
+      width: 15.2%;
+      // max-width: 150px;
+    }
+
+    .cfc {
+      width: 25%;
+      // max-width: 248px;
+    }
   }
 }
