@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+.background {
+  padding-top: 32px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: "Proxima Nova";
+  color: #000000;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+
+  > hr {
+    position: relative;
+    z-index: -100;
+    bottom: 105px;
+  }
+}
+
+.headerText {
+  margin-top: 5rem;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Proxima Nova";
+  margin-bottom: 1%;
+}
+
+.headshot {
+  background-size: cover;
+  background-position: center center;
+  width: 92.5%;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.headshot:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+.title {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+.bottom_diagonal {
+  padding-top: 10rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #ffffff;
+  border-left: 100vw solid transparent;
+}
+
+.margin {
+  margin-bottom: 19rem;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 3%;
+  line-height: 150%;
+  font-family: "Proxima Nova";
+}
+
+.directors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+}
+
+@media (max-width: 425px) {
+  .description {
+    font-size: 16px;
+    margin-bottom: 12%;
+  }
+  .headerText {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .directors {
+    // flex-basis: 20%;
+    gap: 20px calc(7% / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  // .directors {
+  //   gap: 0 calc(10% / 4);
+  // }
+}
