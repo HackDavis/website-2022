@@ -4,6 +4,7 @@ import { FAQOnwards } from "./front-end/pages/FAQOnwards";
 import Section_Navbar from "./front-end/components/section_navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AboutUs } from "./front-end/pages/AboutUs";
+import {PlacesToStay} from "./front-end/pages/PlacesToStay";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/placestostay" element={<PlacesToStay/>}/>
       </Routes>
     </Router>
   );

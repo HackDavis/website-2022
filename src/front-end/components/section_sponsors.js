@@ -18,6 +18,7 @@ import athletics from "../images/sponsors/athletics.png";
 import iet from "../images/sponsors/iet.png";
 import cpe from "../images/sponsors/cpe.png";
 import shds from "../images/sponsors/shds.png";
+import visitdavis from "../images/sponsors/visitdavis.jpeg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -91,6 +92,10 @@ const Section_Sponsors = () => {
               </a>
               <a className={styles.cfc} href="https://csi.ucdavis.edu/cfc/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={cfc} />
+              </a>
+              <div className={styles.break}></div>
+              <a className={styles.visitdavis} href="https://visitdavis.org/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={visitdavis} />
               </a>
             </div>
           </div>
