@@ -40,8 +40,6 @@ export default function TeamCard(props) {
       <div className={styles.group}>{content}</div>
       <h5>We are looking for:</h5>
       <div className={styles.skillsetGroup}>
-        {/* tag1 = red = roles, 
-        tag2 = purple = skills */}
         {props.data.tags1.map((tag1) => {
           return <div className={styles.role}>{tag1}</div>;
         })}

@@ -4,15 +4,17 @@ import PendingTeamCard from "./PendingTeamCard";
 import Dashboard from "./Dashboard";
 import DashboardButton from "./DashboardButton";
 import backarrow from "../../images/dashboard/whiteBackArrow.svg";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState} from 'recoil';
+import { useRecoilState } from 'recoil';
 
 export default function PendingTeams(props) {
   const [user] = useRecoilState(userStateAtom);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-
+  const navigate = useNavigate();
+  const {state} = useLocation();
+  const {pendingTeams} = state;
   return (
     <div className={styles.container}>
       <DashboardButton
@@ -28,12 +30,12 @@ export default function PendingTeams(props) {
         setShowDashboard={setShowDashboard}
       />
       <div className={styles.content}>
-        <a className={styles.back} onClick={() => props.setShowPending(false)}>
+        <a className={styles.back} onClick={() => navigate("/findteam")}>
           <img src={backarrow} className={styles.backarrow} />
           Back to Search
         </a>
         <h1>Your Pending Requests <span>{user.pending_groups.length}</span></h1>
-        {props.pendingTeams?.map((groupId) => {
+        {pendingTeams?.map((groupId) => {
           return <PendingTeamCard groupId={groupId} key={groupId} />;
         })}
       </div>

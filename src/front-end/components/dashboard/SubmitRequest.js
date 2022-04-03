@@ -8,6 +8,7 @@ import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { updateUserPendingGroup } from "../../../recoil/selectors/updateUserPendingGroup";
 import { updateGroupPendingMember } from "../../../recoil/selectors/updateGroupPendingMember";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function SubmitRequest(props) {
   const [reason, setReason] = useState("");
@@ -16,6 +17,10 @@ export default function SubmitRequest(props) {
   const setUpdateUserPendingGroup = useSetRecoilState(updateUserPendingGroup);
   const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
 
+  const navigate = useNavigate();
+  const {state} = useLocation();
+  const {group} = state;
+
   const handleDescChange = (e) => {
     setReason(e.target.value);
   };
@@ -23,8 +28,8 @@ export default function SubmitRequest(props) {
   const handleSubmit = async (e) => {
     // probably need to change this to an actual page redirection
     e.preventDefault();
-    let pending_members_map_copy = await groupApplication(user.user_id, props.group.group_id, reason);
-    setUpdateUserPendingGroup(props.group.group_id);
+    let pending_members_map_copy = await groupApplication(user.user_id, group.group_id, reason);
+    setUpdateUserPendingGroup(group.group_id);
     setUpdateGroupPendingMember(pending_members_map_copy);
     setShowModal(true);
   };
@@ -32,11 +37,11 @@ export default function SubmitRequest(props) {
   return (
     <div>
       <div className={styles.container}>
-        <a onClick={() => props.setShowRequest(false)} className={styles.back}>
+        <a onClick={() => navigate("/findteam")} className={styles.back}>
           <img src={backarrow} className={styles.backarrow} />
           Back to Search
         </a>
-        <TeamCard showRequest={props.showRequest} data={props.group} />
+        <TeamCard showRequest={props.showRequest} data={group} />
         <form onSubmit={handleSubmit}>
           <label>
             Join the team

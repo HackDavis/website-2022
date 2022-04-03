@@ -4,9 +4,12 @@ import { FAQOnwards } from "./front-end/pages/FAQOnwards";
 import Section_Navbar from "./front-end/components/section_navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AboutUs } from "./front-end/pages/AboutUs";
-import { TeamFinder } from "./front-end/pages/TeamFinder";
-
-
+import LoginPage from "./front-end/pages/team_finder/LoginPage";
+import SetupPage from "./front-end/pages/team_finder/SetupPage";
+import { TeamFinder } from "./front-end/pages/team_finder/TeamFinder";
+import FindTeamPage from "./front-end/pages/team_finder/FindTeamPage";
+import PendingTeamsPage from "./front-end/pages/team_finder/PendingTeamsPage";
+import SubmitRequestPage from "./front-end/pages/team_finder/SubmitRequestPage";
 import "./App.css";
 
 function LandingPage() {
@@ -15,7 +18,7 @@ function LandingPage() {
       <Section_Navbar />
       <MainSection />
       <FAQOnwards />
-      <TeamFinder />
+      <LoginPage />
     </div>
   );
 }
@@ -35,7 +38,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/setup" element={<SetupPage/>}/>
         <Route path="/teamfinder" element={<TeamFinder/>}/>
+        <Route path="/findteam" element={<FindTeamPage/>}/>
+        <Route path="/submitrequest" element={<SubmitRequestPage/>}/>
+        <Route path="/pendingteams" element={<PendingTeamsPage/>}/>
       </Routes>
     </Router>
   );

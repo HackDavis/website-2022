@@ -5,63 +5,56 @@ import CreateTeam from "../../images/dashboard/CreateTeam.svg";
 import JoinTeam from "../../images/dashboard/JoinTeam.svg";
 import blankTicket from "../../images/dashboard/blankTicket.svg";
 import DashboardButton from "./DashboardButton";
-import FindTeam from "./FindTeam";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState} from 'recoil';
-import { isAllOf } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
 
 export default function TeamFinderHome() {
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [showFinder, setShowFinder] = useState(false);
   const [user] = useRecoilState(userStateAtom);
+  const navigate = useNavigate();
   return (
-    <div>
-      {showFinder ? (
-        <FindTeam setShowFinder={setShowFinder}/>
-      ) : (
-        <div className={styles.container}>
-          <DashboardButton
-            user={user}
-            setShowDashboard={setShowDashboard}
-            showDashboard={showDashboard}
-          />
-          <Dashboard
-            user={user}
-            showEdit={showEdit}
-            setShowEdit={setShowEdit}
-            showDashboard={showDashboard}
-            setShowDashboard={setShowDashboard}
-          />
-          <div className={styles.mainContent}>
-            <div className={styles.text}>
-              <h2>Hi {user.name.split(' ')[0]}</h2>
-              <img src={blankTicket} alt="blank ticket" />
-              <h1>Welcome to Team Finder</h1>
-              <h4>Meet some cool people.</h4>
-            </div>
-            <div className={styles.teamButtonCont}>
-              <div className={styles.teamButtons}>
-                <img src={JoinTeam} alt="Join a team" />
-                <div className={styles.findJoinTeam}>
-                  <div
-                    className={styles.findJoinTeamBtn}
-                    onClick={() => setShowFinder(true)}
-                  >
-                    FIND A TEAM
-                  </div>
-                </div>
-              </div>
-              <div className={styles.teamButtons}>
-                <img src={CreateTeam} alt="Create a team" />
-                <div className={styles.findJoinTeam}>
-                  <div className={styles.findJoinTeamBtn}>CREATE A TEAM</div>
-                </div>
+    <div className={styles.container}>
+      <DashboardButton
+        user={user}
+        setShowDashboard={setShowDashboard}
+        showDashboard={showDashboard}
+      />
+      <Dashboard
+        user={user}
+        showEdit={showEdit}
+        setShowEdit={setShowEdit}
+        showDashboard={showDashboard}
+        setShowDashboard={setShowDashboard}
+      />
+      <div className={styles.mainContent}>
+        <div className={styles.text}>
+          <h2>Hi {user.name.split(" ")[0]}</h2>
+          <img src={blankTicket} alt="blank ticket" />
+          <h1>Welcome to Team Finder</h1>
+          <h4>Meet some cool people.</h4>
+        </div>
+        <div className={styles.teamButtonCont}>
+          <div className={styles.teamButtons}>
+            <img src={JoinTeam} alt="Join a team" />
+            <div className={styles.findJoinTeam}>
+              <div
+                className={styles.findJoinTeamBtn}
+                onClick={() => navigate("/findteam")}
+              >
+                FIND A TEAM
               </div>
             </div>
           </div>
+          <div className={styles.teamButtons}>
+            <img src={CreateTeam} alt="Create a team" />
+            <div className={styles.findJoinTeam}>
+              <div className={styles.findJoinTeamBtn}>CREATE A TEAM</div>
+            </div>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

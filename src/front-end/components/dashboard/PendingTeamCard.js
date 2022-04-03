@@ -8,6 +8,7 @@ import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { SetUserPendingGroups } from "../../../recoil/selectors/setUserPendingGroups";
 import { updateGroupPendingMember } from "../../../recoil/selectors/updateGroupPendingMember";
+import { useNavigate } from "react-router-dom";
 
 export default function PendingTeamCard(props) {
   const [members, setMembers] = useState([]);
@@ -16,6 +17,8 @@ export default function PendingTeamCard(props) {
   const setSetUserPendingGroup = useSetRecoilState(SetUserPendingGroups);
   const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+  
   useEffect(() => {
     let allMembers = [];
     let groupData = {};
@@ -46,17 +49,14 @@ export default function PendingTeamCard(props) {
     console.log(user.pending_groups);
     const pending_members_map_copy = await groupWithdraw(user.user_id, group.group_id);
     if (pending_members_map_copy != null) {
-      console.log(pending_members_map_copy);
-
       let pending_groups_copy = [...user.pending_groups];
-      console.log(pending_groups_copy);
-      
       let groupIndex = pending_groups_copy.indexOf(group.group_id);
       pending_groups_copy.splice(groupIndex, 1);
-      console.log("Pending groups copy: ", pending_groups_copy);
+
       setSetUserPendingGroup(pending_groups_copy);
       setUpdateGroupPendingMember(pending_members_map_copy);
       setShowModal(false);
+      navigate("/pendingteams", {state: {pendingTeams: pending_groups_copy}});
     }
   };
   return (

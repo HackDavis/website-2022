@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { getUser } from "../../../back-end/DBQueries/getUser";
 import styles from "../../css/dashboard/login.module.scss";
+import { readFileSync } from 'fs';
 
 export function SignInHardCode() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -34,7 +35,7 @@ export function SignInHardCode() {
         // Add new user to DB
 
         //TODO: Cross check with csv of accepted applicants, if they exist in the csv proceed with creating the user data and all the code below, else don't make a new user and redirect them to the 401 page. 
-
+        
         const newUserData = {
           name: user.displayName, // there should be a name field somewhere in the sign up that feeds into this
           email: user.email,
@@ -55,7 +56,7 @@ export function SignInHardCode() {
             user.email.substring(user.email.lastIndexOf("@") + 1) ===
             "hackdavis.io"
         };
-
+          
         await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
         setUser(newUserData);
         console.log("created new user");

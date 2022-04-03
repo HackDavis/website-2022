@@ -2,12 +2,14 @@ import react from "react";
 import styles from "../../css/dashboard/submitmodal.module.scss";
 import fred from "../../images/dashboard/fred.svg";
 import check from "../../images/dashboard/check.svg";
-
+import { useNavigate } from "react-router-dom";
 export default function SubmitModal(props) {
+  const navigate = useNavigate();
   const handleClick = () => {
-    props.setShowRequest(false);
     props.setShowModal(false);
+    navigate("/findteam");
   };
+  
   return (
     <div className={styles.modal}>
       <div className={styles.modalContent}>

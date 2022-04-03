@@ -5,14 +5,13 @@ import CloudLeft from "../../images/dashboard/CloudLeft.svg";
 import CloudRight from "../../images/dashboard/CloudRight.svg";
 import cow from "../../images/dashboard/cow.svg";
 import chicky from "../../images/dashboard/chicky.svg";
+import { useNavigate } from "react-router-dom";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState} from 'recoil';
-import TeamFinderHome from "./TeamFinderHome";
-import Setup from "./Setup";
+import { useRecoilState } from 'recoil';
 
 export default function Login() {
   const [user, setUser] = useRecoilState(userStateAtom);
-  console.log(typeof user);
+  const navigate = useNavigate();
   return (
     <div>
       {user === "" ?(
@@ -31,7 +30,7 @@ export default function Login() {
           </div>
           <SignInHardCode className={styles.login} />
         </div>
-      </div>) : user.discord_id === "" && user.description === "" ? <Setup /> : <TeamFinderHome/>}
+      </div>) : user.discord_id === "" && user.description === "" ? navigate("/setup") : navigate("/teamfinder")}
     </div>
   );
 }

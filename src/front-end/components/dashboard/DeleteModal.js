@@ -6,6 +6,7 @@ import BlackX from "../../images/dashboard/blackx.svg";
 export default function DeleteModal(props) {
   const handleDelete = () => {
     props.deleteRequestClick();
+    
   };
   return (
     <div className={styles.modal}>
