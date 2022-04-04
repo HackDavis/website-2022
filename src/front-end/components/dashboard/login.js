@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../css/dashboard/loginpage.module.scss";
 import { SignInHardCode } from "./SignInHardcode";
-import CloudLeft from "../../images/dashboard/CloudLeft.svg";
+import Froggy from "../../images/dashboard/Froggy.svg";
 import CloudRight from "../../images/dashboard/CloudRight.svg";
 import cow from "../../images/dashboard/cow.svg";
 import chicky from "../../images/dashboard/chicky.svg";
@@ -14,12 +14,11 @@ export default function Login() {
   const navigate = useNavigate();
   return (
     <div>
-      {user === "" ?(
+      {user === "" ? (
       <div className={styles.container}>
-        <img src={CloudLeft} className={styles.cloudLeft} alt="cloud" />
+        <img src={Froggy} className={styles.froggy} alt="cloud" />
         <img src={CloudRight} className={styles.cloudRight} alt="cloud" />
         <img src={cow} className={styles.cow} alt="cow" />
-        <img src={chicky} className={styles.chicky} alt="chicky" />
         <div className={styles.left}></div>
         <div className={styles.right}>
           <div className={styles.text}>
