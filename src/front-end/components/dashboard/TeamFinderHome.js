@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../css/dashboard/teamfinderhome.module.scss";
 import Dashboard from "./Dashboard";
 import CreateTeam from "../../images/dashboard/CreateTeam.svg";
@@ -6,7 +6,7 @@ import JoinTeam from "../../images/dashboard/JoinTeam.svg";
 import blankTicket from "../../images/dashboard/blankTicket.svg";
 import DashboardButton from "./DashboardButton";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState} from 'recoil';
+import { useRecoilState } from 'recoil';
 import { useNavigate } from "react-router-dom";
 
 export default function TeamFinderHome() {
@@ -14,6 +14,19 @@ export default function TeamFinderHome() {
   const [showEdit, setShowEdit] = useState(false);
   const [user] = useRecoilState(userStateAtom);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      } else if (user.group_id !== "") {
+        navigate("/teamfinder/myteam");
+      }
+    }, 2500);
+  }, []);
+
+  if (user === "") return null;
+
   return (
     <div className={styles.container}>
       <DashboardButton
@@ -41,7 +54,7 @@ export default function TeamFinderHome() {
             <div className={styles.findJoinTeam}>
               <div
                 className={styles.findJoinTeamBtn}
-                onClick={() => navigate("/findteam")}
+                onClick={() => navigate("/teamfinder/findteam")}
               >
                 FIND A TEAM
               </div>
@@ -50,7 +63,12 @@ export default function TeamFinderHome() {
           <div className={styles.teamButtons}>
             <img src={CreateTeam} alt="Create a team" />
             <div className={styles.findJoinTeam}>
-              <div className={styles.findJoinTeamBtn}>CREATE A TEAM</div>
+              <div
+                className={styles.findJoinTeamBtn}
+                onClick={() => navigate("/teamfinder/createteam")}
+              >
+                CREATE A TEAM
+              </div>
             </div>
           </div>
         </div>

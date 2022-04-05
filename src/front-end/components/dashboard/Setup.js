@@ -13,6 +13,7 @@ import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { doc, updateDoc } from "firebase/firestore";
 import { dbConfig } from "../../../back-end/db/dbConfig.js";
 import { useNavigate } from "react-router-dom";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
 // import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export default function Setup() {
@@ -20,10 +21,11 @@ export default function Setup() {
     description: "",
     discord: ""
   });
+
   const [text, setText] = useState("");
   const [user, setUser] = useRecoilState(userStateAtom);
   const navigate = useNavigate();
-
+  const auth = getAuth();
   const handleDiscordChange = (event) => {
     setForm({
       ...form,
@@ -52,6 +54,18 @@ export default function Setup() {
 
     navigate("/teamfinder");
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      } else if (user.group_id !== "") {
+        navigate("/teamfinder/myteam");
+      }
+    }, 2500);
+  }, []);
+
+  if (user === "") return null;
 
   return (
     <div className={styles.container}>

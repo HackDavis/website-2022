@@ -56,7 +56,7 @@ export default function PendingTeamCard(props) {
       setSetUserPendingGroup(pending_groups_copy);
       setUpdateGroupPendingMember(pending_members_map_copy);
       setShowModal(false);
-      navigate("/pendingteams", {state: {pendingTeams: pending_groups_copy}});
+      navigate("/teamfinder/pendingteams", {state: {pendingTeams: pending_groups_copy}});
     }
   };
   return (

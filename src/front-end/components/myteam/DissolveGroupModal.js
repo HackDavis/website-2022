@@ -24,7 +24,7 @@ export function DissolveGroupModal() {
     }
     setIsDissolveGroupModal(false);
     console.log("dissolved");
-    navigate("/createteam");
+    navigate("/teamfinder/createteam");
     setGroup([]);
     setUserGroupID("");
   }

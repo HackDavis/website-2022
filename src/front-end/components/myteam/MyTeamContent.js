@@ -1,6 +1,8 @@
 import styles from "../../css/myteam/MyTeamContent.module.scss";
 import goldenTicket from "front-end/images/createteam/goldenTicket.svg";
 import blueTicket from "front-end/images/myteam/blueTicket.svg";
+import Dashboard from "../dashboard/Dashboard";
+import DashboardButton from "../dashboard/DashboardButton";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../../recoil/atoms/groupAtom";
@@ -19,6 +21,7 @@ import { EditTeamModal } from "front-end/components/myteam/EditTeamModal";
 import { DissolveGroupModal } from "front-end/components/myteam/DissolveGroupModal";
 import { RemoveMemberModal } from "front-end/components/myteam/RemoveMemberModal";
 import {LeaveGroupModal} from "front-end/components/myteam/LeaveGroupModal";
+import { useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
@@ -33,6 +36,10 @@ export function MyTeamContent() {
   const [isAdmin, setIsAdmin] = useRecoilState(isAdminAtom);
   const [isLeaveGroup, setIsLeaveGroup] = useRecoilState(isLeaveGroupAtom);
   const setRemoveActiveMemberUID = useSetRecoilState(removeActiveMemberUIDAtom);
+  const [showDashboard, setShowDashboard] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+
+  const navigate = useNavigate();
 
   function RemoveOnClick() {
     setRemoveActiveMemberUID(user.user_id);
@@ -40,16 +47,27 @@ export function MyTeamContent() {
   }
   //TODO: Remove this function on merge, user and group should already be loaded on sign in
   async function setGroupState() {
-    // user hardcoded for testing
-    const groupData = await getGroup("PZAAXjgamxYyXlGfxIc7");
-    setGroup(groupData);
-    const userData = await getUser("SH0tYYf5RKPXb0n0rFY0bb5cmBX2");
-    // const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
-    setUser(userData);
+    // // user hardcoded for testing
+    // const groupData = await getGroup("PZAAXjgamxYyXlGfxIc7");
+    // setGroup(groupData);
+    // const userData = await getUser("SH0tYYf5RKPXb0n0rFY0bb5cmBX2");
+    // // const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
+    // setUser(userData);
+    try {
+      const groupData = await getGroup(user.group_id);
+      setGroup(groupData);
+    } catch(e) {
+      navigate("/teamfinder");
+    }
   }
 
   // TOOD: remove this function on merge, user and group should already be loaded on sign in
   useEffect(() => {
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      }
+    }, 2500);
     setGroupState();
   }, []);
 
@@ -92,12 +110,26 @@ export function MyTeamContent() {
     );
   }
 
+  if (user === "") return null;
+
   return (
     <>
+      <DashboardButton
+        user={user}
+        setShowDashboard={setShowDashboard}
+        showDashboard={showDashboard}
+      />
+      <Dashboard
+        user={user}
+        showEdit={showEdit}
+        setShowEdit={setShowEdit}
+        showDashboard={showDashboard}
+        setShowDashboard={setShowDashboard}
+      />
       <div className={styles.banner}></div>
       <div className={styles.wrapper}>
         <h2>
-          Hi {user.name}!{" "}
+          Hi {user.name.split(" ")[0]}!{" "}
           {isAdmin ? (
             <img
               src={goldenTicket}

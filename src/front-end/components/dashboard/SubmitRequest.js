@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TeamCard from "./TeamCard";
 import SubmitModal from "./SubmitModal";
 import styles from "../../css/dashboard/submitrequest.module.scss";
@@ -9,6 +9,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { updateUserPendingGroup } from "../../../recoil/selectors/updateUserPendingGroup";
 import { updateGroupPendingMember } from "../../../recoil/selectors/updateGroupPendingMember";
 import { useNavigate, useLocation } from "react-router-dom";
+import { getGroup } from "../../../back-end/DBQueries/getGroup";
 
 export default function SubmitRequest(props) {
   const [reason, setReason] = useState("");
@@ -16,11 +17,31 @@ export default function SubmitRequest(props) {
   const [user] = useRecoilState(userStateAtom);
   const setUpdateUserPendingGroup = useSetRecoilState(updateUserPendingGroup);
   const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
+  const [group, setGroup] = useState("");
+  
+  useEffect(() => {
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      } else if (user.group_id !== "") {
+        navigate("/teamfinder/myteam");
+      }
+    }, 2500);
+    
+    let groupData = "";
+    async function getGroupFunc() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const groupId = urlParams.get('group');
+      console.log("groupId: " , groupId);
+      groupData = await getGroup(groupId);
+    }
+    getGroupFunc().then(() => setGroup(groupData));
+  }, []);
 
   const navigate = useNavigate();
   const {state} = useLocation();
-  const {group} = state;
-
+  
   const handleDescChange = (e) => {
     setReason(e.target.value);
   };
@@ -34,10 +55,12 @@ export default function SubmitRequest(props) {
     setShowModal(true);
   };
 
+  if (user === "" || group === "") return null;
+
   return (
     <div>
       <div className={styles.container}>
-        <a onClick={() => navigate("/findteam")} className={styles.back}>
+        <a onClick={() => navigate("/teamfinder/findteam")} className={styles.back}>
           <img src={backarrow} className={styles.backarrow} />
           Back to Search
         </a>

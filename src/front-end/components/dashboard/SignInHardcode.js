@@ -10,10 +10,11 @@ import styles from "../../css/dashboard/login.module.scss";
 import { useCSVReader } from "react-papaparse";
 import Papa from "papaparse";
 import applicants from "../../../back-end/db/applicants.csv";
+import { useNavigate } from "react-router-dom";
 
 export function SignInHardCode() {
   const [user, setUser] = useRecoilState(userStateAtom);
-
+  const navigate = useNavigate();
   // check the csv data if the applicant email exists
   function checkUserExists(data, user) {
     for(let i = 0; i < data.length; i++) {
@@ -49,7 +50,7 @@ export function SignInHardCode() {
         // if they exist in the csv proceed with creating the user data and all the code below,
         // else don't make a new user and redirect them to the 401 page.
 
-        // function from Papaparse library
+        // parse function from Papaparse library
         Papa.parse(applicants, {
           download: true,
           complete: async function (input) {
@@ -80,7 +81,7 @@ export function SignInHardCode() {
               console.log("created new user");
             } else {
               // user was not found!
-              console.error("redirect");
+              navigate("/401");
             }
           }
         });

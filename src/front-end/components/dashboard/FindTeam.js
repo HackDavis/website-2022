@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../css/dashboard/findteam.module.scss";
+import styles from "../../css/dashboard/FindTeam.module.scss";
 import { Checkbox } from "./Checkbox";
 import DashboardButton from "./DashboardButton";
 import Dashboard from "./Dashboard";
@@ -24,13 +24,22 @@ export default function FindTeam(props) {
 
   const [user] = useRecoilState(userStateAtom);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      } else if (user.group_id !== "") {
+        navigate("/teamfinder/myteam");
+      }
+    }, 2500);
+
     if(tags.size > 0 && allGroups.length > 0) {
       filterGroupsByTags();
     } else if(tags.size == 0 && allGroups.length > 0) {
       setAllGroups(constAllGroups);
     } else {
+      console.log("else")
       const fetchData = async () => {
         const data = await getAllGroups();
         setAllGroups(data);
@@ -67,8 +76,10 @@ export default function FindTeam(props) {
   };
 
   const onCardClick = (group) => {
-    navigate("/submitrequest", {state: {group: group}});
+    navigate(`/teamfinder/submitrequest?group=${group.group_id}`);
   };
+
+  if (user === "") return null;
 
   return (
     <div>
@@ -133,7 +144,7 @@ export default function FindTeam(props) {
           <button
             className={styles.pendingButton}
             onClick={() =>
-              navigate("/pendingteams", {
+              navigate("/teamfinder/pendingteams", {
                 state: { pendingTeams: user.pending_groups }
               })
             }

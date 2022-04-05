@@ -5,9 +5,10 @@ import discord from "../../images/dashboard/discord.svg";
 import backarrow from "../../images/dashboard/whiteBackArrow.svg";
 import { updateUserDiscordID } from "../../../back-end/DBQueries/updateUserDiscordID";
 import { updateUserDesc } from "../../../back-end/DBQueries/updateUserDesc";
+import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { SetUserDescription } from "../../../recoil/selectors/setUserDesc";
 import { SetUserDiscordID } from "../../../recoil/selectors/setUserDiscordID";
-import { useSetRecoilState} from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 
 export default function EditDashboard(props) {
   const [form, setForm] = useState({
@@ -15,6 +16,7 @@ export default function EditDashboard(props) {
     discord: props.user.discord_id
   });
   const [text, setText] = useState("");
+  // const user = useRecoilValue(userStateAtom);
   
   const handleDiscordChange = (event) => {
     setForm({
@@ -75,6 +77,7 @@ export default function EditDashboard(props) {
               name="discord"
               onChange={handleDiscordChange}
               maxLength={37}
+              // value={user.discord_id}
               required
             />
           </div>
@@ -85,6 +88,7 @@ export default function EditDashboard(props) {
               name="description"
               onChange={handleDescChange}
               maxLength={250}
+              // value={user.description}
               required
             />
             <div className={styles.characterCount}>

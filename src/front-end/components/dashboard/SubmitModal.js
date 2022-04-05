@@ -7,7 +7,7 @@ export default function SubmitModal(props) {
   const navigate = useNavigate();
   const handleClick = () => {
     props.setShowModal(false);
-    navigate("/findteam");
+    navigate("/teamfinder/findteam");
   };
   
   return (

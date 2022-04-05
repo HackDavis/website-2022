@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
+import Dashboard from "../dashboard/Dashboard";
+import DashboardButton from "../dashboard/DashboardButton";
 import styles from "../../css/createteam/CreateTeamContent.module.scss";
 import BackArrow from "../../images/createteam/backArrow.svg";
 import goldenTicket from "../../images/createteam/goldenTicket.svg";
@@ -18,6 +20,7 @@ import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
 import { useNavigate } from "react-router-dom";
 import { SignInHardCode } from "./SignInHardCode.js";
 import { Checkbox } from './Checkbox';
+import { Link } from 'react-router-dom';
 
 export function CreateTeamContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -25,7 +28,8 @@ export function CreateTeamContent() {
   const [tags, setUserTags] = useState(new Set());
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
-
+  const [showDashboard, setShowDashboard] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
   const [group, setGroup] = useRecoilState(groupStateAtom);
 
   const navigate = useNavigate();
@@ -66,7 +70,7 @@ export function CreateTeamContent() {
       await setTags(newGroup.group_id, Array.from(tags));
       setRolesSelector(Array.from(roles));
       setTagsSelector(Array.from(tags));
-      navigate("/myteam");
+      navigate("/teamfinder/myteam");
     }
   }
 
@@ -98,18 +102,42 @@ export function CreateTeamContent() {
     }
   }
 
+  // useEffect(() => {
+  //   console.log({ roles: Array.from(roles), tags: Array.from(tags) });
+  // }, [roles, tags]);
+
   useEffect(() => {
-    console.log({ roles: Array.from(roles), tags: Array.from(tags) });
-  }, [roles, tags]);
+    setTimeout(() => {
+      if (user === "") {
+        navigate("/401");
+      } else if (user.group_id !== "") {
+        navigate("/teamfinder/myteam");
+      }
+    }, 1000);
+  }, []);
+
+  if (user === "") return null;
 
   return (
     <>
+      <DashboardButton
+        user={user}
+        setShowDashboard={setShowDashboard}
+        showDashboard={showDashboard}
+      />
+      <Dashboard
+        user={user}
+        showEdit={showEdit}
+        setShowEdit={setShowEdit}
+        showDashboard={showDashboard}
+        setShowDashboard={setShowDashboard}
+      />
       <div className={styles.banner}>
         <div>
-          <a href="">
+          <Link to="/teamfinder">
             <img src={BackArrow} className={styles.backarrow} />
             Back to Team Finder
-          </a>
+          </Link>
         </div>
       </div>
       <div className={styles.content}>
@@ -121,7 +149,7 @@ export function CreateTeamContent() {
             alt="golden ticket"
           />
         </h2>
-        <SignInHardCode />
+        {/* <SignInHardCode /> */}
         <form onSubmit={createGroupClick}>
           <div className={styles.setup}>
             <div className={styles.column1}>

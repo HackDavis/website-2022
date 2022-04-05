@@ -7,7 +7,7 @@ export default function TeamCard(props) {
   useEffect(() => {
     let allMembers = [];
     const fetchMembers = async () => {
-      for(const memberId of props.data.members) {
+      for (const memberId in props.data.members) {
         const memberData = await getUser(memberId);
         allMembers.push(memberData);
       }
@@ -15,24 +15,27 @@ export default function TeamCard(props) {
     fetchMembers().then(() => {
       setMembers(allMembers);
     });
-    
+
   }, []);
 
-  const content = members.map((member, ind) => (
-    <div className={styles.names} key={ind}>
-      <div className={styles.pfpContainer}><img src={member.profile_picture} className={styles.pfp} alt="member pfp"/></div>
-      <div className={styles.memberName}>{member.name.split(' ')[0]}</div>
-    </div>
-  ));
+  const content = Object.values(members).map((member) => {
+    // console.log("member: ", member)
+    return (
+      <div className={styles.names} key={member[1]}>
+        <div className={styles.pfpContainer}><img src={member[4]} className={styles.pfp} alt="member pfp" /></div>
+        <div className={styles.memberName}>{member.name.split(' ')[0]}</div>
+      </div>
+    )
+  });
 
   return (
     <div
-      className={`${props.showRequest ? `${styles.removeEffect}` : ""} ${
-        styles.container
-      }`}
+      key={props.data.group_id}
+      className={`${props.showRequest ? `${styles.removeEffect}` : ""} ${styles.container
+        }`}
     >
       <h3>
-        {props.data.group_name} <span>{props.data.members?.length}/4</span>
+        {props.data.group_name} <span>{Object.keys(props.data.members).length}/4</span>
       </h3>
       <h5 className={styles.id}>ID #{props.data.group_id}</h5>
       <p>{props.data.description}</p>

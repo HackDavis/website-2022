@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../../components/dashboard/login";
+import Login from "../../components/dashboard/Login";
 import Section_Navbar from "../../components/section_navbar";
 
 export default function LoginPage() {
