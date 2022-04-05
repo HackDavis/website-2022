@@ -37,6 +37,7 @@ const Section_Mobile_Navbar = () => {
           <div className={styles.buttons}>
             <p><Link to="/" className={`${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}`: `${styles.button}`}`} >Homepage</Link></p>
             <p><Link to="/about" className={`${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}`: `${styles.button}`}`}>About us</Link></p>
+            <p><Link to="/placestostay" className={`${window.location.href == `${window.location.origin}/placestostay` ? `${styles.bold_navitem}`: `${styles.button}`}`}>Places To Stay</Link></p>
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>
