@@ -4,10 +4,12 @@ import LogoIcon from "../images/HackDavisLogo.svg";
 import { Link } from "react-router-dom";
 
 const Section_Desktop_Navbar = () => {
-  const [shadow, setShadow] = useState(false);
+  const isTeamFinder = window.location.href == `${window.location.origin}/createteam` || window.location.href == `${window.location.origin}/myteam`;
+
+  const [shadow, setShadow] = useState(isTeamFinder);
 
   const setNavbarShadow = () => {
-    if(window.scrollY > 0) {
+    if(window.scrollY > 0 || isTeamFinder) {
       setShadow(true);
     } else {
       setShadow(false);

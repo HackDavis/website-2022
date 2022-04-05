@@ -1,0 +1,53 @@
+.container {
+  > div {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 50%;
+      padding-top: 18%;
+      padding-left: 10%;
+      > h2 {
+        width: auto;
+        font-family: "Proxima Nova";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: white;
+      }
+      > h3 {
+        font-family: "Proxima Nova";
+        width: auto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 24px;
+        color: white;
+        > a {
+          font-family: "Proxima Nova";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 24px;
+          color: white;
+        }
+      }
+    }
+  }
+  .errorCode {
+    margin: auto;
+  }
+  > div:nth-child(2) {
+    position: fixed;
+    width: 60%;
+    bottom: 0px;
+    .loginErrorImage {
+      width: 100%;
+    }
+  }
+}

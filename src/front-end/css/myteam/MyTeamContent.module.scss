@@ -1,0 +1,111 @@
+.banner {
+  padding: 20px 90px;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1330px;
+  padding: 14px 24px;
+  background: #043c54;
+
+  > h2 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: white;
+    margin-bottom: 54px;
+    display: flex;
+    align-items: center;
+
+    > img {
+      margin-left: 20px;
+      width: 47px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  // justify-content: center;
+  gap: 0 52px;
+
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    > button.pendingButton {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: left;
+      color: #043b54;
+      width: 400px;
+      margin-top: 20px;
+      background-color: #9ee7e5;
+      padding: 22px 27px;
+
+      > span {
+        font-family: "Proxima Nova";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        color: white;
+
+        background: #f95a5a;
+        padding: 4px 9px;
+        margin-left: 13px;
+        border-radius: 50%;
+      }
+    }
+
+    > button.deleteButton {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f95a5a;
+
+      width: 400px;
+      margin-top: 20px;
+      background-color: transparent;
+      border: solid 3px #f95a5a;
+      border-radius: 100px;
+      color: #f95a5a;
+      transition: 250ms ease-in-out;
+      padding: 10px;
+      &:hover {
+        background-color: #f95a5a;
+        color: white;
+        transition: 250ms ease-in-out;
+      }
+    }
+  }
+}
+
+.members {
+  > h3 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: white;
+  }
+}
+
+.memberCards {
+  // flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

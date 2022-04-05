@@ -1,7 +1,13 @@
 const Roles = [
     "Front-End",
     "Back-End",
-    "Designer"
+    "Design/UX",
+    "Mobile",
+    "Data Science",
+    "ML/AI"
 ];
+
+// potential roles
+
 
 export default Roles;

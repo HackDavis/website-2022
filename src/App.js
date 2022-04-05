@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { MainSection } from "./front-end/pages/MainSection";
 import { FAQOnwards } from "./front-end/pages/FAQOnwards";
 import Section_Navbar from "./front-end/components/section_navbar.js";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { AboutUs } from "./front-end/pages/AboutUs";
 import {PlacesToStay} from "./front-end/pages/PlacesToStay";
 
@@ -26,7 +26,7 @@ export default function App() {
         .replace(/^ +/, "")
         .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
     });
-  });
+  }, []);
 
   return (
     <Router>
