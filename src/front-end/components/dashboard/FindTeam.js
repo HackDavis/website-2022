@@ -155,17 +155,17 @@ export default function FindTeam(props) {
                     group.group_id.includes(groupId) ||
                     group.group_id.includes(groupId.substring(1))
                 )
-                .map((group, ind) => {
+                .map((group) => {
                   return (
-                    <div onClick={() => onCardClick(group)}>
-                      <TeamCard key={ind} data={group} />
+                    <div key={group.group_id} onClick={() => onCardClick(group)}>
+                      <TeamCard data={group} />
                     </div>
                   );
                 })
             : allGroups.map((group, ind) => {
                 return (
-                  <div onClick={() => onCardClick(group)}>
-                    <TeamCard key={ind} data={group} />
+                  <div key={ind} onClick={() => onCardClick(group)}>
+                    <TeamCard data={group} />
                   </div>
                 );
               })}

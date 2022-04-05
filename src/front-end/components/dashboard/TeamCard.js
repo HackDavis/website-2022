@@ -41,10 +41,10 @@ export default function TeamCard(props) {
       <h5>We are looking for:</h5>
       <div className={styles.skillsetGroup}>
         {props.data.tags1.map((tag1) => {
-          return <div className={styles.role}>{tag1}</div>;
+          return <div key={tag1} className={styles.role}>{tag1}</div>;
         })}
         {props.data.tags2.map((tag2) => {
-          return <div className={styles.skill}>{tag2}</div>;
+          return <div key={tag2} className={styles.skill}>{tag2}</div>;
         })}
       </div>
     </div>

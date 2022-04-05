@@ -1,4 +1,3 @@
-First Name,Last Name,Email,Expiry time,Redirect?,Invitation URL,Order Reference,Order URL,HackDavis-2022,HackDavis-2022 Test,HackDavis 2022 Hacker Ticket
 Zihan,Lu,zzzlu@ucdavis.edu,,Y,https://ti.to/hackdavis/hackdavis-2022/rsvp/rsvp_pIYFcmXgRzQVyGC07SMJL6A,DB9E,https://ti.to/registrations/ptXE1VzLHwQ3vFXuMqnhMLQ,,,Y
 ZHENGYU,SONG,zyusong@ucdavis.edu,,Y,https://ti.to/hackdavis/hackdavis-2022/rsvp/rsvp_peksHLS8sfagcpkSVUTx43g,-,-,,,Y
 Zeki,Xu,zxxu@ucdavis.edu,,Y,https://ti.to/hackdavis/hackdavis-2022/rsvp/rsvp_p5dMdlGAHgZRArAPvEIp7KQ,-,-,,,Y
@@ -752,4 +751,3 @@ Nazar,Potapchuk,npotapchuk@student.sierracollege.edu,,Y,,,Y
 Monique,Reed,mzreed@mymail.csmd.edu,,Y,,,Y
 Marc-Antoine,Willy,ma.willy@icloud.com,,Y,,,Y
 Shrieyaa,Sekar Jayanthi,ssekarjayanthi@ucsd.edu,,Y,,,Y
-Eric, Ni,ericni2000@gmail.com,,Y,,,Y
