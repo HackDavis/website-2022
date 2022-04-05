@@ -25,6 +25,7 @@
     "react-scripts": "4.0.3",
     "reactstrap": "^9.0.1",
     "recoil": "^0.4.1",
+    "recoil-persist": "^4.1.0",
     "sass": "^1.46.0",
     "typed.js": "^2.0.12",
     "web-vitals": "^1.1.2",

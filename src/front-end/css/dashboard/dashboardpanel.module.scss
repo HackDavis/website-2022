@@ -42,7 +42,7 @@
       
       width: 90px;
       height: 30px;
-      
+      color: white;
       border-radius: 20px;
       background-color: #2A586E;
       font-weight: 600;
@@ -82,4 +82,25 @@
       margin-top: 15px;
     }
   }
+}
+
+.signout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  position: absolute;
+  top: 400px;
+  left: 35%;
+  
+  width: 150px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
+  background-color: #2A586E;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.signout:hover {
+  cursor: pointer;
 }
