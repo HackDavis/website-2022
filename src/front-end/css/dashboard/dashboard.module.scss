@@ -1,0 +1,13 @@
+.dashboard {
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -500px;
+  z-index: 998;
+  background-color: #2A586E;
+  transition: all 200ms ease-out;
+}
+.showDashboard {
+  right:0px;
+}

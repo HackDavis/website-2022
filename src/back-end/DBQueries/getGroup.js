@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { dbConfig } from "../db/dbConfig.js";
+import { dbConfig } from "../db/dbConfig";
 
 // Purpose: Gets the user's basic information when they log into their Google account
 // How it works: When a user first logs in, the async function getUser() is called to fetch the user's data; the recoil state will be updated in the component that calls this function
