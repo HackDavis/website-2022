@@ -26,7 +26,7 @@ export function LeaveGroupModal() {
     setGroupMembers(new_group_members);
     setIsLeaveGroup(false);
     console.log("successfully removed");
-    navigate("/teamfinder/createteam");
+    navigate("/teamfinder");
   }
 
   return (

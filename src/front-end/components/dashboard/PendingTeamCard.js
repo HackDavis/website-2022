@@ -25,7 +25,7 @@ export default function PendingTeamCard(props) {
 
     const fetchData = async () => {
       const getGroupData = await getGroup(props.groupId);
-      for(const memberId of getGroupData.members) {
+      for(const memberId of Object.keys(getGroupData.members)) {
         const memberData = await getUser(memberId);
         allMembers.push(memberData);
       }

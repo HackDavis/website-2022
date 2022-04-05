@@ -7,23 +7,38 @@ import backarrow from "../../images/dashboard/whiteBackArrow.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
 import { useRecoilState } from 'recoil';
+import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export default function PendingTeams(props) {
-  const [user] = useRecoilState(userStateAtom);
+  const [user, setUser] = useRecoilState(userStateAtom);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const navigate = useNavigate();
-  const {state} = useLocation();
-  const {pendingTeams} = state;
-
+  // const {state} = useLocation();
+  // let pendingTeams = [];
+  
   useEffect(() => {
     setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
-        navigate("/teamfinder/myteam");
+        navigate("/teamfinder");
       }
     }, 2500);
+
+    // :mild-panic-intensifies:
+    // Basically checks if a user got accepted
+    async function checkUser() {
+      const newUserData = await getUser(user.user_id);
+      async function SetUser() {
+        setUser(newUserData);
+      }
+      SetUser().
+        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+    }
+    checkUser();
+    // pendingTeams = user.pending_groups;
+    // console.log(pendingTeams);
   }, []);
 
   if (user === "") return null;
@@ -48,7 +63,10 @@ export default function PendingTeams(props) {
           Back to Search
         </a>
         <h1>Your Pending Requests <span>{user.pending_groups.length}</span></h1>
-        {pendingTeams?.map((groupId) => {
+        {/* {pendingTeams.map((groupId) => {
+          return <PendingTeamCard groupId={groupId} key={groupId} />;
+        })} */}
+        {user.pending_groups.map((groupId) => {
           return <PendingTeamCard groupId={groupId} key={groupId} />;
         })}
       </div>

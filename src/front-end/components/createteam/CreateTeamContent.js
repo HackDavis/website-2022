@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { SignInHardCode } from "./SignInHardCode.js";
 import { Checkbox } from './Checkbox';
 import { Link } from 'react-router-dom';
+import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export function CreateTeamContent() {
   const [user, setUser] = useRecoilState(userStateAtom);
@@ -111,9 +112,21 @@ export function CreateTeamContent() {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
-        navigate("/teamfinder/myteam");
+        navigate("/teamfinder");
       }
     }, 1000);
+
+    // :mild-panic-intensifies:
+    // Basically checks if a user got accepted
+    async function checkUser() {
+      const newUserData = await getUser(user.user_id);
+      async function SetUser() {
+        setUser(newUserData);
+      }
+      SetUser().
+        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+    }
+    checkUser();
   }, []);
 
   if (user === "") return null;

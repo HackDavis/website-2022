@@ -59,8 +59,8 @@ export default function Setup() {
     setTimeout(() => {
       if (user === "") {
         navigate("/401");
-      } else if (user.group_id !== "") {
-        navigate("/teamfinder/myteam");
+      } else if (user.discord_id !== "") {
+        navigate("/teamfinder");
       }
     }, 2500);
   }, []);

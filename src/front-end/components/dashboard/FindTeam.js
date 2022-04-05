@@ -12,6 +12,8 @@ import Roles from "../../../back-end/db/Roles";
 import Tags from "../../../back-end/db/Tags";
 import { getAllGroups } from "../../../back-end/DBQueries/getAllGroups";
 import { useNavigate } from "react-router-dom";
+import AlreadyAppliedModal from "./AlreadyAppliedModal";
+import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export default function FindTeam(props) {
   const [allGroups, setAllGroups] = useState([]);
@@ -21,8 +23,9 @@ export default function FindTeam(props) {
   const [tags, setTags] = useState(new Set());
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const [user] = useRecoilState(userStateAtom);
+  const [user, setUser] = useRecoilState(userStateAtom);
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -30,9 +33,21 @@ export default function FindTeam(props) {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
-        navigate("/teamfinder/myteam");
+        navigate("/teamfinder");
       }
     }, 2500);
+
+    // :mild-panic-intensifies:
+    // Basically checks if a user got accepted
+    async function checkUser() {
+      const newUserData = await getUser(user.user_id);
+      async function SetUser() {
+        setUser(newUserData);
+      }
+      SetUser().
+        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+    }
+    checkUser();
 
     if(tags.size > 0 && allGroups.length > 0) {
       filterGroupsByTags();
@@ -76,7 +91,12 @@ export default function FindTeam(props) {
   };
 
   const onCardClick = (group) => {
-    navigate(`/teamfinder/submitrequest?group=${group.group_id}`);
+    if(user.pending_groups.includes(group.group_id)) {
+      setShowModal(true);
+    }
+    else {
+      navigate(`/teamfinder/submitrequest?group=${group.group_id}`);
+    }
   };
 
   if (user === "") return null;
@@ -182,6 +202,7 @@ export default function FindTeam(props) {
               })}
         </div>
       </div>
+      {showModal ? <AlreadyAppliedModal setShowModal={setShowModal} /> : null}
     </div>
   );
 }

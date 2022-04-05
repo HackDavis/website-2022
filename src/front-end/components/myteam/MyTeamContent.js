@@ -84,6 +84,7 @@ export function MyTeamContent() {
     if (typeof group === "string") {
       return null;
     }
+    console.log(group);
     return Object.entries(group.members).map(([uid, rest]) => {
       return MemberCard([...rest, uid]);
     });

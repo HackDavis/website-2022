@@ -10,11 +10,12 @@ import { updateUserPendingGroup } from "../../../recoil/selectors/updateUserPend
 import { updateGroupPendingMember } from "../../../recoil/selectors/updateGroupPendingMember";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getGroup } from "../../../back-end/DBQueries/getGroup";
+import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export default function SubmitRequest(props) {
   const [reason, setReason] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [user] = useRecoilState(userStateAtom);
+  const [user, setUser] = useRecoilState(userStateAtom);
   const setUpdateUserPendingGroup = useSetRecoilState(updateUserPendingGroup);
   const setUpdateGroupPendingMember = useSetRecoilState(updateGroupPendingMember);
   const [group, setGroup] = useState("");
@@ -24,18 +25,44 @@ export default function SubmitRequest(props) {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
-        navigate("/teamfinder/myteam");
+        navigate("/teamfinder");
+      } else if(window.location.href === `${window.location.origin}/teamfinder/submitrequest`) {
+        navigate("/teamfinder/findteam");
       }
     }, 2500);
-    
+
+    // :mild-panic-intensifies:
+    // Basically checks if a user got accepted
+    async function checkUser() {
+      const newUserData = await getUser(user.user_id);
+      async function SetUser() {
+        setUser(newUserData);
+      }
+      SetUser().
+        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+    }
+    checkUser();
+
     let groupData = "";
     async function getGroupFunc() {
       const queryString = window.location.search;
+      
       const urlParams = new URLSearchParams(queryString);
       const groupId = urlParams.get('group');
-      console.log("groupId: " , groupId);
-      groupData = await getGroup(groupId);
+      if (!urlParams.has('group')) {
+        navigate("/teamfinder/findteam");
+      }
+      if (groupId !== null) {
+        console.log("groupId: " , groupId);
+        groupData = await getGroup(groupId);
+        if (groupData === undefined) {
+          navigate("/teamfinder/findteam");
+        }
+      } else {
+        navigate("/teamfinder/findteam");
+      }
     }
+
     getGroupFunc().then(() => setGroup(groupData));
   }, []);
 
