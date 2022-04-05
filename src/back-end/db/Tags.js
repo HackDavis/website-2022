@@ -21,4 +21,20 @@ const Tags = [
     "NoSQL"
 ];
 
+// potential tags
+
+// "Firebase"
+
+// "Twilio",
+// "Flutter",
+// "Kotlin",
+
+// "Unity",
+// "C#",
+
+// "Socket.io",
+// "Pandas",
+// "Numpy",
+// "Scikit-learn",
+
 export default Tags;

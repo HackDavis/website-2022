@@ -1,5 +1,5 @@
 import { doc, deleteDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig";
+import { dbConfig } from "../db/dbConfig";
 import { getGroup } from "./getGroup";
 import { deleteUserPendingGroup } from "./deleteUserPendingGroup";
 import { deleteUserPendingInvitation } from "./deleteUserPendingInvitation";
@@ -30,10 +30,7 @@ export async function deleteGroup(groupID) {
 
         // 1. removing group_id from all user's pending_groups
         let keys_p_mem = Object.keys(pending_members_map);
-<<<<<<< HEAD:src/recoil/DBQueries/deleteGroup.js
         console.log("initial pending_members:", keys_p_mem);
-=======
->>>>>>> 7b62b0a0bef4ffe3f993632cbd67c20d482d1474:src/back-end/DBQueries/deleteGroup.js
         for(let id of keys_p_mem) {
             await deleteUserPendingGroup(id, groupID);
         }
@@ -47,7 +44,8 @@ export async function deleteGroup(groupID) {
 
         //3. removing group_id from all members of the group
         // console.log("initial members:", members_arr);
-        for(let id of members_arr) {
+        
+        for(let id in members_arr) {
             await deleteUserGroupID(id);
         }
 
