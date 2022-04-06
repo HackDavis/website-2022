@@ -13,6 +13,7 @@ import cfc from "../images/sponsors/cfc.png";
 import twilio from "../images/sponsors/twilio.png";
 import citris from "../images/sponsors/citris.png";
 import visityolo from "../images/sponsors/visityolo.png";
+import eclipse from "../images/sponsors/eclipse.png";
 import gsec from "../images/sponsors/gsec.png";
 import athletics from "../images/sponsors/athletics.png";
 import iet from "../images/sponsors/iet.png";
@@ -42,8 +43,8 @@ const Section_Sponsors = () => {
               <a className={styles.citris} href="https://citris-uc.org/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={citris} />
               </a>
-              <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
-                <img className={`${styles.imageStyle}`} src={visityolo} />
+              <a className={styles.eclipse} href="https://www.eclipsefoods.com/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={eclipse} />
               </a>
               <a className={styles.gsec} href="https://www.greatersacramento.com/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={gsec} />
@@ -96,6 +97,9 @@ const Section_Sponsors = () => {
               <div className={styles.break}></div>
               <a className={styles.visitdavis} href="https://visitdavis.org/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={visitdavis} />
+              </a>
+              <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={visityolo} />
               </a>
             </div>
           </div>
