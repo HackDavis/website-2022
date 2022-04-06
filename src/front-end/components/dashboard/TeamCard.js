@@ -25,7 +25,7 @@ export default function TeamCard(props) {
         <div className={styles.pfpContainer}><img src={member[4]} className={styles.pfp} alt="member pfp" /></div>
         <div className={styles.memberName}>{member.name.split(' ')[0]}</div>
       </div>
-    )
+    );
   });
 
   return (

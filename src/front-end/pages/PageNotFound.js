@@ -2,7 +2,7 @@ import {React} from 'react';
 import styles from "front-end/css/errorPage.module.scss";
 import {Link} from "react-router-dom";
 import errorCode from "front-end/images/errorPages/404.svg";
-import Section_Navbar from "front-end/components/section_navbar"
+import Section_Navbar from "front-end/components/section_navbar";
 export function PageNotFound() {
 
   return (
