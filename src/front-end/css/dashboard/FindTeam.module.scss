@@ -45,13 +45,16 @@
 .container {
   background: #043B54;
   display: flex;
+  justify-content: center;
   padding: 50px 0;
+  width:100%;
   .left {
     display: flex;
-    width: 30%;
-    min-width: 650px;
+    width: 34%;
+    // max-width: 500px;
+    // min-width: 650px;
     flex-direction: column;
-    padding: 0px 50px 50px 100px;
+    padding: 0px 0px 50px 80px;
     > form {
       position: relative;
       width: 400px;
@@ -62,18 +65,18 @@
       color: #51919D;
       background-color: #043B54;
       border: solid 3px #9EE7E5;
-      width: 500px;
+      width: 375px;
     }
     .searchIcon {
       position: absolute;
       width: 20px;
       top: 15px;
-      left: 460px;
+      left: 335px;
       // right: 20px;
     }
     .skillset {
       height: 1150px;
-      width: 500px;
+      width: 375px;
       margin-top: 20px;
       border: solid 3px #9EE7E5;
       padding: 25px;
@@ -119,7 +122,7 @@
       text-align: left;
       color: #043b54;
       width: 30%;
-      width: 500px;
+      width: 375px;
       margin-top: 20px;
       background-color: #9ee7e5;
       // padding: 22px 27px;
@@ -146,8 +149,8 @@
     grid-template-columns: 450px 450px;
     gap: 20px 20px;
     min-height: 100vh;
-    max-width: 70%;
-    // min-width: 1200px;
+    width: 66%;
+    // max-width: 1200px;
     padding: 0px;
     margin-top: 50px;
     position: relative;

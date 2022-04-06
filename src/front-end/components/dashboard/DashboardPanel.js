@@ -47,7 +47,7 @@ export default function DashboardPanel(props) {
           {props.user.discord_id}
         </div>
         <div className={styles.bio}>{props.user.description}</div>
-        <div className={styles.tags}></div>
+        {/* <div className={styles.tags}></div> */}
       </div>
       <button className={styles.signout} onClick={() => signOut()}>
           SIGN OUT

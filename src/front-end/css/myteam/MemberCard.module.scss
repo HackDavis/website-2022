@@ -1,7 +1,8 @@
 .container {
   padding: 24px 40px;
   background: #084967;
-  flex-basis: calc(50% - 12px);
+  // flex-basis: calc(50% - 12px);
+  width: 400px;
   display: flex;
   flex-direction: column;
 
@@ -15,6 +16,7 @@
     background-color: transparent;
     width: 130px;
   }
+  // max-width: 500px;
 }
 
 .top {
@@ -78,6 +80,8 @@
       color: white;
       margin: 0;
       margin-left: 10px;
+      white-space: normal;
+      word-break: break-all;
     }
   }
 
@@ -89,5 +93,7 @@
     line-height: 17px;
     color: white;
     margin-top: 30px;
+    white-space: normal;
+    word-break: break-all;
   }
 }

@@ -45,7 +45,8 @@
     }
     .textArea {
       margin-top: 10px;
-      width: 1000px;
+      width: 100%;
+      max-width: 1000px;
       height: 400px;
       background-color: transparent;
       border: solid 2px #9EE7E5;

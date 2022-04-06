@@ -23,14 +23,15 @@
     font-weight: 600;
   }
   .profileCard {
-    width: 450px;
+    width: 475px;
+    height: 450px;
     padding: 20px;
+    //padding-bottom: 30px;
     background-color: #043B54;
     border-radius: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     .edit {
       display: flex;
       align-items: center;
@@ -62,15 +63,12 @@
       border-radius: 50%;
     }
     .name {
-      margin-top: 15px;
+      margin-top: 20px;
       font-weight: 600;
       font-size: 16pt;
     }
     .email {
-      margin-top: 15px;
-    }
-    .discord {
-      margin-top: 5px;
+      margin-top: 20px;
     }
     .icons {
       display: inline;
@@ -79,7 +77,9 @@
       margin-bottom: 2px;
     }
     .bio {
-      margin-top: 15px;
+      margin-top: 20px;
+      white-space: normal;
+      word-break: break-all;
     }
   }
 }
@@ -90,7 +90,7 @@
   justify-content: center;
   
   position: absolute;
-  top: 400px;
+  top: 540px;
   left: 35%;
   
   width: 150px;

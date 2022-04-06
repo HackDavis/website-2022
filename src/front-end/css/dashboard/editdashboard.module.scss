@@ -8,6 +8,7 @@
   text-align: center;
   justify-content: center;
   position: relative;
+  z-index: 2;
 
   .x {
     position: absolute;
@@ -103,7 +104,7 @@
   letter-spacing: 2px;
   border-radius: 20px;
   border: solid 4px #9EE7E5;
-  margin-top: 50px;
+  margin-top: 20px;
   font-weight: 600;
 }
 .submit:hover {

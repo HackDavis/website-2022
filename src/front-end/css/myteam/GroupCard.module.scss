@@ -1,13 +1,14 @@
 .groupCardContainer {
     background-color: #074967;
-    height: 465px;
+    // height: 465px;
     max-width: 400px;
     .cardContent {
         display: flex;
         flex-direction: column;
-        padding-left: 33px;
-        padding-right: 33px;
-        padding-top: 31px;
+        // padding-left: 33px;
+        // padding-right: 33px;
+        // padding-top: 31px;
+        padding: 31px 33px 20px;
         font-family: "Proxima Nova";
 
         .titleContent {
@@ -20,7 +21,7 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                padding: 5px 30px;
+                padding: 5px 20px;
                 border-radius: 100px;
                 background-color: rgba(255, 255, 255, 0.15);
                 font-size: 14px;
@@ -51,6 +52,8 @@
             color: white;
             font-weight: 400;
             line-height: 21px;
+            white-space: normal;
+            word-break: break-all;
         }
         .skillsTitle {
             font-family: "Proxima Nova";

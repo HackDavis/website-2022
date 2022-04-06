@@ -154,14 +154,14 @@ export function CreateTeamContent() {
         </div>
       </div>
       <div className={styles.content}>
-        <h2>
+        {/* <h2>
           Hi {user.name}!{" "}
           <img
             src={goldenTicket}
             className={styles.goldenTicket}
             alt="golden ticket"
           />
-        </h2>
+        </h2> */}
         {/* <SignInHardCode /> */}
         <form onSubmit={createGroupClick}>
           <div className={styles.setup}>

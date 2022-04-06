@@ -77,7 +77,7 @@ export default function EditDashboard(props) {
               name="discord"
               onChange={handleDiscordChange}
               maxLength={37}
-              // value={user.discord_id}
+              // value={props.user.discord_id}
               required
             />
           </div>
@@ -88,7 +88,7 @@ export default function EditDashboard(props) {
               name="description"
               onChange={handleDescChange}
               maxLength={250}
-              // value={user.description}
+              // value={props.user.description}
               required
             />
             <div className={styles.characterCount}>
