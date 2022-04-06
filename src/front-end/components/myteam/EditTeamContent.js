@@ -27,7 +27,7 @@ export function EditTeamContent() {
     if (typeof group !== "string") {
       const newRoles = new Set(group.tags1);
       const newTags = new Set(group.tags2);
-      console.log(group);
+      //console.log(group);
       setName(group.group_name);
       setDesc(group.description);
       setUserRoles(newRoles);
@@ -95,7 +95,7 @@ export function EditTeamContent() {
   }
 
   useEffect(() => {
-    console.log({ roles: Array.from(roles), tags: Array.from(tags) });
+    //console.log({ roles: Array.from(roles), tags: Array.from(tags) });
   }, [roles, tags]);
 
   return (

@@ -54,7 +54,7 @@ export default function FindTeam(props) {
     } else if(tags.size == 0 && allGroups.length > 0) {
       setAllGroups(constAllGroups);
     } else {
-      console.log("else")
+      // console.log("else")
       const fetchData = async () => {
         const data = await getAllGroups();
         setAllGroups(data);

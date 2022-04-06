@@ -23,7 +23,7 @@ export function DissolveGroupModal() {
       return;
     }
     setIsDissolveGroupModal(false);
-    console.log("dissolved");
+    //console.log("dissolved");
     navigate("/teamfinder");
     setGroup([]);
     setUserGroupID("");

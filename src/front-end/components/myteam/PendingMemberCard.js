@@ -23,7 +23,7 @@ export function PendingMemberCard([name, email, _, reason, uid]) {
   const isAdmin = useRecoilValue(isAdminAtom);
 
   useEffect(() => {
-    console.log({ name, email, _, reason, uid });
+    // console.log({ name, email, _, reason, uid });
   }, []);
 
   async function denyGroupRequestClick() {

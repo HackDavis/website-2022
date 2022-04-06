@@ -18,12 +18,12 @@ export function RemoveMemberModal() {
     const setGroupMembers = useSetRecoilState(SetGroupMembers);
 
     async function Remove() {
-        console.log(` remove active member uid: ${removeActiveMemberUID}`);
+        // console.log(` remove active member uid: ${removeActiveMemberUID}`);
         let new_group_members = await deleteActiveMember(removeActiveMemberUID, group.group_id);
         setUserGroupID("");
         setGroupMembers(new_group_members);
         setIsMemberRemoveModal(false);
-        console.log("successfully removed");
+        // console.log("successfully removed");
     }
 
     return (

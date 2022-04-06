@@ -73,8 +73,10 @@ export function MyTeamContent() {
 
   useEffect(() => {
     if (typeof group === "string" || typeof user === "string") return;
-    console.log(group);
+    // console.log(group);
     // Check if the user is an admin
+    // console.log("user.email: ", user.email);
+    // console.log("group.contact_email: ", group.contact_email);
     if (user.email == group.contact_email) {
       setIsAdmin(true);
     }
@@ -84,7 +86,7 @@ export function MyTeamContent() {
     if (typeof group === "string") {
       return null;
     }
-    console.log(group);
+    // console.log(group);
     return Object.entries(group.members).map(([uid, rest]) => {
       return MemberCard([...rest, uid]);
     });

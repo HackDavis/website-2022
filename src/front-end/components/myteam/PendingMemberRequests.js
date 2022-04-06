@@ -20,7 +20,7 @@ export function PendingMemberRequests() {
       return null;
     }
     return Object.entries(group.pending_members).map(([uid, rest]) => {
-      console.log(uid);
+      // console.log(uid);
       return PendingMemberCard([...rest, uid]);
     });
   }

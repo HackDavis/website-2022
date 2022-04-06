@@ -53,7 +53,7 @@ export default function SubmitRequest(props) {
         navigate("/teamfinder/findteam");
       }
       if (groupId !== null) {
-        console.log("groupId: " , groupId);
+        // console.log("groupId: " , groupId);
         groupData = await getGroup(groupId);
         if (groupData === undefined) {
           navigate("/teamfinder/findteam");

@@ -40,7 +40,7 @@ export function SignInHardCode() {
       // If user signs in with their gmail account but their data does not exist in firebase, then create a user object
       const userData = await getUser(user.uid);
       if (userData) {
-        console.log("user found in database");
+        // console.log("user found in database");
         // Update user recoil state
         setUser(userData);
       } else {
@@ -78,7 +78,7 @@ export function SignInHardCode() {
               };
               await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
               setUser(newUserData);
-              console.log("created new user");
+              // console.log("created new user");
             } else {
               // user was not found!
               navigate("/401");

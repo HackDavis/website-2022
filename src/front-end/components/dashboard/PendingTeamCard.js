@@ -46,7 +46,7 @@ export default function PendingTeamCard(props) {
   ));
 
   async function deleteRequestClick() {
-    console.log(user.pending_groups);
+    //console.log(user.pending_groups);
     const pending_members_map_copy = await groupWithdraw(user.user_id, group.group_id);
     if (pending_members_map_copy != null) {
       let pending_groups_copy = [...user.pending_groups];

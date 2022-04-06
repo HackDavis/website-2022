@@ -20,12 +20,12 @@ export function LeaveGroupModal() {
   const navigate = useNavigate();
 
   async function Remove() {
-    console.log(` remove active member uid: ${removeActiveMemberUID}`);
+    // console.log(` remove active member uid: ${removeActiveMemberUID}`);
     let new_group_members = await deleteActiveMember(removeActiveMemberUID, group.group_id);
     setUserGroupID("");
     setGroupMembers(new_group_members);
     setIsLeaveGroup(false);
-    console.log("successfully removed");
+    //console.log("successfully removed");
     navigate("/teamfinder");
   }
 

@@ -22,7 +22,7 @@ export function MemberCard([name, email, discord, desc, pfp, uid]) {
   }
 
   useEffect(() => {
-    console.log({ name, email, desc, pfp, uid });
+    // console.log({ name, email, desc, pfp, uid });
   }, []);
 
   return (
