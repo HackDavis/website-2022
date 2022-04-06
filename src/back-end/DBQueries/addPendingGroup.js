@@ -17,7 +17,7 @@ export async function addPendingGroup(user_id, group_id) {
         });
 
     } catch(e) {
-        console.log(`error in addPendingGroup: ${e}`);
+        // console.error(`error in addPendingGroup: ${e}`);
     }
 
 }

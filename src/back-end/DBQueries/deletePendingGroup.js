@@ -17,6 +17,6 @@ export async function deletePendingGroup(user_id, group_id) {
         });
         return new_pending_groups;
     } catch(e) {
-        console.log(`deletePendingGroup error ${e}`);
+        console.error(`deletePendingGroup error ${e}`);
     }
 }

@@ -18,7 +18,7 @@ export default function PendingTeams(props) {
   // let pendingTeams = [];
   
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
@@ -39,6 +39,10 @@ export default function PendingTeams(props) {
     checkUser();
     // pendingTeams = user.pending_groups;
     // console.log(pendingTeams);
+
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   if (user === "") return null;

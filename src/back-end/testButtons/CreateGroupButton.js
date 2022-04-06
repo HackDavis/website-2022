@@ -30,7 +30,7 @@ export function CreateGroupButton() {
 
         const newGroup = await createGroup(user.email, user.user_id, name, desc);
         if (newGroup == null) {
-            console.log("createGroup Error: user is already in a group");
+            // console.log("createGroup Error: user is already in a group");
         } else {
             // setRSVP for front-end Recoil atom
             setGroup(newGroup);

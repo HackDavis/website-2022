@@ -14,10 +14,10 @@ export async function getGroup(groupID) {
             return docSnap.data();
         } else {
             // doc.data() will be undefined in this case
-            console.log("Group does not exist!");
+            console.error("Group does not exist!");
         }
     } catch(e) {
-        console.log("error with getGroup: ", e);
+        console.error("error with getGroup: ", e);
     }
 }
 

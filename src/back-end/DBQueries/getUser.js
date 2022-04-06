@@ -17,7 +17,7 @@ export async function getUser(userID) {
             console.log("User does not exist!");
         }
     } catch(e) {
-        console.log("error with getUser: ", e);
+        console.error("error with getUser: ", e);
     }
 }
 

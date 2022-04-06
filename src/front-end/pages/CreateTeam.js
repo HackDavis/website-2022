@@ -1,13 +1,13 @@
 import {React,useEffect} from 'react';
-import Section_Desktop_Navbar from "../components/section_desktop_navbar";
+import Section_Navbar from "../components/section_navbar";
 import { CreateTeamContent } from '../components/createteam/CreateTeamContent';
 
 export function CreateTeam() {
 
   return (
-    <>
-      <Section_Desktop_Navbar />
+    <div>
+      <Section_Navbar />
       <CreateTeamContent />
-    </>
+    </div>
   );
 };

@@ -19,6 +19,6 @@ export async function deleteUserPendingGroup(user_id, group_id) {
             pending_groups: pending_groups_copy
         });
     } catch(e) {
-        console.log("error with deleteMultiplePendingMembers: ", e);
+        console.error("error with deleteMultiplePendingMembers: ", e);
     }
 }

@@ -15,6 +15,6 @@ export async function deleteUserGroupID(user_id) {
             group_id:""
         });
     } catch(e) {
-        console.log("error with deleteUserGroupID: ", e);
+        console.error("error with deleteUserGroupID: ", e);
     }
 }

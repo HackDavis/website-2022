@@ -10,9 +10,8 @@ export async function updateUserDesc(userID, desc) {
         await updateDoc(docRef, {
             description: desc
         });
-        console.log("successfully updated user's desc");
         return desc;
     } catch (e) {
-        console.log("error setting user desc ", e);
+        console.error("error setting user desc ", e);
     }
 }

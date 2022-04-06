@@ -10,9 +10,8 @@ export async function updateGroupName(groupID, name) {
         await updateDoc(docRef, {
             group_name: name
         });
-        console.log("Successfully updated group's description");
         return name;
     } catch (e) {
-        console.log("Error setting group description: ", e);
+        console.error("Error setting group description: ", e);
     }
 }

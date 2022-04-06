@@ -14,7 +14,7 @@ export async function setRoles(group_id, new_roles) {
         });
 
     } catch(e) {
-        console.log(`error in setRoles: ${e}`);
+        console.error(`error in setRoles: ${e}`);
     }
 
 }

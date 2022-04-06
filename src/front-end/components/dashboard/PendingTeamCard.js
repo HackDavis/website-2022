@@ -67,7 +67,7 @@ export default function PendingTeamCard(props) {
         <div className={styles.statusAccepted}>Accepted</div>
       )}
       <h3>
-        {group.group_name} <span>{group.members?.length}/4</span>
+        {group.group_name} <span>{Object.keys(members).length}/4</span>
       </h3>
       <h5 className={styles.id}>ID #{group.group_id}</h5>
       <p>{group.description}</p>

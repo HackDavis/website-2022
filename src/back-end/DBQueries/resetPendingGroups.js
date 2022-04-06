@@ -16,7 +16,7 @@ export async function resetPendingGroups(userID) {
         let newPendingGroups = [];
         return newPendingGroups;
     } catch(e) {
-        console.log(`resetPendingGroup error ${e}`);
+        console.error(`resetPendingGroup error ${e}`);
     }
 }
 

@@ -56,13 +56,16 @@ export default function Setup() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.discord_id !== "") {
         navigate("/teamfinder");
       }
     }, 2500);
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   if (user === "") return null;

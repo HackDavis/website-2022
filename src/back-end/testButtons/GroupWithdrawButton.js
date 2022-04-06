@@ -14,12 +14,11 @@ function GroupWithdrawButton() {
     
     async function groupWithdrawClick() {
         let hardcode_group_id = "umw6kVQBPPQI0pRByIYg";
-        //TODO: Change hardcode_group_id to group.group_id after testing
-        console.log("old group:", group);
-        console.log("old user:", user);
+        // console.log("old group:", group);
+        // console.log("old user:", user);
         let pending_members_map_copy = await groupWithdraw(user.user_id, hardcode_group_id);
         if (pending_members_map_copy != null) {
-            console.log(pending_members_map_copy);
+            // console.log(pending_members_map_copy);
     
             let pending_groups_copy = [...user.pending_groups];
 
@@ -29,8 +28,8 @@ function GroupWithdrawButton() {
             pending_groups_copy.splice(pending_groups_copy.indexOf(hardcode_group_id), 1);
             setSetUserPendingGroup(pending_groups_copy);
             setUpdateGroupPendingMember(pending_members_map_copy);
-            console.log("New group:", group);
-            console.log("User:", user);
+            // console.log("New group:", group);
+            // console.log("User:", user);
         }
     }
     

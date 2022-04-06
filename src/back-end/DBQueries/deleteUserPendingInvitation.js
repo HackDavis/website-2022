@@ -20,6 +20,6 @@ export async function deleteUserPendingInvitation(user_id, group_id) {
         });
         
     } catch(e) {
-        console.log("error with deleteMultiplePendingInvitations: ", e);
+        console.error("error with deleteMultiplePendingInvitations: ", e);
     }
 }

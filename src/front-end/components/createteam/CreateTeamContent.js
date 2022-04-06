@@ -58,15 +58,15 @@ export function CreateTeamContent() {
     const newGroup = await createGroup(user.email, user.user_id, desc, name);
 
     if (newGroup == null) {
-      console.log("createGroup Error: user is already in a group");
+      // console.log("createGroup Error: user is already in a group");
     } else {
       // setRSVP for front-end Recoil atom
       setGroup(newGroup);
       setUserGroupID(newGroup.group_id);
       setUserPendingGroups([]);
       setUserPendingInvitations([]);
-      console.log(Array.from(roles));
-      console.log(Array.from(tags));
+      // console.log(Array.from(roles));
+      // console.log(Array.from(tags));
       await setRoles(newGroup.group_id, Array.from(roles));
       await setTags(newGroup.group_id, Array.from(tags));
       setRolesSelector(Array.from(roles));
@@ -108,7 +108,7 @@ export function CreateTeamContent() {
   // }, [roles, tags]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
@@ -127,6 +127,10 @@ export function CreateTeamContent() {
         then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
     }
     checkUser();
+
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   if (user === "") return null;

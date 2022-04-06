@@ -54,7 +54,10 @@ export function MyTeamContent() {
     // // const userData = await getUser("1OepypJdNtVXlm8FKRvmZhlQihl2");
     // setUser(userData);
     try {
+      const userData = await getUser(user.user_id);
+      setUser(userData);
       const groupData = await getGroup(user.group_id);
+      // console.log(user.group_id);
       setGroup(groupData);
     } catch(e) {
       navigate("/teamfinder");
@@ -63,12 +66,15 @@ export function MyTeamContent() {
 
   // TOOD: remove this function on merge, user and group should already be loaded on sign in
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       }
     }, 2500);
     setGroupState();
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   useEffect(() => {

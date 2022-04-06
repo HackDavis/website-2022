@@ -17,6 +17,6 @@ export async function deletePendingMember(user_id, group_id) {
         });
         return new_pending_members;
     } catch(e) {
-        console.log(`deletePendingMember error ${e}`);
+        console.error(`deletePendingMember error ${e}`);
     }
 }

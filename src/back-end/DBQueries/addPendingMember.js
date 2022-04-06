@@ -22,6 +22,6 @@ export async function addPendingMember(user_id, group_id, reason) {
 
         return pending_members_map_copy;
     } catch(e) {
-        console.log(`error updating user in addPendingMember: ${e}`);
+        // console.error(`error updating user in addPendingMember: ${e}`);
     }
 }

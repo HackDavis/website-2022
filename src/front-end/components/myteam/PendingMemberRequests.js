@@ -26,11 +26,15 @@ export function PendingMemberRequests() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       }
     }, 2500);
+
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   return (

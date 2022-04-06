@@ -29,7 +29,7 @@ export default function FindTeam(props) {
   const navigate = useNavigate();
   
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
@@ -63,6 +63,9 @@ export default function FindTeam(props) {
       fetchData()
         .catch(console.error);
     }
+    return () => {
+      clearTimeout(redirect);
+    };
   }, [tags]);
 
   // Update the allGroups state to only show groups that have tags equal to the tags selected

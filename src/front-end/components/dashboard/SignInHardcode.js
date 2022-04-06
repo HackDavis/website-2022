@@ -1,6 +1,6 @@
 import React from "react";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth";
 import { setDoc, doc, updateDoc } from "firebase/firestore";
 import { dbConfig } from "../../../back-end/db/dbConfig.js";
 import { useRecoilState } from "recoil";
@@ -29,6 +29,7 @@ export function SignInHardCode() {
   async function handleSignIn() {
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
+    await setPersistence(auth, browserSessionPersistence);
     provider.addScope("profile");
     provider.addScope("email");
     const result = await signInWithPopup(auth, provider);
@@ -87,7 +88,7 @@ export function SignInHardCode() {
         });
       }
     } else {
-      console.log("No user found!");
+      console.error("No user found!");
     }
   }
 

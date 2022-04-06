@@ -19,7 +19,7 @@ export function DissolveGroupModal() {
     try {
       await deleteGroup(group.group_id);
     } catch (e) {
-      console.log("delete group api error: ", e);
+      console.error("delete group api error: ", e);
       return;
     }
     setIsDissolveGroupModal(false);

@@ -17,7 +17,7 @@ export default function TeamFinderHome() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
@@ -36,6 +36,10 @@ export default function TeamFinderHome() {
         then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
     }
     checkUser();
+
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   if (user === "") return null;

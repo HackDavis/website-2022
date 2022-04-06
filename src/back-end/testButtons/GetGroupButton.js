@@ -10,7 +10,7 @@ export function GetGroupButton() {
     async function setGroupState () {
         // user hardcoded for testing
         const groupData = await getGroup("xPN9lsrl3ZjKOxDQuGig");
-        console.log(groupData); 
+        // console.log(groupData); 
         setGroup(groupData);
     }
     return (

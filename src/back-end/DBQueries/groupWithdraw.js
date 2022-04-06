@@ -13,8 +13,8 @@ export async function groupWithdraw(user_id, group_id) {
     try {
         let user = await getUser(user_id);
         let group = await getGroup(group_id);
-        console.log(typeof(group.pending_members));
-        console.log(group.pending_members);
+        // console.log(typeof(group.pending_members));
+        // console.log(group.pending_members);
 
         const keys = Object.keys(group.pending_members);
         const map = new Map();
@@ -22,11 +22,11 @@ export async function groupWithdraw(user_id, group_id) {
             //inserting new key value pair inside map
             map.set(keys[i], group.pending_members[keys[i]]);
         };
-        console.log("map: ", map);
+        // console.log("map: ", map);
 
         
         if (map.get(user_id) === undefined) {
-            console.log("Error: user did not apply to this group");
+            console.error("Error: user did not apply to this group");
             return null;
         } else {
             // delete this group from user's pending groups
@@ -36,6 +36,6 @@ export async function groupWithdraw(user_id, group_id) {
             return pending_members_map_copy;
         }
     } catch (e) {
-        console.log("error with group Withdraw handler", e);
+        console.error("error with group Withdraw handler", e);
     }
 }

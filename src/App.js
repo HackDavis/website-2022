@@ -15,6 +15,8 @@ import { MyTeam } from "./front-end/pages/MyTeam";
 import { LoginError } from "./front-end/pages/LoginError";
 import { PageNotFound } from "./front-end/pages/PageNotFound";
 import { PlacesToStay } from "./front-end/pages/PlacesToStay";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import "./App.css";
 
 function LandingPage() {
@@ -23,7 +25,7 @@ function LandingPage() {
       <Section_Navbar />
       <MainSection />
       <FAQOnwards />
-      <LoginPage />
+      {/* <LoginPage /> */}
     </div>
   );
 }
@@ -35,6 +37,12 @@ export default function App() {
       document.cookie = c
         .replace(/^ +/, "")
         .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.localStorage.clear();
+      }
     });
   }, []);
 

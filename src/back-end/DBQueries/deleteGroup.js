@@ -30,7 +30,7 @@ export async function deleteGroup(groupID) {
 
         // 1. removing group_id from all user's pending_groups
         let keys_p_mem = Object.keys(pending_members_map);
-        console.log("initial pending_members:", keys_p_mem);
+        // console.log("initial pending_members:", keys_p_mem);
         for(let id of keys_p_mem) {
             await deleteUserPendingGroup(id, groupID);
         }
@@ -54,7 +54,7 @@ export async function deleteGroup(groupID) {
 
     }
     catch(e) {
-        console.log(`error in deleteGroup: ${e}`);
+        console.error(`error in deleteGroup: ${e}`);
     }
     
 }

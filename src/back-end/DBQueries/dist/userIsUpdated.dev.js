@@ -18,11 +18,11 @@ function userIsUpdated(userID) {
           q = (0, _firestore.query)((0, _firestore.collection)(_dbConfig.dbConfig, "2022-users"), (0, _firestore.where)("user_id", "==", userID));
           unsubscribe = (0, _firestore.onSnapshot)(q, function (snapshot) {
             snapshot.docChanges().forEach(function (change) {
-              console.log("change: ", change.doc.data());
+              // console.log("change: ", change.doc.data());
 
               if (change.type === "added") {
                 // console.log("Modified city: ", change.doc.data());
-                console.log("added user: ", change.doc.data());
+                // console.log("added user: ", change.doc.data());
                 return change.doc.data();
               }
             });

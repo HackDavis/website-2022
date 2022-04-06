@@ -21,7 +21,7 @@ export default function SubmitRequest(props) {
   const [group, setGroup] = useState("");
   
   useEffect(() => {
-    setTimeout(() => {
+    const redirect = setTimeout(() => {
       if (user === "") {
         navigate("/401");
       } else if (user.group_id !== "") {
@@ -64,6 +64,10 @@ export default function SubmitRequest(props) {
     }
 
     getGroupFunc().then(() => setGroup(groupData));
+
+    return () => {
+      clearTimeout(redirect);
+    };
   }, []);
 
   const navigate = useNavigate();

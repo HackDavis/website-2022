@@ -56,7 +56,7 @@ export function SignInHardCode() {
         // console.log("created new user");
       }
     } else {
-      console.log("No user found!");
+      console.error("No user found!");
     }
   }
 

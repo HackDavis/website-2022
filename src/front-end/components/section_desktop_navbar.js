@@ -4,7 +4,9 @@ import LogoIcon from "../images/HackDavisLogo.svg";
 import { Link } from "react-router-dom";
 
 const Section_Desktop_Navbar = () => {
-  const isTeamFinder = window.location.href == `${window.location.origin}/createteam` || window.location.href == `${window.location.origin}/myteam`;
+  // const allRoutes = /\/teamfinder\/.*/g;
+  // const regex = new RegExp(window.location.origin + allRoutes);
+  const isTeamFinder = window.location.pathname.startsWith("/teamfinder");
 
   const [shadow, setShadow] = useState(isTeamFinder);
 
@@ -30,7 +32,7 @@ const Section_Desktop_Navbar = () => {
           <div className={styles.buttons}>
             <Link to="/" className={`${styles.button} ${window.location.href == `${window.location.origin}/` ? `${styles.bold_navitem}` : null}`}>Homepage </Link>
             <Link to="/about" className={`${styles.button} ${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}` : null} `}>About us</Link>
-            <Link to="/teamfinder/login" className={`${styles.button} ${window.location.href == (`${window.location.origin}/teamfinder/login` || `${window.location.origin}/teamfinder`) ? `${styles.bold_navitem}` : null} `}>Team Finder</Link>
+            <Link to="/teamfinder/login" className={`${styles.button} ${isTeamFinder ? `${styles.bold_navitem}` : null} `}>Team Finder</Link>
             <Link to="/placestostay" className={`${styles.button} ${window.location.href == `${window.location.origin}/placestostay` ? `${styles.bold_navitem}` : `${styles.button}`}`}>Places To Stay</Link>
             {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>

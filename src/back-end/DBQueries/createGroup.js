@@ -5,8 +5,8 @@ import { getUser } from "./getUser.js";
 export async function createGroup(email, user_id, newGroupDesc, group_name) {
     // note: can just fix frontend to avoid this issue
     if (getUser(user_id).group_id != undefined) {
-        console.log(getUser(user_id).group_id);
-        console.log('error in createGroup: user is already in a group');
+        // console.log(getUser(user_id).group_id);
+        // console.log('error in createGroup: user is already in a group');
         return null;
     }
 
@@ -37,7 +37,7 @@ export async function createGroup(email, user_id, newGroupDesc, group_name) {
             group_id: docRef.id
         });
     } catch(e) {
-        console.log(`error adding group in createGroup: ${e}`);
+        // console.error(`error adding group in createGroup: ${e}`);
     }
 
     // update the current user's group on firebase
@@ -48,7 +48,7 @@ export async function createGroup(email, user_id, newGroupDesc, group_name) {
             pending_groups: []
         });
     } catch(e) {
-        console.log(`error updating user in createGroup: ${e}`);
+        console.error(`error updating user in createGroup: ${e}`);
     }
 
     newGroup.group_id = docRef.id;

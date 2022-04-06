@@ -19,8 +19,8 @@ function UpdateGroupDescButton() {
     async function setGroupDescClick () {
         // error checking to make sure the admin is changing the group description
         if (user.email === group.contact_email) {
-            console.log(text);
-            console.log(text.length);
+            // console.log(text);
+            // console.log(text.length);
             const newdesc = await updateGroupDesc(group.group_id, text);
             setGroupDescription(newdesc);
         }
