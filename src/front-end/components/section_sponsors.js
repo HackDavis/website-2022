@@ -20,6 +20,8 @@ import iet from "../images/sponsors/iet.png";
 import cpe from "../images/sponsors/cpe.png";
 import shds from "../images/sponsors/shds.png";
 import visitdavis from "../images/sponsors/visitdavis.jpeg";
+import reign from "../images/sponsors/reign.png";
+import datalab from "../images/sponsors/datalab.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -77,6 +79,9 @@ const Section_Sponsors = () => {
               <a className={styles.iet} href="https://iet.ucdavis.edu/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={iet} />
               </a>
+              <a className={styles.datalab} href="https://datalab.ucdavis.edu/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={datalab} />
+              </a>
               <div className={styles.break}></div>
               <a className={styles.cpe} href="https://cpe.ucdavis.edu/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={cpe} />
@@ -100,6 +105,10 @@ const Section_Sponsors = () => {
               </a>
               <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={visityolo} />
+              </a>
+              <div className={styles.break}></div>
+              <a className={styles.reign} href="https://reignbodyfuel.com/en-us/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={reign} />
               </a>
             </div>
           </div>
