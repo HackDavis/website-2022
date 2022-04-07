@@ -8,12 +8,12 @@ export function Discord() {
         <div className={styles.container}>
             <h2 className={styles.heading}> Join our discord to speak with mentors and connect with hackers. </h2>
             <p className={styles.text}>Follow popup instructions to gain access to the server. Discord will be the fastest way to reach the HackDavis team. </p>
-						<a href="https://discord.gg/wc6QQEc" target="_blank">
-							<button className={styles.button}> 
-                <img src={DiscordWhite} className={styles.icon} />
-                JOIN DISCORD 
-            	</button>
-						</a>
+                <a href="https://discord.gg/wc6QQEc" target="_blank">
+                    <button className={styles.button}> 
+                        <img src={DiscordWhite} className={styles.icon} />
+                        JOIN DISCORD 
+                    </button>
+                </a>
         </div>
         </>
     );

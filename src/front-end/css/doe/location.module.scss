@@ -46,3 +46,44 @@
   // top: 11px;
   // position: absolute;
 }
+
+.mappic {
+  display: none;
+}
+span {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .content {
+      margin-right: 24px;
+      display: flex;
+      flex-direction: row;
+  }
+  .pin {
+    margin-bottom: 8px;
+  }
+  .time {
+    color: #9ee7e5;
+    margin-bottom: 17px;
+  }
+  .button {
+    width: 180px;
+  }
+  br {
+    display: none;
+  }
+  span {
+    display: inline;
+  }
+
+  .mappic {
+    display: block;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    // pepelaff
+    // obv change this once we get the actual image in
+    width: 350px;
+    max-height:250px;
+  }
+}

@@ -1,0 +1,53 @@
+.container {
+  padding: 40px 15px;
+  border: 3px solid #9ee7e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: white;
+  text-align: center;
+}
+
+.text {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #9ee7e5;
+  text-align: center;
+}
+
+.iconcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  gap: 10%;
+  margin: 0 auto;
+}
+.iconcontainer > a {
+  width: auto;
+}
+
+.icon {
+  width: 30px;
+}
+
+.iconfb {
+  margin-top: 8px;
+  width: 35px;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 30%;
+  }
+}

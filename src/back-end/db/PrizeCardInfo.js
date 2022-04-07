@@ -2,20 +2,32 @@ export const PrizeCardInfo = [
 	{
 		title: "Best Hack for Social Good",
 		prize: "Nintendo Switch for each member of the winning team",
-    description: "",
-    color: "yellow"
+		description: "",
+    color: "green"
 	},
 	{
 		title: "Best Beginner Hack",
 		prize: "Smart TV for each member of the winning team",
-    description: "Every team member must be a beginner in order to qualify.",
-    color: "yellow"
+		description: "Every team member must be a beginner in order to qualify.",
+		color: "green"
+	},
+	{
+		title: "Most Technically Challenging Hack",
+		prize: "Drones for each member of the winning team",
+	description: "",
+	color: "green"
+	},
+	{
+		title: "Most Creative Hack",
+		prize: "Lego Set for each member of the winning team",
+	description: "",
+	color: "green"
 	},
 	{
 		title: "Best Interdisciplinary Hack, sponsored by the College of Letters & Science",
 		prize: "AirPods for each member of the winning team",
-    description: "At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify. More specifically, we are looking for teams that leverage multiple perspectives of different disciplines to create a more well-rounded project.",
-    color: "yellow"
+		description: "At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify. More specifically, we are looking for teams that leverage multiple perspectives of different disciplines to create a more well-rounded project.",
+		color: "yellow"
 	},
 	{
 		title: "Best AggieData Hack, sponsored by UC Davis DataLab",
@@ -52,18 +64,6 @@ export const PrizeCardInfo = [
 		prize: "UC Davis Adidas gear for each member of the winning team. The team will also be spotlighted at a football game this fall with a videoboard and on-field recognition.",
     description: "Projects must provide an avenue for Aggies to access sport schedules, tickets, giveaways, and in-game activities at athletics events, as well as aim to reward students who show their school spirit by attending games.",
     color: "yellow"
-	},
-	{
-		title: "Most Technically Challenging Hack",
-		prize: "Drones for each member of the winning team",
-    description: "",
-    color: "green"
-	},
-	{
-		title: "Most Creative Hack",
-		prize: "Lego Set for each member of the winning team",
-    description: "",
-    color: "green"
 	},
 	{
 		title: "Best Sustainability Hack",

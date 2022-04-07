@@ -11,7 +11,10 @@ import { TreeTop } from "../components/landingPage/mainSection/TreeTop";
 import { About } from "../components/landingPage/mainSection/About";
 import { CowHeart } from "../components/landingPage/mainSection/CowHeart";
 import { Discord } from "front-end/components/doe/Discord";
+import { Socials } from "front-end/components/doe/Socials";
 import { Prizes } from "front-end/components/doe/Prizes";
+import Section_Sponsors from '../components/section_sponsors.js';
+import Footer from "../components/footer";
 
 export function MainSection() {
 	return (
@@ -25,11 +28,24 @@ export function MainSection() {
 				<TreeTop />
 				<CowHeart />
 				<Prizes />
+				<Section_Sponsors/>
 			</div>
 			
 			{/* tablet, desktop */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
-				
+				<Timer />
+				<div>
+					<Location />
+					<Socials />
+				</div>
+				<Discord />
+				<TreeTop />
+				<Stats/>
+				<Prizes />
+				<About/>
+				<CowHeart />
+				<Section_Sponsors/>
+				<Footer/>
 			</div>
 		</>
 	);

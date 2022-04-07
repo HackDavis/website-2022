@@ -1,8 +1,6 @@
-@import "../defs";
-
 .container {
   padding: 40px 15px;
-  @include border();
+  border: 3px solid #9ee7e5;
   margin-bottom: 24px;
 }
 
@@ -19,7 +17,6 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
-
   color: #ffffff;
 }
 
@@ -28,14 +25,12 @@
   background: rgba(158, 231, 229, 0.1);
   box-shadow: 0px 4px 50px rgba(47, 172, 184, 0.15);
   border-radius: 100px;
-
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
   line-height: 21px;
   letter-spacing: 0.1em;
-
   color: white;
 }
 
@@ -49,14 +44,17 @@
   .heading {
     text-align: center;
   }
+
   .text {
     font-size: 20px;
     text-align: center;
   }
+
   a {
     display: flex;
     justify-content: center;
   }
+
   .button {
     width: auto;
   }
