@@ -22,7 +22,7 @@ export default function TeamCard(props) {
     // console.log("member: ", member)
     return (
       <div className={styles.names} key={member[1]}>
-        <div className={styles.pfpContainer}><img src={member[4]} className={styles.pfp} alt="member pfp" /></div>
+        <div className={styles.pfpContainer}><img src={member.profile_picture} className={styles.pfp} alt="member pfp" /></div>
         <div className={styles.memberName}>{member.name.split(' ')[0]}</div>
       </div>
     );
