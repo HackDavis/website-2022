@@ -104,3 +104,9 @@
     transition: 250ms ease-in-out;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    height: 491px;
+  }
+}
