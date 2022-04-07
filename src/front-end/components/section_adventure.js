@@ -25,8 +25,8 @@ const Section_Adventure = () => {
           // if animation is "paused", render the mouse hover event div
           <div onMouseEnter={() => setIsPaused(!isPaused)}>
             <section className={styles.container}>
-              <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-              <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
+              <p className={styles.headerText}>CODE FOR SOCIAL GOOD</p>
+              {/* <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button> */}
               <img src={AdventureDesktop} className={styles.adventuredesktop} />
               <img src={AdventureMobile} className={styles.adventuremobile} />
             </section>
@@ -34,8 +34,8 @@ const Section_Adventure = () => {
         ) : (
           // else do the animation (10 seconds)
           <div className={styles.container}>
-            <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-            <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
+            <p className={styles.headerText}>CODE FOR SOCIAL GOOD</p>
+            {/* <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button> */}
             <img src={AdventureDesktop} className={styles.adventuredesktop} />
             <img src={AdventureMobile} className={styles.adventuremobile} />
             <Lottie

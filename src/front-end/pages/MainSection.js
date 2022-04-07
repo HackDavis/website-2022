@@ -15,6 +15,7 @@ import { Socials } from "front-end/components/doe/Socials";
 import { Prizes } from "front-end/components/doe/Prizes";
 import Section_Sponsors from '../components/section_sponsors.js';
 import Footer from "../components/footer";
+import Section_Adventure from "front-end/components/section_adventure";
 
 export function MainSection() {
 	return (
@@ -51,6 +52,7 @@ export function MainSection() {
 					<CowHeart />
 				</div>
 				<Section_Sponsors/>
+				<Section_Adventure/>
 				<Footer/>
 			</div>
 		</>

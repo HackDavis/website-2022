@@ -1,0 +1,16 @@
+.content {
+  border: 3px solid #9ee7e5;
+  padding: 40px 15px 25px 15px;
+  margin-bottom: 24px;
+}
+
+.title {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 600;
+  line-height: 175%;
+  letter-spacing: 2%;
+  margin: 0;
+  font-size: 0.875rem;
+  font-size: 32px;
+}

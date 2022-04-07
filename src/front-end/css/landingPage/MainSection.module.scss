@@ -37,7 +37,7 @@
   // }
 }
 
-.locationsection, .aboutsection {
+.locationsection, .schedulesection, .aboutsection {
   flex-grow: 0;
   display: flex;
   flex-direction: row;
@@ -45,11 +45,12 @@
 }
 
 .schedulesection {
-  flex-grow: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   > div {
-    width: 40%;
+    width: 45%;
   }
+  gap: 24px;
+}
+
+.aboutsection {
+  gap: 24px;
 }
