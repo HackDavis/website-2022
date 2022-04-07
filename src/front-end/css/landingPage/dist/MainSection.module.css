@@ -17,9 +17,20 @@
   column-gap: 24px;
   background-color: #173a52;
 }
-.non_mobile_container > div:first-of-type {
+
+.locationsection, .aboutsection {
   flex-grow: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+.schedulesection {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.schedulesection > div {
+  width: 40%;
 }

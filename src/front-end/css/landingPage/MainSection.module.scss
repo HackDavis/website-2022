@@ -22,13 +22,6 @@
   column-gap: 24px;
   background-color: $darker_teal;
 
-  > div:first-of-type {
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-
   // > div:first-of-type {
   //   width: 44.3%;
   //   flex-grow: 0;
@@ -42,4 +35,21 @@
   //   display: flex;
   //   flex-direction: column;
   // }
+}
+
+.locationsection, .aboutsection {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.schedulesection {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  > div {
+    width: 40%;
+  }
 }
