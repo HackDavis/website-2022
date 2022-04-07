@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { userStateAtom } from "../../recoil/atoms/userAtom.js";
 import { groupStateAtom } from "../../recoil/atoms/groupAtom";
-import {SetUserGroupID} from "../../recoil/selectors/setUserGroupID";
-import {SetUserPendingGroups} from "../../recoil/selectors/setUserPendingGroups";
+import { SetUserGroupID } from "../../recoil/selectors/setUserGroupID";
+import { SetUserPendingGroups } from "../../recoil/selectors/setUserPendingGroups";
 import { SetUserPendingInvitations } from "../../recoil/selectors/setUserPendingInvitations.js";
 import { createGroup } from '../DBQueries/createGroup.js';
 
@@ -30,7 +30,7 @@ export function CreateGroupButton() {
 
         const newGroup = await createGroup(user.email, user.user_id, name, desc);
         if (newGroup == null) {
-            console.log("createGroup Error: user is already in a group");
+            // console.log("createGroup Error: user is already in a group");
         } else {
             // setRSVP for front-end Recoil atom
             setGroup(newGroup);

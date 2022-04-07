@@ -1,0 +1,157 @@
+.container {
+  width: 439px;
+  height: 800px;
+  background-color: #074967;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border: solid 4px transparent;
+  position: relative;
+  .content {
+    position: relative;
+  }
+  .statusPending {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 110px;
+    height: 45px;
+    font-size: 17pt;
+    font-weight: 600;
+    top: -3px;
+    right: -3px;
+    border-bottom-left-radius: 20px;
+    color: #074967;
+    background-color: #FFC53D;
+  }
+  .statusAccepted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 110px;
+    height: 45px;
+    font-size: 17pt;
+    font-weight: 600;
+    top: -3px;
+    right: -3px;
+    border-bottom-left-radius: 20px;
+    color: #074967;
+    background-color: #9CD43D;
+  }
+
+  > h3 {
+    color: white;
+    font-size: 18pt;
+    padding: 0;
+    margin: 0;
+    > span {
+      color: #136E90;
+      font-size: 16pt;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+  }
+  .id {
+    margin-top: 5px;
+    color: white;
+    font-size: 12pt;
+    font-weight: normal;
+    font: "Proxima Nova";
+  }
+  > p {
+    color: white;
+    font-size: 12pt;
+    height: 146px;
+    margin-top: 10px;
+    word-break: break-all;
+    white-space: normal;
+  }
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 510px;
+    height: 130px;
+    gap: 2px 2px;
+  }
+  > h5 {
+    color: white;
+    font-size: 16pt;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  > .group > .names {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background-color: #043B54;
+    border-radius: 60px;
+    .pfpContainer {
+      position: absolute;
+      top: 5px;
+      margin-left: 5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: grey;
+      .pfp {
+        border-radius: 50%;
+      }
+    }
+    .memberName {
+      position: absolute;
+      top: 17px;
+      left: 55px;
+      color: white;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+  }
+  .skillsetGroup {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    min-height: 50px;
+    .role {
+      border-radius: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px 20px;
+      margin-right: 15px;
+      margin-top: 20px;
+      background-color: #35B1D1;
+      color: white;
+    }
+    .skill {
+      border-radius: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px 20px;
+      margin-right: 15px;
+      margin-top: 20px;
+      background-color: #136E90;
+      color: white;
+    }
+  }
+  .btn {
+    margin-top: 40px;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    width: 400px;
+    border: solid white 4px;
+    padding: 5px 0;
+    background: transparent;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 14pt;
+  }
+  .btn:hover {
+    cursor: pointer;
+    color: #074967;
+    background-color: white;
+  }
+}

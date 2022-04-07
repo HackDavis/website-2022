@@ -1,0 +1,17 @@
+.login {
+  display: flex;
+  max-width: 600px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+
+  border: solid white 4px;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 10px;
+
+  z-index: 999;
+}
+.login:hover {
+  cursor: pointer;
+}

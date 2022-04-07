@@ -10,9 +10,8 @@ export async function updateUserDiscordID(userID, discord) {
         await updateDoc(docRef, {
             discord_id: discord
         });
-        console.log("successfully updated user's desc");
         return discord;
     } catch (e) {
-        console.log("error setting user desc ", e);
+        console.error("error setting user desc ", e);
     }
 }

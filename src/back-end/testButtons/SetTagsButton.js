@@ -16,7 +16,7 @@ function SetTagsButton() {
 
         // error checking to make sure the admin is changing the group description
         if (user.email === group.contact_email) {
-            console.log(hard_coded_new_tags);
+            // console.log(hard_coded_new_tags);
             await setTags(group.group_id, hard_coded_new_tags);
             setTagsSelector(hard_coded_new_tags);
         }

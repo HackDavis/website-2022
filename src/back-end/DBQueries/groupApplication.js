@@ -15,8 +15,8 @@ export async function groupApplication(user_id, group_id, reason) {
     try {
         let user = await getUser(user_id);
         let group = await getGroup(group_id);
-        console.log(typeof(group.pending_members));
-        console.log(group.pending_members);
+        // console.log(typeof(group.pending_members));
+        // console.log(group.pending_members);
 
         const keys = Object.keys(group.pending_members);
         const map = new Map();
@@ -24,18 +24,18 @@ export async function groupApplication(user_id, group_id, reason) {
             //inserting new key value pair inside map
             map.set(keys[i], group.pending_members[keys[i]]);
         };
-        console.log("map: ", map);
-        console.log("map get: ", map.get(user_id));
+        // console.log("map: ", map);
+        // console.log("map get: ", map.get(user_id));
 
         // error checking:
         // if user is in a group already
         // Note: Ideally these error cases should not be possible on the front-end if we remove the buttons if the user matches any of these cases
         if (user.group_id != "") {
-            console.log("Error: user already in a group");
+            console.error("Error: user already in a group");
             return null;
         // if user has already applied to this group before (GROUP APPLICATION !=)
         } else if (map.get(user_id) !== undefined) {
-            console.log("Error: user already applied to this group");
+            console.error("Error: user already applied to this group");
             return null;
         } else {
             await addPendingGroup(user_id, group_id);
@@ -43,6 +43,6 @@ export async function groupApplication(user_id, group_id, reason) {
             return pending_members_map_copy;
         }
     } catch (e) {
-        console.log("error with groupApplication handler: ", e);
+        console.error("error with groupApplication handler: ", e);
     }
 }

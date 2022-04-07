@@ -16,7 +16,7 @@ function SetRolesButton() {
 
         // error checking to make sure the admin is changing the group description
         if (user.email === group.contact_email) {
-            console.log(hard_coded_new_roles);
+            // console.log(hard_coded_new_roles);
             await setRoles(group.group_id, hard_coded_new_roles);
             setRolesSelector(hard_coded_new_roles);
         }

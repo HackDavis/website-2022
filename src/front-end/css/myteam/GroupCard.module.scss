@@ -1,0 +1,104 @@
+.groupCardContainer {
+    background-color: #074967;
+    // height: 465px;
+    max-width: 400px;
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        // padding-left: 33px;
+        // padding-right: 33px;
+        // padding-top: 31px;
+        padding: 31px 33px 20px;
+        font-family: "Proxima Nova";
+
+        .titleContent {
+            display: flex;
+            align-items: center;
+
+            .editButton {
+                width: 95px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 5px 20px;
+                border-radius: 100px;
+                background-color: rgba(255, 255, 255, 0.15);
+                font-size: 14px;
+                font-weight: 700;
+                color: white;
+                font-family: "Proxima Nova";
+            }
+            .title {
+                font-size: 24px;
+                font-weight: 700;
+                color: white;
+                margin: 0;
+                font-family: "Proxima Nova";
+            }
+        }
+        .id {
+            font-family: "Proxima Nova";
+            font-size: 17px;
+            color: #9EE7E5;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        .groupDesc {
+            margin-top: 28px;
+            margin-bottom: 30px;
+            font-family: "Proxima Nova";
+            font-size: 17px;
+            color: white;
+            font-weight: 400;
+            line-height: 21px;
+            white-space: normal;
+            word-break: break-all;
+        }
+        .skillsTitle {
+            font-family: "Proxima Nova";
+            font-size: 17px;
+            color: white;
+            font-weight: 700;
+        }
+        .tagContainer{
+            display:flex;
+            margin-top: 15px;
+            flex-wrap:wrap;
+        }
+    }
+}
+.tags1 {
+    font-family: "Proxima Nova";
+    font-size: 17px;
+    color: white;
+    background-color: #35B1D1;
+    font-weight: 400;
+    border-radius: 24px;
+    padding: 4px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    margin-right: 10px;
+    margin-bottom: 14px;
+}
+
+.tags2 {
+    font-family: "Proxima Nova";
+    font-size: 17px;
+    color: white;
+    background-color: #1B6E90;
+    font-weight: 400;
+    border-radius: 24px;
+    padding: 4px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    margin-right: 10px;
+    margin-bottom: 14px;
+}
+

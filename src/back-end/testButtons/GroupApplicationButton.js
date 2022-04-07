@@ -20,9 +20,6 @@ function GroupApplicationButton() {
     
     async function groupApplicationClick() {
         let hardcode_group_id = "xPN9lsrl3ZjKOxDQuGig";
-        //TODO: Change hardcode_group_id to group.group_id after testing
-        console.log("old group:", group);
-        console.log("old user:", user);
         let pending_members_map_copy = await groupApplication(user.user_id, hardcode_group_id, reason);
         if (pending_members_map_copy != null) {
     

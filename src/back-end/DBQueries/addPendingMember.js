@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import { getGroup } from "./getGroup.js";
 import { getUser } from "./getUser.js";
 
@@ -22,6 +22,6 @@ export async function addPendingMember(user_id, group_id, reason) {
 
         return pending_members_map_copy;
     } catch(e) {
-        console.log(`error updating user in addPendingMember: ${e}`);
+        // console.error(`error updating user in addPendingMember: ${e}`);
     }
 }

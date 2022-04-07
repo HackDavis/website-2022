@@ -1,0 +1,54 @@
+.back {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 40px;
+
+  .backarrow {
+    width: 12px;
+    margin-right: 16px;
+  }
+}
+.back:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  background: #043B54;
+}
+
+.content {
+  display: flex;
+  max-width: 1600px;
+  position: relative;
+  gap: 25px 25px;
+  flex-wrap: wrap;
+  padding: 50px 75px;
+  > h1 {
+    color: white;
+    margin: 50px 0;
+    > span {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      color: white;
+
+      background: #f95a5a;
+      padding: 3px 12px;
+      margin-left: 5px;
+      border-radius: 50%;
+    }
+  }
+}

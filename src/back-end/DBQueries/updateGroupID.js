@@ -12,9 +12,9 @@ export async function setGroupID(userID, groupID) {
         await updateDoc(docRef, {
             group_id: groupID
         });
-        console.log("successfully updated user's groupID");
+        // console.log("successfully updated user's groupID");
         return groupID;
     } catch (e) {
-        console.log("error setting groupID ", e);
+        console.error("error setting groupID ", e);
     }
 }

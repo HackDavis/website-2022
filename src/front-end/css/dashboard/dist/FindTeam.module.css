@@ -1,0 +1,171 @@
+.banner {
+  height: 160px;
+  padding: 56px 90px;
+  background-image: url("../../images/dashboard/banner.svg");
+  background-size: cover;
+}
+.banner > a {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #043B54;
+}
+.banner > :hover {
+  cursor: pointer;
+}
+
+.greeting {
+  padding: 50px 0 0 100px;
+  position: relative;
+  background: #043B54;
+}
+.greeting .hi {
+  color: white;
+  font-size: 48pt;
+  display: inline;
+  margin-right: 30px;
+}
+.greeting .blankTicket {
+  width: 75px;
+  bottom: 10px;
+  position: absolute;
+}
+
+.backarrow {
+  width: 12px;
+  margin-right: 16px;
+}
+
+.container {
+  background: #043B54;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  width: 100%;
+}
+.container .left {
+  display: flex;
+  width: 34%;
+  flex-direction: column;
+  padding: 0px 0px 50px 80px;
+}
+.container .left > form {
+  position: relative;
+  width: 400px;
+}
+.container .left .search {
+  padding: 10px;
+  height: 50px;
+  color: #51919D;
+  background-color: #043B54;
+  border: solid 3px #9EE7E5;
+  width: 375px;
+}
+.container .left .searchIcon {
+  position: absolute;
+  width: 20px;
+  top: 15px;
+  left: 335px;
+}
+.container .left .skillset {
+  height: 1150px;
+  width: 375px;
+  margin-top: 20px;
+  border: solid 3px #9EE7E5;
+  padding: 25px;
+}
+.container .left .skillset .title {
+  font-weight: 600;
+  font-size: 28pt;
+  color: white;
+  margin-bottom: 30px;
+}
+.container .left .skillset .roleContainer, .container .left .skillset .toolContainer {
+  color: white;
+}
+.container .left .skillset .roleContainer h4, .container .left .skillset .toolContainer h4 {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #9ee7e5;
+}
+.container .left .skillset .toolContainer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 130px;
+  justify-content: flex-start;
+  gap: 0 54px;
+  max-width: 400px;
+}
+.container .left .skillset .toolContainer > div > div {
+  width: 130px;
+}
+.container .left .pendingButton {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  text-align: left;
+  color: #043b54;
+  width: 30%;
+  width: 375px;
+  margin-top: 20px;
+  background-color: #9ee7e5;
+  padding: 22px 0px 22px 22px;
+}
+.container .left .pendingButton > span {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  color: white;
+  background: #f95a5a;
+  padding: 4px 9px;
+  margin-left: 13px;
+  border-radius: 50%;
+}
+.container .right {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  gap: 20px 20px;
+  min-height: 100vh;
+  width: 66%;
+  padding: 0px;
+  margin-top: 50px;
+  position: relative;
+}
+.container .results {
+  color: white;
+  font-size: 17pt;
+  font-weight: 600;
+  top: -50px;
+  left: 0;
+  position: absolute;
+}
+
+.dashboard {
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -500px;
+  z-index: 998;
+  background-color: #2A586E;
+  visibility: hidden;
+  transition: all 200ms ease-out;
+}
+
+.showDashboard {
+  visibility: visible;
+  right: 0px;
+}

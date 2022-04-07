@@ -47,7 +47,7 @@ export function DBTest() {
       // If user signs in with their gmail account but their data does not exist in firebase, then create a user object
       const userData = await getUser(user.uid);
       if (userData) {
-        console.log("user found in database");
+        // console.log("user found in database");
         // Update user recoil state 
         setUser(userData);
       } else {
@@ -74,10 +74,10 @@ export function DBTest() {
 
       await setDoc(doc(dbConfig, "2022-users", user.uid), newUserData);
       setUser(newUserData);
-      console.log("created new user");
+      // console.log("created new user");
     }
     } else { 
-      console.log("No user found!");
+      console.error("No user found!");
     };
   };
 
@@ -133,10 +133,10 @@ export function DBTest() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        console.log("signed in");
+        // console.log("signed in");
         // Signed in
         var user = userCredential.user;
-        console.log(user.uid);
+        // console.log(user.uid);
         // ...
       })
       .catch((error) => {
@@ -151,7 +151,7 @@ export function DBTest() {
       .signOut()
       .then(() => {
         // Sign-out successful.
-        console.log("Signed Out");
+        // console.log("Signed Out");
       })
       .catch((error) => {
         // An error happened.
@@ -165,12 +165,12 @@ export function DBTest() {
         document.getElementById("forgotPasswordEmail").value
       )
       .then(() => {
-        console.log("success resetting password");
+        // console.log("success resetting password");
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
   }
 
@@ -227,7 +227,7 @@ export function DBTest() {
           AsyncAwaitTest();
         }}>Async Await Testing</button>
     <button onClick={() => {
-          console.log(user);
+          // console.log(user);
         }}>Recoil test</button>
   
     <SetRSVPButton

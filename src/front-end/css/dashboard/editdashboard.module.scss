@@ -1,0 +1,120 @@
+.container {
+  background-color: #074967;
+  padding: 120px 20px 20px 20px;
+  display: flex;
+  width: 500px;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+
+  .x {
+    position: absolute;
+    width: 30px;
+    top: 120px;
+    right: 25px;
+  }
+  .x:hover {
+    cursor: pointer;
+  }
+  .cancelButton {
+    position: absolute;
+    top: 120px;
+    left: 25px;
+    width: 100px;
+    .backArrow {
+      width: 17px;
+      margin-bottom: 5px;
+    }
+    .cancel {
+      display: inline;
+      color: white;
+      font-size: 16pt;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+  }
+  .cancelButton:hover {
+    cursor: pointer;
+  }
+  .pfpContainer {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+  .pfp {
+    border-radius: 50%;
+  }
+  .text {
+    color: white;
+    text-align: center;
+    font-size: 24pt;
+    font-weight: 600;
+  }
+  .textCont {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  .icon {
+    position: absolute;
+    width: 20px;
+    top: 63%;
+    left: 2.5%;
+  }
+  .textField {
+    margin-top: 35px;
+    padding: 10px 10px 10px 40px;
+    height: 50px;
+    // width: 430px;
+
+    color: #51919D;
+    background-color: #043B54;
+    border: solid 1px #9EE7E5;
+  }
+  .descContainer {
+    position: relative;
+    .textArea {
+      margin-top: 25px;
+      padding: 10px;
+      resize: none;
+      height: 200px;
+
+      color: #51919D;
+      background-color: #043B54;
+      border: solid 1px #9EE7E5;
+    }
+    .characterCount {
+      color: white;
+      position: absolute;
+      font-weight: 600;
+      bottom: 20px;
+      left: 150px;
+    }
+  } 
+}
+.submit {
+  background-color: #043B54;;
+  color: #9EE7E5;
+  width: 130px;
+  height: 40px;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: solid 4px #9EE7E5;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.submit:hover {
+  color: white;
+  border: white 4px solid;
+  cursor: pointer;
+}
+
+.submit:active {
+  background-color: #9EE7E5;
+  border: solid 4px #9EE7E5;
+  color: #00425A;
+}

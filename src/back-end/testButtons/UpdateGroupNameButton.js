@@ -19,7 +19,7 @@ function UpdateGroupNameButton() {
     async function setGroupNameClick () {
         // error checking to make sure the admin is changing the group name
         if (user.email === group.contact_email) {
-            console.log(text);
+            // console.log(text);
             const newName = await updateGroupName(group.group_id, text);
             setGroupName(newName);
         }
