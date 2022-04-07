@@ -24,7 +24,7 @@ function LandingPage() {
     <div className="app_container">
       <Section_Navbar />
       <MainSection />
-      <FAQOnwards />
+      {/* <FAQOnwards /> */}
       {/* <LoginPage /> */}
     </div>
   );

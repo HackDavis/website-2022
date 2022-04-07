@@ -1,0 +1,168 @@
+@import "../defs";
+
+.container {
+  padding: 40px 25px 34px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  background: white;
+  margin-bottom: 24px;
+  // background: url("../../images/doe/MainBG.svg");
+  // background-size: 400px auto;
+
+  > img:first-child {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 500px;
+    // z-index: -1;
+    // opacity: 0;
+  }
+
+  > img:nth-of-type(2) {
+    position: absolute;
+    bottom: 20%;
+    left: -40px;
+    width: 132px;
+  }
+
+  > h1 {
+    @include title();
+    backdrop-filter: blur(0px);
+    margin-bottom: -18px;
+  }
+
+  > h2 {
+    @include header1();
+    font-size: 17px;
+    backdrop-filter: blur(0px);
+    word-spacing: 0px;
+    margin-bottom: 22px;
+  }
+}
+
+.timeBoxContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0 10px;
+  margin-bottom: 262px;
+}
+
+.timeBox {
+  max-width: 75vw;
+  background: rgba(158, 231, 229, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  padding: 12px 18px 8px;
+
+  > p {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+    margin-bottom: 3px;
+    backdrop-filter: blur(0px);
+  }
+
+  > span {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 51px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 4px 24px rgba(16, 49, 75, 0.1);
+    backdrop-filter: blur(0px);
+  }
+}
+
+.buttons {
+  margin-bottom: 26px;
+  backdrop-filter: blur(0px);
+}
+
+.submitButton {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  > button {
+    padding: 10px 24px;
+    background: #136e90;
+    border-radius: 100px;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+
+    letter-spacing: 0.1em;
+    border: #136e90;
+
+    color: #ffffff;
+    backdrop-filter: blur(0px);
+    text-decoration: none;
+  }
+}
+
+.helpButton {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  > button {
+    padding: 7px 24px;
+    background: white;
+    border-radius: 100px;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+
+    letter-spacing: 0.1em;
+    border: 2px solid #136e90;
+    color: #136e90;
+    backdrop-filter: blur(0px);
+    //@include button(true);
+    > img {
+      width: 20px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.footer {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  color: #136e90;
+  backdrop-filter: blur(0px);
+  text-align: left;
+  width: 80%;
+  margin: auto;
+
+  > a {
+    text-decoration: none;
+    font-family: "Proxima Nova";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: #136e90;
+    backdrop-filter: blur(0px);
+  }
+}
+
+.arrow {
+  width: 14px;
+  backdrop-filter: blur(0px);
+}

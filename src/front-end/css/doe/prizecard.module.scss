@@ -1,0 +1,70 @@
+@import "../defs";
+
+.container {
+  background-color: #436073;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.title {
+  color: white;
+  font-size: 14px;
+  margin-left: 20px;
+  width: 80%;// 
+}
+.top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.prizeImgCont {
+  width: 20px;
+  position: absolute;
+  left: 10px;
+  top: 18px;
+}
+.prize {
+  width: 100%;
+}
+.downArrowCont {
+  width: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.downarrow {
+  width: 100%;
+  transition: transform, 2ms, ease-in-out;
+}
+
+.flipDownArrow {
+  transform: rotate(180deg);
+}
+
+.bot {
+  @include body();
+  display: none;
+  transition: transform ease-in-out 200ms;
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  // > div {
+  //   width: 75%;
+  //   > p {
+  //       width: 80%;
+  //       justify-content: center;
+  //   }
+  // }
+}
+
+.showbot {
+  display: flex;
+  transition: transform ease-in-out 200ms;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}

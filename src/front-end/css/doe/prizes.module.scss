@@ -1,0 +1,11 @@
+@import "../defs";
+
+.content {
+    @include border();
+    padding: 40px 15px 25px 15px;
+}
+
+.title {
+    @include header2();
+    font-size: 32px;
+}

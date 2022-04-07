@@ -1,0 +1,45 @@
+@import "../defs";
+
+.container {
+  padding: 40px 15px;
+  @include border();
+}
+
+.heading {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #9ee7e5;
+}
+
+.text {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+
+  color: #ffffff;
+}
+
+.button {
+  padding: 11px 24px;
+  background: rgba(158, 231, 229, 0.1);
+  box-shadow: 0px 4px 50px rgba(47, 172, 184, 0.15);
+  border-radius: 100px;
+
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+
+  color: white;
+}
+
+.icon {
+  position: relative;
+  margin-right: 10px;
+  width: 20px;
+}
