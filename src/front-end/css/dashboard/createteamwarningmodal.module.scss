@@ -13,23 +13,17 @@
     border-radius: 16px;
     margin: 150px auto;
     width: 420px;
-    height: 438px;
   }
   .topHalf {
     padding-top: 20px;
     padding-right: 20px;
-    height: 53%;
-    background-color: #FFBB4D;
+    height: 50%;
+    background-color: #e66560;
     border-radius: 16px 16px 0px 0px;
     overflow: hidden;
-    > .check {
-      width: 100px;
-      margin-left: 164px;
-    }
-    > .chick {
+    > img {
       width: 352px;
-      margin-top: 30px;
-      margin-left: 37px;
+      margin-left: 63px;
     }
     .exitButtonContainer {
       display: flex;
@@ -41,21 +35,28 @@
     }
   }
   .bottomHalf {
-    height: 47%;
-    padding: 25px 40px 48px 40px;
-    text-align: center;
-    
-    .rockOn{
+    height: 50%;
+    padding: 36px 40px 48px 40px;
+    .warningText {
       font-family: "Proxima Nova";
-      font-weight: 650;
-      font-size: 32px;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 29px;
+      // padding-bottom: 28px;
       color: white;
+      text-align: center;
+      > span {
+        font-family: "Proxima Nova";
+        font-weight: 600;
+        font-size: 24px;
+        color: #e66460;
+      }
     }
     .submitText {
       font-family: "Proxima Nova";
       font-weight: 600;
       font-size: 17px;
-      line-height: 0px;
+      line-height: 29px;
       padding-bottom: 28px;
       color: white;
       text-align: center;
@@ -63,18 +64,34 @@
     }
     .buttonContainer {
       display: flex;
-      justify-content: center;
       .keepButton {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 250px;
         padding: 10px 30px;
         border: 4px solid #9ee7e5;
         border-radius: 100px;
         color: #9ee7e5;
         background-color: transparent;
+        font-family: "Proxima Nova";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        margin-right: 24px;
+      }
+      .removeButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 30px;
+        border-radius: 100px;
+        color: white;
+        background-color: #f95a5a;
         font-family: "Proxima Nova";
         font-style: normal;
         font-weight: 700;

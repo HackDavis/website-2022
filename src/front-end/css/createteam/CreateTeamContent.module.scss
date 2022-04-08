@@ -25,6 +25,14 @@
   }
 }
 
+.textarea {
+  color: white
+}
+.textarea::placeholder {
+  color: #51919D;
+}
+
+
 .content {
   margin: auto;
   max-width: 1330px;

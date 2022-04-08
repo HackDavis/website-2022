@@ -1,11 +1,13 @@
 import React from "react";
-import styles from "../../css/dashboard/deletemodal.module.scss";
+import styles from "../../css/dashboard/createteamwarningmodal.module.scss";
 import AngryCow from "../../images/dashboard/angryCow.svg";
 import BlackX from "../../images/dashboard/blackx.svg";
+import { useNavigate } from "react-router-dom";
 
-export default function DeleteModal(props) {
-  const handleDelete = () => {
-    props.deleteRequestClick();
+export default function CreateTearmWarningModal(props) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/teamfinder/createteam");
   };
   return (
     <div className={styles.modal}>
@@ -22,9 +24,11 @@ export default function DeleteModal(props) {
           <img src={AngryCow} alt="angry cow image" />
         </div>
         <div className={styles.bottomHalf}>
-          <h2 className={styles.warningText}>
-            Are you sure you want <br /> to <span>delete</span> this request?
-          </h2>
+          <h2 className={styles.warningText}>Are you sure?</h2>
+          <h3 className={styles.submitText}>
+            {" "}
+            Creating a team will remove all your requests to current groups.{" "}
+          </h3>
           <div className={styles.buttonContainer}>
             <button
               className={styles.keepButton}
@@ -34,9 +38,9 @@ export default function DeleteModal(props) {
             </button>
             <button
               className={styles.removeButton}
-              onClick={() => handleDelete()}
+              onClick={() => handleClick()}
             >
-              DELETE
+              YES
             </button>
           </div>
         </div>

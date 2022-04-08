@@ -3,6 +3,7 @@
   padding: 56px 90px;
   background-image: url("../../images/dashboard/banner.svg");
   background-size: cover;
+  color: #043B54;
   // position: sticky;
   // top: 85px;
   // z-index: 1;
@@ -15,7 +16,7 @@
     font-size: 18px;
     line-height: 21px;
     text-decoration: none;
-    color: #043B54;
+    
   }
   > :hover {
     cursor: pointer;
@@ -62,10 +63,13 @@
     .search {
       padding: 10px;
       height: 50px;
-      color: #51919D;
+      color: #FFFFFF;
       background-color: #043B54;
       border: solid 3px #9EE7E5;
       width: 375px;
+    }
+    .search::placeholder {
+      color: #51919D
     }
     .searchIcon {
       position: absolute;
@@ -75,7 +79,7 @@
       // right: 20px;
     }
     .skillset {
-      height: 1150px;
+      height: 750px;
       width: 375px;
       margin-top: 20px;
       border: solid 3px #9EE7E5;
@@ -87,6 +91,9 @@
         margin-bottom: 30px;
       }
       .roleContainer, .toolContainer {
+      > div > div {
+        margin-bottom: -10px;;
+      }
         color: white;
         h4 {
           margin-bottom: 30px;
@@ -96,6 +103,20 @@
           line-height: 26px;
           color: #9ee7e5;
         }
+      }
+      .roleContainer {
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 0 54px;
+          max-width: 400px;
+          > div {
+            width:130px;
+          }
+        }
+
       }
       .toolContainer {
         > div {
@@ -157,7 +178,7 @@
   }
   .results {
     color: white;
-    font-size: 17pt;
+    font-size: 17px;
     font-weight: 600;
     top: -50px;
     left: 0;
