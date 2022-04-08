@@ -13,12 +13,15 @@ import cfc from "../images/sponsors/cfc.png";
 import twilio from "../images/sponsors/twilio.png";
 import citris from "../images/sponsors/citris.png";
 import visityolo from "../images/sponsors/visityolo.png";
+import eclipse from "../images/sponsors/eclipse.png";
 import gsec from "../images/sponsors/gsec.png";
 import athletics from "../images/sponsors/athletics.png";
 import iet from "../images/sponsors/iet.png";
 import cpe from "../images/sponsors/cpe.png";
 import shds from "../images/sponsors/shds.png";
 import visitdavis from "../images/sponsors/visitdavis.jpeg";
+import reign from "../images/sponsors/reign.png";
+import datalab from "../images/sponsors/datalab.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -42,8 +45,8 @@ const Section_Sponsors = () => {
               <a className={styles.citris} href="https://citris-uc.org/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={citris} />
               </a>
-              <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
-                <img className={`${styles.imageStyle}`} src={visityolo} />
+              <a className={styles.eclipse} href="https://www.eclipsefoods.com/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={eclipse} />
               </a>
               <a className={styles.gsec} href="https://www.greatersacramento.com/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={gsec} />
@@ -76,6 +79,9 @@ const Section_Sponsors = () => {
               <a className={styles.iet} href="https://iet.ucdavis.edu/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={iet} />
               </a>
+              <a className={styles.datalab} href="https://datalab.ucdavis.edu/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={datalab} />
+              </a>
               <div className={styles.break}></div>
               <a className={styles.cpe} href="https://cpe.ucdavis.edu/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={cpe} />
@@ -96,6 +102,13 @@ const Section_Sponsors = () => {
               <div className={styles.break}></div>
               <a className={styles.visitdavis} href="https://visitdavis.org/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={visitdavis} />
+              </a>
+              <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={visityolo} />
+              </a>
+              <div className={styles.break}></div>
+              <a className={styles.reign} href="https://reignbodyfuel.com/en-us/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={reign} />
               </a>
             </div>
           </div>
