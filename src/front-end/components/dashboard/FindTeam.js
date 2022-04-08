@@ -7,7 +7,7 @@ import TeamCard from "./TeamCard";
 import backarrow from "../../images/dashboard/backarrow.svg";
 import search from "../../images/dashboard/search.svg";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState} from 'recoil';
+import { useRecoilState } from "recoil";
 import Roles from "../../../back-end/db/Roles";
 import Tags from "../../../back-end/db/Tags";
 import { getAllGroups } from "../../../back-end/DBQueries/getAllGroups";
@@ -27,7 +27,7 @@ export default function FindTeam(props) {
 
   const [user, setUser] = useRecoilState(userStateAtom);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const redirect = setTimeout(() => {
       if (user === "") {
@@ -44,14 +44,15 @@ export default function FindTeam(props) {
       async function SetUser() {
         setUser(newUserData);
       }
-      SetUser().
-        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+      SetUser().then(
+        newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null
+      );
     }
     checkUser();
 
-    if(tags.size > 0 && allGroups.length > 0) {
+    if (tags.size > 0 && allGroups.length > 0) {
       filterGroupsByTags();
-    } else if(tags.size == 0 && allGroups.length > 0) {
+    } else if (tags.size == 0 && allGroups.length > 0) {
       setAllGroups(constAllGroups);
     } else {
       // console.log("else")
@@ -60,8 +61,7 @@ export default function FindTeam(props) {
         setAllGroups(data);
         setConstAllGroups(data);
       };
-      fetchData()
-        .catch(console.error);
+      fetchData().catch(console.error);
     }
     return () => {
       clearTimeout(redirect);
@@ -71,10 +71,13 @@ export default function FindTeam(props) {
   // Update the allGroups state to only show groups that have tags equal to the tags selected
   const filterGroupsByTags = () => {
     let tagArray = Array.from(tags);
-    
+
     let filteredGroups = [];
-    allGroups.forEach(group => {
-      if(group.tags1.some(tag1 => tagArray.indexOf(tag1) >= 0) || group.tags2.some(tag2 => tagArray.indexOf(tag2) >= 0)) {
+    allGroups.forEach((group) => {
+      if (
+        group.tags1.some((tag1) => tagArray.indexOf(tag1) >= 0) ||
+        group.tags2.some((tag2) => tagArray.indexOf(tag2) >= 0)
+      ) {
         filteredGroups.push(group);
       }
     });
@@ -84,7 +87,7 @@ export default function FindTeam(props) {
   const handleCheck = (e) => {
     // If tags set contains the tag, user is unchecking the check box
     const newTags = new Set(tags);
-    if(e.target.checked) {
+    if (e.target.checked) {
       newTags.add(e.target.name);
     } else {
       newTags.delete(e.target.name);
@@ -94,12 +97,18 @@ export default function FindTeam(props) {
   };
 
   const onCardClick = (group) => {
-    if(user.pending_groups.includes(group.group_id)) {
+    if (user.pending_groups.includes(group.group_id)) {
       setShowModal(true);
-    }
-    else {
+    } else {
       navigate(`/teamfinder/submitrequest?group=${group.group_id}`);
     }
+  };
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    navigate("/teamfinder/pendingteams", {
+      state: { pendingTeams: user.pending_groups },
+    });
   };
 
   if (user === "") return null;
@@ -136,7 +145,6 @@ export default function FindTeam(props) {
             <img src={search} className={styles.searchIcon} alt="search icon" />
           </form>
           <div className={styles.skillset}>
-            <div className={styles.title}>Your Skillset</div>
             <div className={styles.roleContainer}>
               <h4>Skillset</h4>
               <div>
@@ -166,11 +174,7 @@ export default function FindTeam(props) {
           </div>
           <button
             className={styles.pendingButton}
-            onClick={() =>
-              navigate("/teamfinder/pendingteams", {
-                state: { pendingTeams: user.pending_groups }
-              })
-            }
+            onClick={() => handleClick()}
           >
             Your Pending Requests
             <span>{user.pending_groups?.length}</span>
@@ -191,7 +195,10 @@ export default function FindTeam(props) {
                 )
                 .map((group) => {
                   return (
-                    <div key={group.group_id} onClick={() => onCardClick(group)}>
+                    <div
+                      key={group.group_id}
+                      onClick={() => onCardClick(group)}
+                    >
                       <TeamCard data={group} />
                     </div>
                   );

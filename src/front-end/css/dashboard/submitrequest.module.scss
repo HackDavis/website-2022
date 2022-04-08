@@ -51,11 +51,15 @@
       background-color: transparent;
       border: solid 2px #9EE7E5;
       padding: 25px;
-      color: #51919D;
+      color: #FFFFFF;
       resize: none;
+      font-size: 17px;
+    }
+    .textArea::placeholder {
+      color: #51919D;
     }
     .characterCount {
-
+      font-size: 17px;
     }
     .submit {
       width: 214px;
