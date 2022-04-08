@@ -14,7 +14,7 @@ export const saturdayScheduleInfo = [
   {
     firstLine: "11:00 AM",
     type: "None",
-    title: "Hacking Starts",
+    title: "Hacking Starts"
   },
   {
     firstLine: "11:00 AM - 12:00 PM",
@@ -28,9 +28,8 @@ export const saturdayScheduleInfo = [
     title: "Workshop",
     description: "Daryl Cai @ MANGA",
     location: "ARC Ballroom B"
-  },
-
-]
+  }
+];
 
 export const sundayScheduleInfo = [
   {
@@ -51,8 +50,8 @@ export const sundayScheduleInfo = [
     title: "Workshop",
     description: "Daryl Cai @ MANGA",
     location: "ARC Ballroom B"
-  },
-]
+  }
+];
 
 export const activitiesInfo = [
   {
@@ -72,5 +71,5 @@ export const activitiesInfo = [
     title: "Video Games",
     type: "Activity",
     location: "Video Game Area"
-  },
-]
+  }
+];

@@ -3,8 +3,7 @@ import styles from 'front-end/css/doe/schedule.module.scss';
 import PinWhite from "front-end/images/doe/PinWhite.svg";
 import { saturdayScheduleInfo, sundayScheduleInfo, activitiesInfo } from "./ScheduleInfo";
 
-
-const ScheduleCard = ({ firstLine, type, title, location, description }, index) => {
+function ScheduleCard({ firstLine, type, title, location, description }, index) {
   const colorClass = type === "Workshop" ? styles.blue : type === "Activity" ? styles.yellow : type === "Menu" ? styles.green : styles.white;
 
   return (
@@ -26,53 +25,46 @@ const ScheduleCard = ({ firstLine, type, title, location, description }, index) 
 }
 
 export default function Schedule() {
-  const [showAll, setShowAll] = useState(true);
-  const [showActivities, setShowActivities] = useState(false);
-  const [showWorkshops, setShowWorkshops] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const all = 0;
+  const activities = 1;
+  const workshops = 2;
+  const menu = 3;
+
+  const [toShow, setToShow] = useState(all);
   const [filter, setFilter] = useState(() => (event) => true);
 
-  function allSelectedClick() {
-    setShowActivities(false);
-    setShowWorkshops(false);
-    setShowMenu(false);
-    setShowAll(true);
-    setFilter(() => (event) => true);
-  }
-
-  function workshopsSelectedClick() {
-    setShowActivities(false);
-    setShowMenu(false);
-    setShowAll(false);
-    setShowWorkshops(true);
-    setFilter(() => (event) => event.type === "Workshop")
-  }
-
-  function activitiesSelectedClick() {
-    setShowAll(false);
-    setShowWorkshops(false);
-    setShowMenu(false);
-    setShowActivities(true);
-    setFilter(() => (event) => event.type === "Activity");
-  }
-
-  function menuSelectedClick() {
-    setShowActivities(false);
-    setShowWorkshops(false);
-    setShowAll(false);
-    setShowMenu(true);
-    setFilter(() => (event) => event.type === "Menu");
-  }
+  useEffect(() => {
+    if (toShow === all) setFilter(() => (event) => true);
+    if (toShow === activities) setFilter(() => (event) => event.type === "Activity");
+    if (toShow === workshops) setFilter(() => (event) => event.type === "Workshop");
+    if (toShow === menu) setFilter(() => (event) => event.type === "Menu");
+  }, [toShow]);
 
   return (
     <div className={styles.wrapper}>
       <section className={styles.container}>
         <h2>Schedule</h2>
         <div className={styles.filters}>
-          <button className={showAll ? styles.selected : undefined} onClick={allSelectedClick}>ALL</button>
-          <button className={showWorkshops ? styles.selected : undefined} onClick={workshopsSelectedClick}>Workshops</button>
-          <button className={showActivities ? styles.selected : undefined} onClick={activitiesSelectedClick}>Activities</button>
-          <button className={showMenu ? styles.selected : undefined} onClick={menuSelectedClick}>Menu</button>
+          <button
+            className={toShow === all ? styles.selected : undefined}
+            onClick={() => setToShow(all)}
+          >ALL
+          </button>
+          <button
+            className={toShow === workshops ? styles.selected : undefined}
+            onClick={() => setToShow(workshops)}
+          >Workshops
+          </button>
+          <button
+            className={toShow === activities ? styles.selected : undefined}
+            onClick={() => setToShow(activities)}
+          >Activities
+          </button>
+          <button
+            className={toShow === menu ? styles.selected : undefined}
+            onClick={() => setToShow(menu)}
+          >Menu
+          </button>
         </div>
         <h3>Saturday <span>4/16</span></h3>
         <div className={styles.scheduleCards}>
@@ -82,7 +74,7 @@ export default function Schedule() {
         <div className={styles.scheduleCards}>
           {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
         </div>
-        {showAll || showActivities ?
+        {toShow === all || toShow === activities ?
           <>
             <h3 className={styles.activityh3}>Activities available 24/7</h3>
             <div className={styles.activityCards}>

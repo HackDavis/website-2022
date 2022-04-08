@@ -11,8 +11,7 @@ import Countdown from "react-countdown";
 export function Timer() {
   const start = new Date("April 16, 2022, 10:00:00 PST");
   const end = new Date("April 17, 2022, 10:00:00 PST");
-
-  const [ongoing, setOngoing] = useState(false);
+  const ongoing = new Date() > start;
 
   const Timer = ({ hours, minutes, seconds, completed }) => {
     return (
@@ -33,16 +32,10 @@ export function Timer() {
     );
   };
 
-  useEffect(() => {
-    setOngoing(new Date() > start);
-  }, [])
-
   return (
     <Fade>
       <main className={styles.container}>
         <img src={MainBG} alt="background" />
-        {/* <img src={CowBalloon} alt="cow balloon" />
-      <img src={Froggy} alt="Frog on jetpack" /> */}
         <h1>HackDavis</h1>
         <h2>// code for social good_</h2>
         <Countdown
