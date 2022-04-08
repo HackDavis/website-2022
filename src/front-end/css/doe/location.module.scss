@@ -3,8 +3,8 @@
 .content {
   @include border();
   width: 100%;
-  height: 250px;
-  padding: 20px 0;
+  // height: 250px;
+  padding: 43px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -16,26 +16,29 @@
 .location {
   @include header2();
   font-size: 18px;
-  line-height: 25px
+  line-height: 25px;
+  margin-bottom: 20px;
 }
 
 .time {
   @include body();
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .pin {
   width: 18px;
+  margin-bottom: 9px;
 }
 
 .button {
-    @include button(false);
-    width: 60%;
-    height: 40px;
-    border: none;
-    background-color: #265268;
-    position: relative;
-    // padding-left: 16px;
+  @include button(false);
+  width: 60%;
+  height: 40px;
+  border: none;
+  background-color: #265268;
+  position: relative;
+  // padding-left: 16px;
 }
 
 .download {
@@ -50,15 +53,12 @@
 .mappic {
   display: none;
 }
-span {
-  display: none;
-}
 
 @media only screen and (min-width: 992px) {
   .content {
-      margin-right: 24px;
-      display: flex;
-      flex-direction: row;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: row;
   }
   .pin {
     margin-bottom: 8px;
@@ -84,6 +84,6 @@ span {
     // pepelaff
     // obv change this once we get the actual image in
     width: 350px;
-    max-height:250px;
+    max-height: 250px;
   }
 }

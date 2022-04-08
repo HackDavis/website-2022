@@ -1,0 +1,245 @@
+@import "../defs";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright_teal;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+  padding: 3px 0;
+  margin-bottom: -20px;
+}
+
+.container {
+  padding: 40px 15px;
+  // @include border();
+  width: calc(100% - 6px);
+  position: relative;
+  padding: 60px 19px 77px 21px;
+  background-color: $darker_teal;
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
+
+  > h2 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: white;
+  }
+
+  > h3 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: white;
+
+    > span {
+      font-weight: 400;
+      color: #9ee7e5;
+    }
+
+    &.activityh3 {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: #ffbb4d;
+    }
+  }
+}
+
+.cardContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0 12px;
+  background-color: #436073;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  padding: 14px 20px 9px;
+}
+
+.cardInfo {
+  > p {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  > h4 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 5px;
+  }
+
+  > h5 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 5px;
+  }
+
+  > h6 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    > img {
+      width: 10px;
+      margin-right: 11px;
+    }
+  }
+}
+
+.dot {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: 3px;
+}
+
+.dot.blue {
+  background-color: #9ee7e5;
+}
+
+.dot.yellow {
+  background-color: #fbc53e;
+}
+
+.dot.green {
+  background-color: #c0e267;
+}
+.dot.white {
+  background-color: white;
+}
+
+h4.blue {
+  color: #9ee7e5;
+}
+
+h4.yellow {
+  color: #fbc53e;
+}
+
+h4.green {
+  color: #c0e267;
+}
+
+h4.white {
+  color: white;
+}
+
+.sundayTitle {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: white;
+  > span {
+    font-weight: 400;
+    color: #9ee7e5;
+  }
+}
+
+.filters {
+  border-radius: 8px;
+  background-color: #415e72;
+  display: flex;
+  flex-flow: row wrap;
+  // height: 153px;
+  padding: 11px;
+  gap: 10px;
+  margin-bottom: 35px;
+
+  > button {
+    &:nth-of-type(1) {
+      color: white;
+      &.selected {
+        background-color: white;
+        color: black;
+      }
+    }
+    &:nth-of-type(2) {
+      color: #9ee7e5;
+      &.selected {
+        background-color: #9ee7e5;
+        color: #2d4e63;
+      }
+    }
+    &:nth-of-type(3) {
+      color: #fbc53e;
+      &.selected {
+        background-color: #fbc53e;
+        color: black;
+      }
+    }
+    &:nth-of-type(4) {
+      color: #c2e566;
+      &.selected {
+        background-color: #c2e566;
+        color: black;
+      }
+    }
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 10px 20px;
+    text-align: left;
+    background: transparent;
+    text-decoration: none;
+    width: 45%;
+    border-radius: 4px;
+
+    &:nth-of-type(2n) {
+      flex-grow: 1;
+    }
+  }
+}
+
+// .allSelected {
+//   background-color: white;
+//   color: black;
+// }
+
+// .workshopsSelected {
+//   background-color: #9ee7e5;
+//   color: #2d4e63;
+// }
+
+// .activitiesSelected {
+//   background-color: #fbc53e;
+//   color: black;
+// }
+
+// .menuSelected {
+//   background-color: #c2e566;
+//   color: black;
+// }

@@ -12,6 +12,7 @@ import { About } from "../components/landingPage/mainSection/About";
 import { CowHeart } from "../components/landingPage/mainSection/CowHeart";
 import { Discord } from "front-end/components/doe/Discord";
 import { Socials } from "front-end/components/doe/Socials";
+import Schedule from "front-end/components/doe/Schedule";
 import { Prizes } from "front-end/components/doe/Prizes";
 import Section_Sponsors from '../components/section_sponsors.js';
 import Footer from "../components/footer";
@@ -27,6 +28,7 @@ export function MainSection() {
 				<TagLine />
 				<Discord />
 				<TreeTop />
+				<Schedule />
 				<CowHeart />
 				<Prizes />
 				<Section_Sponsors/>
