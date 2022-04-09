@@ -107,7 +107,7 @@ export default function FindTeam(props) {
   const handleClick = () => {
     window.scrollTo(0, 0);
     navigate("/teamfinder/pendingteams", {
-      state: { pendingTeams: user.pending_groups },
+      state: { pendingTeams: user.pending_groups }
     });
   };
 
