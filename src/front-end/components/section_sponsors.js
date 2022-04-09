@@ -21,6 +21,7 @@ import cpe from "../images/sponsors/cpe.png";
 import shds from "../images/sponsors/shds.png";
 import visitdavis from "../images/sponsors/visitdavis.jpeg";
 import reign from "../images/sponsors/reign.png";
+import ultrapress from "../images/sponsors/ultrapress.png";
 import datalab from "../images/sponsors/datalab.svg";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
@@ -109,6 +110,9 @@ const Section_Sponsors = () => {
               <div className={styles.break}></div>
               <a className={styles.reign} href="https://reignbodyfuel.com/en-us/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={reign} />
+              </a>
+              <a className={styles.ultrapress} href="https://ultrapress.com/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={ultrapress} />
               </a>
             </div>
           </div>
