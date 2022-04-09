@@ -37,19 +37,20 @@ export function MainSection() {
 			{/* tablet, desktop */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
 				<Timer />
-				<div className={styles.locationsection}>
+				<div className={styles.locationSection}>
 					<Location />
 					<Socials />
 				</div>
 				<Discord />
-				<div className={styles.schedulesection}>
-					<div>
+				<div className={styles.scheduleSection}>
+					<div className={styles.firstSection}>
 						<TreeTop />
 						<Stats/>
 					</div>
+					<Schedule />
 				</div>
 				<Prizes />
-				<div className={styles.aboutsection}>
+				<div className={styles.aboutSection}>
 					<About/>
 					<CowHeart />
 				</div>

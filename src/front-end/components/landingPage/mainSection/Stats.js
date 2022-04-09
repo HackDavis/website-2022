@@ -9,11 +9,11 @@ export function Stats() {
       <div className={styles.wrapper}>
         <section className={styles.container}>
           <h2>
-            <span>750+</span> hackers
-            <br />
             <span>24 </span>hours
             <br />
             <span>150+</span> projects
+            <br />
+            <span>750+</span> hackers
             <br />
             <span>&#36;14,000+</span> prizes
           </h2>

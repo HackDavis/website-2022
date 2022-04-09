@@ -28,6 +28,12 @@ export const saturdayScheduleInfo = [
     title: "Workshop",
     description: "Daryl Cai @ MANGA",
     location: "ARC Ballroom B"
+  },
+  {
+    firstLine: "AFTERNOON SNACK",
+    type: "Menu",
+    title: "Dumpling House",
+    description: "Overpriced food"
   }
 ];
 

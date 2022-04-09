@@ -13,7 +13,7 @@ export function Location() {
         <div>
           <img className={styles.pin} src={Pin} />
           <h2 className={styles.location}>
-            University Credit Union Center,
+            University Credit Union Center,{" "}
             <br />
             UC Davis
           </h2>

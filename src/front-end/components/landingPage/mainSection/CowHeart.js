@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../../css/landingPage/mainSection/CowHeart.module.scss";
-import base_image from '../../../images/main_section/cow_heart/base_image.svg';
+import base_image from '../../../images/main_section/cow_heart/base_image_new.svg';
 import code_box from '../../../images/main_section/cow_heart/code_box.svg';
 import heart from '../../../images/main_section/cow_heart/heart.svg';
 import lightbulb from '../../../images/main_section/cow_heart/lightbulb.svg';

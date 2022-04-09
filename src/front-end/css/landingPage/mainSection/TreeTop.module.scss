@@ -132,7 +132,7 @@
 @media (min-width: 992px) {
   .container {
     height: auto;
-    flex-grow: 1;
+    // flex-grow: 1;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 50px));
   }
 }

@@ -56,6 +56,25 @@
   }
 }
 
+.scheduleCards {
+  max-height: 575px;
+  overflow-y: scroll;
+  position: relative;
+  margin-bottom: 24px;
+
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: 1;
+  //   bottom: 0;
+  //   left: 0;
+  //   pointer-events: none;
+  //   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
 .cardContainer {
   display: flex;
   align-items: flex-start;
@@ -186,17 +205,17 @@ h4.white {
       }
     }
     &:nth-of-type(2) {
-      color: #9ee7e5;
-      &.selected {
-        background-color: #9ee7e5;
-        color: #2d4e63;
-      }
-    }
-    &:nth-of-type(3) {
       color: #fbc53e;
       &.selected {
         background-color: #fbc53e;
         color: black;
+      }
+    }
+    &:nth-of-type(3) {
+      color: #9ee7e5;
+      &.selected {
+        background-color: #9ee7e5;
+        color: #2d4e63;
       }
     }
     &:nth-of-type(4) {
@@ -206,6 +225,7 @@ h4.white {
         color: black;
       }
     }
+
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 700;
@@ -218,28 +238,25 @@ h4.white {
     width: 45%;
     border-radius: 4px;
 
-    &:nth-of-type(2n) {
+    &:nth-of-type(odd) {
       flex-grow: 1;
     }
   }
 }
 
-// .allSelected {
-//   background-color: white;
-//   color: black;
-// }
-
-// .workshopsSelected {
-//   background-color: #9ee7e5;
-//   color: #2d4e63;
-// }
-
-// .activitiesSelected {
-//   background-color: #fbc53e;
-//   color: black;
-// }
-
-// .menuSelected {
-//   background-color: #c2e566;
-//   color: black;
-// }
+@media (min-width: 992px) {
+  .wrapper {
+    flex-grow: 1;
+    clip-path: none;
+    overflow-y: hidden;
+    margin-bottom: 0;
+  }
+  
+  .container {
+    clip-path: none;
+    padding: 40px 15px;
+    height: 100%;
+    overflow-y: scroll;
+    // max-height: 792px;
+  }
+}

@@ -45,19 +45,26 @@
 
 @media (min-width: 992px) {
   .wrapper {
-    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    clip-path: none;
     padding-bottom: 3px;
     margin-bottom: 0;
+    width: 52.1%;
   }
 
   .container {
-    padding: 108px min(10%, 64px) 80px;
-    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    padding: 65px min(10%, 64px) 65px;
+    clip-path: none;
     margin: 0;
+    height: 100%;
 
     > h2 {
       @include header1(false);
+      font-size: min(2.4rem, 2.85vw);
       margin-bottom: 25px;
+
+      > br {
+        display: none;
+      }
     }
 
     > p {

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: $bright_teal;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
   padding: 3px 0;
   margin-bottom: -20px;
 }
@@ -15,7 +15,7 @@
   position: relative;
   padding: 29px 19px 77px 21px;
   background-color: $darker_teal;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 calc(100% - 50px));
+  clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
 
   > a {
     text-decoration: none;
@@ -58,11 +58,22 @@
 }
 
 @media (min-width: 992px) {
+  .wrapper {
+    flex-grow: 1;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    margin-bottom: 0;
+  }
   .container {
-    padding: 64px min(12%, 64px) 153px;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: ;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    padding: 80px min(12%, 64px) 40px;
+    height: 100%;
 
     > h2 {
-      font-size: min(2.9rem, 3.5vw);
+      font-size: min(2.4rem, 2.85vw);
       line-height: 1.4em;
 
       > span {
@@ -70,7 +81,7 @@
       }
     }
 
-    > a > button {
+    > a, > a  > button {
       max-width: 234px;
     }
     .hover_winners {

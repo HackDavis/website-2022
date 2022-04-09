@@ -32,6 +32,8 @@ export default function Schedule() {
 
   const [toShow, setToShow] = useState(all);
   const [filter, setFilter] = useState(() => (event) => true);
+  const [saturdaySchedule, setSaturdaySchedule] = useState(saturdayScheduleInfo);
+  const [sundaySchedule, setSundaySchedule] = useState(sundayScheduleInfo);
 
   useEffect(() => {
     if (toShow === all) setFilter(() => (event) => true);
@@ -39,6 +41,11 @@ export default function Schedule() {
     if (toShow === workshops) setFilter(() => (event) => event.type === "Workshop");
     if (toShow === menu) setFilter(() => (event) => event.type === "Menu");
   }, [toShow]);
+
+  useEffect(() => {
+    setSaturdaySchedule(saturdayScheduleInfo.filter(filter));
+    setSundaySchedule(sundayScheduleInfo.filter(filter));
+  }, [filter]);
 
   return (
     <div className={styles.wrapper}>
@@ -51,14 +58,14 @@ export default function Schedule() {
           >ALL
           </button>
           <button
-            className={toShow === workshops ? styles.selected : undefined}
-            onClick={() => setToShow(workshops)}
-          >Workshops
-          </button>
-          <button
             className={toShow === activities ? styles.selected : undefined}
             onClick={() => setToShow(activities)}
           >Activities
+          </button>
+          <button
+            className={toShow === workshops ? styles.selected : undefined}
+            onClick={() => setToShow(workshops)}
+          >Workshops
           </button>
           <button
             className={toShow === menu ? styles.selected : undefined}
@@ -66,14 +73,24 @@ export default function Schedule() {
           >Menu
           </button>
         </div>
-        <h3>Saturday <span>4/16</span></h3>
-        <div className={styles.scheduleCards}>
-          {saturdayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
-        </div>
-        <h3 className={styles.sundayTitle}>Sunday <span>4/17</span></h3>
-        <div className={styles.scheduleCards}>
-          {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
-        </div>
+        {saturdaySchedule.length > 0 ?
+          <>
+            <h3>Saturday <span>4/16</span></h3>
+            <div className={styles.scheduleCards}>
+              {saturdaySchedule.map((event, index) => ScheduleCard(event, index))}
+            </div>
+          </>
+          : null
+        }
+        {sundaySchedule.length > 0 ?
+          <>
+            <h3 className={styles.sundayTitle}>Sunday <span>4/17</span></h3>
+            <div className={styles.scheduleCards}>
+              {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
+            </div>
+          </>
+          : null
+        }
         {toShow === all || toShow === activities ?
           <>
             <h3 className={styles.activityh3}>Activities available 24/7</h3>

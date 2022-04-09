@@ -107,6 +107,10 @@
 
 @media (min-width: 992px) {
   .container {
+    clip-path: none;
+    background: #1B6E90;
+    height: 100%;
+
     &:hover {
       .heart {
         transform: scale(1.3);
