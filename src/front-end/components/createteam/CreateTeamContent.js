@@ -19,8 +19,8 @@ import { SetRolesState } from "../../../recoil/selectors/setRolesState";
 import { SetTagsState } from "../../../recoil/selectors/setTagsState.js";
 import { useNavigate } from "react-router-dom";
 import { SignInHardCode } from "./SignInHardCode.js";
-import { Checkbox } from './Checkbox';
-import { Link } from 'react-router-dom';
+import { Checkbox } from "./Checkbox";
+import { Link } from "react-router-dom";
 import { getUser } from "../../../back-end/DBQueries/getUser";
 
 export function CreateTeamContent() {
@@ -123,8 +123,9 @@ export function CreateTeamContent() {
       async function SetUser() {
         setUser(newUserData);
       }
-      SetUser().
-        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+      SetUser().then(
+        newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null
+      );
     }
     checkUser();
 
@@ -172,6 +173,7 @@ export function CreateTeamContent() {
             <div className={styles.column1}>
               <label>Team Name</label>
               <textarea
+                className={styles.textarea}
                 type="text"
                 placeholder="Best team ever"
                 value={name}
@@ -183,6 +185,7 @@ export function CreateTeamContent() {
               <p>{name.length}/20 characters</p>
               <label>Team Description</label>
               <textarea
+                className={styles.textarea}
                 type="text"
                 placeholder="Project goals, professional interests, what you are looking for..."
                 value={desc}
@@ -223,7 +226,7 @@ export function CreateTeamContent() {
                   </div>
                 </div>
               </div>
-              <p>5 skills and 5 tools maximum</p>
+              <p>Select up to 5 tools and 5 skillsets</p>
             </div>
           </div>
           <div className={styles.submitWrap}>

@@ -72,9 +72,12 @@
         height: 50px;
         // width: 430px;
     
-        color: #51919D;
+        color: #FFFFFF;
         background-color: #043B54;
         border: solid 1px #9EE7E5;
+      }
+      .textField::placeholder {
+        color: #51919D;
       }
       .descContainer {
         position: relative;
@@ -84,9 +87,12 @@
           resize: none;
           height: 200px;
     
-          color: #51919D;
+          color: #FFFFFF;
           background-color: #043B54;
           border: solid 1px #9EE7E5;
+        }
+        .textArea::placeholder {
+          color: #51919D;
         }
         .characterCount {
           color: white;

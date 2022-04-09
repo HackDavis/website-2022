@@ -6,14 +6,16 @@ import JoinTeam from "../../images/dashboard/JoinTeam.svg";
 import blankTicket from "../../images/dashboard/blankTicket.svg";
 import DashboardButton from "./DashboardButton";
 import { userStateAtom } from "../../../recoil/atoms/userAtom";
-import { useRecoilState } from 'recoil';
+import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../back-end/DBQueries/getUser";
+import CreateTearmWarningModal from "./CreateTeamWarningModal";
 
 export default function TeamFinderHome() {
   const [showDashboard, setShowDashboard] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [user, setUser] = useRecoilState(userStateAtom);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +26,7 @@ export default function TeamFinderHome() {
         navigate("/teamfinder/myteam");
       }
     }, 2500);
-    
+
     // :mild-panic-intensifies:
     // Basically checks if a user got accepted
     async function checkUser() {
@@ -32,8 +34,9 @@ export default function TeamFinderHome() {
       async function SetUser() {
         setUser(newUserData);
       }
-      SetUser().
-        then(newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null);
+      SetUser().then(
+        newUserData.group_id !== "" ? navigate("/teamfinder/myteam") : null
+      );
     }
     checkUser();
 
@@ -41,6 +44,14 @@ export default function TeamFinderHome() {
       clearTimeout(redirect);
     };
   }, []);
+
+  const handleClick = () => {
+    if (user.pending_groups.length > 0) {
+      setShowModal(true);
+    } else {
+      navigate("/teamfinder/createteam");
+    }
+  };
 
   if (user === "") return null;
 
@@ -60,8 +71,6 @@ export default function TeamFinderHome() {
       />
       <div className={styles.mainContent}>
         <div className={styles.text}>
-          <h2>Hi {user.name.split(" ")[0]}</h2>
-          <img src={blankTicket} alt="blank ticket" />
           <h1>Welcome to Team Finder</h1>
           <h4>Meet some cool people.</h4>
         </div>
@@ -82,7 +91,7 @@ export default function TeamFinderHome() {
             <div className={styles.findJoinTeam}>
               <div
                 className={styles.findJoinTeamBtn}
-                onClick={() => navigate("/teamfinder/createteam")}
+                onClick={() => handleClick()}
               >
                 CREATE A TEAM
               </div>
@@ -90,6 +99,9 @@ export default function TeamFinderHome() {
           </div>
         </div>
       </div>
+      {showModal ? (
+        <CreateTearmWarningModal setShowModal={setShowModal} />
+      ) : null}
     </div>
   );
 }
