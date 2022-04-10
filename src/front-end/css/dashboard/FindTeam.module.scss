@@ -69,6 +69,10 @@
       width: 375px;
     }
     .search::placeholder {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
       color: #51919D
     }
     .searchIcon {
@@ -96,12 +100,12 @@
       }
         color: white;
         h4 {
-          margin-bottom: 30px;
+          margin-bottom: 25px;
+          color: #9ee7e5;
+          font-family: 'DM Sans';
           font-style: normal;
           font-weight: 700;
           font-size: 20px;
-          line-height: 26px;
-          color: #9ee7e5;
         }
       }
       .roleContainer {
@@ -178,11 +182,19 @@
   }
   .results {
     color: white;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
     font-size: 17px;
-    font-weight: 600;
     top: -50px;
     left: 0;
     position: absolute;
+    > span {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+    }
   }
 }
 
