@@ -34,7 +34,6 @@ const Section_Desktop_Navbar = () => {
             <Link to="/about" className={`${styles.button} ${window.location.href == `${window.location.origin}/about` ? `${styles.bold_navitem}` : null} `}>About us</Link>
             <Link to="/teamfinder/login" className={`${styles.button} ${isTeamFinder ? `${styles.bold_navitem}` : null} `}>Team Finder</Link>
             <Link to="/placestostay" className={`${styles.button} ${window.location.href == `${window.location.origin}/placestostay` ? `${styles.bold_navitem}` : `${styles.button}`}`}>Places To Stay</Link>
-            {/* <a className={styles.button} href="">Dashboard</a> */}
           </div>
         </div>
       </div>
