@@ -8,30 +8,40 @@
   border: solid 4px transparent;
   > h3 {
     color: white;
-    font-size: 18pt;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
     padding: 0;
     margin: 0;
     > span {
       color: #136E90;
-      font-size: 16pt;
+      font-family: 'Proxima Nova';
+      font-style: normal;
       font-weight: 700;
+      font-size: 24px;
       margin-left: 10px;
     }
   }
   .id {
     margin-top: 5px;
     color: #9EE7E5;
-    font-size: 12pt;
-    font-weight: normal;
-    font: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: "Proxima Nova";
   }
   > p {
     color: white;
-    font-size: 12pt;
     margin-top: 10px;
     height: 135px;
     word-break: break-all;
     white-space: normal;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
   }
   .group {
     display: flex;
@@ -42,8 +52,10 @@
   }
   > h5 {
     color: white;
-    font-size: 16pt;
-    font-weight: 600;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
     margin-top: 10px;
   }
   > .group > .names {
@@ -69,8 +81,11 @@
       top: 17px;
       left: 55px;
       color: white;
-      font-weight: 600;
       margin-left: 10px;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
     }
   }
   .skillsetGroup {
@@ -87,6 +102,10 @@
       margin-top: 10px;
       background-color: #35B1D1;
       color: white;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
     }
     .skill {
       border-radius: 20px;
@@ -97,6 +116,10 @@
       margin-top: 10px;
       background-color: #136E90;
       color: white;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
     }
   }
 }

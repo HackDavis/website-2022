@@ -34,14 +34,18 @@ body {
       display: inline;
     }
     > h1 {
-      font-weight: 600;
-      font-size: 48pt;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64px;
       padding-top: 50px;
     }
     > h4 {
-      font-weight: 600;
       color: #9EE7E5;
-      font-size: 18pt;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
     }
   }
 }
@@ -73,11 +77,14 @@ body {
         justify-content: center;
         width: 90%;
         height: 35px;
-        letter-spacing: 1px;
+        letter-spacing: 0.1em;
         border-radius: 20px;
         border: solid 2px #9EE7E5;
         color: #9EE7E5;
-        font-weight: 600;
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
       }
       .findJoinTeamBtn:hover {
         cursor: pointer;

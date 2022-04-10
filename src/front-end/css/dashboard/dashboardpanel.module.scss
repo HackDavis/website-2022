@@ -21,6 +21,10 @@
     margin-bottom: 10px;
     width: 450px;
     font-weight: 600;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
   }
   .profileCard {
     width: 475px;
@@ -36,17 +40,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      
       position: absolute;
       top: 30px;
       right: 20px;
-      
       width: 90px;
       height: 30px;
       color: white;
       border-radius: 20px;
       background-color: #2A586E;
-      font-weight: 600;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
       letter-spacing: 1px;
     }
     .edit:hover {
@@ -64,11 +69,17 @@
     }
     .name {
       margin-top: 20px;
-      font-weight: 600;
-      font-size: 16pt;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
     }
     .email {
       margin-top: 20px;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
     }
     .icons {
       display: inline;
@@ -80,8 +91,20 @@
       margin-top: 20px;
       white-space: normal;
       word-break: break-all;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 21px;
     }
   }
+}
+
+.discord {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
 }
 
 .signout {
@@ -100,6 +123,7 @@
   background-color: #2A586E;
   font-weight: 600;
   letter-spacing: 1px;
+  font-family: "Proxima Nova";
 }
 .signout:hover {
   cursor: pointer;
