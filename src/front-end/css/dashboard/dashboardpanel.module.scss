@@ -90,7 +90,7 @@
     .bio {
       margin-top: 20px;
       white-space: normal;
-      word-break: break-all;
+      overflow-wrap: break-word;
       font-family: 'Proxima Nova';
       font-style: normal;
       font-weight: 400;
