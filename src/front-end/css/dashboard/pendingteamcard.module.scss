@@ -65,7 +65,7 @@
     font-size: 12pt;
     height: 146px;
     margin-top: 10px;
-    word-break: break-all;
+    overflow-wrap: break-word;
     white-space: normal;
   }
   .group {

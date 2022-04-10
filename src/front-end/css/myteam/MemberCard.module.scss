@@ -81,7 +81,7 @@
       margin: 0;
       margin-left: 10px;
       white-space: normal;
-      word-break: break-all;
+      overflow-wrap: break-word;
     }
   }
 
@@ -94,6 +94,6 @@
     color: white;
     margin-top: 30px;
     white-space: normal;
-    word-break: break-all;
+    overflow-wrap: break-word;
   }
 }
