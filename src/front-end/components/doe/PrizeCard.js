@@ -27,10 +27,10 @@ export function PrizeCard({ prizeInfo }) {
               <h3 className={styles.title}>{prizeInfo.title}</h3>
             </div>
             <div className={styles.downArrowCont}>
-              <img className={`${styles.downarrow} ${isOpen ? `${styles.flipDownArrow}` : ""}`} src={ArrowDownWhite}/>
+              <img className={`${styles.downArrow} ${isOpen ? `${styles.flipDownArrow}` : ""}`} src={ArrowDownWhite}/>
             </div>
           </div>
-          <div className={`${styles.bot} ${isOpen ? `${styles.showbot}` : ""}`}>
+          <div className={`${styles.bot} ${isOpen ? `${styles.showBot}` : ""}`}>
             <div>
               <p>{prizeInfo.prize}</p>
               {prizeInfo.description.length > 0

@@ -4,9 +4,28 @@
     @include border();
     padding: 40px 15px 25px 15px;
     margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .title {
     @include header2();
     font-size: 32px;
+}
+
+
+@media (min-width: 992px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+      
+  }
+  .title {
+    text-align: center;
+    font-size: 40px;
+  }
 }

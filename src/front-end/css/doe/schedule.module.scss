@@ -19,7 +19,7 @@
   background-color: $darker_teal;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 calc(100% - 50px));
 
-  > h2 {
+  h2 {
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 700;
@@ -28,7 +28,7 @@
     color: white;
   }
 
-  > h3 {
+  h3 {
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 700;
@@ -201,14 +201,14 @@ h4.white {
       color: white;
       &.selected {
         background-color: white;
-        color: black;
+        color: #2d4e63;
       }
     }
     &:nth-of-type(2) {
       color: #fbc53e;
       &.selected {
         background-color: #fbc53e;
-        color: black;
+        color: #2d4e63;
       }
     }
     &:nth-of-type(3) {
@@ -222,7 +222,7 @@ h4.white {
       color: #c2e566;
       &.selected {
         background-color: #c2e566;
-        color: black;
+        color: #2d4e63;
       }
     }
 
@@ -251,12 +251,92 @@ h4.white {
     overflow-y: hidden;
     margin-bottom: 0;
   }
-  
+
   .container {
     clip-path: none;
-    padding: 40px 15px;
+    padding: 50px min(60px, 2vw) 0;
     height: 100%;
-    overflow-y: scroll;
-    // max-height: 792px;
+    overflow-y: auto;
+
+    h2 {
+      text-align: center;
+      font-size: 40px;
+      line-height: 49px;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 29px;
+
+      &.activityh3 {
+        margin-top: 13px;
+        font-size: 20px;
+        line-height: 24px;
+        color: white;
+      }
+    }
+  }
+
+  .filters {
+    flex-flow: row nowrap;
+    max-width: 413px;
+    padding: 5px;
+
+    > button {
+      padding: 8px 16px;
+
+      &:nth-of-type(1) {
+        order: 1;
+      }
+      &:nth-of-type(2) {
+        order: 3;
+      }
+      &:nth-of-type(3) {
+        order: 2;
+      }
+      &:nth-of-type(4) {
+        order: 4;
+      }
+      &:nth-of-type(odd) {
+        flex-grow: 0;
+      }
+    }
+  }
+
+  .schedules {
+    display: flex;
+    gap: 0 min(60px, 2vw);
+  }
+
+  .scheduleCards {
+    overflow-y: auto;
+    // box-shadow:
+    //   inset 0px 20px 8px -10px rgba(0,0,0,0.3),
+    //   inset 0px -20px 8px -10px rgba(0,0,0,0.3);
+  }
+
+  .activityCards {
+    display: flex;
+    gap: 0 16px;
+  }
+  .scheduleCards::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scheduleCards::-webkit-scrollbar-track {
+    border-radius: 100px;
+    margin-left:30px;
+    width: 6px;
+    background-color: #123045;
+  }
+  .scheduleCards::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    width: 6px;
+    background-color: #A8E9E8;
+  }
+
+  .cardContainer {
+    width: calc(100% - 10px);
   }
 }

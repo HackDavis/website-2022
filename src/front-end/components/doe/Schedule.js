@@ -73,31 +73,33 @@ export default function Schedule() {
           >Menu
           </button>
         </div>
-        {saturdaySchedule.length > 0 ?
-          <>
-            <h3>Saturday <span>4/16</span></h3>
-            <div className={styles.scheduleCards}>
-              {saturdaySchedule.map((event, index) => ScheduleCard(event, index))}
+        <div className={styles.schedules}>
+          {saturdaySchedule.length > 0 ?
+            <div className={styles.saturdayContainer}>
+              <h3>Saturday <span>4/16</span></h3>
+              <div className={styles.scheduleCards}>
+                {saturdaySchedule.map((event, index) => ScheduleCard(event, index))}
+              </div>
             </div>
-          </>
-          : null
-        }
-        {sundaySchedule.length > 0 ?
-          <>
-            <h3 className={styles.sundayTitle}>Sunday <span>4/17</span></h3>
-            <div className={styles.scheduleCards}>
-              {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
+            : null
+          }
+          {sundaySchedule.length > 0 ?
+            <div className={styles.sundayContainer}>
+              <h3 className={styles.sundayTitle}>Sunday <span>4/17</span></h3>
+              <div className={styles.scheduleCards}>
+                {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
+              </div>
             </div>
-          </>
-          : null
-        }
+            : null
+          }
+        </div>
         {toShow === all || toShow === activities ?
-          <>
+          <div className={styles.activitiesContainer}>
             <h3 className={styles.activityh3}>Activities available 24/7</h3>
             <div className={styles.activityCards}>
               {activitiesInfo.map((activityEvent, index) => ScheduleCard(activityEvent, index))}
             </div>
-          </>
+          </div>
           : null
         }
       </section >

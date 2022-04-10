@@ -10,22 +10,6 @@
   // background: url("../../images/doe/MainBG.svg");
   // background-size: 400px auto;
 
-  > img:first-child {
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 500px;
-    // z-index: -1;
-    // opacity: 0;
-  }
-
-  > img:nth-of-type(2) {
-    position: absolute;
-    bottom: 20%;
-    left: -40px;
-    width: 132px;
-  }
-
   > h1 {
     @include title();
     backdrop-filter: blur(0px);
@@ -39,6 +23,23 @@
     word-spacing: 0px;
     margin-bottom: 22px;
   }
+}
+
+.mobileBG {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+}
+
+.mlhBanner,
+.topCloud,
+.rightCloud,
+.leftCloud,
+.chicky,
+.cowBalloon,
+.froggy {
+  display: none;
 }
 
 .timeBoxContainer {
@@ -85,6 +86,10 @@
 .buttons {
   margin-bottom: 26px;
   backdrop-filter: blur(0px);
+}
+
+.discordWhite {
+  display: none;
 }
 
 .submitButton {
@@ -138,6 +143,10 @@
   }
 }
 
+.arrowWhite {
+  display: none;
+}
+
 .footer {
   font-family: "Proxima Nova";
   font-weight: 400;
@@ -165,4 +174,164 @@
 .arrow {
   width: 14px;
   backdrop-filter: blur(0px);
+}
+
+@media (min-width: 992px) {
+  .mobileBG {
+    display: none;
+  }
+
+  .container {
+    max-height: 686px;
+    padding: 100px 0px 112px;
+    position: relative;
+    overflow: visible;
+    background: linear-gradient(140.82deg, #c5eddb 3.87%, #5bcde8 56.65%);
+
+    > h2 {
+      font-size: 19px;
+      margin-bottom: 45px;
+    }
+  }
+
+  .froggy,
+  .chicky,
+  .cowBalloon,
+  .mlhBanner,
+  .topCloud,
+  .rightCloud,
+  .leftCloud {
+    position: absolute;
+    display: block;
+  }
+
+  .froggy {
+    left: 0;
+    bottom: 0;
+    width: 550px;
+  }
+
+  .cowBalloon {
+    bottom: 0;
+    right: 0;
+    width: 515px;
+  }
+
+  .chicky {
+    width: 60px;
+    left: 30%;
+    top: 5%;
+  }
+
+  .mlhBanner {
+    width: 105px;
+    left: 35px;
+    top: 0;
+  }
+
+  .leftCloud {
+    bottom: 0;
+    max-width: 1097px;
+  }
+
+  .rightCloud {
+    top: -70px;
+    right: 0;
+  }
+
+  .timeBoxContainer {
+    margin-inline: auto;
+    max-width: 706px;
+    margin-bottom: 50px;
+    gap: 0 24px;
+  }
+
+  .timeBox {
+    padding: 32px 51px 2px;
+    margin-bottom: 0;
+
+    > p {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 24px;
+    }
+
+    > span {
+      font-size: 104px;
+      line-height: 127px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    max-width: 356px;
+    margin: auto;
+    justify-content: space-between;
+    gap: 0 24px;
+    margin-bottom: 19px;
+  }
+
+  .discordBlue {
+    display: none;
+  }
+
+  .discordWhite {
+    display: inline;
+  }
+
+  .submitButton {
+    width: 212px;
+    margin: 0;
+
+    > button {
+      color: #5bcde8;
+      width: 100%;
+      background: white;
+      padding: 11px 0;
+    }
+  }
+
+  .helpButton {
+    width: 119px;
+    margin: 0;
+
+    > button {
+      color: white;
+      background: #77dce4;
+      border: 3px solid white;
+      padding: 8px 10px;
+    }
+  }
+
+  .arrowBlue {
+    display: none;
+  }
+
+  .arrowWhite {
+    display: inline;
+  }
+
+  .footer {
+    margin-top: 19px;
+    color: white;
+    text-align: center;
+
+    > br {
+      display: none;
+    }
+
+    > a {
+      display: inline;
+      color: white;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 250ms ease-in-out;
+      padding-bottom: 5px;
+
+      &:hover {
+        border-bottom-color: white;
+        transition: border-bottom 250ms ease-in-out;
+      }
+    }
+  }
 }

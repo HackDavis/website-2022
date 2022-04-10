@@ -32,6 +32,7 @@ export function MainSection() {
 				<CowHeart />
 				<Prizes />
 				<Section_Sponsors/>
+				<Section_Adventure/>
 			</div>
 			
 			{/* tablet, desktop */}
@@ -52,7 +53,10 @@ export function MainSection() {
 				<Prizes />
 				<div className={styles.aboutSection}>
 					<About/>
-					<CowHeart />
+					<div>
+						<div className={styles.filler}></div>
+						<CowHeart />
+					</div>
 				</div>
 				<Section_Sponsors/>
 				<Section_Adventure/>

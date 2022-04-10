@@ -57,7 +57,14 @@
 .aboutSection {
   gap: 24px;
 
-  > section {
+  > div:last-child {
     width: 48.9%;
+    display: flex;
+    flex-direction: column;
+
+    > .filler {
+      flex-grow: 1;
+      background: #1B6E90;
+    }
   }
 }
