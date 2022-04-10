@@ -58,8 +58,13 @@
 }
 
 .headerText {
-  text-align: center;
-  @include header1();
+  text-align: left;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: white;
   margin-bottom: 59px;
 }
 
@@ -82,7 +87,7 @@
     margin-bottom: 24px;
   }
   .headerText {
-    @include header1($size: 48px, $line-height: 62px);
+    text-align: center;
   }
   .sponsors {
     a {

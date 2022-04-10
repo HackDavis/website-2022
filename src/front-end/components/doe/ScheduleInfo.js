@@ -56,6 +56,25 @@ export const sundayScheduleInfo = [
     title: "Workshop",
     description: "Daryl Cai @ MANGA",
     location: "ARC Ballroom B"
+  },
+  {
+    firstLine: "11:00 AM - 12:00 PM",
+    type: "Activity",
+    title: "Team Mixer",
+    location: "ARC Ballroom B"
+  },
+  {
+    firstLine: "11:00 AM - 12:00 PM",
+    type: "Workshop",
+    title: "Workshop",
+    description: "Daryl Cai @ MANGA",
+    location: "ARC Ballroom B"
+  },
+  {
+    firstLine: "AFTERNOON SNACK",
+    type: "Menu",
+    title: "Dumpling House",
+    description: "Overpriced food"
   }
 ];
 

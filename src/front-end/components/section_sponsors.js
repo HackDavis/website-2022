@@ -31,7 +31,7 @@ const Section_Sponsors = () => {
     <Fade>
       <div className={styles.container}>
         <section className={styles.contentWrapper}>
-          <h2 className={styles.headerText}>Sponsors and Partners</h2>
+          <h2 className={styles.headerText}>Sponsors</h2>
           <div className={styles.sponsors}>
             <a className={styles.ford} href="https://www.fordfund.org/" target="_blank">
               <img className={`${styles.imageStyle}`} src={Fmc} />

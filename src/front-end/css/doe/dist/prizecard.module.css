@@ -1,13 +1,11 @@
-@import "../defs";
-
 .container {
   font-family: "Proxima Nova";
   background-color: #436073;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  // margin-bottom: 15px;
 }
+
 .title {
   color: white;
   font-family: "Proxima Nova";
@@ -19,6 +17,7 @@
   margin-bottom: 0;
   width: 80%;
 }
+
 .top {
   width: 100%;
   display: flex;
@@ -26,6 +25,7 @@
   padding: 20px;
   position: relative;
 }
+
 .top:hover {
   cursor: pointer;
 }
@@ -36,9 +36,11 @@
   left: 10px;
   top: 20px;
 }
+
 .prize {
   width: 100%;
 }
+
 .downArrowCont {
   width: 20px;
   position: absolute;
@@ -56,19 +58,24 @@
 }
 
 .bot {
-  @include body();
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.02rem;
+  margin: 0;
+  font-size: 0.875rem;
   display: none;
   transition: transform ease-in-out 200ms;
   width: 100%;
   padding: 0px 20px 20px 20px;
-
-  p {
-    font-family: "Proxima Nova";
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 19px;
-    letter-spacing: 0.02em;
-  }
+}
+.bot p {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
 }
 
 .showBot {
@@ -84,19 +91,21 @@
     flex: 0 1 43%;
     height: fit-content;
   }
+
   .bot {
     height: fit-content;
-
-    p {
-      font-size: 16px;
-      line-height: 20px;
-    }
   }
+  .bot p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
   .title {
     font-size: 24px;
     line-height: 29px;
     margin-top: 0;
   }
+
   .prizeImgCont {
     top: 20px;
   }
