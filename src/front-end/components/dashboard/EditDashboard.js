@@ -8,9 +8,12 @@ import { updateUserDesc } from "../../../back-end/DBQueries/updateUserDesc";
 import { userStateAtom } from "../../../recoil/atoms/userAtom.js";
 import { SetUserDescription } from "../../../recoil/selectors/setUserDesc";
 import { SetUserDiscordID } from "../../../recoil/selectors/setUserDiscordID";
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
+import { updateUserTeamDesc } from "back-end/DBQueries/updateUserTeamDesc";
+import { groupStateAtom } from "recoil/atoms/groupAtom";
 
 export default function EditDashboard(props) {
+  const [group, setGroup] = useRecoilState(groupStateAtom);
   const [form, setForm] = useState({
     description: props.user.description,
     discord: props.user.discord_id
@@ -43,6 +46,11 @@ export default function EditDashboard(props) {
 
     await updateUserDesc(props.user.user_id, form.description);
     setUserDescription(form.description);
+
+    if (props.user.group_id !== "") {
+      const updatedGroup = await updateUserTeamDesc(props.user.user_id, props.user.group_id);
+      setGroup(updatedGroup);
+    }
 
     props.setShowEdit(false);
   }
