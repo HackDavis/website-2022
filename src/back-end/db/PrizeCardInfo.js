@@ -14,13 +14,13 @@ export const PrizeCardInfo = [
 	{
 		title: "Most Technically Challenging Hack",
 		prize: "Drones for each member of the winning team",
-	description: "",
+	description: "Projects must showcase breadth and application of technical knowledge.",
 	color: "green"
 	},
 	{
 		title: "Most Creative Hack",
 		prize: "Lego Set for each member of the winning team",
-	description: "",
+	description: "Projects must be unique and original, and showcase creativity and out-of-the-box thinking.",
 	color: "green"
 	},
 	{
@@ -71,5 +71,5 @@ export const PrizeCardInfo = [
     description: "",
     color: "yellow"
 	}
-	// Updated as of 4/6/2022
+	// Updated as of 4/11/2022, may need to remove best sustainability hack
 ];
