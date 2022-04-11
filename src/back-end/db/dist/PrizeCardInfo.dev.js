@@ -59,11 +59,6 @@ var PrizeCardInfo = [{
   prize: "UC Davis Adidas gear for each member of the winning team. The team will also be spotlighted at a football game this fall with a videoboard and on-field recognition.",
   description: "Projects must provide an avenue for Aggies to access sport schedules, tickets, giveaways, and in-game activities at athletics events, as well as aim to reward students who show their school spirit by attending games.",
   color: "yellow"
-}, {
-  title: "Best Sustainability Hack",
-  prize: "Hydroflasks for each member of the winning team",
-  description: "",
-  color: "yellow"
-} // Updated as of 4/11/2022, may need to remove best sustainability hack
+} // Updated as of 4/11/2022
 ];
 exports.PrizeCardInfo = PrizeCardInfo;
