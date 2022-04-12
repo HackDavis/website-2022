@@ -13,14 +13,12 @@ export function CowHeart() {
   const [animateHeart, setAnimateHeart] = useState(false);
 
   return (
-    <Fade>
-      <section className={styles.container}>
-        <img className={styles.base_image} src={base_image} alt="cow image" onMouseMove={() => setAnimateHand(true)} onClick={() => setAnimateHeart(true)} />
-        <img className={animateHand ? `${styles.hand_up} ${styles.hand_animate}` : `${styles.hand_up}`} onAnimationEnd={() => setAnimateHand(false)} src={hand_up} alt="cow hand" />
-        <img className={styles.lightbulb} src={lightbulb} alt="lightbulb" />
-        <img className={styles.code_box} src={code_box} alt="code box" />
-        <img className={animateHeart ? `${styles.heart} ${styles.heart_animate}` : `${styles.heart}`} onClick={() => setAnimateHeart(true)} onAnimationEnd={() => setAnimateHeart(false)} src={heart} alt="heart" />
-      </section>
-    </Fade>
+    <section className={styles.container}>
+      <img className={styles.base_image} src={base_image} alt="cow image" onMouseMove={() => setAnimateHand(true)} onClick={() => setAnimateHeart(true)} />
+      <img className={animateHand ? `${styles.hand_up} ${styles.hand_animate}` : `${styles.hand_up}`} onAnimationEnd={() => setAnimateHand(false)} src={hand_up} alt="cow hand" />
+      <img className={styles.lightbulb} src={lightbulb} alt="lightbulb" />
+      <img className={styles.code_box} src={code_box} alt="code box" />
+      <img className={animateHeart ? `${styles.heart} ${styles.heart_animate}` : `${styles.heart}`} onClick={() => setAnimateHeart(true)} onAnimationEnd={() => setAnimateHeart(false)} src={heart} alt="heart" />
+    </section>
   );
 }

@@ -244,6 +244,11 @@ h4.white {
   }
 }
 
+.ongoing {
+  border: solid 2px #B7EEEC;
+  padding: 12px 18px 7px;
+}
+
 @media (min-width: 992px) {
   .wrapper {
     flex-grow: 1;
@@ -254,7 +259,7 @@ h4.white {
 
   .container {
     clip-path: none;
-    padding: 50px min(60px, 2vw) 0;
+    padding: 50px min(60px, 2vw) 44px;
     height: 100%;
     overflow-y: auto;
 

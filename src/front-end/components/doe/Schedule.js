@@ -3,11 +3,14 @@ import styles from 'front-end/css/doe/schedule.module.scss';
 import PinWhite from "front-end/images/doe/PinWhite.svg";
 import { saturdayScheduleInfo, sundayScheduleInfo, activitiesInfo } from "./ScheduleInfo";
 
-function ScheduleCard({ firstLine, type, title, location, description }, index) {
+function ScheduleCard({ firstLine, type, title, location, description, start, end }, index) {
   const colorClass = type === "Workshop" ? styles.blue : type === "Activity" ? styles.yellow : type === "Menu" ? styles.green : styles.white;
+  const now = new Date();
+  const ongoing = now > start && now < end;
+  const cardClass = ongoing ? [styles.cardContainer, styles.ongoing].join(" ") : styles.cardContainer;
 
   return (
-    <div className={styles.cardContainer} key={index}>
+    <div className={cardClass} key={index}>
       <div className={`${styles.dot} ${colorClass}`}></div>
       <div className={styles.cardInfo}>
         <p>{firstLine ? firstLine : null}</p>

@@ -53,7 +53,7 @@
   max-width: 75vw;
   background: rgba(158, 231, 229, 0.2);
   backdrop-filter: blur(8px);
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 24px;
   padding: 12px 18px 8px;
 
@@ -249,6 +249,9 @@
   .timeBox {
     padding: 32px 51px 2px;
     margin-bottom: 0;
+    border-radius: 20px;
+    background: rgba(18, 168, 177, 0.2);
+    backdrop-filter: blur(30px);
 
     > p {
       font-weight: 800;
@@ -333,5 +336,11 @@
         transition: border-bottom 250ms ease-in-out;
       }
     }
+  }
+}
+
+@media (min-width: 1280px) {
+  .froggy {
+    z-index: 5;
   }
 }
