@@ -18,6 +18,8 @@ import Section_Sponsors from '../components/section_sponsors.js';
 import Footer from "../components/footer";
 import Section_Adventure from "front-end/components/section_adventure";
 
+import {BoardTimer} from "../components/doe/BoardTimer";
+
 export function MainSection() {
 	return (
 		<>
@@ -37,6 +39,7 @@ export function MainSection() {
 			
 			{/* tablet, desktop */}
 			<div className={`d-none d-lg-flex ${styles.non_mobile_container}`}>
+				{/* <BoardTimer /> */}
 				<Timer />
 				<div className={styles.locationSection}>
 					<Location />

@@ -14,8 +14,8 @@ import DiscordWhite from "front-end/images/doe/DiscordWhite.svg";
 
 export function Timer() {
   // GMT-0700 during DST, GMT-0800 otherwise
-  const start = new Date("April 16, 2022, 10:00:00 GMT-0700");
-  const end = new Date("April 17, 2022, 10:00:00 GMT-0700");
+  const start = new Date("April 16, 2022, 11:00:00 GMT-0700");
+  const end = new Date("April 17, 2022, 11:00:00 GMT-0700");
   const ongoing = new Date() > start;
 
   const Timer = ({ hours, minutes, seconds, completed }) => {

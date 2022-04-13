@@ -16,6 +16,7 @@ import { LoginError } from "./front-end/pages/LoginError";
 import { PageNotFound } from "./front-end/pages/PageNotFound";
 import { PlacesToStay } from "./front-end/pages/PlacesToStay";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {BoardTimer} from "./front-end/components/doe/BoardTimer.js";
 
 import "./App.css";
 
@@ -62,6 +63,7 @@ export default function App() {
         <Route path="/401" element={<LoginError />} />
         <Route path="/placestostay" element={<PlacesToStay />} />
         <Route path="/404" element={<PageNotFound />} />
+        <Route path="/boardtimer" element={<BoardTimer />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </Router>

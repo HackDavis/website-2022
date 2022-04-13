@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "front-end/css/doe/schedule.module.scss";
 import PinWhite from "front-end/images/doe/PinWhite.svg";
 import {
@@ -15,13 +15,13 @@ function ScheduleCard(
     type === "Workshop"
       ? styles.blue
       : type === "Activity"
-      ? styles.yellow
-      : type === "Menu"
-      ? styles.green
-      : styles.white;
+        ? styles.yellow
+        : type === "Menu"
+          ? styles.green
+          : styles.white;
   const now = new Date();
   const ongoing = now > start && now < end;
-  const cardClass = ongoing
+  let cardClass = ongoing
     ? [styles.cardContainer, styles.ongoing].join(" ")
     : styles.cardContainer;
 
@@ -32,12 +32,12 @@ function ScheduleCard(
         <p>{firstLine ? firstLine : null}</p>
         <h4 className={colorClass}>{title ? title : null}</h4>
         <h5 className={styles.desc}>{description ? description : null}</h5>
-        {location ? (
+        {location && (
           <h6>
             <img src={PinWhite} alt="location icon" />
             <span>{location}</span>
           </h6>
-        ) : null}
+        )}
       </div>
     </div>
   );
@@ -54,6 +54,8 @@ export default function Schedule() {
   const [saturdaySchedule, setSaturdaySchedule] =
     useState(saturdayScheduleInfo);
   const [sundaySchedule, setSundaySchedule] = useState(sundayScheduleInfo);
+  // const [addSaturdayGradient, setAddSaturdayGradient] = useState(true);
+  // const [addSundayGradient, setAddSundayGradient] = useState(true);
 
   useEffect(() => {
     if (toShow === all) setFilter(() => (event) => true);
@@ -67,6 +69,22 @@ export default function Schedule() {
   useEffect(() => {
     setSaturdaySchedule(saturdayScheduleInfo.filter(filter));
     setSundaySchedule(sundayScheduleInfo.filter(filter));
+
+    // if (!saturdayRef.current || !sundayRef.current) return;
+
+    // console.log("saturday height: ", saturdayRef?.current?.clientHeight);
+    // console.log("sunday height: ", sundayRef?.current?.clientHeight);
+    // if (saturdayRef?.current?.clientHeight >= 575) {
+    //   setAddSaturdayGradient(true);
+    // } else {
+    //   setAddSaturdayGradient(false);
+    // }
+
+    // if (sundayRef?.current?.clientHeight >= 575) {
+    //   setAddSundayGradient(true);
+    // } else {
+    //   setAddSundayGradient(false);
+    // }
   }, [filter]);
 
   return (
@@ -100,36 +118,36 @@ export default function Schedule() {
           </button>
         </div>
         <div className={styles.schedules}>
-          {saturdaySchedule.length > 0 ? (
+          {saturdaySchedule.length > 0 && (
             <div className={styles.saturdayContainer}>
               <h3>
                 Saturday <span>4/16</span>
               </h3>
               <div className={styles.scheduleCards}>
-                <div className={styles.gradient} />
+                {saturdaySchedule.length >= 5 && <span className={styles.gradient} />}
                 {saturdaySchedule.map((event, index) =>
                   ScheduleCard(event, index)
                 )}
-                <div className={styles.gradient_bot} />
+                {saturdaySchedule.length >= 5 && <span className={styles.gradient_bot} />}
               </div>
             </div>
-          ) : null}
-          {sundaySchedule.length > 0 ? (
+          )}
+          {sundaySchedule.length > 0 && (
             <div className={styles.sundayContainer}>
               <h3 className={styles.sundayTitle}>
                 Sunday <span>4/17</span>
               </h3>
-              <div className={styles.gradient} />
               <div className={styles.scheduleCards}>
+                {sundaySchedule.length >= 5 && <span className={styles.gradient} />}
                 {sundayScheduleInfo
                   .filter(filter)
                   .map((event, index) => ScheduleCard(event, index))}
+                {sundaySchedule.length >= 5 && <span className={styles.gradient_bot} />}
               </div>
-              <div className={styles.gradient_bot} />
             </div>
-          ) : null}
+          )}
         </div>
-        {toShow === all || toShow === activities ? (
+        {(toShow === all || toShow === activities) && (
           <div className={styles.activitiesContainer}>
             <h3 className={styles.activityh3}>Activities available 24/7</h3>
             <div className={styles.activityCards}>
@@ -138,7 +156,7 @@ export default function Schedule() {
               )}
             </div>
           </div>
-        ) : null}
+        )}
       </section>
     </div>
   );

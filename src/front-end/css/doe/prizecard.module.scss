@@ -14,7 +14,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  margin-left: 20px;
+  // margin-left: 20px;
   margin-top: 3px;
   margin-bottom: 0;
   width: 80%;
@@ -23,16 +23,19 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 16px 16px 16px 12px;
   position: relative;
+  gap: 0 10px;
 }
 .top:hover {
   cursor: pointer;
 }
 
 .prizeImgCont {
+  align-self: flex-start;
   width: 20px;
-  position: absolute;
+  // position: absolute;
   left: 10px;
   top: 20px;
 }
@@ -40,9 +43,10 @@
   width: 100%;
 }
 .downArrowCont {
+  align-self: flex-start;
   width: 20px;
-  position: absolute;
-  right: 15px;
+  // position: absolute;
+  // right: 15px;
   top: 20px;
 }
 
@@ -83,6 +87,9 @@
   .container {
     flex: 0 1 43%;
     height: fit-content;
+  }
+  .top {
+    padding: 20px 24px 20px 20px;
   }
   .bot {
     height: fit-content;

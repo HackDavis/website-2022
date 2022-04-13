@@ -30,9 +30,9 @@ export const PrizeCardInfo = [
 		color: "yellow"
 	},
 	{
-		title: "Best AggieData Hack, sponsored by UC Davis DataLab",
-		prize: "Winners will have their visualization printed and displayed in the DataLab in Shields Library, be invited to a DataLab luncheon, and invited to participate in DataLab’s internship program.",
-    description: "Projects must use at least one publicly accessible dataset that is focused on UC Davis to address questions of interest to our campus community. For consideration for this award, the team must produce a GitHub repository with a readME, annotated code, and a reproducible static data visualization. The visualization should have an accompanying 1-page narrative describing the goals, methods, and interpretation of the project.",
+		title: "Best Campus Living Hack, sponsored by Student Housing and Dining Services",
+		prize: "AggieCash + Swag for each member of the winning team",
+    description: "Projects must tackle aspects of campus living in the residence halls and/or dining commons.",
     color: "yellow"
 	},
 	{
@@ -54,9 +54,9 @@ export const PrizeCardInfo = [
     color: "yellow"
 	},
 	{
-		title: "Best Campus Living Hack, sponsored by Student Housing and Dining Services",
-		prize: "AggieCash + Swag for each member of the winning team",
-    description: "Projects must tackle aspects of campus living in the residence halls and/or dining commons.",
+		title: "Best AggieData Hack, sponsored by UC Davis DataLab",
+		prize: "Winners will have their visualization printed and displayed in the DataLab in Shields Library, be invited to a DataLab luncheon, and invited to participate in DataLab’s internship program.",
+    description: "Projects must use at least one publicly accessible dataset that is focused on UC Davis to address questions of interest to our campus community. For consideration for this award, the team must produce a GitHub repository with a readME, annotated code, and a reproducible static data visualization. The visualization should have an accompanying 1-page narrative describing the goals, methods, and interpretation of the project.",
     color: "yellow"
 	},
 	{

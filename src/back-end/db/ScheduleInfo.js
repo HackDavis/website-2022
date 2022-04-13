@@ -52,9 +52,9 @@ export const saturdayScheduleInfo = [
     firstLine: "LUNCH",
     type: "Menu",
     title: "Mr. Pickles Sandwich Shop",
-    description: "cheese and vegetable sandwich (v), veggie wraps (vg/gf), turkey, ham, roast beef sandwiches; chocolate chip cookie (v)",
+    description: "Turkey, ham, roast beef sandwiches, cheese and vegetable sandwich (v), veggie wraps (vg/gf); chocolate chip cookie (v)",
     start: new Date("April 16 2022 12:00:00 GMT-0700"),
-    end: new Date("April 16 2022 12:30:00 GMT-0700")
+    end: new Date("April 16 2022 13:00:00 GMT-0700")
   },
   {
     firstLine: "12:30 PM - 1:30 PM",
@@ -93,6 +93,15 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 15:00:00 GMT-0700")
   },
   {
+    firstLine: "2:00 PM - 3:00 PM",
+    type: "Activity",
+    title: "Surprise Game",
+    description: "Major League Hacking",
+    location: "Gaming/Activity Area",
+    start: new Date("April 16 2022 14:00:00 GMT-0700"),
+    end: new Date("April 16 2022 15:00:00 GMT-0700")
+  },
+  {
     firstLine: "3:00 PM - 4:00 PM",
     type: "Workshop",
     title: "3D Printing Workshop",
@@ -107,7 +116,7 @@ export const saturdayScheduleInfo = [
     title: "Eclipse Foods",
     description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, mango passionfruit, dark chocolate chip, caramel butter pecan, mint chip)",
     start: new Date("April 16 2022 15:30:00 GMT-0700"),
-    end: new Date("April 16 2022 15:45:00 GMT-0700")
+    end: new Date("April 16 2022 16:00:00 GMT-0700")
   },
   {
     firstLine: "3:30 PM - 4:30 PM",
@@ -119,6 +128,16 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 16:30:00 GMT-0700")
   },
   {
+    firstLine: "3:30 PM - 4:30 PM",
+    type: "Activity",
+    title: "Coffee Chat",
+    description: "UCD Library DataLab",
+    location: "Ballroom Patio",
+    start: new Date("April 16 2022 15:30:00 GMT-0700"),
+    end: new Date("April 16 2022 16:30:00 GMT-0700")
+  },
+  
+  {
     firstLine: "4:00 PM - 5:00 PM",
     type: "Workshop",
     title: "Arduino Workshop",
@@ -128,13 +147,39 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 17:00:00 GMT-0700")
   },
   {
+    firstLine: "4:30 PM - 5:30 PM",
+    type: "Activity",
+    title: "Zumba",
+    description: "Katrina Lau @ Zumba Instructor",
+    location: "Gaming/Activity Area",
+    start: new Date("April 16 2022 16:30:00 GMT-0700"),
+    end: new Date("April 16 2022 17:30:00 GMT-0700")
+  },
+  {
     firstLine: "5:00 PM - 6:00 PM",
     type: "Workshop",
     title: "Careers in Tech Workshop",
-    description: "Alisha Nanda (Google), Laya Gollapudi (Apple), Angie Ni (Microsoft), Rustie Lin (Meta/Aptos)",
+    description: "Alisha Nanda @ Google, Laya Gollapudi @ Apple, Angie Ni @ Microsoft, Rustie Lin @ Meta/Aptos",
     location: "Ballroom B",
     start: new Date("April 16 2022 17:00:00 GMT-0700"),
     end: new Date("April 16 2022 18:00:00 GMT-0700")
+  },
+  {
+    firstLine: "6:00 PM - 7:00 PM",
+    type: "Activity",
+    title: "Cupstacking Tournament #1",
+    description: "HackDavis",
+    location: "Gaming/Activity Area",
+    start: new Date("April 16 2022 18:00:00 GMT-0700"),
+    end: new Date("April 16 2022 19:00:00 GMT-0700")
+  },
+  {
+    firstLine: "DINNER",
+    type: "Menu",
+    title: "Dumpling House",
+    description: "Pork Dumplings, Chicken Dumplings, Vegetable Dumplings (v), Eggplant Tofu w/ Rice (vg)",
+    start: new Date("April 16 2022 18:45:00 GMT-0700"),
+    end: new Date("April 16 2022 20:00:00 GMT-0700")
   },
   {
     firstLine: "7:30 PM - 8:30 PM",
@@ -149,7 +194,7 @@ export const saturdayScheduleInfo = [
     firstLine: "8:30 PM - 9:30 PM",
     type: "Workshop",
     title: "Tackling Imposter Syndrome in Tech",
-    description: "Angie Ni (Microsoft)",
+    description: "Angie Ni @ Microsoft",
     location: "Ballroom B",
     start: new Date("April 16 2022 20:30:00 GMT-0700"),
     end: new Date("April 16 2022 21:30:00 GMT-0700")
@@ -178,51 +223,49 @@ export const sundayScheduleInfo = [
     firstLine: "MIDNIGHT SNACK",
     type: "Menu",
     title: "Eclipse Foods",
-    description: "Ice cream pint (vg/gf) Flavors",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
+    description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, mango passion fruit, dark chocolate chip, caramel butter pecan, mint chip)",
+    start: new Date("April 17 2022 00:00:00 GMT-0700"),
+    end: new Date("April 17 2022 01:00:00 GMT-0700")
   },
   {
-    firstLine: "1:30 AM - 2:30AM",
-    type: "Activity",
-    title: "Super Smash Tournament (i.e. Cam beats people up)",
-    location: "Video Game Area",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
-  },
-  {
-    firstLine: "11:00 AM - 12PM",
-    type: "Workshop",
-    title: "Workshop",
-    description: "Daryl Cai @ MANGA",
-    location: "ARC Ballroom B",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
-  },
-  {
-    firstLine: "11:00 AM - 12:00 PM",
-    type: "Activity",
-    title: "Team Mixer",
-    location: "ARC Ballroom B",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
-  },
-  {
-    firstLine: "11:00 AM - 12:00 PM",
-    type: "Workshop",
-    title: "Workshop",
-    description: "Daryl Cai @ MANGA",
-    location: "ARC Ballroom B",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
-  },
-  {
-    firstLine: "AFTERNOON SNACK",
+    firstLine: "BREAKFAST",
     type: "Menu",
-    title: "Dumpling House",
-    description: "Overpriced food",
-    start: new Date("April 16 2022 8:30:00 GMT-0700"),
-    end: new Date("April 16 2022 9:30:00 GMT-0700")
+    title: "Fluffy Donuts",
+    description: "cake donuts (vg), cake donuts (v), old fashioned donuts (v)",
+    start: new Date("April 17 2022 08:30:00 GMT-0700"),
+    end: new Date("April 17 2022 10:00:00 GMT-0700")
+  },
+  {
+    firstLine: "11:00 AM",
+    type: "None",
+    title: "Hacking Ends",
+    start: new Date("April 17 2022 11:00:00 GMT-0700"),
+    end: new Date("April 17 2022 11:00:00 GMT-0700")
+  },
+  {
+    firstLine: "11:15 AM - 1:30 PM",
+    type: "None",
+    title: "Judging",
+    location: "Main Venue",
+    start: new Date("April 17 2022 11:15:00 GMT-0700"),
+    end: new Date("April 17 2022 13:30:00 GMT-0700")
+  },
+  {
+    firstLine: "11:30 AM - 12:30 PM",
+    type: "Activity",
+    title: "Cupstacking Tournament #2",
+    description: "HackDavis",
+    location: "Gaming/Activity Area",
+    start: new Date("April 17 2022 11:30:00 GMT-0700"),
+    end: new Date("April 17 2022 12:30:00 GMT-0700")
+  },
+  {
+    firstLine: "1:45 PM - 2:30 PM",
+    type: "None",
+    title: "Closing Ceremony",
+    location: "Main Venue",
+    start: new Date("April 17 2022 13:45:00 GMT-0700"),
+    end: new Date("April 17 2022 14:30:00 GMT-0700")
   }
 ];
 
@@ -238,11 +281,11 @@ export const activitiesInfo = [
     title: "Table Tennis",
     type: "Activity",
     location: "Table Tennis Court"
-  },
-  {
-    firstLine: "OPEN 24/7",
-    title: "Video Games",
-    type: "Activity",
-    location: "Video Game Area"
   }
+  // {
+  //   firstLine: "OPEN 24/7",
+  //   title: "Video Games",
+  //   type: "Activity",
+  //   location: "Gaming/Activity Area"
+  // }
 ];
