@@ -209,6 +209,7 @@
     left: 0;
     bottom: 0;
     width: 550px;
+    pointer-events:none;
   }
 
   .cowBalloon {
@@ -286,7 +287,6 @@
   .submitButton {
     width: 212px;
     margin: 0;
-
     > button {
       color: #5bcde8;
       width: 100%;
@@ -342,5 +342,6 @@
 @media (min-width: 1280px) {
   .froggy {
     z-index: 5;
+    pointer-events:none;
   }
 }
