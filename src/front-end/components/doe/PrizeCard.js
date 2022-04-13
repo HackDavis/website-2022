@@ -11,7 +11,11 @@ export function PrizeCard({ prizeInfo }) {
           <summary className={colorClass}>
             <h3>{prizeInfo.title}</h3>
           </summary>
-          <p hidden={prizeInfo.description === ""}>{prizeInfo.description}</p>
+          <p>
+            {prizeInfo.prize}
+            <br /><br hidden={prizeInfo.description === ""} />
+            {prizeInfo.description}
+          </p>
         </details>
       </div>
     </>

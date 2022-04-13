@@ -40,7 +40,8 @@
       content: url("../../images/doe/PrizeGreen.svg");
     }
 
-    &::before, &::after {
+    &::before,
+    &::after {
       width: 24px;
       height: 24px;
     }
@@ -52,7 +53,8 @@
       transform: rotate(0deg);
     }
 
-    &::marker, &::-webkit-details-marker {
+    &::marker,
+    &::-webkit-details-marker {
       display: none;
     }
   }
