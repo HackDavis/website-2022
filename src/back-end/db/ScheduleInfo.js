@@ -52,7 +52,7 @@ export const saturdayScheduleInfo = [
     firstLine: "LUNCH",
     type: "Menu",
     title: "Mr. Pickles Sandwich Shop",
-    description: "Turkey, ham, roast beef sandwiches, cheese and vegetable sandwich (v), veggie wraps (vg/gf); chocolate chip cookie (v)",
+    description: "Sandwiches (Turkey, Ham, Roast Beef, Cheese (v)) / Wrap (vg/gf); Chocolate Chip Cookie (v)",
     start: new Date("April 16 2022 12:00:00 GMT-0700"),
     end: new Date("April 16 2022 13:00:00 GMT-0700")
   },
@@ -114,7 +114,7 @@ export const saturdayScheduleInfo = [
     firstLine: "AFTERNOON SNACK",
     type: "Menu",
     title: "Eclipse Foods",
-    description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, mango passionfruit, dark chocolate chip, caramel butter pecan, mint chip)",
+    description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, Mango Passion Fruit, Dark Chocolate Chip, Caramel Butter Pecan, Mint Chip)",
     start: new Date("April 16 2022 15:30:00 GMT-0700"),
     end: new Date("April 16 2022 16:00:00 GMT-0700")
   },
@@ -174,10 +174,19 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 19:00:00 GMT-0700")
   },
   {
+    firstLine: "6:00 PM - 7:00 PM",
+    type: "Workshop",
+    title: "Keeping Data Secure with Google Cloud",
+    description: "GDSC",
+    location: "Ballroom A",
+    start: new Date("April 16 2022 18:00:00 GMT-0700"),
+    end: new Date("April 16 2022 19:00:00 GMT-0700")
+  },
+  {
     firstLine: "DINNER",
     type: "Menu",
     title: "Dumpling House",
-    description: "Pork Dumplings, Chicken Dumplings, Vegetable Dumplings (v), Eggplant Tofu w/ Rice (vg)",
+    description: "Dumplings (Pork, Chicken, Vegetable(v)) / Eggplant Tofu w/ Rice (vg)",
     start: new Date("April 16 2022 18:45:00 GMT-0700"),
     end: new Date("April 16 2022 20:00:00 GMT-0700")
   },
@@ -200,15 +209,6 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 21:30:00 GMT-0700")
   },
   {
-    firstLine: "6:00 PM - 7:00 PM",
-    type: "Workshop",
-    title: "Keeping Data Secure with Google Cloud",
-    description: "GDSC",
-    location: "Ballroom A",
-    start: new Date("April 16 2022 18:00:00 GMT-0700"),
-    end: new Date("April 16 2022 19:00:00 GMT-0700")
-  },
-  {
     firstLine: "10:00 PM - 2:30 AM",
     type: "None",
     title: "Sleeping Rooms Open",
@@ -223,7 +223,7 @@ export const sundayScheduleInfo = [
     firstLine: "MIDNIGHT SNACK",
     type: "Menu",
     title: "Eclipse Foods",
-    description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, mango passion fruit, dark chocolate chip, caramel butter pecan, mint chip)",
+    description: "Ice Cream Pint (vg/df) (flavors: Cookie Butter, Mango Passion Fruit, Dark Chocolate Chip, Caramel Butter Pecan, Mint Chip)",
     start: new Date("April 17 2022 00:00:00 GMT-0700"),
     end: new Date("April 17 2022 01:00:00 GMT-0700")
   },
@@ -231,7 +231,7 @@ export const sundayScheduleInfo = [
     firstLine: "BREAKFAST",
     type: "Menu",
     title: "Fluffy Donuts",
-    description: "cake donuts (vg), cake donuts (v), old fashioned donuts (v)",
+    description: "Assorted Donuts (v), Cake Donuts (vg)",
     start: new Date("April 17 2022 08:30:00 GMT-0700"),
     end: new Date("April 17 2022 10:00:00 GMT-0700")
   },
