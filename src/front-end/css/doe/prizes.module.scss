@@ -4,6 +4,7 @@
     @include border();
     padding: 40px 15px 25px 15px;
     margin-bottom: 24px;
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -22,7 +23,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px 30px;
-      
+    margin-top: 0px;
   }
   .title {
     text-align: center;

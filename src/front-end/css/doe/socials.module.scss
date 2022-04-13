@@ -45,6 +45,11 @@
   //   position: relative;
   //   margin-right: 10px;
   width: 30px;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.15);
+  }
 }
 
 .iconfb {
@@ -52,6 +57,11 @@
   // margin-right: 10px;
   margin-top: 8px;
   width: 35px;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.15);
+  }
 }
 
 @media only screen and (min-width: 992px) {

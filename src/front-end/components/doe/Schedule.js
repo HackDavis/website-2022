@@ -1,13 +1,29 @@
 import React, { useState, useEffect } from "react";
-import styles from 'front-end/css/doe/schedule.module.scss';
+import styles from "front-end/css/doe/schedule.module.scss";
 import PinWhite from "front-end/images/doe/PinWhite.svg";
-import { saturdayScheduleInfo, sundayScheduleInfo, activitiesInfo } from "./ScheduleInfo";
+import {
+  saturdayScheduleInfo,
+  sundayScheduleInfo,
+  activitiesInfo
+} from "../../../back-end/db/ScheduleInfo";
 
-function ScheduleCard({ firstLine, type, title, location, description, start, end }, index) {
-  const colorClass = type === "Workshop" ? styles.blue : type === "Activity" ? styles.yellow : type === "Menu" ? styles.green : styles.white;
+function ScheduleCard(
+  { firstLine, type, title, location, description, start, end },
+  index
+) {
+  const colorClass =
+    type === "Workshop"
+      ? styles.blue
+      : type === "Activity"
+      ? styles.yellow
+      : type === "Menu"
+      ? styles.green
+      : styles.white;
   const now = new Date();
   const ongoing = now > start && now < end;
-  const cardClass = ongoing ? [styles.cardContainer, styles.ongoing].join(" ") : styles.cardContainer;
+  const cardClass = ongoing
+    ? [styles.cardContainer, styles.ongoing].join(" ")
+    : styles.cardContainer;
 
   return (
     <div className={cardClass} key={index}>
@@ -16,12 +32,12 @@ function ScheduleCard({ firstLine, type, title, location, description, start, en
         <p>{firstLine ? firstLine : null}</p>
         <h4 className={colorClass}>{title ? title : null}</h4>
         <h5 className={styles.desc}>{description ? description : null}</h5>
-        {location ?
+        {location ? (
           <h6>
             <img src={PinWhite} alt="location icon" />
             <span>{location}</span>
           </h6>
-          : null}
+        ) : null}
       </div>
     </div>
   );
@@ -35,13 +51,16 @@ export default function Schedule() {
 
   const [toShow, setToShow] = useState(all);
   const [filter, setFilter] = useState(() => (event) => true);
-  const [saturdaySchedule, setSaturdaySchedule] = useState(saturdayScheduleInfo);
+  const [saturdaySchedule, setSaturdaySchedule] =
+    useState(saturdayScheduleInfo);
   const [sundaySchedule, setSundaySchedule] = useState(sundayScheduleInfo);
 
   useEffect(() => {
     if (toShow === all) setFilter(() => (event) => true);
-    if (toShow === activities) setFilter(() => (event) => event.type === "Activity");
-    if (toShow === workshops) setFilter(() => (event) => event.type === "Workshop");
+    if (toShow === activities)
+      setFilter(() => (event) => event.type === "Activity");
+    if (toShow === workshops)
+      setFilter(() => (event) => event.type === "Workshop");
     if (toShow === menu) setFilter(() => (event) => event.type === "Menu");
   }, [toShow]);
 
@@ -58,54 +77,69 @@ export default function Schedule() {
           <button
             className={toShow === all ? styles.selected : undefined}
             onClick={() => setToShow(all)}
-          >ALL
+          >
+            ALL
           </button>
           <button
             className={toShow === activities ? styles.selected : undefined}
             onClick={() => setToShow(activities)}
-          >Activities
+          >
+            Activities
           </button>
           <button
             className={toShow === workshops ? styles.selected : undefined}
             onClick={() => setToShow(workshops)}
-          >Workshops
+          >
+            Workshops
           </button>
           <button
             className={toShow === menu ? styles.selected : undefined}
             onClick={() => setToShow(menu)}
-          >Menu
+          >
+            Menu
           </button>
         </div>
         <div className={styles.schedules}>
-          {saturdaySchedule.length > 0 ?
+          {saturdaySchedule.length > 0 ? (
             <div className={styles.saturdayContainer}>
-              <h3>Saturday <span>4/16</span></h3>
+              <h3>
+                Saturday <span>4/16</span>
+              </h3>
               <div className={styles.scheduleCards}>
-                {saturdaySchedule.map((event, index) => ScheduleCard(event, index))}
+                <div className={styles.gradient} />
+                {saturdaySchedule.map((event, index) =>
+                  ScheduleCard(event, index)
+                )}
+                <div className={styles.gradient_bot} />
               </div>
             </div>
-            : null
-          }
-          {sundaySchedule.length > 0 ?
+          ) : null}
+          {sundaySchedule.length > 0 ? (
             <div className={styles.sundayContainer}>
-              <h3 className={styles.sundayTitle}>Sunday <span>4/17</span></h3>
+              <h3 className={styles.sundayTitle}>
+                Sunday <span>4/17</span>
+              </h3>
+              <div className={styles.gradient} />
               <div className={styles.scheduleCards}>
-                {sundayScheduleInfo.filter(filter).map((event, index) => ScheduleCard(event, index))}
+                {sundayScheduleInfo
+                  .filter(filter)
+                  .map((event, index) => ScheduleCard(event, index))}
               </div>
+              <div className={styles.gradient_bot} />
             </div>
-            : null
-          }
+          ) : null}
         </div>
-        {toShow === all || toShow === activities ?
+        {toShow === all || toShow === activities ? (
           <div className={styles.activitiesContainer}>
             <h3 className={styles.activityh3}>Activities available 24/7</h3>
             <div className={styles.activityCards}>
-              {activitiesInfo.map((activityEvent, index) => ScheduleCard(activityEvent, index))}
+              {activitiesInfo.map((activityEvent, index) =>
+                ScheduleCard(activityEvent, index)
+              )}
             </div>
           </div>
-          : null
-        }
-      </section >
-    </div >
+        ) : null}
+      </section>
+    </div>
   );
 }

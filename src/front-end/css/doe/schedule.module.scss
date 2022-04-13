@@ -61,7 +61,7 @@
   overflow-y: scroll;
   position: relative;
   margin-bottom: 24px;
-
+  position:relative;
   // &:after {
   //   content: "";
   //   position: absolute;
@@ -73,6 +73,31 @@
   //   width: 100%;
   //   height: 100%;
   // }
+}
+
+.gradient {
+  position:sticky;
+  width: 100%;
+  top: 0px;
+  height: 30px;
+  margin-bottom: -30px;
+  background-image: linear-gradient( 
+  rgba(23, 58, 82, 0.9), 
+  rgba(255, 255, 255, 0)
+    100%);
+  // background: linear-gradient(180deg, rgba(23, 58, 82, 0) 92.71%, #173A52 100%);
+}
+
+.gradient_bot {
+  position:sticky;
+  width: 100%;
+  bottom: 0px;
+  height: 30px;
+  margin-top:-30px;
+  background-image: linear-gradient( 
+    rgba(23, 58, 82, 0.9), 
+    rgba(255, 255, 255, 0)
+    100%);
 }
 
 .cardContainer {

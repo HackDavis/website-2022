@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   height: 276px;
   width: 100%;
   background-color: #123041;
@@ -46,7 +47,9 @@
   letter-spacing: 0.08rem;
   inline-size: 280px;
   overflow-wrap: break-word;
-  margin-top: 15px;
+  // margin-top: 15px;
+  margin-bottom: 50px;
+  width: 200px;
   z-index: 998;
   line-height: normal;
   background-color: transparent;
@@ -73,6 +76,7 @@
 @media only screen and (min-width: 992px) {
   .container {
     height: 438px;
+    justify-content: start;
   }
   .headerText {
     @include header2;
