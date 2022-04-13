@@ -8,9 +8,11 @@ export function Prizes() {
     <>
       <div className={styles.content}>
         <h2 className={styles.title}>APIs & Prizes</h2>
-        {PrizeCardInfo.map((prizeInfo, index) => {
-          return <PrizeCard key={index} prizeInfo={prizeInfo} />;
-        })}
+        <div className={styles.prizes}>
+          {PrizeCardInfo.map((prizeInfo, index) => {
+            return <PrizeCard key={index} prizeInfo={prizeInfo} />;
+          })}
+        </div>
       </div>
     </>
   );

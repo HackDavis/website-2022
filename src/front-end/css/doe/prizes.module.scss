@@ -1,33 +1,42 @@
 @import "../defs";
 
 .content {
-    @include border();
-    padding: 36px 15px 25px 15px;
-    margin-bottom: 24px;
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  @include border();
+  padding: 36px 15px 25px 15px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.prizes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
 }
 
 .title {
-    @include header2();
-    font-size: 32px;
-    font-weight: 700;
+  @include header2();
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 26px;
 }
-
 
 @media (min-width: 992px) {
   .content {
-    display: flex;
+    padding: 50px 62px 72px;
+    margin-top: 0;
+  }
+
+  .prizes {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: center;
-    gap: 20px 30px;
-    margin-top: 0px;
+    gap: 30px 40px;
   }
+
   .title {
     text-align: center;
     font-size: 40px;
+    margin-bottom: 50px;
   }
 }

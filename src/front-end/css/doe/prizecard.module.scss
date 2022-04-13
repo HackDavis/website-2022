@@ -4,107 +4,98 @@
   font-family: "Proxima Nova";
   background-color: #436073;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  // margin-bottom: 15px;
-}
-.title {
-  color: white;
-  font-family: "Proxima Nova";
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  // margin-left: 20px;
-  margin-top: 3px;
-  margin-bottom: 0;
-  width: 80%;
-}
-.top {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 16px 16px 12px;
-  position: relative;
-  gap: 0 10px;
-}
-.top:hover {
-  cursor: pointer;
 }
 
-.prizeImgCont {
-  align-self: flex-start;
-  width: 20px;
-  // position: absolute;
-  left: 10px;
-  top: 20px;
-}
-.prize {
-  width: 100%;
-}
-.downArrowCont {
-  align-self: flex-start;
-  width: 20px;
-  // position: absolute;
-  // right: 15px;
-  top: 20px;
-}
+.card {
+  padding: 16px 16px 14px 12px;
 
-.downArrow {
-  width: 100%;
-  transition: transform, 2ms, ease-in-out;
-}
+  &[open] {
+    > summary::after {
+      transition: transform 100ms ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
 
-.flipDownArrow {
-  transform: rotate(180deg);
-}
+  > summary {
+    display: flex;
+    list-style: none;
+    gap: 0 12px;
 
-.bot {
-  @include body();
-  display: none;
-  transition: transform ease-in-out 200ms;
-  width: 100%;
-  padding: 0px 40px 20px 40px;
+    > h3 {
+      position: relative;
+      top: 1px;
+      color: white;
+      font-family: "Proxima Nova";
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0;
+    }
 
-  p {
+    &.yellow::before {
+      content: url("../../images/doe/PrizeYellow.svg");
+    }
+
+    &.green::before {
+      content: url("../../images/doe/PrizeGreen.svg");
+    }
+
+    &::before, &::after {
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      content: url("../../images/doe/ArrowDownWhite.svg");
+      margin-left: auto;
+      transition: transform 100ms ease-in-out;
+      transform: rotate(0deg);
+    }
+
+    &::marker {
+      display: none;
+    }
+  }
+
+  > p {
+    display: flex;
+    gap: 0 12px;
     font-family: "Proxima Nova";
     font-weight: 400;
     font-size: 15px;
     line-height: 19px;
     letter-spacing: 0.02em;
-  }
-}
+    color: white;
+    margin: 0;
+    margin-top: 20px;
+    padding-bottom: 12px;
 
-.showBot {
-  display: flex;
-  transition: transform ease-in-out 200ms;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    &::before,
+    &::after {
+      content: "";
+      padding: 0 12px;
+      height: 24px;
+    }
+  }
 }
 
 @media (min-width: 992px) {
   .container {
-    flex: 0 1 43%;
-    height: fit-content;
+    width: calc(50% - 20px);
   }
-  .top {
-    padding: 20px 24px 20px 20px;
-  }
-  .bot {
-    height: fit-content;
 
-    p {
+  .card {
+    padding: 20px;
+
+    > summary > h3 {
+      font-size: 24px;
+      line-height: 29px;
+      top: 0;
+    }
+
+    > p {
       font-size: 16px;
       line-height: 20px;
     }
-  }
-  .title {
-    font-size: 24px;
-    line-height: 29px;
-    margin-top: 0;
-  }
-  .prizeImgCont {
-    top: 20px;
   }
 }
