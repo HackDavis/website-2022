@@ -6,6 +6,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   // margin-bottom: 15px;
 }
 .title {
@@ -106,5 +107,9 @@
   }
   .prizeImgCont {
     top: 20px;
+  }
+  .bot {
+    width: 100%;
+    padding: 0px min(14%, 69px) 20px min(14%, 69px);
   }
 }
