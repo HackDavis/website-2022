@@ -17,7 +17,7 @@ export async function updateUserTeamDesc(user_id, group_id) {
         groupData.members[user_id] = [userData.name, userData.email, userData.discord_id, userData.description, userData.profile_picture];
         await updateDoc(docRef, {
           members: groupData.members
-        })
+        });
         return groupData;
     } catch (e) {
         console.error ("error updatting group's member field", e);

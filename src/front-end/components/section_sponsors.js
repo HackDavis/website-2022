@@ -24,6 +24,7 @@ import reign from "../images/sponsors/reign.png";
 import ultrapress from "../images/sponsors/ultrapress.png";
 import datalab from "../images/sponsors/datalab.svg";
 import standout from "../images/sponsors/standout.png";
+import kora from "../images/sponsors/kora.png";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -107,6 +108,9 @@ const Section_Sponsors = () => {
               </a>
               <a className={styles.yolo} href="https://visityolo.com/" target="_blank">
                 <img className={`${styles.imageStyle}`} src={visityolo} />
+              </a>
+              <a className={styles.kora} href="http://koramoney.com" target="_blank">
+                <img className={`${styles.imageStyle}`} src={kora} />
               </a>
               <div className={styles.break}></div>
               <a className={styles.reign} href="https://reignbodyfuel.com/en-us/" target="_blank">
