@@ -64,6 +64,31 @@ export const PrizeCardInfo = [
 		prize: "UC Davis Adidas gear for each member of the winning team. The team will also be spotlighted at a football game this fall with a videoboard and on-field recognition.",
     description: "Projects must provide an avenue for Aggies to access sport schedules, tickets, giveaways, and in-game activities at athletics events, as well as aim to reward students who show their school spirit by attending games.",
     color: "yellow"
+	},
+	{
+		title: "Best Pantry Hack",
+		prize: "",
+    description: "The ASUCD Pantry provides UC Davis students, staff, and faculty with free groceries, but there are many other ways to receive basic needs support whether it’s through community organizations or government-provided services. With so many options it can be challenging for an individual to be informed about what services are available and how to obtain them. What are some better ways to organize this information and get it out to the community?",
+    color: "yellow"
+	},
+	{
+		title: "Best Greenhouse Hack",
+		prize: "",
+    description: "The GreenHouse has a library for reading with books for 1st - 12th graders.  All readers are assessed for reading levels 2-3 times a year and there are some books matched to their reading level.  But the majority of the library is not evaluated for reading levels by book. How can a system to analyze books and categorize them by reading level be created?",
+    color: "yellow"
+	},
+	{
+		title: "Best Yolo Food Bank Hack",
+		prize: "",
+    description: "With the large volume of food that the Yolo Food Bank receives, sorting them out and finding their nutritional information can be a long and tedious process. How can this be made more simple for the Yolo Food Bank?",
+    color: "yellow"
+	},
+	{
+		title: "Best Cool Davis Hack",
+		prize: "",
+    description: "Cool Davis has no way currently to encourage local community members to engage with sustainability actions from our Cool Solutions webpage on a super convenient platform that allows them to choose, track, and interact. The Cool California Calculator is an action tracking platform we could share with our community, but it does not allow us to make any changes to the actions and it does not allow us to connect with the users who participate. The Community Climate Solutions program is also a great model but is not free. Community needs are constantly changing and Cool Davis programs must be dynamic and responsive to make a difference. How can all of this be combined into a usable mobile app that can be used by the community?",
+    color: "yellow"
 	}
+
 	// Updated as of 4/11/2022
 ];

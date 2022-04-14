@@ -25,6 +25,10 @@ import ultrapress from "../images/sponsors/ultrapress.png";
 import datalab from "../images/sponsors/datalab.svg";
 import standout from "../images/sponsors/standout.png";
 import kora from "../images/sponsors/kora.png";
+import coolDavis from "../images/sponsors/coolDavis.png";
+import greenHouse from "../images/sponsors/greenHouse.png";
+import pantry from "../images/sponsors/pantry.png";
+import YFB from "../images/sponsors/YFB.png";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Fade from "react-reveal/Fade";
 
@@ -121,6 +125,24 @@ const Section_Sponsors = () => {
               <div className={styles.break}></div>
               <a className={styles.standout} href="http://hackp.ac/mlh-StandOutStickers-hackathons" target="_blank">
                 <img className={`${styles.imageStyle}`} src={standout} />
+              </a>
+            </div>
+          </div>
+          <h3 className={styles.headerText}>Nonprofits</h3>
+          <div className={styles.sponsors}>
+            <div className={styles.mini}>
+              <a className={styles.coolDavis} href="https://www.cooldavis.org/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={coolDavis} />
+              </a>
+              <a className={styles.yoloFood} href="https://yolofoodbank.org/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={YFB} />
+              </a>
+              <div className={styles.break}></div>
+              <a className={styles.pantry} href="https://thepantry.ucdavis.edu/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={pantry} />
+              </a>
+              <a className={styles.greenHouse} href="http://www.thegreenhousecenter.org/" target="_blank">
+                <img className={`${styles.imageStyle}`} src={greenHouse} />
               </a>
             </div>
           </div>

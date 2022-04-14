@@ -102,6 +102,15 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 15:00:00 GMT-0700")
   },
   {
+    firstLine: "2:30 PM - 3:00 PM",
+    type: "Workshop",
+    title: "Financing Your Future",
+    description: "Kora",
+    location: "Ballroom A",
+    start: new Date("April 16 2022 14:30:00 GMT-0700"),
+    end: new Date("April 16 2022 15:00:00 GMT-0700")
+  },
+  {
     firstLine: "3:00 PM - 4:00 PM",
     type: "Workshop",
     title: "3D Printing Workshop",
