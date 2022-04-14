@@ -12,8 +12,13 @@ export function PrizeCard({ prizeInfo }) {
             <h3>{prizeInfo.title}</h3>
           </summary>
           <p>
-            {prizeInfo.prize}
-            <br /><br hidden={prizeInfo.description === ""} />
+            {prizeInfo.prize &&
+              <>
+                {prizeInfo.prize}
+                <br />
+                <br hidden={prizeInfo.description === ""} />
+              </>
+            }
             {prizeInfo.description}
           </p>
         </details>
