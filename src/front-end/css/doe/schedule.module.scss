@@ -75,7 +75,14 @@
 // }
 
 .gradient_bot {
-  display: none;
+  display: block;
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  height: 20px;
+  margin-top: -20px;
+  background-image: -webkit-linear-gradient(rgba(23, 58, 82, 0), rgba(23, 58, 82, 0.7));
+  background-image: -webkit-gradient(rgba(23, 58, 82, 0), rgba(23, 58, 82, 0.7));
 }
 
 .cardContainer {
@@ -325,16 +332,6 @@ h4.white {
     > div:last-of-type {
       margin-bottom: 0;
     }
-  }
-  .gradient_bot {
-    display:block;
-    position: sticky;
-    width: 100%;
-    bottom: 0px;
-    height: 20px;
-    margin-top: -20px;
-    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(23, 58, 82, 0.7));
-    background-image: -webkit-gradient(rgba(255, 255, 255, 0), rgba(23, 58, 82, 0.7));
   }
 
   .activityCards {

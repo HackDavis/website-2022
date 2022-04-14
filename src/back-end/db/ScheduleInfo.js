@@ -31,13 +31,13 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 11:00:00 GMT-0700")
   },
   {
-    firstLine: "11:00 AM - 12:00 PM",
+    firstLine: "11:00 AM - 11:30 AM",
     type: "Workshop",
     title: "UNIX Crash Course",
     description: "WiCS",
     location: "Ballroom A",
     start: new Date("April 16 2022 11:00:00 GMT-0700"),
-    end: new Date("April 16 2022 12:00:00 GMT-0700")
+    end: new Date("April 16 2022 11:30:00 GMT-0700")
   },
   {
     firstLine: "11:30 AM - 12:30 PM",
@@ -52,7 +52,7 @@ export const saturdayScheduleInfo = [
     firstLine: "LUNCH",
     type: "Menu",
     title: "Mr. Pickles Sandwich Shop",
-    description: "Sandwiches (Turkey, Ham, Roast Beef, Cheese (v)) / Wrap (v/gf) / Chocolate Chip Cookie (v)",
+    description: "Sandwiches (Turkey, Ham, Roast Beef, Cheese (v))\nWrap (v/gf)\nChocolate Chip Cookie (v)",
     start: new Date("April 16 2022 12:00:00 GMT-0700"),
     end: new Date("April 16 2022 13:00:00 GMT-0700")
   },
@@ -186,7 +186,7 @@ export const saturdayScheduleInfo = [
     firstLine: "DINNER",
     type: "Menu",
     title: "Dumpling House",
-    description: "Dumplings (Pork, Chicken, Vegetable(v)) / Eggplant Tofu w/ Rice (vg)",
+    description: "Dumplings (Pork, Chicken, Vegetable(v))\nEggplant Tofu w/ Rice (vg)",
     start: new Date("April 16 2022 18:45:00 GMT-0700"),
     end: new Date("April 16 2022 20:00:00 GMT-0700")
   },
@@ -231,7 +231,7 @@ export const sundayScheduleInfo = [
     firstLine: "BREAKFAST",
     type: "Menu",
     title: "Fluffy Donuts",
-    description: "Assorted Donuts (v), Cake Donuts (vg)",
+    description: "Assorted Donuts (v)\nCake Donuts (vg)",
     start: new Date("April 17 2022 08:30:00 GMT-0700"),
     end: new Date("April 17 2022 10:00:00 GMT-0700")
   },
