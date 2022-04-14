@@ -200,6 +200,15 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 20:00:00 GMT-0700")
   },
   {
+    firstLine: "7:30 PM - 8:00 PM",
+    type: "Workshop",
+    title: "Social Mixer",
+    description: "Kora",
+    location: "Ballroom A",
+    start: new Date("April 16 2022 19:30:00 GMT-0700"),
+    end: new Date("April 16 2022 20:00:00 GMT-0700")
+  },
+  {
     firstLine: "7:30 PM - 8:30 PM",
     type: "Workshop",
     title: "Intro to Product Management",
