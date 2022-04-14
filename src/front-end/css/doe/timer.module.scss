@@ -82,6 +82,9 @@
     backdrop-filter: blur(0px);
   }
 }
+.desktopText {
+  display:none;
+}
 
 .buttons {
   margin-bottom: 26px;
@@ -180,7 +183,6 @@
   .mobileBG {
     display: none;
   }
-
   .container {
     max-height: 686px;
     padding: 100px 0px 112px;
@@ -255,10 +257,22 @@
     backdrop-filter: blur(30px);
 
     > p {
+      &:first-of-type {
+        display:none;
+      }
+    }
+    .desktopText {
+      display:block;
+      font-family: "Proxima Nova";
+      font-style: normal;
       font-weight: 800;
       font-size: 24px;
       line-height: 29px;
       margin-bottom: 24px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: white;
+      backdrop-filter: blur(0px);
     }
 
     > span {

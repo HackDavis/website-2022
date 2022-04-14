@@ -31,7 +31,7 @@ function ScheduleCard(
       <div className={styles.cardInfo}>
         <p>{firstLine ? firstLine : null}</p>
         <h4 className={colorClass}>{title ? title : null}</h4>
-        <h5 className={styles.desc}>{description ? description : null}</h5>
+        <h5 className={styles.desc}>{description ? description: null}</h5>
         {location && (
           <h6>
             <img src={PinWhite} alt="location icon" />
@@ -124,7 +124,6 @@ export default function Schedule() {
                 Saturday <span>4/16</span>
               </h3>
               <div className={styles.scheduleCards}>
-                {saturdaySchedule.length >= 5 && <span className={styles.gradient} />}
                 {saturdaySchedule.map((event, index) =>
                   ScheduleCard(event, index)
                 )}
@@ -138,7 +137,6 @@ export default function Schedule() {
                 Sunday <span>4/17</span>
               </h3>
               <div className={styles.scheduleCards}>
-                {sundaySchedule.length >= 5 && <span className={styles.gradient} />}
                 {sundayScheduleInfo
                   .filter(filter)
                   .map((event, index) => ScheduleCard(event, index))}

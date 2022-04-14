@@ -52,7 +52,7 @@ export const saturdayScheduleInfo = [
     firstLine: "LUNCH",
     type: "Menu",
     title: "Mr. Pickles Sandwich Shop",
-    description: "Sandwiches (Turkey, Ham, Roast Beef, Cheese (v)) / Wrap (vg/gf); Chocolate Chip Cookie (v)",
+    description: "Sandwiches (Turkey, Ham, Roast Beef, Cheese (v)) / Wrap (v/gf) / Chocolate Chip Cookie (v)",
     start: new Date("April 16 2022 12:00:00 GMT-0700"),
     end: new Date("April 16 2022 13:00:00 GMT-0700")
   },

@@ -23,14 +23,17 @@ export function Timer() {
       <div className={styles.timeBoxContainer}>
         <div className={styles.timeBox}>
           <p>HRS</p>
+          <p className={styles.desktopText}>HOURS</p>
           <span>{ongoing ? hours : "24"}</span>
         </div>
         <div className={styles.timeBox}>
           <p>MIN</p>
+          <p className={styles.desktopText}>MINUTES</p>
           <span>{ongoing ? minutes : "00"}</span>
         </div>
         <div className={styles.timeBox}>
           <p>SEC</p>
+          <p className={styles.desktopText}>SECONDS</p>
           <span>{ongoing ? seconds : "00"}</span>
         </div>
       </div>
