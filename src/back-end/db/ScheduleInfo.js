@@ -114,7 +114,7 @@ export const saturdayScheduleInfo = [
     firstLine: "3:00 PM - 4:00 PM",
     type: "Workshop",
     title: "3D Printing Workshop",
-    description: "SSC",
+    description: "SCC",
     location: "Ballroom A",
     start: new Date("April 16 2022 15:00:00 GMT-0700"),
     end: new Date("April 16 2022 16:00:00 GMT-0700")
