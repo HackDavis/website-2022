@@ -201,7 +201,7 @@ export const saturdayScheduleInfo = [
   },
   {
     firstLine: "7:30 PM - 8:00 PM",
-    type: "Workshop",
+    type: "Activity",
     title: "Social Mixer",
     description: "Kora",
     location: "Ballroom A",
