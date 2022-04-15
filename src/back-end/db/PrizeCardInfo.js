@@ -88,6 +88,12 @@ export const PrizeCardInfo = [
 		prize: "",
     description: "Cool Davis has no way currently to encourage local community members to engage with sustainability actions from our Cool Solutions webpage on a super convenient platform that allows them to choose, track, and interact. The Cool California Calculator is an action tracking platform we could share with our community, but it does not allow us to make any changes to the actions and it does not allow us to connect with the users who participate. The Community Climate Solutions program is also a great model but is not free. Community needs are constantly changing and Cool Davis programs must be dynamic and responsive to make a difference. How can all of this be combined into a usable mobile app that can be used by the community?",
     color: "yellow"
+	},
+	{
+		title: "Best Use of Twilio API",
+		prize: "Webcams for each member of the winning team",
+    description: "Projects must use Twilio API.",
+    color: "yellow"
 	}
 
 	// Updated as of 4/11/2022
