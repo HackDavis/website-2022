@@ -24,11 +24,11 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 11:30:00 GMT-0700")
   },
   {
-    firstLine: "11:30 AM",
+    firstLine: "11:45 AM",
     type: "None",
     title: "Hacking Starts",
-    start: new Date("April 16 2022 11:00:00 GMT-0700"),
-    end: new Date("April 16 2022 11:00:00 GMT-0700")
+    start: new Date("April 16 2022 11:45:00 GMT-0700"),
+    end: new Date("April 16 2022 11:45:00 GMT-0700")
   },
   {
     firstLine: "11:30 AM - 12:00 PM",
