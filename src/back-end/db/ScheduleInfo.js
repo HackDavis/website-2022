@@ -236,7 +236,7 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 21:30:00 GMT-0700")
   },
   {
-    firstLine: "11:00 PM - 5:00 AM",
+    firstLine: "10:00 PM - 5:00 AM",
     type: "Activity",
     title: "Sleeping Rooms Open",
     location: "Main Venue",
