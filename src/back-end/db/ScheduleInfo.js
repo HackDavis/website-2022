@@ -236,12 +236,12 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 21:30:00 GMT-0700")
   },
   {
-    firstLine: "10:00 PM - 8:30 AM",
+    firstLine: "11:00 PM - 5:00 AM",
     type: "Activity",
     title: "Sleeping Rooms Open",
     location: "Main Venue",
-    start: new Date("April 16 2022 22:00:00 GMT-0700"),
-    end: new Date("April 17 2022 8:30:00 GMT-0700")
+    start: new Date("April 16 2022 23:00:00 GMT-0700"),
+    end: new Date("April 17 2022 5:00:00 GMT-0700")
   }
 ];
 
