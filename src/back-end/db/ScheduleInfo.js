@@ -78,7 +78,7 @@ export const saturdayScheduleInfo = [
     firstLine: "1:30 PM - 2:30 PM",
     type: "Workshop",
     title: "VR Workshop",
-    description: "SSC",
+    description: "SCC",
     location: "Ballroom A",
     start: new Date("April 16 2022 13:30:00 GMT-0700"),
     end: new Date("April 16 2022 14:30:00 GMT-0700")
