@@ -194,7 +194,7 @@ export const saturdayScheduleInfo = [
   {
     firstLine: "6:00 PM - 7:00 PM",
     type: "Workshop",
-    title: "Keeping Data Secure with Google Cloud",
+    title: "Confidential Computing using Google Cloud",
     description: "GDSC",
     location: "Ballroom A",
     start: new Date("April 16 2022 18:00:00 GMT-0700"),
