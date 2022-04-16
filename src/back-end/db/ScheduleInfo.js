@@ -156,13 +156,13 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 17:00:00 GMT-0700")
   },
   {
-    firstLine: "5:00 PM - 6:00 PM",
+    firstLine: "4:30 PM - 5:30 PM",
     type: "Activity",
     title: "Zumba",
     description: "Katrina Lau @ Zumba Instructor",
     location: "Gaming/Activity Area",
-    start: new Date("April 16 2022 17:00:00 GMT-0700"),
-    end: new Date("April 16 2022 18:00:00 GMT-0700")
+    start: new Date("April 16 2022 16:30:00 GMT-0700"),
+    end: new Date("April 16 2022 17:30:00 GMT-0700")
   },
   {
     firstLine: "5:00 PM - 6:00 PM",
