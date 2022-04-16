@@ -167,6 +167,15 @@ export const saturdayScheduleInfo = [
   {
     firstLine: "5:00 PM - 6:00 PM",
     type: "Workshop",
+    title: "TwilioQuest",
+    description: "Twilio",
+    location: "Ballroom A",
+    start: new Date("April 16 2022 17:00:00 GMT-0700"),
+    end: new Date("April 16 2022 18:00:00 GMT-0700")
+  },
+  {
+    firstLine: "5:00 PM - 6:00 PM",
+    type: "Workshop",
     title: "Careers in Tech Workshop",
     description: "Alisha Nanda @ Google, Laya Gollapudi @ Apple, Angie Ni @ Microsoft, Rustie Lin @ Meta/Aptos",
     location: "Ballroom B",
