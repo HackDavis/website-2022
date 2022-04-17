@@ -263,18 +263,18 @@ export const sundayScheduleInfo = [
     end: new Date("April 17 2022 10:00:00 GMT-0700")
   },
   {
-    firstLine: "11:00 AM",
+    firstLine: "11:45 AM",
     type: "None",
     title: "Hacking Ends",
-    start: new Date("April 17 2022 11:00:00 GMT-0700"),
-    end: new Date("April 17 2022 11:00:00 GMT-0700")
+    start: new Date("April 17 2022 11:45:00 GMT-0700"),
+    end: new Date("April 17 2022 11:45:00 GMT-0700")
   },
   {
-    firstLine: "11:15 AM - 1:30 PM",
+    firstLine: "11:45 AM - 1:30 PM",
     type: "None",
     title: "Judging",
     location: "Main Venue",
-    start: new Date("April 17 2022 11:15:00 GMT-0700"),
+    start: new Date("April 17 2022 11:45:00 GMT-0700"),
     end: new Date("April 17 2022 13:30:00 GMT-0700")
   },
   {
