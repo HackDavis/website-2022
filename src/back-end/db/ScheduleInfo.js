@@ -16,28 +16,28 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 9:45:00 GMT-0700")
   },
   {
-    firstLine: "10:00 AM - 11:00 AM",
+    firstLine: "10:30 AM - 11:30 AM",
     type: "None",
     title: "Opening Ceremony",
     location: "Main Venue",
-    start: new Date("April 16 2022 10:00:00 GMT-0700"),
-    end: new Date("April 16 2022 11:00:00 GMT-0700")
+    start: new Date("April 16 2022 10:30:00 GMT-0700"),
+    end: new Date("April 16 2022 11:30:00 GMT-0700")
   },
   {
-    firstLine: "11:00 AM",
+    firstLine: "11:45 AM",
     type: "None",
     title: "Hacking Starts",
-    start: new Date("April 16 2022 11:00:00 GMT-0700"),
-    end: new Date("April 16 2022 11:00:00 GMT-0700")
+    start: new Date("April 16 2022 11:45:00 GMT-0700"),
+    end: new Date("April 16 2022 11:45:00 GMT-0700")
   },
   {
-    firstLine: "11:00 AM - 11:30 AM",
+    firstLine: "11:30 AM - 12:00 PM",
     type: "Workshop",
     title: "UNIX Crash Course",
     description: "WiCS",
-    location: "Ballroom A",
-    start: new Date("April 16 2022 11:00:00 GMT-0700"),
-    end: new Date("April 16 2022 11:30:00 GMT-0700")
+    location: "Ballroom B",
+    start: new Date("April 16 2022 11:30:00 GMT-0700"),
+    end: new Date("April 16 2022 12:00:00 GMT-0700")
   },
   {
     firstLine: "11:30 AM - 12:30 PM",
@@ -78,7 +78,7 @@ export const saturdayScheduleInfo = [
     firstLine: "1:30 PM - 2:30 PM",
     type: "Workshop",
     title: "VR Workshop",
-    description: "SSC",
+    description: "SCC",
     location: "Ballroom A",
     start: new Date("April 16 2022 13:30:00 GMT-0700"),
     end: new Date("April 16 2022 14:30:00 GMT-0700")
@@ -194,7 +194,7 @@ export const saturdayScheduleInfo = [
   {
     firstLine: "6:00 PM - 7:00 PM",
     type: "Workshop",
-    title: "Keeping Data Secure with Google Cloud",
+    title: "Confidential Computing using Google Cloud",
     description: "GDSC",
     location: "Ballroom A",
     start: new Date("April 16 2022 18:00:00 GMT-0700"),
@@ -236,12 +236,12 @@ export const saturdayScheduleInfo = [
     end: new Date("April 16 2022 21:30:00 GMT-0700")
   },
   {
-    firstLine: "10:00 PM - 2:30 AM",
-    type: "None",
+    firstLine: "10:00 PM - 5:00 AM",
+    type: "Activity",
     title: "Sleeping Rooms Open",
     location: "Main Venue",
-    start: new Date("April 16 2022 22:00:00 GMT-0700"),
-    end: new Date("April 17 2022 2:30:00 GMT-0700")
+    start: new Date("April 16 2022 23:00:00 GMT-0700"),
+    end: new Date("April 17 2022 5:00:00 GMT-0700")
   }
 ];
 
@@ -263,18 +263,18 @@ export const sundayScheduleInfo = [
     end: new Date("April 17 2022 10:00:00 GMT-0700")
   },
   {
-    firstLine: "11:00 AM",
+    firstLine: "11:45 AM",
     type: "None",
     title: "Hacking Ends",
-    start: new Date("April 17 2022 11:00:00 GMT-0700"),
-    end: new Date("April 17 2022 11:00:00 GMT-0700")
+    start: new Date("April 17 2022 11:45:00 GMT-0700"),
+    end: new Date("April 17 2022 11:45:00 GMT-0700")
   },
   {
-    firstLine: "11:15 AM - 1:30 PM",
+    firstLine: "11:45 AM - 1:30 PM",
     type: "None",
     title: "Judging",
     location: "Main Venue",
-    start: new Date("April 17 2022 11:15:00 GMT-0700"),
+    start: new Date("April 17 2022 11:45:00 GMT-0700"),
     end: new Date("April 17 2022 13:30:00 GMT-0700")
   },
   {
