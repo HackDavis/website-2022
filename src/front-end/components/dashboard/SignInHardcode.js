@@ -9,7 +9,7 @@ import { getUser } from "../../../back-end/DBQueries/getUser";
 import styles from "../../css/dashboard/login.module.scss";
 import { useCSVReader } from "react-papaparse";
 import Papa from "papaparse";
-import applicants from "../../../back-end/db/applicants.csv";
+// import applicants from "../../../back-end/db/applicants.csv";
 import { useNavigate } from "react-router-dom";
 
 export function SignInHardCode() {

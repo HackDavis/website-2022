@@ -52,14 +52,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/teamfinder/login" element={<LoginPage />} />
+        {/* <Route path="/teamfinder/login" element={<LoginPage />} />
         <Route path="/teamfinder/setup" element={<SetupPage />} />
         <Route path="/teamfinder" element={<TeamFinder />} />
         <Route path="/teamfinder/createteam" element={<CreateTeam />} />
         <Route path="/teamfinder/myteam" element={<MyTeam />} />
         <Route path="/teamfinder/findteam" element={<FindTeamPage />} />
         <Route path="/teamfinder/submitrequest" element={<SubmitRequestPage />} />
-        <Route path="/teamfinder/pendingteams" element={<PendingTeamsPage />} />
+        <Route path="/teamfinder/pendingteams" element={<PendingTeamsPage />} /> */}
         <Route path="/401" element={<LoginError />} />
         <Route path="/placestostay" element={<PlacesToStay />} />
         <Route path="/404" element={<PageNotFound />} />
