@@ -1,0 +1,136 @@
+.container {
+  width: 450px;
+  height: 700px;
+  background-color: #074967;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border: solid 4px transparent;
+  > h3 {
+    color: white;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    > span {
+      color: #136E90;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+  }
+  .id {
+    margin-top: 5px;
+    color: #9EE7E5;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: "Proxima Nova";
+  }
+  > p {
+    color: white;
+    margin-top: 10px;
+    height: 135px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 510px;
+    height: 130px;
+    gap: 2px 2px;
+  }
+  > h5 {
+    color: white;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 10px;
+  }
+  > .group > .names {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background-color: #043B54;
+    border-radius: 60px;
+    .pfpContainer {
+      position: absolute;
+      top: 5px;
+      margin-left: 5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: grey;
+      .pfp {
+        border-radius: 50%;
+      }
+    }
+    .memberName {
+      position: absolute;
+      top: 17px;
+      left: 55px;
+      color: white;
+      margin-left: 10px;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+  .skillsetGroup {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50px;
+    // margin-top: -10px;
+    .role {
+      border-radius: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px 20px;
+      margin-right: 10px;
+      margin-top: 10px;
+      background-color: #35B1D1;
+      color: white;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .skill {
+      border-radius: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px 20px;
+      margin-right: 10px;
+      margin-top: 10px;
+      background-color: #136E90;
+      color: white;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+}
+.container:hover {
+  border: solid 4px #12A8B1;
+  cursor: pointer;
+}
+
+.removeEffect {
+  .container:hover {
+    border: solid 4px transparent;
+    cursor: default;
+  }
+}

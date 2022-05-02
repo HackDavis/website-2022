@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import { getUser } from "./getUser.js";
 
 // Purpose: deletes group_id from users's pending_group
@@ -19,6 +19,6 @@ export async function deleteUserPendingGroup(user_id, group_id) {
             pending_groups: pending_groups_copy
         });
     } catch(e) {
-        console.log("error with deleteMultiplePendingMembers: ", e);
+        console.error("error with deleteMultiplePendingMembers: ", e);
     }
 }

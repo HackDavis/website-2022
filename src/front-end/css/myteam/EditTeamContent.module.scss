@@ -1,0 +1,185 @@
+.content {
+  padding: 54px 80px;
+  background: #043c54;
+
+  > h2 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: white;
+    margin-bottom: 54px;
+    display: flex;
+    align-items: center;
+
+    > img {
+      margin-left: 20px;
+      width: 47px;
+    }
+  }
+}
+
+.setup {
+  display: flex;
+  gap: 0 37px;
+  margin-bottom: 20px;
+
+  p {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+}
+
+.column1 {
+  max-width: 392px;
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 16px;
+  }
+
+  > input,
+  > textarea {
+    padding: 17px 24px;
+    border: 2px solid #9ee7e5;
+    background-color: transparent;
+    resize: none;
+    color: white !important;
+
+    &::placeholder {
+      color: #51919D
+    }
+  }
+
+  > textarea:last-of-type {
+    flex-grow: 2;
+  }
+
+  > p:first-of-type {
+    margin-bottom: 16px;
+  }
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    color: white !important;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 16px;
+  }
+
+  > p {
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+.tags {
+  border: 2px solid #9ee7e5;
+  padding: 28px 32px;
+
+  input {
+    border: 1px solid white;
+    accent-color: #043c54;
+    width: auto;
+    margin-right: 12px;
+  }
+
+  label {
+    display: inline;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    color: white;
+  }
+}
+
+.skillsContainer,
+.toolsContainer {
+  > div > div {
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #9ee7e5;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 54px;
+
+    > div {
+      width: 140px;
+    }
+  }
+}
+
+.skillsContainer {
+  margin-bottom: 33px;
+  max-width: 400px;
+}
+
+.toolsContainer {
+  > div {
+    max-width: 750px;
+  }
+}
+
+.submitWrap {
+  text-align: right;
+}
+
+.saveButton {
+  font-family: "Proxima Nova";
+  font-size: 17px;
+  font-weight: 700;
+  color: #9ee7e5;
+  letter-spacing: 0.1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-self: flex-end;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 100px;
+  border: 3px solid #9ee7e5;
+  background: transparent;
+  width: auto;
+  transition: 250ms ease-in-out;
+
+  &:hover {
+    border: 3px solid white;
+    color: white;
+    transition: 250ms ease-in-out;
+  }
+}

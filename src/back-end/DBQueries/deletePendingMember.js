@@ -1,5 +1,5 @@
 import { doc, getDoc, updateDoc} from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import {getGroup} from "./getGroup";
 import { getUser } from "./getUser.js";
 
@@ -17,6 +17,6 @@ export async function deletePendingMember(user_id, group_id) {
         });
         return new_pending_members;
     } catch(e) {
-        console.log(`deletePendingMember error ${e}`);
+        console.error(`deletePendingMember error ${e}`);
     }
 }

@@ -5,6 +5,7 @@ import Section_Sponsors from '../components/section_sponsors.js';
 import Section_Adventure from '../components/section_adventure.js';
 import { Prizes } from '../components/Prizes.js';
 
+import Footer from "../components/footer";
 export function FAQOnwards() {
   return (
     <div className={styles.container}>
@@ -12,6 +13,7 @@ export function FAQOnwards() {
       <Prizes/>
       <Section_Sponsors/>
       <Section_Adventure/>
+      <Footer/>
     </div>
   );
 }

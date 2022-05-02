@@ -3,6 +3,8 @@ import styles from '../../../css/landingPage/mainSection/MainBlock.module.scss';
 import date_icon from '../../../images/main_section/date_icon.svg';
 import location_icon from '../../../images/main_section/location_icon.svg';
 import arrow_forward from '../../../images/main_section/arrow_forward.svg';
+import Fade from "react-reveal/Fade";
+
 export function MainBlock() {
   return (
     <div className={styles.wrapper}>

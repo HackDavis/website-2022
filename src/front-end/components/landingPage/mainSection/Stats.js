@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../../css/landingPage/mainSection/Stats.module.scss";
+import Fade from "react-reveal/Fade";
 
 export function Stats() {
 

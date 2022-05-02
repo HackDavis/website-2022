@@ -3,6 +3,8 @@ import styles from '../css/section_faq.module.scss';
 import { UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionBody} from "reactstrap";
 import Section_Contact from './section_contact.js';
 import arrow_forward from "../images/main_section/arrow_forward.svg";
+import Fade from "react-reveal/Fade";
+
 const Section_FAQ  = () => {
   const [open, setOpen] = useState();
 
@@ -17,6 +19,7 @@ const Section_FAQ  = () => {
   };
 
   return (
+    <Fade>
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
           <div className={styles.headerText}>Questions</div>
@@ -55,6 +58,7 @@ const Section_FAQ  = () => {
         </div>
         <Section_Contact/>
       </div>
+    </Fade>
   );
 };
 

@@ -25,6 +25,10 @@
   max-width: 1330px;
   margin: auto;
   z-index: 999;
+
+  > a {
+    width: auto;
+  }
 }
 
 .scroll {
@@ -39,7 +43,7 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  max-width: 485px;
+  max-width: 500px;
   justify-content: flex-end;
   column-gap: 56px;
 }

@@ -2,7 +2,7 @@
 import { getGroup } from "./getGroup.js";
 import { deleteUserGroupID } from "./deleteUserGroupID.js";
 import { doc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 
 //Purpose: delete's a current member of group, can only be called by group leader who is currently logged in
 //Input: user_id to be deleted and group_id
@@ -14,8 +14,7 @@ export async function deleteActiveMember(user_id, group_id) {
     // to remove user_id from members array
     let group_copy = await getGroup(group_id);
     let group_members_copy = group_copy.members;
-    let groupIndex = group_members_copy.indexOf(user_id);
-    group_members_copy.splice(groupIndex, 1);
+    delete group_members_copy[user_id];
     await updateDoc(docRef, {
         members: group_members_copy
     });

@@ -1,0 +1,32 @@
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: hidden; /* Enable scroll if needed */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  .modalContent {
+    max-height: 650px; 
+    background-color: #074967;
+    border-radius: 16px;
+    margin: 88px auto;
+    padding: 28px 33px 35px 33px;
+    width: 80%;
+    max-width: 1330px;
+    overflow-y: auto;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .exitButton {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    width: auto;
+    background-color: transparent;
+  }
+}

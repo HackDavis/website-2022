@@ -1,0 +1,215 @@
+.banner {
+  height: 160px;
+  padding: 56px 90px;
+  background-image: url("../../images/dashboard/banner.svg");
+  background-size: cover;
+  color: #043B54;
+  // position: sticky;
+  // top: 85px;
+  // z-index: 1;
+  > a {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    font-family: "Proxima Nova";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+    
+  }
+  > :hover {
+    cursor: pointer;
+  }
+}
+.greeting {
+  padding: 50px 0 0 100px;
+  position: relative;
+  background: #043B54;
+  .hi {
+    color: white;
+    font-size: 48pt;
+    display: inline;
+    margin-right: 30px;
+  }
+  .blankTicket {
+    width: 75px;
+    bottom: 10px;
+    position: absolute;
+  }
+}
+.backarrow {
+  width: 12px;
+  margin-right: 16px;
+}
+
+.container {
+  background: #043B54;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  width:100%;
+  .left {
+    display: flex;
+    width: 34%;
+    // max-width: 500px;
+    // min-width: 650px;
+    flex-direction: column;
+    padding: 0px 0px 50px 80px;
+    > form {
+      position: relative;
+      width: 400px;
+    }
+    .search {
+      padding: 10px;
+      height: 50px;
+      color: #FFFFFF;
+      background-color: #043B54;
+      border: solid 3px #9EE7E5;
+      width: 375px;
+    }
+    .search::placeholder {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      color: #51919D
+    }
+    .searchIcon {
+      position: absolute;
+      width: 20px;
+      top: 15px;
+      left: 335px;
+      // right: 20px;
+    }
+    .skillset {
+      height: 750px;
+      width: 375px;
+      margin-top: 20px;
+      border: solid 3px #9EE7E5;
+      padding: 25px;
+      .title {
+        font-weight: 600;
+        font-size: 28pt;
+        color: white;
+        margin-bottom: 30px;
+      }
+      .roleContainer, .toolContainer {
+      > div > div {
+        margin-bottom: -10px;;
+      }
+        color: white;
+        h4 {
+          margin-bottom: 25px;
+          color: #9ee7e5;
+          font-family: 'DM Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+      .roleContainer {
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 0 54px;
+          max-width: 400px;
+          > div {
+            width:130px;
+          }
+        }
+
+      }
+      .toolContainer {
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          height: 130px;
+          justify-content: flex-start;
+          gap: 0 54px;
+          max-width: 400px;
+      
+          > div {
+            width: 130px;
+          }
+        }
+      }
+    }
+    .pendingButton {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: left;
+      color: #043b54;
+      width: 30%;
+      width: 375px;
+      margin-top: 20px;
+      background-color: #9ee7e5;
+      // padding: 22px 27px;
+      padding: 22px 0px 22px 22px;
+      > span {
+        font-family: "Proxima Nova";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        color: white;
+
+        background: #f95a5a;
+        padding: 4px 9px;
+        margin-left: 13px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .right {
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 450px 450px;
+    gap: 20px 20px;
+    min-height: 100vh;
+    width: 66%;
+    // max-width: 1200px;
+    padding: 0px;
+    margin-top: 50px;
+    position: relative;
+  }
+  .results {
+    color: white;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    top: -50px;
+    left: 0;
+    position: absolute;
+    > span {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+    }
+  }
+}
+
+.dashboard {
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -500px;
+  z-index: 998;
+  background-color: #2A586E;
+  visibility: hidden;
+  transition: all 200ms ease-out;
+}
+.showDashboard {
+  visibility:visible;
+  right:0px;
+}

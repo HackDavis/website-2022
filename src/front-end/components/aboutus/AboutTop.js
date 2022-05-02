@@ -34,7 +34,7 @@ export function AboutTop() {
           <main className={styles.main_block}>
             <h1>About Us</h1>
             <p>
-              HackDavis is UC Davis’ 36-hour collegiate hackathon dedicated to empowering student hackers to collaborate and build impactful projects that make the world a better place. HackDavis 2021 featured <span>750+ student attendees</span> and <span>150+ project submissions</span> dedicated to social good, making the event a huge success and the <span>second-largest hackathon in California</span>. We also partnered with non-profit organizations like Aging 2.0, The Children’s Scoliosis Foundation, and Breathe California to support our local communities.
+              HackDavis is UC Davis’ 24-hour collegiate hackathon dedicated to empowering student hackers to collaborate and build impactful projects that make the world a better place. HackDavis 2021 featured <span>750+ student attendees</span> and <span>150+ project submissions</span> dedicated to social good, making the event a huge success and the <span>second-largest hackathon in California</span>. We also partnered with non-profit organizations like Aging 2.0, The Children’s Scoliosis Foundation, and Breathe California to support our local communities.
             </p>
             <button>SPONSOR 2022</button>
           </main>

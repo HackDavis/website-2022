@@ -15,6 +15,6 @@ export async function setRSVP(user, response) {
         });
         return response;
     } catch(e) {
-        console.log(`error setting rsvp: ${e}`);
+        console.error(`error setting rsvp: ${e}`);
     }
 }

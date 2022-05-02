@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig";
 
 //Purpose: add a group to user's pending group
 //How it works: appends group_id to user's pending_groups array
@@ -17,7 +17,7 @@ export async function addPendingGroup(user_id, group_id) {
         });
 
     } catch(e) {
-        console.log(`error in addPendingGroup: ${e}`);
+        // console.error(`error in addPendingGroup: ${e}`);
     }
 
 }

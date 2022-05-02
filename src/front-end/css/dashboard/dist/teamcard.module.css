@@ -1,0 +1,112 @@
+.container {
+  width: 450px;
+  height: 700px;
+  background-color: #074967;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border: solid 4px transparent;
+}
+.container > h3 {
+  color: white;
+  font-size: 18pt;
+  padding: 0;
+  margin: 0;
+}
+.container > h3 > span {
+  color: #136E90;
+  font-size: 16pt;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.container .id {
+  margin-top: 5px;
+  color: white;
+  font-size: 12pt;
+  font-weight: normal;
+  font: "Proxima Nova";
+}
+.container > p {
+  color: white;
+  font-size: 12pt;
+  margin-top: 10px;
+  height: 135px;
+  word-break: break-all;
+  white-space: normal;
+}
+.container .group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 510px;
+  height: 130px;
+  gap: 2px 2px;
+}
+.container > h5 {
+  color: white;
+  font-size: 16pt;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.container > .group > .names {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: #043B54;
+  border-radius: 60px;
+}
+.container > .group > .names .pfpContainer {
+  position: absolute;
+  top: 5px;
+  margin-left: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.container > .group > .names .pfpContainer .pfp {
+  border-radius: 50%;
+}
+.container > .group > .names .memberName {
+  position: absolute;
+  top: 17px;
+  left: 55px;
+  color: white;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.container .skillsetGroup {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 50px;
+  margin-top: -10px;
+}
+.container .skillsetGroup .role {
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 20px;
+  margin-right: 15px;
+  margin-top: 20px;
+  background-color: #35B1D1;
+  color: white;
+}
+.container .skillsetGroup .skill {
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 20px;
+  margin-right: 15px;
+  margin-top: 20px;
+  background-color: #136E90;
+  color: white;
+}
+
+.container:hover {
+  border: solid 4px #12A8B1;
+  cursor: pointer;
+}
+
+.removeEffect .container:hover {
+  border: solid 4px transparent;
+  cursor: default;
+}

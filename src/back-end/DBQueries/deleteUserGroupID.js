@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { dbConfig } from "../dbConfig.js";
+import { dbConfig } from "../db/dbConfig.js";
 import { getUser } from "./getUser.js";
 
 // Purpose: deletes group_id from users's group_id field
@@ -15,6 +15,6 @@ export async function deleteUserGroupID(user_id) {
             group_id:""
         });
     } catch(e) {
-        console.log("error with deleteUserGroupID: ", e);
+        console.error("error with deleteUserGroupID: ", e);
     }
 }

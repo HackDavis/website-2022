@@ -27,11 +27,11 @@
 }
 
 /* fonts */
-@font-face {
+/* @font-face {
   font-family: "Proxima Nova";
   font-weight: 700;
   src: url(./front-end/fonts/ProximaNova-Bold.otf) format("opentype");
-}
+} */
 
 @font-face {
   font-family: "Proxima Nova";
@@ -39,10 +39,45 @@
   src: url(./front-end/fonts/Proxima\ Nova\ Semibold.ttf) format("truetype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Proxima Nova";
   font-weight: 400;
   src: url(./front-end/fonts/ProximaNova-Regular.otf) format("opentype");
-}
+} */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap");
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./front-end/fonts/ProximaNova-Bold.eot');
+  src: url('./front-end/fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./front-end/fonts/ProximaNova-Bold.woff2') format('woff2'),
+  url('./front-end/fonts/ProximaNova-Bold.woff') format('woff'),
+  url('./front-end/fonts/ProximaNova-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("./front-end/fonts/ProximaNova-Medium.eot");
+  src: url("./front-end/fonts/ProximaNova-Medium.eot?#iefix") format("embedded-opentype"), url("./front-end/fonts/ProximaNova-Medium.woff2") format("woff2"), url("./front-end/fonts/ProximaNova-Medium.woff") format("woff"), url("./front-end/fonts/ProximaNova-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./front-end/fonts/ProximaNova-Regular.eot');
+  src: url('./front-end/fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+  url('./front-end/fonts/ProximaNova-Regular.woff2') format('woff2'),
+  url('./front-end/fonts/ProximaNova-Regular.woff') format('woff'),
+  url('./front-end/fonts/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
