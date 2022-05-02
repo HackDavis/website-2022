@@ -17,6 +17,7 @@
   line-height: 19px;
   font-weight: 500;
   margin: auto;
+  margin-bottom: 12px;
 }
 .container > p > a {
   color: white;
@@ -26,7 +27,7 @@
   letter-spacing: 0.02rem;
   margin: 0;
   font-size: 0.875rem;
-  color: #9ee7e5;
+  color: #45d5d9;
   font-size: 16px;
   line-height: 19px;
   font-weight: 700;
@@ -36,7 +37,7 @@
   transition: border-bottom 250ms ease-in-out;
 }
 .container > p > a:hover {
-  border-bottom-color: #9ee7e5;
+  border-bottom-color: #45d5d9;
   transition: border-bottom 250ms ease-in-out;
 }
 .container > p > a > img {
@@ -59,6 +60,9 @@
   width: 18px;
   height: 22px;
 }
+.container > .info_flex > p {
+  padding-left: 32px;
+}
 .container > .info_flex > p > a {
   text-decoration: none;
   color: white;
@@ -66,9 +70,13 @@
   letter-spacing: 2%;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 500;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms ease-in-out;
 }
 .container > .info_flex > p > a:hover {
-  text-decoration: underline;
+  border-bottom-color: white;
+  transition: border-bottom 250ms ease-in-out;
 }
 .container > .info_flex > h3 {
   color: white;
@@ -93,6 +101,29 @@
   font-size: 17px;
   line-height: 21px;
   font-weight: 700;
+}
+.container > .mentorVolunteer {
+  width: 85%;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  margin: auto;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+}
+.container > .mentorVolunteer > a {
+  color: #9ee7e5;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms ease-in-out;
+}
+.container > .mentorVolunteer > a:hover {
+  border-bottom-color: #9ee7e5;
+  transition: border-bottom 250ms ease-in-out;
 }
 .container > .location_container {
   margin-bottom: 25px;
@@ -178,6 +209,11 @@
   }
   .container .info_flex > h3:last-of-type {
     line-height: 28px;
+  }
+  .container > .mentorVolunteer {
+    width: auto;
+    font-size: 20px;
+    line-height: 24px;
   }
   .container > div {
     flex-flow: row nowrap;

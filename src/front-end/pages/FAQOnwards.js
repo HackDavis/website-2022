@@ -9,8 +9,8 @@ import Footer from "../components/footer";
 export function FAQOnwards() {
   return (
     <div className={styles.container}>
-      <Section_FAQ/>
       <Prizes/>
+      <Section_FAQ/>
       <Section_Sponsors/>
       <Section_Adventure/>
       <Footer/>

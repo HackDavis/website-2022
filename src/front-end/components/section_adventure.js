@@ -35,7 +35,7 @@ const Section_Adventure = () => {
           // else do the animation (10 seconds)
           <div className={styles.container}>
             <p className={styles.headerText}>START YOUR ADVENTURE TODAY.</p>
-            <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/hackdavis2022')}>APPLY</button>
+            <button className={styles.button} onClick={() => window.open('https://hackdavis.typeform.com/director2023')}>APPLY</button>
             <img src={AdventureDesktop} className={styles.adventuredesktop} />
             <img src={AdventureMobile} className={styles.adventuremobile} />
             <Lottie
