@@ -1,7 +1,7 @@
 export const PrizeCardInfo = [
 	{
 		title: "Technical",
-		prize: "We’re looking for software developers to work on technical projects for HackDavis, including the website, application system, tech workshops, and our judging app, among others. You will also collaborate with the design team to bring HackDavis’ creative vision to life. If you are looking to gain hands-on experience with a variety of interesting technologies such as ReactJS, Node, Firebase, and more, this is the team to join.",
+		prize: "We’re looking for software developers to work on technical projects for HackDavis, including the website, application system, tech workshops, and our judging app, among others. You will also collaborate with the design team to bring HackDavis’ creative vision to life. If you are looking to gain hands-on experience with a variety of interesting technologies such as ReactJS, Firebase, and more, this is the team to join.",
 		description: "",
     color: "green"
 	},
