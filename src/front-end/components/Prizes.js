@@ -7,7 +7,7 @@ export function Prizes() {
   return (
     <>
       <div className={styles.content}>
-        <h2 className={styles.title}>APIs & Prizes</h2>
+        <h2 className={styles.title}>Teams</h2>
         <div className={styles.prizes}>
           {PrizeCardInfo.map((prizeInfo, index) => {
             return <PrizeCard key={index} prizeInfo={prizeInfo} />;
