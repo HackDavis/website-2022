@@ -6,7 +6,7 @@
   font-size: $size;
   line-height: $line-height;
   letter-spacing: 0%;
-  color: #ffffff;
+  color: #9ee7e5;
 }
 @mixin header2($size: 14px) {
   font-family: "Proxima Nova";
@@ -20,7 +20,7 @@
   width: 100%;
   padding: 32px 24px;
   max-width: 1330px;
-  margin: 24px auto 24px;
+  margin: 0px auto 24px;
   background-color: #173a52;
   border: solid #9ee7e5 3.5px;
   > a {
@@ -33,6 +33,24 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
+
+  a {
+    display: block;
+    height: auto;
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 3rem;
+  }
+
+  .asucd {
+    width: 65%;
+    margin-inline: auto;
+  }
+}
+
+.sponsors .matrix,
+.mini a {
+  margin-bottom: 4.5rem;
 }
 
 .contentWrapper {
@@ -40,9 +58,14 @@
 }
 
 .headerText {
-  text-align: center;
-  @include header1();
-  margin-bottom: 24px;
+  text-align: left;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: white;
+  margin-bottom: 59px;
 }
 
 .box {
@@ -52,59 +75,168 @@
 }
 
 .imageStyle {
-  height: auto;
   width: 100%;
+  height: 100%;
   user-select: none;
   cursor: pointer;
-  transition: transform 0.5s;
-  margin-bottom: 3.5rem;
-  margin-top: 1rem;
 }
 
 @media only screen and (min-width: 992px) {
   .container {
     padding: 5rem;
     margin-bottom: 24px;
+    margin-top: 24px;
   }
   .headerText {
-    @include header1($size: 48px, $line-height: 62px);
+    text-align: center;
   }
   .sponsors {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    a {
+      margin: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+      transform: scale(1);
 
-    > a {
-      flex-basis: 40%;
-      &:first-of-type {
-        flex-basis: 70%;
-      }
-      &:nth-of-type(2) {
-        flex-basis: 65%;
+      &:hover {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1.15);
       }
     }
-  }
-  .imageStyle {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  .imageStyle_small {
-    transform: scale(0.6);
-  }
 
-  .imageStyle_medium {
-    transform: scale(0.55);
-  }
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: auto;
+    }
 
-  .imageStyle:hover {
-    transform: scale(1.1);
-  }
+    .break {
+      flex-basis: 100%;
+      height: 0;
+      margin: 30px 0;
+    }
 
-  .imageStyle_medium:hover {
-    transform: scale(0.65);
-  }
+    .ford {
+      width: 624px;
+      margin-bottom: 46px;
+    }
 
-  .imageStyle_small:hover {
-    transform: scale(0.7);
+    .twilio {
+      width: 264px;
+      margin-bottom: 60px;
+    }
+
+    .matrix {
+      width: 300px;
+      margin-bottom: 85px;
+    }
+
+    .citris {
+      width: 22.3%;
+      // max-width: 221px;
+    }
+
+    .eclipse {
+      width: 26.7%;
+      // max-width: 264px;
+    }
+
+    .gsec {
+      width: 38.3%;
+      // max-width: 379px;
+    }
+
+    .cls {
+      width: 36.7%;
+      // max-width: 364px;
+    }
+
+    .coe {
+      width: 35.8%;
+      // max-width: 354px;
+    }
+
+    .globalaffairs {
+      width: 23.5%;
+      // max-width: 233px;
+    }
+
+    .cs {
+      width: 25.5%;
+      // max-width: 252px;
+    }
+
+    .athletics {
+      width: 17%;
+      // max-width: 233px;
+    }
+
+    .msba {
+      width: 37.6%;
+      // max-width: 402px;
+    }
+
+    .iet {
+      width: 28%;
+      // max-width: 302px;
+    }
+    .datalab {
+      width: 28%;
+    }
+    .cpe {
+      width: 37.6%;
+      // max-width: 372px;
+    }
+
+    .shds {
+      width: 19.7%;
+      // max-width: 195px;
+    }
+
+    .store {
+      width: 30.3%;
+      // max-width: 300px;
+    }
+
+    .asucd {
+      width: 15.2%;
+      // max-width: 150px;
+    }
+
+    .cfc {
+      width: 25%;
+      // max-width: 248px;
+    }
+
+    .visitdavis {
+      width: 27%;
+    }
+    .yolo {
+      width: 27%;
+    }
+    .reign {
+      width: 27%;
+    }
+    .ultrapress {
+      width: 27%;
+    }
+    .standout {
+      width: 27%;
+    }
+    .kora {
+      width: 26%;
+    }
+    .coolDavis {
+      width: 20%;
+    }
+    .yoloFood {
+      width: 30%;
+    }
+    .pantry{
+      width: 23%;
+    }
+    .greenHouse {
+      width: 25%;
+    }
   }
 }

@@ -4,6 +4,44 @@
   margin-bottom: 24px;
   border: 3px solid #9ee7e5;
 }
+.container > p {
+  width: 85%;
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.02rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  margin: auto;
+}
+.container > p > a {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.02rem;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #9ee7e5;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms ease-in-out;
+}
+.container > p > a:hover {
+  border-bottom-color: #9ee7e5;
+  transition: border-bottom 250ms ease-in-out;
+}
+.container > p > a > img {
+  width: auto;
+}
 .container > .info_flex {
   display: flex;
   justify-content: center;
@@ -21,11 +59,15 @@
   width: 18px;
   height: 22px;
 }
-.container > .info_flex > a {
+.container > .info_flex > p > a {
   text-decoration: none;
   color: white;
+  font-size: 17px;
+  letter-spacing: 2%;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 500;
 }
-.container > .info_flex > a:hover {
+.container > .info_flex > p > a:hover {
   text-decoration: underline;
 }
 .container > .info_flex > h3 {
@@ -70,6 +112,7 @@
 .container > div {
   display: flex;
   flex-flow: column nowrap;
+  margin-bottom: 26px;
 }
 .container > div > button {
   padding: 7px;
@@ -103,7 +146,7 @@
 
 @media (min-width: 992px) {
   .container {
-    padding: 64px min(12%, 64px) 80px;
+    padding: 64px min(12%, 64px) 42px;
   }
   .container > h1 {
     color: white;
@@ -115,6 +158,15 @@
     font-size: 5rem;
     font-size: min(5rem, 6vw);
     margin-bottom: 32px;
+  }
+  .container > p {
+    width: auto;
+  }
+  .container > p > br {
+    display: none;
+  }
+  .container .info_flex > p > a {
+    font-size: 20px;
   }
   .container .info_flex > h3 {
     font-size: 24px;
@@ -140,6 +192,8 @@
   .container > div > button:first-of-type {
     margin: 0;
     margin-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .container .hover_prereg {
     transition: 250ms ease-in-out;
@@ -166,5 +220,10 @@
     border: 3px solid #45d5d9;
     color: #45d5d9;
     transition: 250ms ease-in-out;
+  }
+}
+@media (min-width: 1240px) {
+  .linebreak {
+    display: none;
   }
 }

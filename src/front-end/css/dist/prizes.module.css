@@ -1,0 +1,45 @@
+.content {
+  border: 3px solid #9ee7e5;
+  padding: 36px 15px 25px 15px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.prizes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+}
+
+.title {
+  color: white;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 600;
+  line-height: 175%;
+  letter-spacing: 2%;
+  margin: 0;
+  font-size: 0.875rem;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+@media (min-width: 992px) {
+  .content {
+    padding: 50px 62px 72px;
+  }
+
+  .prizes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px 40px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}

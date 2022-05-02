@@ -1,0 +1,103 @@
+@import "./defs";
+
+.container {
+  font-family: "Proxima Nova";
+  background-color: #436073;
+  border-radius: 10px;
+}
+
+.card {
+  padding: 16px 16px 14px 12px;
+
+  &[open] {
+    > summary::after {
+      transition: transform 100ms ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
+
+  > summary {
+    display: flex;
+    list-style: none;
+    gap: 0 12px;
+
+    > h3 {
+      position: relative;
+      top: 1px;
+      color: white;
+      font-family: "Proxima Nova";
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0;
+    }
+
+    // &.yellow::before {
+    //   content: url("../../images/doe/PrizeYellow.svg");
+    // }
+
+    // &.green::before {
+    //   content: url("../../images/doe/PrizeGreen.svg");
+    // }
+
+    &::before,
+    &::after {
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      content: url("../images/ArrowDownWhite.svg");
+      margin-left: auto;
+      transition: transform 100ms ease-in-out;
+      transform: rotate(0deg);
+    }
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  > p {
+    display: flex;
+    gap: 0 12px;
+    font-family: "Proxima Nova";
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: white;
+    margin: 0;
+    margin-top: 20px;
+    padding-bottom: 12px;
+
+    &::before,
+    &::after {
+      content: "";
+      padding: 0 12px;
+      height: 24px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: calc(50% - 20px);
+  }
+
+  .card {
+    padding: 20px;
+
+    > summary > h3 {
+      font-size: 24px;
+      line-height: 29px;
+      top: 0;
+    }
+
+    > p {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
