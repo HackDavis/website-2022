@@ -61,21 +61,14 @@
   height: 22px;
 }
 .container > .info_flex > p {
-  padding-left: 32px;
-}
-.container > .info_flex > p > a {
   text-decoration: none;
   color: white;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 2%;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 500;
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
-  transition: border-bottom 250ms ease-in-out;
-}
-.container > .info_flex > p > a:hover {
-  border-bottom-color: white;
   transition: border-bottom 250ms ease-in-out;
 }
 .container > .info_flex > h3 {
@@ -101,6 +94,11 @@
   font-size: 17px;
   line-height: 21px;
   font-weight: 700;
+}
+.container .info_flex:first-of-type > p {
+  color: #9EE7E5;
+  font-weight: bold;
+  font-size: 26px;
 }
 .container > .mentorVolunteer {
   width: 85%;
@@ -228,8 +226,6 @@
   .container > div > button:first-of-type {
     margin: 0;
     margin-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
   }
   .container .hover_prereg {
     transition: 250ms ease-in-out;
