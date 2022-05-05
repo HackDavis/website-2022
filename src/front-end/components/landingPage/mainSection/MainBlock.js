@@ -22,11 +22,11 @@ export function MainBlock() {
           <button className={styles.hover_prereg} onClick={() => window.open('https://hackdavis.typeform.com/director2023')}>APPLY</button>
           <button className={styles.hover_sponsor} onClick={() => window.open('mailto:team@hackdavis.io')}>SPONSOR 2023</button>
         </div>
-        <p>
-          {/* New to hackathons?&nbsp;
-          <br /> */}
+        {/* <p>
+          New to hackathons?&nbsp;
+          <br />
           Check out our <a target="_blank" href="https://hackdavis.notion.site/hackdavis/HackDavis-2022-Starter-Pack-9295e5896d524b28914844559b087aac">Starter Pack <img src={arrow_forward} /></a>
-        </p>
+        </p> */}
       </main>
     </div>
   );
