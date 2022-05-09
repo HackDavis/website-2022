@@ -30,12 +30,7 @@
       font-size: 18px;
       line-height: 22px;
       margin: 0;
-      padding-left: 36px;
-
-      // ::before {
-      //   content: "";
-      //   width: 24px;
-      // }
+      padding-left: 12px;
     }
 
     // &.yellow::before {
@@ -81,7 +76,7 @@
     &::before,
     &::after {
       content: "";
-      padding: 0 12px;
+      // padding: 0 12px;
       height: 24px;
     }
   }
