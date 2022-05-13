@@ -7,6 +7,11 @@
   @include border();
 
   > p {
+    > strong {
+      @include body();
+      font-size: 16px;
+      line-height: 19px;
+    }
     width: 85%;
     @include body();
     font-size: 16px;
