@@ -7,11 +7,6 @@
   @include border();
 
   > p {
-    > strong {
-      @include body();
-      font-size: 16px;
-      line-height: 19px;
-    }
     width: 85%;
     @include body();
     font-size: 16px;
@@ -71,6 +66,15 @@
       
       border-bottom: 2px solid transparent;
       transition: border-bottom 250ms ease-in-out;
+      
+      > strong {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 2%;
+        font-family: "Proxima Nova", sans-serif;
+        font-weight: 500;
+      }
       
       // > a {
       //   &:hover {
