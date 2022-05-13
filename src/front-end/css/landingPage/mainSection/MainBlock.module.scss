@@ -7,7 +7,7 @@
   @include border();
 
   > p {
-    > strong {
+    > span {
       @include body();
       font-size: 16px;
       line-height: 19px;
