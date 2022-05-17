@@ -1,6 +1,9 @@
+@import "./defs.scss";
+
 .container {
   display: flex;
   flex-direction: column;
+  background: $darker_teal;
 
   > h2 {
     margin-top: 53px;
