@@ -11,15 +11,15 @@ export function MainBlock() {
       <main className={styles.container}>
         <h1>HackDavis</h1>
         <div className={styles.info_flex}>
-          <p>Look out, HackDavis 2023 Director Applications are now OPEN!</p>
+          <p>Keep an eye out for HackDavis 2023!!</p>
         </div>
         <div className={`${styles.info_flex} ${styles.location_container} `}>
           {/* <img src={location_icon} className={styles.location_icon} /> */}
           {/* <p><a target="_blank" href="https://hackdavis.typeform.com/director2023" >Want to be a director for HackDavis 2023? Now's your chance!</a></p> */}
-          <p>Apply to join the director team by <strong>May 15!</strong> :)</p>
+//           <p>Apply to join the director team by <strong>May 15!</strong> :)</p>
         </div>
         <div>
-          <button className={styles.hover_prereg} onClick={() => window.open('https://hackdavis.typeform.com/director2023')}>APPLY</button>
+//           <button className={styles.hover_prereg} onClick={() => window.open('https://hackdavis.typeform.com/director2023')}>APPLY</button>
           <button className={styles.hover_sponsor} onClick={() => window.open('mailto:team@hackdavis.io')}>SPONSOR 2023</button>
         </div>
         {/* <p>
