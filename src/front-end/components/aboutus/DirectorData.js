@@ -1,5 +1,5 @@
 import Abhishek from "../../images/headshots/Abhishek.png";
-import Alec from "../../images/headshots/Alec.jpg";
+import Alec from "../../images/headshots/Alec.jpeg";
 import Alex from "../../images/headshots/Alex.jpg";
 import Alyson from "../../images/headshots/Alyson.png";
 import Andy from "../../images/headshots/Andy.jpg";
@@ -8,17 +8,18 @@ import Calla from "../../images/headshots/Calla.jpg";
 import Cameron from "../../images/headshots/Cameron.jpg";
 import Chelsea from "../../images/headshots/Chelsea.jpg";
 import Cheryl from "../../images/headshots/Cheryl.jpg";
+import Christina from "../../images/headshots/Christina.jpg";
 import Daphne from "../../images/headshots/Daphne.jpg";
 import Eric from "../../images/headshots/Eric.jpg";
 import Eugenia from "../../images/headshots/Eugenia.png";
 import Eva from "../../images/headshots/Eva.jpg";
-import Ishani from "../../images/headshots/Ishani.png";
+import Ishani from "../../images/headshots/Ishani.jpeg";
 import Jonny from "../../images/headshots/Jonny.jpg";
 import Joyce from "../../images/headshots/Joyce.jpg";
 import Justin from "../../images/headshots/Justin.jpg";
 import Matt from "../../images/headshots/Matt.jpg";
 import Miles from "../../images/headshots/Miles.jpg";
-import Rachel from "../../images/headshots/rachel.jpeg";
+import Rachel from "../../images/headshots/Rachel.jpg";
 import Shelly from "../../images/headshots/Shelly.jpg";
 import Shounak from "../../images/headshots/Shounak.JPG";
 import Sivani from "../../images/headshots/Sivani.JPG";
@@ -33,6 +34,21 @@ import Trishna from "../../images/headshots/Trishna.jpg";
 import Zaynah from "../../images/headshots/Zaynah.jpg";
 import Arjun from "../../images/headshots/Arjun.jpg";
 import Hanah from "../../images/headshots/Hanah.jpg";
+// New people are down here!!
+import Reece from "../../images/headshots/Reece.jpeg";
+import David from "../../images/headshots/David.jpg";
+import Xiaolin from "../../images/headshots/Xiaolin.jpeg";
+import Mick from "../../images/headshots/Mick.jpeg";
+import Christine from "../../images/headshots/Christine.jpg";
+import Danielle from "../../images/headshots/Danielle.jpg";
+import Shivam from "../../images/headshots/Shivam.jpeg";
+import Ayushi from "../../images/headshots/Ayushi.png";
+import Amanda from "../../images/headshots/Amanda.jpeg";
+import Kennedy from "../../images/headshots/Kennedy.jpeg";
+import Kiana from "../../images/headshots/Kiana.jpeg";
+import Lana from "../../images/headshots/Lana.jpg";
+import Abbas from "../../images/headshots/Abbas.png";
+import Dorothy from "../../images/headshots/Dorothy.jpeg";
 
 const DirectorData = {
   vivek: {
@@ -50,18 +66,25 @@ const DirectorData = {
     github: `https://github.com/ishanip24`,
     image: Ishani
   },
-  cheryl: {
-    name: "Cheryl",
+  rachel: {
+    name: "Rachel",
     description: `Design Lead`,
-    linkedin: `https://www.linkedin.com/in/cherylcai/`,
-    image: Cheryl
+    linkedin: `https://www.linkedin.com/in/rachelyapp/`,
+    instagram: `https://www.instagram.com/rachell.yap/`,
+    image: Rachel
   },
   joyce: {
     name: "Joyce",
-    description: `External Lead`,
+    description: `External Co-Lead`,
     linkedin: `https://www.linkedin.com/in/joycelu17/`,
     instagram : `https://www.instagram.com/joyceeeluuu/`,
     image: Joyce
+  },
+  shounak: {
+    name: "Shounak",
+    description: `External Co-Lead`,
+    linkedin: `https://www.linkedin.com/in/shounakranabhor`,
+    image: Shounak
   },
   stephenie: {
     name: "Stephenie",
@@ -69,25 +92,33 @@ const DirectorData = {
     linkedin: `https://www.linkedin.com/in/stepheniecho/`,
     image: Stephenie
   },
-  calla: {
-    name: "Calla",
+  shelly: {
+    name: "Shelly",
     description: `Marketing Lead`,
-    linkedin: `https://www.linkedin.com/in/calla-yang/`,
-    image: Calla
+    linkedin: `https://www.linkedin.com/in/shellysagy`,
+    image: Shelly
   },
-  abhishek: {
-    name: "Abhishek",
+  eugenia: {
+    name: "Eugenia",
     description: `Operations Co-Lead`,
-    linkedin: `https://www.linkedin.com/in/abhishekhandigol/`,
-    image: Abhishek
+    linkedin: `https://www.linkedin.com/in/eugenia-zhang1`,
+    instagram: `https://www.instagram.com/eugenia.zhang/`,
+    image: Eugenia
   },
-  alex: {
-    name: "Alex",
+  daphne: {
+    name: "Daphne",
+    description: `Sponsorship Co-Lead`,
+    linkedin: `https://www.linkedin.com/in/daphne-lee-84b4a4223`,
+    instagram: `https://www.instagram.com/axel_vanderlin_/`,
+    image: Daphne
+  },
+  trishna: {
+    name: "Trishna",
     description: `Technical Co-Lead`,
-    linkedin: `https://www.linkedin.com/in/alelong/`,
-    github: `https://github.com/ale-long`,
-    instagram: `https://www.instagram.com/a_long_one/`,
-    image: Alex
+    linkedin: `https://www.linkedin.com/in/trishnasharma/`,
+    instagram: `https://www.instagram.com/trishnasharmaa/`,
+    github: `https://github.com/trishnasharma`,
+    image: Trishna
   },
   justin: {
     name: "Justin",
@@ -96,12 +127,13 @@ const DirectorData = {
     github: `https://github.com/Jalastin`,
     image: Justin
   },
-  rachel: {
-    name: "Rachel",
+
+  christina: {
+    name: "Christina",
     description: `Design`,
-    linkedin: `https://www.linkedin.com/in/rachelyapp/`,
-    instagram: `https://www.instagram.com/rachell.yap/`,
-    image: Rachel
+    linkedin: `https://www.linkedin.com/in/christinayliu/`,
+    instagram: `https://www.instagram.com/liu.cy.designs/`,
+    image: Christina
   },
   fajar: {
     name: "Fajar",
@@ -109,96 +141,90 @@ const DirectorData = {
     linkedin: `https://www.linkedin.com/in/fajar-akhter/`,
     image: Fajar
   },
-  andy: {
-    name: "Andy",
+  reece: {
+    name: "Reece",
     description: `Design`,
-    linkedin: `https://www.linkedin.com/in/andy-do/`,
-    image: Andy
+    linkedin: `https://www.linkedin.com/in/reecekuramoto/`,
+    instagram: `https://www.instagram.com/reecekuramoto/`,
+    image: Reece
   },
-  chelsea: {
-    name: "Chelsea",
+
+  david: {
+    name: "David",
     description: `External`,
-    linkedin: `https://www.linkedin.com/in/chelseahuffman2/`,
-    image: Chelsea
+    linkedin: `https://www.linkedin.com/in/david-gee-b9988621a`,
+    instagram: `https://www.instagram.com/david.g2e/`,
+    image: David
   },
-  shounak: {
-    name: "Shounak",
+  xiaolin: {
+    name: "Xiaolin",
     description: `External`,
-    linkedin: `https://www.linkedin.com/in/shounakranabhor`,
-    image: Shounak
+    linkedin: `https://www.linkedin.com/in/xiaolinm`,
+    instagram: `https://www.instagram.com/xiaoolinn/`,
+    github: `https://github.com/xiaolin-m`,
+    image: Xiaolin
   },
-  takumi: {
-    name: "Takumi",
-    description: `External`,
-    linkedin: `https://www.linkedin.com/in/takumi-imanaka/`,
-    image: Takumi
-  },
-  willie: {
-    name: "Willie",
-    description: `External`,
-    linkedin: `https://www.linkedin.com/in/williefl/`,
-    image: Willie
-  },
-  alyson: {
-    name: "Alyson",
-    description: `Finance`,
-    linkedin: `https://www.linkedin.com/in/alyson-lee-5214501b4/`,
-    image: Alyson
-  },
+
   jonny: {
     name: "Jonny",
     description: `Finance`,
-    linkedin: `http://www.linkedin.com/in/jonny-shen`,
+    linkedin: `https://www.linkedin.com/in/jonny-shen`,
     image: Jonny
   },
-  matt: {
-    name: "Matt",
+  mick: {
+    name: "Mick",
     description: `Finance`,
-    linkedin: `https://www.linkedin.com/in/matthewedwardlee31/`,
-    image: Matt
+    linkedin: `https://www.linkedin.com/in/mickhashimoto`,
+    instagram: `https://www.instagram.com/milkhashimoto/`,
+    image: Mick
   },
-  miles: {
-    name: "Miles",
-    description: `Finance`,
-    linkedin: `https://www.linkedin.com/in/miles-chen-698325191/`,
-    image: Miles
-  },
-  arjun: {
-    name: "Arjun",
+
+  calla: {
+    name: "Calla",
     description: `Marketing`,
-    linkedin: `https://www.linkedin.com/in/arjun-kahlon/`,
-    image: Arjun
+    linkedin: `https://www.linkedin.com/in/calla-yang/`,
+    image: Calla
   },
-  hanah: {
-    name: "Hanah",
+  chrstine: {
+    name: "Christine",
     description: `Marketing`,
-    linkedin: `https://www.linkedin.com/in/hanah-shih/`,
-    image: Hanah
+    linkedin: `https://www.linkedin.com/in/christine-du-82b94423a`,
+    instagram: `https://www.instagram.com/christine.duu/`,
+    image: Christine
   },
-  jennifer: {
-    name: "Jennifer",
+  danielle: {
+    name: "Danielle",
     description: `Marketing`,
-    linkedin: `http://www.linkedin.com/in/jenniferfrey02`,
-    image: Jennifer
+    linkedin: `https://www.linkedin.com/in/danielle-alisantosa-53607a23a/`,
+    image: Danielle
   },
-  zaynah: {
-    name: "Zaynah",
+  shivam: {
+    name: "Shivam",
     description: `Marketing`,
-    linkedin: `https://www.linkedin.com/in/zaynahcochinwala/`,
-    image: Zaynah
+    linkedin: `https://www.linkedin.com/in/shivambha`,
+    instagram: `https://www.instagram/shivamm_b/`,
+    image: Shivam
   },
-  ashwin: {
-    name: "Ashwin",
+
+  amanda: {
+    name: "Amanda",
     description: `Operations`,
-    linkedin: `https://www.linkedin.com/in/ashwin-ramakrishna-5713a51b7/`,
-    image: Ashwin
+    linkedin: `https://www.linkedin.com/in/amanda-tran-bh`,
+    image: Amanda
   },
-  eugenia: {
-    name: "Eugenia",
+  ayushi: {
+    name: "Ayushi",
     description: `Operations`,
-    linkedin: `https://www.linkedin.com/in/eugenia-zhang1`,
-    instagram: `https://www.instagram.com/eugenia.zhang/`,
-    image: Eugenia
+    linkedin: `https://www.linkedin.com/in/ayushi-bhatnagar-1064911b8/`,
+    instagram: `https://www.instagram.com/ayushib_2/`,
+    image: Ayushi
+  },
+  kennedy: {
+    name: "Kennedy",
+    description: `Operations`,
+    linkedin: `https://www.linkedin.com/in/kxma`,
+    instagram: `https://www.instagram.com/_kennedyma_/`,
+    image: Kennedy
   },
   sriya: {
     name: "Sriya",
@@ -206,38 +232,27 @@ const DirectorData = {
     linkedin: `https://www.linkedin.com/in/saisriyamudigonda/`,
     image: Sriya
   },
-  eva: {
-    name: "Eva",
+  
+  kiana: {
+    name: "Kiana",
     description: `Sponsorship`,
-    linkedin: `http://linkedin.com/in/eva-y-chen`,
-    image: Eva
+    linkedin: `https://www.linkedin.com/in/kiana-a-sotelo-kas0528`,
+    instagram: `https://www.instagram.com/kianasotelo/`,
+    image: Kiana
   },
-  daphne: {
-    name: "Daphne",
+  lana: {
+    name: "Lana",
     description: `Sponsorship`,
-    linkedin: `https://www.linkedin.com/in/daphne-lee-84b4a4223`,
-    instagram: `https://www.instagram.com/axel_vanderlin_/`,
-    image: Daphne
+    linkedin: `https://www.linkedin.com/in/lana-wong-2639281a3`,
+    image: Lana
   },
-  shelly: {
-    name: "Shelly",
-    description: `Sponsorship`,
-    linkedin: `https://www.linkedin.com/in/shellysagy`,
-    image: Shelly
-  },
-  sivani: {
-    name: "Sivani",
-    description: `Sponsorship`,
-    linkedin: `https://www.linkedin.com/in/sivani-voruganti/`,
-    image: Sivani
-  },
-  trishna: {
-    name: "Trishna",
-    description: `Technical`,
-    linkedin: `https://www.linkedin.com/in/trishnasharma/`,
-    instagram: `https://www.instagram.com/trishnasharmaa/`,
-    github: `https://github.com/trishnasharma`,
-    image: Trishna
+  abbas: {
+    name: "Abbas",
+    description: "Technical",
+    linkedin: `https://www.linkedin.com/in/abbaskazmii`,
+    instagram: `https://www.instagram.com/abbaskazmii/`,
+    github: `https://www.github.com/abbask31`,
+    image: Abbas
   },
   alec: {
     name: "Alec",
@@ -254,6 +269,14 @@ const DirectorData = {
     instagram: `https://www.instagram.com/fdphurqbhh/`,
     github: `https://github.com/Cameron327`,
     image: Cameron
+  },
+  dorothy: {
+    name: "Dorothy",
+    description: `Technical`,
+    linkedin: `https://www.linkedin.com/in/dorothykle`,
+    instagram: `https://www.instagram.com/dorothylle/`,
+    github: `https://github.com/dorothyle`,
+    image: Dorothy
   },
   eric: {
     name: "Eric",
