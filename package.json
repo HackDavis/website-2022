@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts build",
     "lint": "eslint src --ext .js,.jsx",
     "lint-fix": "eslint --fix src --ext .js,.jsx"
   },
